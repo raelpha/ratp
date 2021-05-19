@@ -1,0 +1,9 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,location_type,parent_station
+2463,,"Saint-Fargeau","112 avenue Gambetta - 75120",48.871699810971116,2.4042987242021825,0,
+1783,,"Pelleport","Paul Signac (place, en face du 125 avenue Gambetta) - 75120",48.86822334760734,2.401324380544102,0,
+1718,,"Saint-Fargeau","112 avenue Gambetta - 75120",48.871699810971116,2.4042987242021825,0,
+2393,,"Pelleport","Paul Signac (place, en face du 125 avenue Gambetta) - 75120",48.86822334760734,2.401324380544102,0,
+1752,,"Porte des Lilas","Rue de Belleville - 75120",48.8769382235089,2.4063765669297816,0,
+2430,,"Porte des Lilas","Rue de Belleville - 75120",48.8769382235089,2.4063765669297816,0,
+2539,,"Gambetta","Père-Lachaise - 75120",48.86503429801815,2.3985414869122423,0,
+1659,,"Gambetta","Père-Lachaise - 75120",48.86503429801815,2.3985414869122423,0,

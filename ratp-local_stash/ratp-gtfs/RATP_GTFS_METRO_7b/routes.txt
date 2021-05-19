@@ -1,0 +1,3 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+2467858,100,"7B","(PRE-SAINT-GERVAIS <-> LOUIS BLANC) - Aller",,1,,FFFFFF,000000
+2467859,100,"7B","(PRE-SAINT-GERVAIS <-> LOUIS BLANC) - Retour",,1,,FFFFFF,000000

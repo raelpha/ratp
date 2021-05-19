@@ -1,0 +1,3 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+323511,100,"FUNICULAIRE","FUN (Gare basse <-> Gare Haute) - Aller",,3,,FFFFFF,000000
+323512,100,"FUNICULAIRE","FUN (Gare basse <-> Gare Haute) - Retour",,3,,FFFFFF,000000

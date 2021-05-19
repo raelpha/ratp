@@ -1,0 +1,5 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,location_type,parent_station
+2091,,"Funiculaire Gare haute","Cardinal Dubois (rue du) - 75118",48.88557692951087,2.3425422354115337,0,
+2552,,"Funiculaire Gare haute","Cardinal Dubois (rue du) - 75118",48.88557692951087,2.3425422354115337,0,
+2090,,"Funiculaire Gare basse","Suzanne Valadon (place) - 75118",48.88469617855217,2.342610282962049,0,
+2551,,"Funiculaire Gare basse","Suzanne Valadon (place) - 75118",48.88469617855217,2.342610282962049,0,
