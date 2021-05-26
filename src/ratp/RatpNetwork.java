@@ -21,12 +21,15 @@ public class RatpNetwork extends SimState {
 
     public RatpNetwork(long seed) throws IOException {
         super(seed);
-        Bag desiredAttributes = new Bag();
-        desiredAttributes.add("line");
-        desiredAttributes.add("stroke");
+        Bag attributes = new Bag();
+        attributes.add("line");
+        attributes.add("stroke"); // TODO: Rename stroke to color
+        attributes.add("sectionId");
+        attributes.add("origin");
+        attributes.add("destination");
 
         try {
-            ShapeFileImporter.read(absolute_shp.toString(), absolute_db.toString(), vectorField, desiredAttributes);
+            ShapeFileImporter.read(absolute_shp.toString(), absolute_db.toString(), vectorField, attributes);
         } catch (Exception e) {
             System.out.println(e);
         }
