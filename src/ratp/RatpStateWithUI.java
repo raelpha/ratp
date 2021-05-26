@@ -65,27 +65,6 @@ public class RatpStateWithUI extends GUIState {
         });
 
 
-
-        //display.reset();
-
-       /* for (int i = 0; i < world.vectorField.getGeometries().size(); i++) {
-            Object geometry_obj =  world.vectorField.getGeometries().objs[i];
-            MasonGeometry geometry = (MasonGeometry) geometries.objs[i];
-            System.out.println(geometry);
-            System.out.println(geometry.getStringAttribute("line"));
-            System.out.println(geometry.getStringAttribute("stroke"));
-            //if (geometry.getStringAttribute("line").equals("1")) {
-            portrayal.setPortrayalForObject(geometry_obj, new GeomPortrayal(Color.decode(geometry.getStringAttribute("stroke")), true));
-           // display.repaint();
-            System.out.println("hfdiujs");
-
-            // }
-        }*/
-
-
-        //display.reset();
-        //display.setBackdrop(Color.WHITE);
-        //display.reset();
         display.reset();
         display.setBackdrop(Color.BLACK);
         display.repaint();
