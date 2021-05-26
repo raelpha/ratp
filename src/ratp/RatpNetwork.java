@@ -15,9 +15,9 @@ public class RatpNetwork extends SimState {
     GeomVectorField vectorField = new GeomVectorField(WIDTH, HEIGHT);
 
     URI absolute_shp = new File(new File(
-            "ressources/ratp_rotated/ratp_pivotated.shp").getCanonicalPath()).toURI();
+            "data/ratp_rotated/ratp_pivotated.shp").getCanonicalPath()).toURI();
     URI absolute_db = new File(new File(
-            "ressources/ratp_rotated/ratp_pivotated.dbf").getCanonicalPath()).toURI();
+            "data/ratp_rotated/ratp_pivotated.dbf").getCanonicalPath()).toURI();
 
     public RatpNetwork(long seed) throws IOException {
         super(seed);
