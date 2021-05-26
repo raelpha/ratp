@@ -11,6 +11,6 @@ public class Main {
         RatpStateWithUI gui = new RatpStateWithUI(model);
         Console console = new Console(gui);
         console.setVisible(true);
-        console.pressPlay();
+        //console.pressPlay();
     }
 }

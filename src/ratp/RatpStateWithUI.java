@@ -17,6 +17,7 @@ public class RatpStateWithUI extends GUIState {
     public static int FrameSize = 600;
     public Display2D display;
     public JFrame displayFrame;
+    private GeomVectorFieldPortrayal agentPortrayal = new GeomVectorFieldPortrayal();
 
     private GeomVectorFieldPortrayal portrayal = new GeomVectorFieldPortrayal();
 
@@ -31,6 +32,7 @@ public class RatpStateWithUI extends GUIState {
         display = new Display2D(FrameSize, FrameSize, this);
 
         display.attach(portrayal, "Vector layer");
+        this.display.attach(this.agentPortrayal, "Agents", true);
 
         displayFrame = display.createFrame();
         controller.registerFrame(displayFrame);
@@ -46,6 +48,9 @@ public class RatpStateWithUI extends GUIState {
     private void setupPortrayals() {
 
         RatpNetwork world = (RatpNetwork) state;
+
+        this.agentPortrayal.setField(world.agents);
+        this.agentPortrayal.setPortrayalForAll(new GeomPortrayal(Color.BLUE, 0.3D, true));
 
         portrayal.setField(world.vectorField);
         portrayal.setPortrayalForAll(new GeomPortrayal(Color.RED, true));
@@ -66,7 +71,7 @@ public class RatpStateWithUI extends GUIState {
 
 
         display.reset();
-        display.setBackdrop(Color.BLACK);
+        //&display.setBackdrop(Color.BLACK);
         display.repaint();
     }
 }
