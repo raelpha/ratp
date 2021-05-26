@@ -4,14 +4,9 @@ import javafx.util.Pair;
 
 import java.util.List;
 
-public class Station extends Crossable {
+public class Station  {
 
     List<Pair<Line,Boolean>> connections; // <Ligne,isconnectionOpen>
-
-    public Boolean isTerminus(){
-        if(origin==null || destination==null)
-            return true;
-        return false;
-    }
+    //TODO: Virer
 
 }
