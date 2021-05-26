@@ -19,6 +19,10 @@ public class RatpStateWithUI extends GUIState {
     public Display2D display;
     public JFrame displayFrame;
 
+    /** Pour l'instant, on n'a qu'un seul portrayal (networkPortrayal), à voir si c'est pas mieux de
+     * faire un portrayal par ligne ?
+     * Peut-être conflits pour les voyageurs ?*/
+    //TODO
     private GeomVectorFieldPortrayal networkPortrayal = new GeomVectorFieldPortrayal();
 
     public RatpStateWithUI(SimState state) {
@@ -46,6 +50,7 @@ public class RatpStateWithUI extends GUIState {
 
         this.networkPortrayal.setField(ratpNetwork.linesGeomVectorField);
         this.networkPortrayal.setPortrayalForAll(new GeomPortrayal(){
+            /** Here, we redraw each LineString according to its line color*/
                 public void draw(Object object, Graphics2D graphics, DrawInfo2D info)
                 {
                     MasonGeometry geometry  = (MasonGeometry)object;
