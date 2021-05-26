@@ -4,7 +4,7 @@ import sim.display.Console;
 
 import java.io.IOException;
 
-public class Main {
+public class RatpMain {
 
     public static void main(String[] args) throws IOException {
         RatpNetwork model = new RatpNetwork(System.currentTimeMillis());
