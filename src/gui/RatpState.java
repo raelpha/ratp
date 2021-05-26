@@ -15,8 +15,8 @@ public class RatpState extends SimState {
     GeomVectorField vectorField = new GeomVectorField(WIDTH, HEIGHT);
 
 
-    URI absolute_shp = new File(new File("src/ressources/ratp-idfm.shp").getCanonicalPath()).toURI();
-    URI absolute_db = new File(new File("src/ressources/ratp-idfm.dbf").getCanonicalPath()).toURI();
+    URI absolute_shp = new File(new File("ressources/ratp-idfm.shp").getCanonicalPath()).toURI();
+    URI absolute_db = new File(new File("ressources/ratp-idfm.dbf").getCanonicalPath()).toURI();
 
     public RatpState(long seed) throws IOException {
         super(seed);
