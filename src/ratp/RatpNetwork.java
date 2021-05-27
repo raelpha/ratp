@@ -30,7 +30,7 @@ public class RatpNetwork extends SimState {
             "data/ratp_rotated/ratp_pivotated.dbf").getCanonicalPath()).toURI();
 
     public GeomVectorField junctions = new GeomVectorField(600, 600);
-    //public GeomVectorField walkways = new GeomVectorField(600, 600);
+    public GeomVectorField walkways = new GeomVectorField(600, 600);
     public RatpNetwork(long seed) throws IOException {
         super(seed);
         Bag attributes = new Bag();
@@ -43,7 +43,7 @@ public class RatpNetwork extends SimState {
         try {
             ShapeFileImporter.read(absolute_shp.toString(), absolute_db.toString(), vectorField, attributes);
             this.network.createFromGeomField(this.vectorField);
-            //ShapeFileImporter.read(absolute_shp.toString(), absolute_db.toString(), this.walkways);
+            ShapeFileImporter.read(absolute_shp.toString(), absolute_db.toString(), this.walkways);
         } catch (Exception e) {
             System.out.println(e);
         }

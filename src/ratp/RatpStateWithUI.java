@@ -49,9 +49,6 @@ public class RatpStateWithUI extends GUIState {
 
         RatpNetwork world = (RatpNetwork) state;
 
-        this.agentPortrayal.setField(world.agents);
-        this.agentPortrayal.setPortrayalForAll(new GeomPortrayal(Color.BLUE, 0.3D, true));
-
         portrayal.setField(world.vectorField);
         portrayal.setPortrayalForAll(new GeomPortrayal(Color.RED, true));
 
@@ -69,6 +66,8 @@ public class RatpStateWithUI extends GUIState {
             }
         });
 
+        this.agentPortrayal.setField(world.agents);
+        this.agentPortrayal.setPortrayalForAll(new GeomPortrayal(Color.RED, 0.3D, true));
 
         display.reset();
         //&display.setBackdrop(Color.BLACK);
