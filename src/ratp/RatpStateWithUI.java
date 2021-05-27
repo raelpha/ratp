@@ -55,6 +55,7 @@ public class RatpStateWithUI extends GUIState {
                 {
                     MasonGeometry geometry  = (MasonGeometry)object;
                     paint = Color.decode(geometry.getStringAttribute("stroke"));
+                    filled = false;
                     super.draw(object, graphics, info);
                 }
             }
