@@ -45,6 +45,28 @@ public class RatpStateWithUI extends GUIState {
         setupPortrayals();
     }
 
+    /**
+     * @return HTML string parsed for "about" section in MASON window
+     */
+    public static Object getInfo() {
+        return  "<h1 style='color: #5e9ca0;' data-darkreader-inline-color=''>RATP Simulation</h1>"+
+                "<h2 style='color: #2e6c80;' data-darkreader-inline-color=''>Purpose of the simulation</h2>"+
+                "<p>This simulation simulate the Paris's subway traffic and how passengers " +
+                        "reacts to pertubation on the network.</p>" +
+                "<h2 style='color: #2e6c80;' data-darkreader-inline-color=''>Authors</h2>"+
+                "<ul>"+
+                "<li>Yvain</li>"+
+                "<li>Rapha&euml;l</li>"+
+                "<li>Hugo</li>"+
+                "<li>Jimmy</li>" +
+                "<li>Cl&eacute;ment</li>" +
+                "</ul>";
+    }
+
+    /**
+     * Where we set up the visualization when the user is
+     * about to start playing the simulation
+     */
     private void setupPortrayals() {
         RatpNetwork ratpNetwork = (RatpNetwork) state;
 
