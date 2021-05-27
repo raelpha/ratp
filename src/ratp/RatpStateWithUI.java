@@ -23,20 +23,29 @@ public class RatpStateWithUI extends GUIState {
      * faire un portrayal par ligne ?
      * Peut-être conflits pour les voyageurs ?*/
     //TODO
-    private GeomVectorFieldPortrayal networkPortrayal = new GeomVectorFieldPortrayal();
+    private final GeomVectorFieldPortrayal networkPortrayal = new GeomVectorFieldPortrayal();
 
     public RatpStateWithUI(SimState state) {
         super(state);
     }
 
+
+    /**
+     * Called when the GUI is created
+     * Create display and attaching it to the console.
+     * @param controller Console Controller
+     */
     @Override
     public void init(Controller controller){
         super.init(controller);
+
+
         display = new Display2D(Constants.DISPLAY_SIZE, Constants.DISPLAY_SIZE, this);
         display.attach(networkPortrayal, "Network (all lines) portrayal");
         displayFrame = display.createFrame();
-        controller.registerFrame(displayFrame);
+        controller.registerFrame(displayFrame); // make the display appears in the "displays" list in Console
         displayFrame.setVisible(true);
+        displayFrame.setTitle("Network");
     }
 
     @Override
@@ -86,5 +95,6 @@ public class RatpStateWithUI extends GUIState {
         display.reset();
         display.setBackdrop(Color.BLACK);
         display.repaint();
+
     }
 }
