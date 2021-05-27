@@ -5,11 +5,9 @@ import sim.display.Controller;
 import sim.display.Display2D;
 import sim.display.GUIState;
 import sim.engine.SimState;
-import sim.field.geo.GeomVectorField;
 import sim.portrayal.DrawInfo2D;
 import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
-import sim.util.Bag;
 import sim.util.geo.MasonGeometry;
 
 import javax.swing.*;
@@ -22,14 +20,8 @@ public class RatpStateWithUI extends GUIState {
     public Display2D display;
     public JFrame displayFrame;
 
-    /** Pour l'instant, on n'a qu'un seul portrayal (networkPortrayal), à voir si c'est pas mieux de
-     * faire un portrayal par ligne ?
-     * Peut-être conflits pour les voyageurs ?*/
-    //TODO
-    private final GeomVectorFieldPortrayal networkPortrayal = new GeomVectorFieldPortrayal();
-
+    /**A map storing each line as a GeomVectorFieldPortrayal*/
     private final Map<String,GeomVectorFieldPortrayal> linesPortrayals = new HashMap<>();
-
 
     public RatpStateWithUI(SimState state) {
         super(state);
@@ -39,7 +31,6 @@ public class RatpStateWithUI extends GUIState {
         }
     }
 
-
     /**
      * Called when the GUI is created
      * Create display and attaching it to the console.
@@ -48,17 +39,11 @@ public class RatpStateWithUI extends GUIState {
     @Override
     public void init(Controller controller){
         super.init(controller);
-
-
         display = new Display2D(Constants.DISPLAY_SIZE, Constants.DISPLAY_SIZE, this);
-
-        //display.attach(networkPortrayal, "Network (all lines) portrayal");
-
 
         for (String s : Constants.listOfLinesNames) {
             display.attach(linesPortrayals.get(s), "Ligne "+s);
         }
-
 
         displayFrame = display.createFrame();
         controller.registerFrame(displayFrame); // make the display appears in the "displays" list in Console
@@ -97,22 +82,8 @@ public class RatpStateWithUI extends GUIState {
     private void setupPortrayals() {
         RatpNetwork ratpNetwork = (RatpNetwork) state;
 
-      //  this.networkPortrayal.setField(ratpNetwork.linesGeomVectorField);
-      //  this.networkPortrayal.setPortrayalForAll(new GeomPortrayal(){
-            /** Here, we redraw each LineString according to its line color*/
-        /*        public void draw(Object object, Graphics2D graphics, DrawInfo2D info)
-                {
-                    MasonGeometry geometry  = (MasonGeometry)object;
-                    paint = Color.decode(geometry.getStringAttribute("stroke"));
-                    filled = false;
-                    super.draw(object, graphics, info);
-                }
-            }
-        );*/
-
-
         for (String s : Constants.listOfLinesNames) {
-            this.linesPortrayals.get(s).setField(ratpNetwork.linesGeomVectorFieldByLine.get(s));
+            this.linesPortrayals.get(s).setField(ratpNetwork.linesGeomVectorField.get(s));
             this.linesPortrayals.get(s).setPortrayalForAll(new GeomPortrayal(){
                      /** Here, we redraw each LineString according to its line color*/
                      public void draw(Object object, Graphics2D graphics, DrawInfo2D info)
@@ -129,6 +100,5 @@ public class RatpStateWithUI extends GUIState {
         display.reset();
         display.setBackdrop(Color.BLACK);
         display.repaint();
-
     }
 }
