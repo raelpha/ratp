@@ -51,6 +51,9 @@ public class FileImporter {
             MBR.expandToInclude(lines.get(line).getMBR());
         }
 
+        //Quickfix: fix weird w/h ratio
+        MBR.expandBy(MBR.getHeight()*0.1, MBR.getWidth()*0.5*0.1);
+
         for(String line : Constants.listOfLinesNames){
             lines.get(line).setMBR(MBR);
         }
