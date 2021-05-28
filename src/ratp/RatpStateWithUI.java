@@ -91,8 +91,19 @@ public class RatpStateWithUI extends GUIState {
         RatpNetwork ratpNetwork = (RatpNetwork) state;
 
         stationsPortrayal.setField(ratpNetwork.stationsGeomVectorField);
-
-        stationsPortrayal.setPortrayalForAll(new GeomPortrayal(Color.RED, 0.000003D, true));
+        //stationsPortrayal.setPortrayalForAll(new GeomPortrayal(Color.RED, 0.000003D, true));
+        stationsPortrayal.setPortrayalForAll(new GeomPortrayal(){
+                 /** Here, we redraw each LineString according to its line color*/
+                 public void draw(Object object, Graphics2D graphics, DrawInfo2D info)
+                 {
+                     MasonGeometry geometry  = (MasonGeometry)object;
+                     paint = Color.decode(geometry.getStringAttribute("stroke"));
+                     filled = true;
+                     scale = 0.000003D;
+                     super.draw(object, graphics, info);
+                 }
+             }
+        );
 
 
         for (String s : Constants.listOfLinesNames) {

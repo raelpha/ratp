@@ -23,7 +23,7 @@ import java.util.Map;
 public class FileImporter {
 
     //TODO: Move this in Constants
-    public static List<String> defaultAttributes = Arrays.asList("line", "stroke", "sectionId","origin","destination");
+    public static List<String> defaultAttributes = Arrays.asList("line", "stroke", "sectionId","origin","destinatio");
 
     public static void shapeFileImporterByLine(String name, Map<String,GeomVectorField> lines, GeomVectorField stations){
         for(String line : Constants.listOfLinesNames){
@@ -59,12 +59,17 @@ public class FileImporter {
                    Point destination_station_point = ((LineString) rdr.read(mg.getGeometry().toString())).getEndPoint();
 
                    MasonGeometry origin_station_mg = new MasonGeometry(origin_station_point);
-                   //TODO:Mouais trop d'arguments, virer destination ie
-                   origin_station_mg.addAttributes(mg.getAttributes());
-                   //origin_station_mg.setUserData((Object)origin_station_point);
+                   origin_station_mg.addStringAttribute("name", mg.getStringAttribute("origin"));
+                   origin_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
+                   origin_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
 
+                   MasonGeometry destination_station_mg = new MasonGeometry(destination_station_point);
+                   destination_station_mg.addStringAttribute("name", mg.getStringAttribute("destinatio"));
+                   destination_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
+                   destination_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
 
                    stations.addGeometry(origin_station_mg);
+                   stations.addGeometry(destination_station_mg);
                }
                 int dnjs = 9;
             } catch (ParseException var6) {
@@ -84,11 +89,14 @@ public class FileImporter {
 
         MBR.expandToInclude(stations.getMBR());
 
+       //MBR.expandBy(MBR.getHeight()*0.1, MBR.getWidth()*0.5*0.1);
 
         //TODO: not the best practice
         for(String line : Constants.listOfLinesNames){
             lines.get(line).setMBR(MBR);
         }
+
+
 
         stations.setMBR(MBR);
 
