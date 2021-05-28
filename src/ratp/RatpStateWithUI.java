@@ -5,7 +5,6 @@ import sim.display.Controller;
 import sim.display.Display2D;
 import sim.display.GUIState;
 import sim.engine.SimState;
-import sim.field.geo.GeomVectorField;
 import sim.portrayal.DrawInfo2D;
 import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
@@ -25,7 +24,7 @@ public class RatpStateWithUI extends GUIState {
     /**
      * A map storing each line, and station, as a GeomVectorFieldPortrayal
      */
-    private Map<String, GeomVectorFieldPortrayal> linesPortrayals = new HashMap<>();
+    final private Map<String, GeomVectorFieldPortrayal> linesPortrayals = new HashMap<>();
 
     public RatpStateWithUI(SimState state) {
         super(state);
