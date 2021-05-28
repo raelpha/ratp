@@ -23,6 +23,7 @@ import java.util.Map;
 public class FileImporter {
 
     //TODO: Move this in Constants
+    //TODO: WARNING ! "destination" = "destinatio" (yeah, wtf ?)
     public static List<String> defaultAttributes = Arrays.asList("line", "stroke", "sectionId","origin","destinatio");
 
     public static void shapeFileImporterByLine(String name, Map<String,GeomVectorField> lines, GeomVectorField stations){
@@ -49,12 +50,9 @@ public class FileImporter {
         for(Object o : allLines.getGeometries()){
             MasonGeometry mg = (MasonGeometry) o;
             lines.get(mg.getStringAttribute("line")).addGeometry(mg);
-            //stations.put(mg.getStringAttribute("origin")+mg.getStringAttribute("line"), new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE));
-            //stations.addGeometry();
-            //MasonGeometry mg_station = mg.get;//TODO: NO !
-            String debukfbdj =  mg.getGeometry().toString();
             try {
-               if(mg.getGeometry().getGeometryType() != "MultiLineString") {
+                //TODO: Issue with line 14: multilinesting to linestring !
+               if(mg.getGeometry().getGeometryType() == "LineString") {
                    Point origin_station_point = ((LineString) rdr.read(mg.getGeometry().toString())).getStartPoint();
                    Point destination_station_point = ((LineString) rdr.read(mg.getGeometry().toString())).getEndPoint();
 
@@ -71,35 +69,26 @@ public class FileImporter {
                    stations.addGeometry(origin_station_mg);
                    stations.addGeometry(destination_station_mg);
                }
-                int dnjs = 9;
             } catch (ParseException var6) {
                 System.out.println("Bogus line string" + var6);
             }
-            String dsjhk = "jfdb";
-            //stations.get(mg.getStringAttribute("origin")+mg.getStringAttribute("line")).addGeometry(mg_station);
-            //TODO:Ajouter la destination aussi !
         }
 
         Envelope MBR = new Envelope();
 
-        //TODO: not the best practice
-        for(String line : Constants.listOfLinesNames){
-            MBR.expandToInclude(lines.get(line).getMBR());
+        for (Map.Entry<String, GeomVectorField> l : lines.entrySet()) {
+            MBR.expandToInclude(l.getValue().getMBR());
         }
 
         MBR.expandToInclude(stations.getMBR());
 
-       //MBR.expandBy(MBR.getHeight()*0.1, MBR.getWidth()*0.5*0.1);
+        MBR.expandBy(MBR.getHeight()*0.1, MBR.getWidth()*0.5*0.1);
 
-        //TODO: not the best practice
-        for(String line : Constants.listOfLinesNames){
-            lines.get(line).setMBR(MBR);
+        for (Map.Entry<String, GeomVectorField> l : lines.entrySet()) {
+            l.getValue().setMBR(MBR);
         }
 
-
-
         stations.setMBR(MBR);
-
     }
 
 }
