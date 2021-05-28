@@ -15,6 +15,9 @@ public class RatpNetwork extends SimState {
     /**linesGeomVectorField contains all the LineString of the network*/
     Map<String,GeomVectorField> linesGeomVectorField = new HashMap<>();;
 
+    /**stationsGeomVectorField contains all the POINTS of the network*/
+    GeomVectorField stationsGeomVectorField = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
+
     /**We WILL make another Graph here for passenger interconnection*/
     //public GeomPlanarGraph passengerNetwork = new GeomPlanarGraph();
 
@@ -24,7 +27,9 @@ public class RatpNetwork extends SimState {
         for (String s : Constants.listOfLinesNames){
             linesGeomVectorField.put(s, new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE));
         }
-        FileImporter.shapeFileImporterByLine("ratp_rotated/ratp_pivotated", linesGeomVectorField);
+        FileImporter.shapeFileImporterByLine("ratp_rotated/ratp_pivotated", linesGeomVectorField, stationsGeomVectorField);
+
+
     }
 
 }
