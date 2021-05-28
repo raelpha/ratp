@@ -90,7 +90,7 @@ public class FileImporter {
         //Envelope Minimum Bounding Rectangle
         Envelope MBR = new Envelope();
 
-        //We find the envelope containing all the lines
+        //We find the envelope containing all the lines (by expanding it to fit each line)
         for (Map.Entry<String, GeomVectorField> l : lines.entrySet()) {
             MBR.expandToInclude(l.getValue().getMBR());
         }
