@@ -7,14 +7,11 @@ import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
 import global.Constants;
 import sim.io.geo.ShapeFileImporter;
-import sim.engine.SimState;
 import sim.field.geo.GeomVectorField;
-import sim.io.geo.ShapeFileImporter;
 import sim.util.Bag;
 import sim.util.geo.MasonGeometry;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
