@@ -23,7 +23,7 @@ public class FileImporter {
     //TODO: WARNING ! "destination" = "destinatio" (yeah, wtf ?)
     public static List<String> defaultAttributes = Arrays.asList("line", "stroke", "sectionId","origin","destinatio");
 
-    public static void shapeFileImporterByLine(String name, Map<String,GeomVectorField> lines, GeomVectorField stations){
+    public static void shapeFileImporterByLine(String name, Map<String,GeomVectorField> lines){
 
         //Initialize a GeomVectorField for each (hardcoded) line
         for(String line : Constants.listOfLinesNames){
@@ -94,19 +94,14 @@ public class FileImporter {
         for (Map.Entry<String, GeomVectorField> l : lines.entrySet()) {
             MBR.expandToInclude(l.getValue().getMBR());
         }
-        //We find the envelope containing all the lines
-
-        MBR.expandToInclude(stations.getMBR());
 
         //A quickfix to shrink the width
         MBR.expandBy(MBR.getHeight()*0.1, MBR.getWidth()*0.5*0.1);
 
-        //We assign the obtained maximum MBR for all the lines
+        //We assign the obtained maximum MBR for all the lines (and stations)
         for (Map.Entry<String, GeomVectorField> l : lines.entrySet()) {
             l.getValue().setMBR(MBR);
         }
-
-        stations.setMBR(MBR);
     }
 
 }
