@@ -19,14 +19,13 @@ import java.util.Map;
 public class RatpStateWithUI extends GUIState {
 
     public Display2D display;
+
     public JFrame displayFrame;
 
     /**A map storing each line as a GeomVectorFieldPortrayal*/
     private Map<String,GeomVectorFieldPortrayal> linesPortrayals = new HashMap<>();
 
     private GeomVectorFieldPortrayal stationsPortrayal = new GeomVectorFieldPortrayal();
-
-
 
     public RatpStateWithUI(SimState state) {
         super(state);
@@ -91,7 +90,6 @@ public class RatpStateWithUI extends GUIState {
         RatpNetwork ratpNetwork = (RatpNetwork) state;
 
         stationsPortrayal.setField(ratpNetwork.stationsGeomVectorField);
-        //stationsPortrayal.setPortrayalForAll(new GeomPortrayal(Color.RED, 0.000003D, true));
         stationsPortrayal.setPortrayalForAll(new GeomPortrayal(){
                  /** Here, we redraw each LineString according to its line color*/
                  public void draw(Object object, Graphics2D graphics, DrawInfo2D info)
@@ -105,22 +103,20 @@ public class RatpStateWithUI extends GUIState {
              }
         );
 
-
-        for (String s : Constants.listOfLinesNames) {
-            this.linesPortrayals.get(s).setField(ratpNetwork.linesGeomVectorField.get(s));
-            this.linesPortrayals.get(s).setPortrayalForAll(new GeomPortrayal(){
-                     /** Here, we redraw each LineString according to its line color*/
-                     public void draw(Object object, Graphics2D graphics, DrawInfo2D info)
-                     {
-                         MasonGeometry geometry  = (MasonGeometry)object;
-                         paint = Color.decode(geometry.getStringAttribute("stroke"));
-                         filled = false;
-                         super.draw(object, graphics, info);
-                     }
+        for (Map.Entry<String, GeomVectorFieldPortrayal> l : this.linesPortrayals.entrySet()) {
+            l.getValue().setField(ratpNetwork.linesGeomVectorField.get(l.getKey()));
+            l.getValue().setPortrayalForAll(new GeomPortrayal(){
+                 /** Here, we redraw each LineString according to its line color*/
+                 public void draw(Object object, Graphics2D graphics, DrawInfo2D info)
+                 {
+                     MasonGeometry geometry  = (MasonGeometry)object;
+                     paint = Color.decode(geometry.getStringAttribute("stroke"));
+                     filled = false;
+                     super.draw(object, graphics, info);
                  }
+                }
             );
         }
-
 
         display.reset();
         display.setBackdrop(Color.BLACK);
