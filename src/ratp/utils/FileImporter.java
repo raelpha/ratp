@@ -49,7 +49,11 @@ public class FileImporter {
 
         for(Object o : allLines.getGeometries()){
             MasonGeometry mg = (MasonGeometry) o;
+
+            //Adding lines
             lines.get(mg.getStringAttribute("line")).addGeometry(mg);
+
+            //Adding stations
             try {
                 //TODO: Issue with line 14: multilinesting to linestring !
                if(mg.getGeometry().getGeometryType() == "LineString") {
@@ -66,8 +70,10 @@ public class FileImporter {
                    destination_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
                    destination_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
 
-                   stations.addGeometry(origin_station_mg);
-                   stations.addGeometry(destination_station_mg);
+                   if(!stations.getGeometries().contains(origin_station_mg))
+                       stations.addGeometry(origin_station_mg);
+                   if(!stations.getGeometries().contains(destination_station_mg))
+                        stations.addGeometry(destination_station_mg);
                }
             } catch (ParseException var6) {
                 System.out.println("Bogus line string" + var6);
