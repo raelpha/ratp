@@ -23,8 +23,9 @@ public class FileImporter {
     //TODO: WARNING ! "destination" = "destinatio" (yeah, wtf ?)
     public static List<String> defaultAttributes = Arrays.asList("line", "stroke", "sectionId","origin","destinatio");
 
-    public static void shapeFileImporterByLine(String name, Map<String,GeomVectorField> lines, GeomVectorField stations){
-        //Initializing
+    public static void shapeFileImporterByLine(String name, Map<String,GeomVectorField> lines){
+
+        //Initialize a GeomVectorField for each (hardcoded) line
         for(String line : Constants.listOfLinesNames){
             lines.put(line, new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE));
         }
@@ -43,13 +44,16 @@ public class FileImporter {
             System.out.println(e);
         }
 
+        //Probably not the best way of doing it...
         WKTReader rdr = new WKTReader();
 
         for (Object o : allLines.getGeometries()) {
             MasonGeometry mg = (MasonGeometry) o;
 
             //Adding lines
-            lines.get(mg.getStringAttribute("line")).addGeometry(mg);
+            MasonGeometry section_mg = mg;
+            section_mg.addStringAttribute("type", "section");
+            lines.get(mg.getStringAttribute("line")).addGeometry(section_mg);
 
             //Adding stations
             try {
@@ -58,40 +62,46 @@ public class FileImporter {
                     Point destination_station_point = ((LineString) rdr.read(mg.getGeometry().toString())).getEndPoint();
 
                     MasonGeometry origin_station_mg = new MasonGeometry(origin_station_point);
+                    origin_station_mg.addStringAttribute("type", "station");
                     origin_station_mg.addStringAttribute("name", mg.getStringAttribute("origin"));
                     origin_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
                     origin_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
 
                     MasonGeometry destination_station_mg = new MasonGeometry(destination_station_point);
+                    destination_station_mg.addStringAttribute("type", "station");
                     destination_station_mg.addStringAttribute("name", mg.getStringAttribute("destinatio"));
                     destination_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
                     destination_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
 
-                    if (!stations.getGeometries().contains(origin_station_mg))
-                        stations.addGeometry(origin_station_mg);
-                    if (!stations.getGeometries().contains(destination_station_mg))
-                        stations.addGeometry(destination_station_mg);
+                    //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
+                    if(!lines.get(mg.getStringAttribute("line")).getGeometries().contains(origin_station_mg))
+                        lines.get(mg.getStringAttribute("line")).addGeometry(origin_station_mg);
+
+                    //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
+                    if(!lines.get(mg.getStringAttribute("line")).getGeometries().contains(destination_station_mg))
+                        lines.get(mg.getStringAttribute("line")).addGeometry(destination_station_mg);
+
                 }
             } catch (ParseException e) {
                 System.out.println("Bogus line string: " + e);
             }
         }
 
+        //Envelope Minimum Bounding Rectangle
         Envelope MBR = new Envelope();
 
+        //We find the envelope containing all the lines (by expanding it to fit each line)
         for (Map.Entry<String, GeomVectorField> l : lines.entrySet()) {
             MBR.expandToInclude(l.getValue().getMBR());
         }
 
-        MBR.expandToInclude(stations.getMBR());
-
+        //A quickfix to shrink the width
         MBR.expandBy(MBR.getHeight()*0.1, MBR.getWidth()*0.5*0.1);
 
+        //We assign the obtained maximum MBR for all the lines (and stations)
         for (Map.Entry<String, GeomVectorField> l : lines.entrySet()) {
             l.getValue().setMBR(MBR);
         }
-
-        stations.setMBR(MBR);
     }
 
 }
