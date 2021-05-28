@@ -27,6 +27,7 @@ public class FileImporter {
     public static List<String> defaultAttributes = Arrays.asList("line", "stroke", "sectionId","origin","destinatio");
 
     public static void shapeFileImporterByLine(String name, Map<String,GeomVectorField> lines, GeomVectorField stations){
+        //Initializing
         for(String line : Constants.listOfLinesNames){
             lines.put(line, new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE));
         }
@@ -47,7 +48,7 @@ public class FileImporter {
 
         WKTReader rdr = new WKTReader();
 
-        for(Object o : allLines.getGeometries()){
+        for (Object o : allLines.getGeometries()) {
             MasonGeometry mg = (MasonGeometry) o;
 
             //Adding lines
@@ -55,28 +56,27 @@ public class FileImporter {
 
             //Adding stations
             try {
-                //TODO: Issue with line 14: multilinesting to linestring !
-               if(mg.getGeometry().getGeometryType() == "LineString") {
-                   Point origin_station_point = ((LineString) rdr.read(mg.getGeometry().toString())).getStartPoint();
-                   Point destination_station_point = ((LineString) rdr.read(mg.getGeometry().toString())).getEndPoint();
+                if (mg.getGeometry().getGeometryType().equals("LineString")) {
+                    Point origin_station_point = ((LineString) rdr.read(mg.getGeometry().toString())).getStartPoint();
+                    Point destination_station_point = ((LineString) rdr.read(mg.getGeometry().toString())).getEndPoint();
 
-                   MasonGeometry origin_station_mg = new MasonGeometry(origin_station_point);
-                   origin_station_mg.addStringAttribute("name", mg.getStringAttribute("origin"));
-                   origin_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
-                   origin_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
+                    MasonGeometry origin_station_mg = new MasonGeometry(origin_station_point);
+                    origin_station_mg.addStringAttribute("name", mg.getStringAttribute("origin"));
+                    origin_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
+                    origin_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
 
-                   MasonGeometry destination_station_mg = new MasonGeometry(destination_station_point);
-                   destination_station_mg.addStringAttribute("name", mg.getStringAttribute("destinatio"));
-                   destination_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
-                   destination_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
+                    MasonGeometry destination_station_mg = new MasonGeometry(destination_station_point);
+                    destination_station_mg.addStringAttribute("name", mg.getStringAttribute("destinatio"));
+                    destination_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
+                    destination_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
 
-                   if(!stations.getGeometries().contains(origin_station_mg))
-                       stations.addGeometry(origin_station_mg);
-                   if(!stations.getGeometries().contains(destination_station_mg))
+                    if (!stations.getGeometries().contains(origin_station_mg))
+                        stations.addGeometry(origin_station_mg);
+                    if (!stations.getGeometries().contains(destination_station_mg))
                         stations.addGeometry(destination_station_mg);
-               }
-            } catch (ParseException var6) {
-                System.out.println("Bogus line string" + var6);
+                }
+            } catch (ParseException e) {
+                System.out.println("Bogus line string: " + e);
             }
         }
 
