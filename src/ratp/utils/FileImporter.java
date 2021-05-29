@@ -1,21 +1,28 @@
 package ratp.utils;
 
+import com.opencsv.CSVReader;
 import com.vividsolutions.jts.geom.Envelope;
 import com.vividsolutions.jts.geom.LineString;
 import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
 import global.Constants;
-import sim.io.geo.ShapeFileImporter;
 import sim.field.geo.GeomVectorField;
+import sim.io.geo.ShapeFileImporter;
 import sim.util.Bag;
 import sim.util.geo.MasonGeometry;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class FileImporter {
 
