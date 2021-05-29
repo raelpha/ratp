@@ -1,9 +1,7 @@
 package ratp.lines;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import global.Constants;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -30,25 +28,47 @@ public class Schedules {
         Schedules s = getInstance();
     }
     
-    List<Schedule> schedules;
+    List<Schedule> allSchedules;
 
     Map<String, List<Schedule>> schedules_by_line = new HashMap<>();
 
-    Map<String, List<Schedule>> schedulesbyLineAnd = new HashMap<>();
+    Map<String, Map<String, List<Schedule>>> schedules = new HashMap<>();
 
     private Schedules()
     {
-        schedules = scheduleReader(Constants.SCHEDULES_FILENAME);
+        allSchedules = scheduleReader(Constants.SCHEDULES_FILENAME);
 
         //Initialize each list for each line
         for(String line : Constants.listOfLinesNames){
             schedules_by_line.put(line, new ArrayList<>());
         }
-
         //TODO: move this elsewhere
-        for(Schedule s : schedules){
+        for(Schedule s : allSchedules){
             if(schedules_by_line.containsKey(s.line))
                 schedules_by_line.get(s.line).add(s);
+        }
+
+        for(String l : Constants.listOfLinesNames){
+            schedules.put(l, new HashMap<>());
+        }
+        //Initialize each list for each line
+        for(String line : Constants.listOfLinesNames){
+            List<String> servicesNames = new ArrayList<>();
+            //Yeah, fuck the complexity...
+            for(Schedule s : schedules_by_line.get(line)){
+                servicesNames.add(s.route_long_name);
+            }
+            servicesNames = servicesNames.stream()
+                            .distinct()
+                            .collect(Collectors.toList());
+
+            for(String service : servicesNames){
+                schedules.get(line).put(service, new ArrayList<>());
+            }
+
+            for(Schedule s : schedules_by_line.get(line)){
+                schedules.get(line).get(s.route_long_name).add(s);
+            }
         }
         
     }
@@ -94,7 +114,7 @@ public class Schedules {
 
             schedules = Files.readAllLines(Paths.get(name))
                     .stream()
-                    .skip(1)
+                    .skip(2) // 1 for the header, 1 for buggy line Hotel De Ville 1
                     .map(line -> new Schedule(
                             Integer.parseInt(line.split(";")[0]),
                             line.split(";")[1],
