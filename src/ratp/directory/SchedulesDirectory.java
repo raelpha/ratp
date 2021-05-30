@@ -3,7 +3,6 @@ package ratp.directory;
 import global.Constants;
 import station.Station;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -84,7 +83,6 @@ public class SchedulesDirectory {
 
         int entry_id;
         int order;
-        //String station_name;
         String line;
         int branch;
         int split;
@@ -102,9 +100,21 @@ public class SchedulesDirectory {
             this.branch = branch;
             this.split = split;
             this.direction  = direction;
-            this.station = StationsDirectory.getInstance().stations.get(station_name);
-            this.origin = StationsDirectory.getInstance().stations.get(stationOriginName);
-            this.destination = StationsDirectory.getInstance().stations.get(stationDestinationName);
+
+            //Dirty trick here:
+            if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.line)){
+                StationsDirectory.getInstance().superStations.get(station_name).stations.put(this.line, new Station(this.line, station_name));
+            }
+            if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.line)){
+                StationsDirectory.getInstance().superStations.get(stationOriginName).stations.put(this.line, new Station(this.line, stationOriginName));
+            }
+            if(!StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.containsKey(this.line)) {
+                StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.put(this.line, new Station(this.line, stationDestinationName));
+            }
+
+            this.station = StationsDirectory.getInstance().superStations.get(station_name).stations.get(this.line);
+            this.origin = StationsDirectory.getInstance().superStations.get(stationOriginName).stations.get(this.line);
+            this.destination = StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.get(this.line);
             this.serviceName = serviceName;
         }
     }
@@ -137,8 +147,9 @@ public class SchedulesDirectory {
         return schedules;
     }
 
+
     /*On Debug*/
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         SchedulesDirectory s = SchedulesDirectory.getInstance();
     }
 

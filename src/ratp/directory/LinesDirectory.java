@@ -1,4 +1,4 @@
-package ratp.utils;
+package ratp.directory;
 
 import com.vividsolutions.jts.geom.Envelope;
 import com.vividsolutions.jts.geom.LineString;
@@ -6,38 +6,63 @@ import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
 import global.Constants;
+import lines.Line;
 import sim.field.geo.GeomVectorField;
 import sim.io.geo.ShapeFileImporter;
 import sim.util.Bag;
 import sim.util.geo.MasonGeometry;
+import station.Station;
 
 import java.io.File;
 import java.net.URI;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
-public class FileImporter {
+public class LinesDirectory {
 
-    //TODO: Move this in Constants
-    public static List<String> defaultAttributes = Arrays.asList("line", "color", "sectionId","origin","destinatio");
+    private static LinesDirectory INSTANCE = new LinesDirectory();
 
-    public static void shapeFileImporterByLine(String name, Map<String,GeomVectorField> lines){
+    public static LinesDirectory getInstance()
+    {
+        return INSTANCE;
+    }
 
-        //Initialize a GeomVectorField for each (hardcoded) line
-        for(String line : Constants.listOfLinesNames){
-            lines.put(line, new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE));
+    public static void initialize()
+    {
+        LinesDirectory s = getInstance();
+    }
+
+    /**lines is a <int lineId, Line line> mapping the line id to a Line*/
+    public Map<String, Line> lines = new HashMap<>();
+
+    private LinesDirectory(){
+        for(String lineNumber : Constants.listOfLinesNames){
+            lines.put(lineNumber, new Line(lineNumber));
         }
+        loadLines(lines);
+    }
+
+    public Station getStation(String lineId, String stationName){
+        return lines.get(lineId).stations.get(stationName);
+    }
+    public Boolean isStation(String lineId, String stationName){
+        return lines.get(lineId).stations.containsKey(stationName);
+    }
+    public void putStation(String lineId, String stationName, Station station){
+        lines.get(lineId).stations.put(stationName, station);
+    }
+
+    public void loadLines(Map<String, Line> lines){
 
         GeomVectorField allLines = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
 
         Bag attributes = new Bag();
-        attributes.addAll(defaultAttributes);
+        attributes.addAll(Constants.LINE_DEFAULTATTRIBUTES);
         try {
             URI absolute_shp = new File(new File(
-                    "data/"+name+".shp").getCanonicalPath()).toURI();
+                    Constants.LINES_FILESNAMES+".shp").getCanonicalPath()).toURI();
             URI absolute_db = new File(new File(
-                    "data/"+name+".dbf").getCanonicalPath()).toURI();
+                    Constants.LINES_FILESNAMES+".dbf").getCanonicalPath()).toURI();
             ShapeFileImporter.read(absolute_shp.toString(), absolute_db.toString(), allLines, attributes);
         } catch (Exception e) {
             System.out.println(e);
@@ -52,7 +77,7 @@ public class FileImporter {
             //Adding lines
             MasonGeometry section_mg = mg;
             section_mg.addStringAttribute("type", "section");
-            lines.get(mg.getStringAttribute("line")).addGeometry(section_mg);
+            lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(section_mg);
 
             //Adding stations
             try {
@@ -66,19 +91,24 @@ public class FileImporter {
                     origin_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
                     origin_station_mg.addStringAttribute("color", mg.getStringAttribute("color"));
 
+                    origin_station_mg.addAttribute("station", StationsDirectory.getInstance().getStation(mg.getStringAttribute("line"), mg.getStringAttribute("origin")));
+
+
                     MasonGeometry destination_station_mg = new MasonGeometry(destination_station_point);
                     destination_station_mg.addStringAttribute("type", "station");
                     destination_station_mg.addStringAttribute("name", mg.getStringAttribute("destinatio"));
                     destination_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
                     destination_station_mg.addStringAttribute("color", mg.getStringAttribute("color"));
 
-                    //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
-                    if(!lines.get(mg.getStringAttribute("line")).getGeometries().contains(origin_station_mg))
-                        lines.get(mg.getStringAttribute("line")).addGeometry(origin_station_mg);
+                    destination_station_mg.addAttribute("station", StationsDirectory.getInstance().getStation(mg.getStringAttribute("line"), mg.getStringAttribute("destinatio")));
 
                     //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
-                    if(!lines.get(mg.getStringAttribute("line")).getGeometries().contains(destination_station_mg))
-                        lines.get(mg.getStringAttribute("line")).addGeometry(destination_station_mg);
+                    if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(origin_station_mg))
+                        lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(origin_station_mg);
+
+                    //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
+                    if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(destination_station_mg))
+                        lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(destination_station_mg);
 
                 }
             } catch (ParseException e) {
@@ -90,17 +120,23 @@ public class FileImporter {
         Envelope MBR = new Envelope();
 
         //We find the envelope containing all the lines (by expanding it to fit each line)
-        for (Map.Entry<String, GeomVectorField> l : lines.entrySet()) {
-            MBR.expandToInclude(l.getValue().getMBR());
+        for (String lineNumber : Constants.listOfLinesNames) {
+            MBR.expandToInclude(lines.get(lineNumber).geomVectorField.getMBR());
         }
 
         //A quickfix to shrink the width
         MBR.expandBy(MBR.getHeight()*0.1, MBR.getWidth()*0.5*0.1);
 
         //We assign the obtained maximum MBR for all the lines (and stations)
-        for (Map.Entry<String, GeomVectorField> l : lines.entrySet()) {
-            l.getValue().setMBR(MBR);
+        for (String lineNumber : Constants.listOfLinesNames) {
+            lines.get(lineNumber).geomVectorField.setMBR(MBR);
         }
+
+    }
+
+    /*On Debug*/
+    public static void main(String[] args){
+        LinesDirectory ld = LinesDirectory.getInstance();
     }
 
 }

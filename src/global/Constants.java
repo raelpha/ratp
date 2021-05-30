@@ -9,8 +9,11 @@ public class Constants {
     public static final int DISPLAY_SIZE = 700;
 
     public static final List<String> listOfLinesNames = Arrays.asList("1", "2", "3", "3b", "4", "5", "6", "7", "7b", "8", "9", "10", "11", "12", "13", "14");
+    public static List<String> LINE_DEFAULTATTRIBUTES = Arrays.asList("line", "color", "sectionId","origin","destinatio");
 
 
+    public static final String LINES_FILESNAMES = "data/lines/lines";
     public static final String SCHEDULES_FILENAME = "data/schedule/schedule.csv";
     public static final String STATIONS_FILENAME = "data/stations/stations.csv";
+
 }

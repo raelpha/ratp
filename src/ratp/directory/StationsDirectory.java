@@ -29,27 +29,29 @@ public class StationsDirectory {
         StationsDirectory s = getInstance();
     }
 
-    List<Station> allStations;
-
-    Map<String, Station> stations;
+    private List<SuperStation> allSuperStations;
 
     Map<String, SuperStation> superStations;
 
     private StationsDirectory()
     {
-        allStations = allStationsReader(Constants.STATIONS_FILENAME);
-        stations = computeStationsMap(allStations);
-        superStations = initializeSuperStations(allStations);
+        allSuperStations = allSuperStationsReader(Constants.STATIONS_FILENAME);
+        //stations = computeStationsMap(allSuperStations);
+        superStations = fillSuperStationsMap(allSuperStations);
+    }
+
+    public Station getStation(String lineId, String stationName){
+        return superStations.get(stationName).getStation(lineId);
     }
 
 
-    public static List<Station> allStationsReader(String name){
-        List<Station> s = new ArrayList<>();
+    public static List<SuperStation> allSuperStationsReader(String name){
+        List<SuperStation> ss = new ArrayList<>();
         try {
-            s = Files.readAllLines(Paths.get(name))
+            ss = Files.readAllLines(Paths.get(name))
                     .stream()
                     .skip(1) // to skip the header
-                    .map(line -> new Station(
+                    .map(line -> new SuperStation(
                             Integer.parseInt(line.split(";")[0]),
                             line.split(";")[1]))
                     .collect(Collectors.toList());
@@ -57,25 +59,25 @@ public class StationsDirectory {
             e.printStackTrace();
         }
 
-        return s;
+        return ss;
     }
 
     public static Map<String, Station> computeStationsMap(List<Station> stations){
         Map<String, Station> s = new HashMap<>();
         for(Station station : stations){
-            s.put(station.name, station);
+            s.put(station.name+" "+station.name, station);
         }
         return s;
     }
 
-    Map<String, SuperStation> initializeSuperStations(List<Station> allStations){
+    Map<String, SuperStation> fillSuperStationsMap(List<SuperStation> allStations){
 
         Map<String, SuperStation> superStations = new HashMap<>();
 
-        for(Station station : allStations){
+        for(SuperStation superStation : allStations){
             //If the map does not contains (yet)
-            if(!superStations.containsKey(station.name)){
-                superStations.put(station.name, new SuperStation(station.name));
+            if(!superStations.containsKey(superStation.name)){
+                superStations.put(superStation.name, superStation);
             }
         }
         return superStations;
@@ -84,7 +86,8 @@ public class StationsDirectory {
     public void addStationsToSuperStations(List<SchedulesDirectory.Schedule> allSchedules){
         for(SchedulesDirectory.Schedule schedule : allSchedules){
             superStations.get(schedule.station.name).stations.put(schedule.line,schedule.station);
-            //If the superStation<-station equals the schedule destination or origin, we label the station as a terminus
+
+            //We label the station as a terminus if the superStation<-station equals the schedule destination or origin
             if(schedule.destination == superStations.get(schedule.station.name).stations.get(schedule.line)
             || schedule.origin == superStations.get(schedule.station.name).stations.get(schedule.line)){
                 superStations.get(schedule.station.name).stations.get(schedule.line).terminus = true;
