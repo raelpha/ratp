@@ -19,6 +19,8 @@ public class Line {
     }
 
     String number;
+
+    //TODO: to be added
     Color lineColor;
     public GeomVectorField geomVectorField = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
     public GeomVectorFieldPortrayal geomVectorFieldPortrayal =  new GeomVectorFieldPortrayal();
