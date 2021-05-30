@@ -69,9 +69,7 @@ public class LinesDirectory {
             //Adding lines
             MasonGeometry section_mg = mg;
             section_mg.addStringAttribute("type", "section");
-            //We add a reference to the Line object
-            section_mg.addAttribute("line", lines.get(mg.getStringAttribute("line")));
-            lines.get(mg.getStringAttribute("lineId")).geomVectorField.addGeometry(section_mg);
+            lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(section_mg);
 
             //Adding stations
             try {
@@ -80,14 +78,12 @@ public class LinesDirectory {
                     Point destination_station_point = ((LineString) rdr.read(mg.getGeometry().toString())).getEndPoint();
 
                     MasonGeometry origin_station_mg = new MasonGeometry(origin_station_point);
-                    //TODO : replace by class
                     origin_station_mg.addStringAttribute("type", "station");
                     origin_station_mg.addStringAttribute("name", mg.getStringAttribute("origin"));
                     origin_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
                     origin_station_mg.addStringAttribute("color", mg.getStringAttribute("color"));
 
                     MasonGeometry destination_station_mg = new MasonGeometry(destination_station_point);
-                    //TODO : replace by class
                     destination_station_mg.addStringAttribute("type", "station");
                     destination_station_mg.addStringAttribute("name", mg.getStringAttribute("destinatio"));
                     destination_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
