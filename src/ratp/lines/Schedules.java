@@ -67,7 +67,7 @@ public class Schedules {
                 schedules.get(line).get(s.service).add(s);
             }
         }
-
+    int i =0;
     }
 
     private Schedules()
