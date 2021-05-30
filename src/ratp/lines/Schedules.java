@@ -110,7 +110,7 @@ public class Schedules {
         try {
             schedules = Files.readAllLines(Paths.get(name))
                     .stream()
-                    .skip(2) // 1 for the header, 1 for buggy line Hotel De Ville 1
+                    .skip(1) // to skip the header
                     .map(line -> new Schedule(
                             Integer.parseInt(line.split(";")[0]),
                             Integer.parseInt(line.split(";")[1]),
