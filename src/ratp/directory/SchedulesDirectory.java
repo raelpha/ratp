@@ -112,6 +112,8 @@ public class SchedulesDirectory {
                 StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.put(this.line, new Station(this.line, stationDestinationName));
             }
 
+            LinesDirectory.getInstance().lines.get(line).stations.put(station_name, StationsDirectory.getInstance().getStation(line, station_name));
+
             this.station = StationsDirectory.getInstance().superStations.get(station_name).stations.get(this.line);
             this.origin = StationsDirectory.getInstance().superStations.get(stationOriginName).stations.get(this.line);
             this.destination = StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.get(this.line);

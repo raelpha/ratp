@@ -1,5 +1,6 @@
 package ratp;
 
+import ratp.directory.LinesDirectory;
 import ratp.directory.SchedulesDirectory;
 import ratp.directory.StationsDirectory;
 import sim.display.Console;
@@ -10,6 +11,7 @@ public class RatpMain {
     private static void initializeDirectories(){
         SchedulesDirectory.initialize();
         StationsDirectory.initialize();
+        LinesDirectory.initialize();
     }
 
     public static void main(String[] args){
