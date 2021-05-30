@@ -27,24 +27,23 @@ public class Schedules {
     
     List<Schedule> allSchedules;
 
-    Map<String, List<Schedule>> schedules_by_line = new HashMap<>();
+    Map<String, List<Schedule>> schedulesByLine = new HashMap<>();
 
     Map<String, Map<String, List<Schedule>>> schedules = new HashMap<>();
 
-    private Schedules()
-    {
-        allSchedules = scheduleReader(Constants.SCHEDULES_FILENAME);
-
+    private void computeSchedulesByLine(){
         //Initialize each list for each line
         for(String line : Constants.listOfLinesNames){
-            schedules_by_line.put(line, new ArrayList<>());
+            schedulesByLine.put(line, new ArrayList<>());
         }
         //TODO: move this elsewhere
         for(Schedule s : allSchedules){
-            if(schedules_by_line.containsKey(s.line))
-                schedules_by_line.get(s.line).add(s);
+            if(schedulesByLine.containsKey(s.line))
+                schedulesByLine.get(s.line).add(s);
         }
+    }
 
+    private void computeSchedules(){
         for(String l : Constants.listOfLinesNames){
             schedules.put(l, new HashMap<>());
         }
@@ -53,21 +52,30 @@ public class Schedules {
         for(String line : Constants.listOfLinesNames){
             List<String> servicesNames = new ArrayList<>();
             //Yeah, fuck the complexity...
-            for(Schedule s : schedules_by_line.get(line)){
+            for(Schedule s : schedulesByLine.get(line)){
                 servicesNames.add(s.service);
             }
             servicesNames = servicesNames.stream()
-                            .distinct()
-                            .collect(Collectors.toList());
+                    .distinct()
+                    .collect(Collectors.toList());
 
             for(String service : servicesNames){
                 schedules.get(line).put(service, new ArrayList<>());
             }
 
-            for(Schedule s : schedules_by_line.get(line)){
+            for(Schedule s : schedulesByLine.get(line)){
                 schedules.get(line).get(s.service).add(s);
             }
         }
+
+    }
+
+    private Schedules()
+    {
+        allSchedules = scheduleReader(Constants.SCHEDULES_FILENAME);
+        //The dirty way... Initialize this before schedules
+        computeSchedulesByLine();
+        computeSchedules();
     }
 
     public static class Schedule {
