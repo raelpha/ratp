@@ -42,6 +42,10 @@ public class StationsDirectory {
         superStations = fillSuperStationsMap(allSuperStations);
     }
 
+    public Station getStation(String lineId, String stationName){
+        return superStations.get(stationName).getStation(lineId);
+    }
+
 
     public static List<SuperStation> allSuperStationsReader(String name){
         List<SuperStation> ss = new ArrayList<>();
@@ -91,7 +95,6 @@ public class StationsDirectory {
                 superStations.get(schedule.station.name).stations.get(schedule.line).terminus = true;
             }
         }
-        int i=0;
     }
 
     /*On Debug*/

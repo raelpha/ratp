@@ -2,6 +2,7 @@ package ratp.directory;
 
 import global.Constants;
 import station.Station;
+import station.SuperStation;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -110,13 +111,14 @@ public class SchedulesDirectory {
             if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.line)){
                 StationsDirectory.getInstance().superStations.get(station_name).stations.put(this.line, new Station(this.line, station_name));
             }
+            LinesDirectory.getInstance().lines.get(line).stations.put(station_name, StationsDirectory.getInstance().getStation(line, station_name));
+
             if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.line)){
                 StationsDirectory.getInstance().superStations.get(stationOriginName).stations.put(this.line, new Station(this.line, stationOriginName));
             }
             if(!StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.containsKey(this.line)) {
                 StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.put(this.line, new Station(this.line, stationDestinationName));
             }
-
 
             this.station = StationsDirectory.getInstance().superStations.get(station_name).stations.get(this.line);
             this.origin = StationsDirectory.getInstance().superStations.get(stationOriginName).stations.get(this.line);
