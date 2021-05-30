@@ -11,14 +11,11 @@ import sim.field.geo.GeomVectorField;
 import sim.io.geo.ShapeFileImporter;
 import sim.util.Bag;
 import sim.util.geo.MasonGeometry;
-import station.SuperStation;
+import station.Station;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class LinesDirectory {
@@ -45,7 +42,17 @@ public class LinesDirectory {
         loadLines(lines);
     }
 
-    public static void loadLines(Map<String, Line> lines){
+    public Station getStation(String lineId, String stationName){
+        return lines.get(lineId).stations.get(stationName);
+    }
+    public Boolean isStation(String lineId, String stationName){
+        return lines.get(lineId).stations.containsKey(stationName);
+    }
+    public void putStation(String lineId, String stationName, Station station){
+        lines.get(lineId).stations.put(stationName, station);
+    }
+
+    public void loadLines(Map<String, Line> lines){
 
         GeomVectorField allLines = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
 
@@ -84,11 +91,16 @@ public class LinesDirectory {
                     origin_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
                     origin_station_mg.addStringAttribute("color", mg.getStringAttribute("color"));
 
+                    origin_station_mg.addAttribute("station", StationsDirectory.getInstance().getStation(mg.getStringAttribute("line"), mg.getStringAttribute("origin")));
+
+
                     MasonGeometry destination_station_mg = new MasonGeometry(destination_station_point);
                     destination_station_mg.addStringAttribute("type", "station");
                     destination_station_mg.addStringAttribute("name", mg.getStringAttribute("destinatio"));
                     destination_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
                     destination_station_mg.addStringAttribute("color", mg.getStringAttribute("color"));
+
+                    destination_station_mg.addAttribute("station", StationsDirectory.getInstance().getStation(mg.getStringAttribute("line"), mg.getStringAttribute("destinatio")));
 
                     //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
                     if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(origin_station_mg))
@@ -98,21 +110,11 @@ public class LinesDirectory {
                     if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(destination_station_mg))
                         lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(destination_station_mg);
 
-
-                    //We add a reference (from StationsDirectory) to the map of stations in the line
-                    /*lines.get(mg.getStringAttribute("line")).stations.put(
-                            mg.getStringAttribute("destinatio"),
-                            StationsDirectory.getInstance().superStations.get(mg.getStringAttribute("destinatio")).stations.get(mg.getStringAttribute("destinatio"))
-                    );*/
-
-
                 }
             } catch (ParseException e) {
                 System.out.println("Bogus line string: " + e);
             }
         }
-
-
 
         //Envelope Minimum Bounding Rectangle
         Envelope MBR = new Envelope();
@@ -135,7 +137,6 @@ public class LinesDirectory {
     /*On Debug*/
     public static void main(String[] args){
         LinesDirectory ld = LinesDirectory.getInstance();
-        int i =0;
     }
 
 }

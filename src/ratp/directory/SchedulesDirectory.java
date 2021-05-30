@@ -85,7 +85,6 @@ public class SchedulesDirectory {
 
         int entry_id;
         int order;
-        //String station_name;
         String line;
         int branch;
         int split;
@@ -102,19 +101,12 @@ public class SchedulesDirectory {
             this.line = line;
             this.branch = branch;
             this.split = split;
-            this.direction  = direction;/*
-            this.station = StationsDirectory.getInstance().stations.get(station_name);
-            this.origin = StationsDirectory.getInstance().stations.get(stationOriginName);
-            this.destination = StationsDirectory.getInstance().stations.get(stationDestinationName);*/
+            this.direction  = direction;
 
             //Dirty trick here:
             if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.line)){
                 StationsDirectory.getInstance().superStations.get(station_name).stations.put(this.line, new Station(this.line, station_name));
             }
-            //LinesDirectory.getInstance().lines.get(line).stations.put(station_name, StationsDirectory.getInstance().getStation(line, station_name));
-
-            LinesDirectory.getInstance().lines.get(line).stations.put(station_name, StationsDirectory.getInstance().getStation(line, station_name));
-
             if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.line)){
                 StationsDirectory.getInstance().superStations.get(stationOriginName).stations.put(this.line, new Station(this.line, stationOriginName));
             }
@@ -156,6 +148,7 @@ public class SchedulesDirectory {
 
         return schedules;
     }
+
 
     /*On Debug*/
     public static void main(String[] args){

@@ -1,15 +1,9 @@
 package ratp;
 
-import global.Constants;
 import lines.Line;
 import ratp.directory.LinesDirectory;
-import ratp.utils.FileImporter;
 import sim.engine.SimState;
-import sim.field.geo.GeomVectorField;
-import sim.util.geo.GeomPlanarGraph;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class RatpNetwork extends SimState {
