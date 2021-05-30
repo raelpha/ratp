@@ -14,7 +14,7 @@ public class RatpMain {
         StationsDirectory.initialize();
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         initializeDirectories();
         RatpNetwork model = new RatpNetwork(System.currentTimeMillis());
         RatpStateWithUI gui = new RatpStateWithUI(model);
