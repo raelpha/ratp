@@ -24,7 +24,7 @@ public class RatpNetwork extends SimState {
         for (String s : Constants.listOfLinesNames){
             linesGeomVectorField.put(s, new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE));
         }
-        FileImporter.shapeFileImporterByLine("network/ratp", linesGeomVectorField);
+        FileImporter.shapeFileImporterByLine("lines/lines", linesGeomVectorField);
 
 
     }

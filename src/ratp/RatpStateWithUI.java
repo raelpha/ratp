@@ -94,7 +94,7 @@ public class RatpStateWithUI extends GUIState {
                                                 /** Here, we redraw each LineString and Point according to its line color*/
                                                 public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
                                                     MasonGeometry geometry = (MasonGeometry) object;
-                                                    paint = Color.decode(geometry.getStringAttribute("stroke"));
+                                                    paint = Color.decode(geometry.getStringAttribute("color"));
 
                                                     //If the geometry is a station
                                                     if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("station"))

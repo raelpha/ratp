@@ -1,861 +1,861 @@
-﻿entry_id;order;station_legacyname;station;line;branch;split;direction;station_origin;station_destination;service
-682;6;Abbesses;Abbesses;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-727;23;Abbesses;Abbesses;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-182;25;Alésia;Alésia;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-187;3;Alésia;Alésia;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-72;23;Alexandre Dumas;Alexandre Dumas;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-77;3;Alexandre Dumas;Alexandre Dumas;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-549;14;Alma - Marceau;Alma-Marceau;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-596;14;Alma - Marceau;Alma-Marceau;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-101;2;Anatole France;Anatole France;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-148;2;Anatole France;Anatole France;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-61;12;Anvers;Anvers;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-88;14;Anvers;Anvers;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-5;6;Argentine;Argentine;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-44;20;Argentine;Argentine;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-116;17;Arts et Métiers;Arts et Métiers;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-133;17;Arts et Métiers;Arts et Métiers;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-653;4;Arts et Métiers;Arts et Métiers;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-672;10;Arts et Métiers;Arts et Métiers;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-809;24;Asnières - Gennevilliers - Les Courtilles ;Asnières-Genevilliers - Les Courtilles;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-810;1;Asnières - Gennevilliers - Les Courtilles ;Asnières-Genevilliers - Les Courtilles;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-690;14;Assemblée nationale;Assemblée Nationale;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-719;15;Assemblée nationale;Assemblée Nationale;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-378;1;La Courneuve - 8 Mai 1945;La Courneuve 8 Mai 1945;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-379;2;Fort d'Aubervilliers;Fort d'Aubervilliers;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-380;3;Aubervilliers - Pantin - Quatre Chemins;Aubervilliers-Pantin Quatre Chemins;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-381;4;Porte de la Villette;Pte de la Villette;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-617;8;Avenue Émile-Zola;Av. Emile Zola;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-642;13;Avenue Émile-Zola;Av. Emile Zola;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-73;24;Avron;Avron;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-76;2;Avron;Avron;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-460;1;Balard;Balard;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-535;38;Balard;Balard;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-62;13;Barbès - Rochechouart;Barbès-Rochechouart;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-87;13;Barbès - Rochechouart;Barbès-Rochechouart;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-162;5;Barbès - Rochechouart;Barbès-Rochechouart;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-207;23;Barbès - Rochechouart;Barbès-Rochechouart;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-758;25;Basilique de Saint-Denis;Basilique de St-Denis;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-761;2;Basilique de Saint-Denis;Basilique de St-Denis;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-17;18;Bastille;Bastille;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-32;8;Bastille;Bastille;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-228;17;Bastille;Bastille;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-239;6;Bastille;Bastille;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-480;21;Bastille;Bastille;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-515;18;Bastille;Bastille;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-281;26;Bel-Air;Bel-Air;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-286;26;Bel-Air;Bel-Air;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-67;18;Belleville;Belleville;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-82;8;Belleville;Belleville;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-656;7;Belleville;Belleville;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-669;7;Belleville;Belleville;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-23;24;Bérault;Bérault;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-26;2;Bérault;Bérault;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-278;23;Bercy;Bercy;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-289;23;Bercy;Bercy;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-843;10;Bercy ;Bercy;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-850;4;Bercy ;Bercy;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-845;12;Bibliothèque François-Mitterrand ;Bibliothèque F. Mitterand;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-848;2;Bibliothèque François-Mitterrand ;Bibliothèque F. Mitterand;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-537;2;Billancourt;Billancourt;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-608;2;Billancourt;Billancourt;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-261;6;Bir-Hakeim;Bir Hakeim;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-306;6;Bir-Hakeim;Bir Hakeim;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-59;10;Blanche;Blanche;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-90;16;Blanche;Blanche;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-212;1;Bobigny - Pablo Picasso;Bobigny-Pablo Picasso;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-255;22;Bobigny - Pablo Picasso;Bobigny-Pablo Picasso;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-213;2;Bobigny - Pantin - Raymond Queneau;Bobigny-Pantin Raymond Queneau;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-254;21;Bobigny - Pantin - Raymond Queneau;Bobigny-Pantin Raymond Queneau;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-258;3;Boissière;Boissière;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-309;3;Boissière;Boissière;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-448;3;Bolivar;Bolivar;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
-457;6;Bolivar;Bolivar;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
-474;15;Bonne-Nouvelle;Bonne Nouvelle;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-521;24;Bonne-Nouvelle;Bonne Nouvelle;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-558;23;Bonne-Nouvelle;Bonne Nouvelle;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-587;23;Bonne-Nouvelle;Bonne Nouvelle;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-450;5;Botzaris;Botzaris;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
-455;4;Botzaris;Botzaris;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
-462;3;Boucicaut;Boucicaut;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-533;36;Boucicaut;Boucicaut;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-611;2;Boulogne - Jean Jaurès;Boulogne-Jean Jaurès;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-648;19;Boulogne - Jean Jaurès;Boulogne-Jean Jaurès;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-610;1;Boulogne - Pont de Saint-Cloud;Boulogne-Pt de Saint-Cloud;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-649;20;Boulogne - Pont de Saint-Cloud;Boulogne-Pt de Saint-Cloud;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-113;14;Bourse;Bourse;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-136;14;Bourse;Bourse;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-227;16;Bréguet - Sabin;Bréguet-Sabin;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-240;7;Bréguet - Sabin;Bréguet-Sabin;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-804;19;Brochant;Brochant;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-815;6;Brochant;Brochant;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-449;4;Buttes Chaumont;Buttes Chaumont;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
-456;5;Buttes Chaumont;Buttes Chaumont;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
-567;32;Buzenval;Buzenval;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-578;32;Buzenval;Buzenval;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-382;5;Corentin Cariou;Corentin Cariou;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-383;6;Crimée;Crimée;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-384;7;Riquet;Riquet;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-385;8;Stalingrad;Stalingrad;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-264;9;Cambronne;Cambronne;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-303;9;Cambronne;Cambronne;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-232;21;Campo-Formio;Campo-Formio;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-235;2;Campo-Formio;Campo-Formio;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-627;18;Cardinal Lemoine;Cardinal Lemoine;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-632;3;Cardinal Lemoine;Cardinal Lemoine;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-756;23;Carrefour Pleyel;Carrefour Pleyel;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-763;4;Carrefour Pleyel;Carrefour Pleyel;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-386;9;Louis Blanc;Louis Blanc;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-387;10;Château-Landon;Château Landon;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-388;11;Gare de l'Est;Gare de l'Est;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-389;12;Poissonnière;Poissonière;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-9;10;Champs-Élysées - Clemenceau;Champs-Elysées-Clémenceau;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-40;16;Champs-Élysées - Clemenceau;Champs-Elysées-Clémenceau;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-746;13;Champs-Élysées - Clemenceau;Champs-Elysées-Clémenceau;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-773;14;Champs-Élysées - Clemenceau;Champs-Elysées-Clémenceau;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-798;13;Champs-Élysées - Clemenceau;Champs-Elysées-Clémenceau;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-821;12;Champs-Élysées - Clemenceau;Champs-Elysées-Clémenceau;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-613;4;Chardon-Lagache;Chardon-Lagache;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-490;31;Charenton - Écoles;Charenton-Ecoles;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-505;8;Charenton - Écoles;Charenton-Ecoles;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-6;7;Charles de Gaulle - Étoile;Charles de Gaulle Etoile;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-43;19;Charles de Gaulle - Étoile;Charles de Gaulle Etoile;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-52;3;Charles de Gaulle - Étoile;Charles de Gaulle Etoile;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-97;23;Charles de Gaulle - Étoile;Charles de Gaulle Etoile;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-256;1;Charles de Gaulle - Étoile;Charles de Gaulle Etoile;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-311;1;Charles de Gaulle - Étoile;Charles de Gaulle Etoile;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-616;7;Charles Michels;Charles Michels;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-643;14;Charles Michels;Charles Michels;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-564;29;Charonne;Charonne;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-581;29;Charonne;Charonne;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-24;25;Château de Vincennes;Château de Vincennes;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-25;1;Château de Vincennes;Château de Vincennes;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-165;8;Château d'Eau;Château d'Eau;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-204;20;Château d'Eau;Château d'Eau;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-161;4;Château Rouge;Château Rouge;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-208;24;Château Rouge;Château Rouge;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-390;13;Cadet;Cadet;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-391;14;Le Peletier;Le Pelletier;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-392;15;Chaussée d'Antin - La Fayette;Chaussée d'Antin - La Fayette;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-393;16;Opéra;Opéra;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-14;15;Châtelet;Châtelet;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-35;11;Châtelet;Châtelet;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-170;13;Châtelet;Châtelet;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-199;15;Châtelet;Châtelet;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-394;17;Pyramides;Pyramides;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-395;18;Palais-Royal - Musée du Louvre;Palais Royal-Musée du Louvre;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-396;19;Pont-Neuf;Pont Neuf;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-397;20;Châtelet;Châtelet;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-650;1;Châtelet;Châtelet;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-675;13;Châtelet;Châtelet;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-841;8;Châtelet ;Châtelet;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-852;6;Châtelet ;Châtelet;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-734;1;Châtillon - Montrouge;Châtillon Montrouge;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-785;26;Châtillon - Montrouge;Châtillon Montrouge;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-786;1;Châtillon - Montrouge;Châtillon Montrouge;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-833;24;Châtillon - Montrouge;Châtillon Montrouge;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-398;21;Pont Marie;Pont Marie;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-399;22;Sully - Morland;Sully-Morland;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-400;23;Jussieu;Jussieu;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-401;24;Place Monge;Place Monge;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-555;20;Chaussée d'Antin - La Fayette;Chaussée d'Antin - La Fayette;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-590;20;Chaussée d'Antin - La Fayette;Chaussée d'Antin - La Fayette;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-479;20;Chemin Vert;Chemin Vert;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-516;19;Chemin Vert;Chemin Vert;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-276;21;Chevaleret;Chevaleret;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-291;21;Chevaleret;Chevaleret;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-171;14;Cité;Cité;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-198;14;Cité;Cité;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-625;16;Cluny - La Sorbonne;Cluny - La Sorbonne;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-634;5;Cluny - La Sorbonne;Cluny - La Sorbonne;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-66;17;Colonel Fabien;Colonel Fabien;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-83;9;Colonel Fabien;Colonel Fabien;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-464;5;Commerce;Commerce;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-531;34;Commerce;Commerce;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-10;11;Concorde;Concorde;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-39;15;Concorde;Concorde;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-469;10;Concorde;Concorde;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-526;29;Concorde;Concorde;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-689;13;Concorde;Concorde;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-720;16;Concorde;Concorde;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-701;25;Convention;Convention;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-708;4;Convention;Convention;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-402;25;Censier - Daubenton;Censier-Daubenton;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-403;26;Les Gobelins;Les Gobelins;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-404;27;Place d'Italie;Place d'Italie;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-405;28;Tolbiac;Tolbiac;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-703;27;Corentin Celton;Corentin Celton;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-706;2;Corentin Celton;Corentin Celton;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-273;18;Corvisart;Corvisart;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-294;18;Corvisart;Corvisart;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-844;11;Cour Saint-Émilion ;Cour St-Emilion;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-849;3;Cour Saint-Émilion ;Cour St-Emilion;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-54;5;Courcelles;Courcelles;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-95;21;Courcelles;Courcelles;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-68;19;Couronnes;Couronnes;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-81;7;Couronnes;Couronnes;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-494;35;Créteil - L'Échat;Créteil-l'Echat;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-501;4;Créteil - L'Échat;Créteil-l'Echat;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-496;37;Créteil - Préfecture;Créteil-Préfecture;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-499;2;Créteil - Préfecture;Créteil-Préfecture;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-495;36;Créteil - Université;Créteil-Université;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-500;3;Créteil - Université;Créteil-Université;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-406;29;Maison Blanche;Maison Blanche;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-407;30;Porte d'Italie;Pte d'Italie;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-408;31;Porte de Choisy;Pte de Choisy;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-409;32;Porte d'Ivry;Pte d'Ivry;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-571;36;Croix de Chavaux;Croix de Chavaux;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-574;36;Croix de Chavaux;Croix de Chavaux;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-453;2;Danube;Danube;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
-280;25;Daumesnil;Daumesnil;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-287;25;Daumesnil;Daumesnil;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-485;26;Daumesnil;Daumesnil;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-510;13;Daumesnil;Daumesnil;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-180;23;Denfert-Rochereau;Denfert-Rochereau;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-189;5;Denfert-Rochereau;Denfert-Rochereau;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-270;15;Denfert-Rochereau;Denfert-Rochereau;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-297;15;Denfert-Rochereau;Denfert-Rochereau;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-279;24;Dugommier;Dugommier;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-288;24;Dugommier;Dugommier;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-262;7;Dupleix;Dupleix;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-305;7;Dupleix;Dupleix;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-620;11;Duroc;Duroc;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-639;10;Duroc;Duroc;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-742;9;Duroc;Duroc;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-777;18;Duroc;Duroc;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-794;9;Duroc;Duroc;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-825;16;Duroc;Duroc;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-466;7;École Militaire;Ecole Militaire;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-529;32;École Militaire;Ecole Militaire;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-491;32;École vétérinaire de Maisons-Alfort;Ecole Vétérinaire de Maisons-Alfort;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-504;7;École vétérinaire de Maisons-Alfort;Ecole Vétérinaire de Maisons-Alfort;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-268;13;Edgar Quinet;Edgar Quinet;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-299;13;Edgar Quinet;Edgar Quinet;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-645;16;Église d'Auteuil;Eglise d'Auteuil;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-214;3;Église de Pantin;Eglise de Pantin;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-253;20;Église de Pantin;Eglise de Pantin;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-1;2;Esplanade de La Défense ;Esplanade de la Défense;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-48;24;Esplanade de La Défense ;Esplanade de la Défense;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-168;11;Étienne Marcel;Etienne Marcel;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-201;17;Étienne Marcel;Etienne Marcel;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-108;9;Europe;Europe;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-141;9;Europe;Europe;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-540;5;Exelmans;Exelmans;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-605;5;Exelmans;Exelmans;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-482;23;Faidherbe - Chaligny;Faidherbe-Chaligny;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-513;16;Faidherbe - Chaligny;Faidherbe-Chaligny;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-697;21;Falguière;Falguière;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-712;8;Falguière;Falguière;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-463;4;Félix Faure;Félix Faure;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-532;35;Félix Faure;Félix Faure;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-477;18;Filles du Calvaire;Filles du Calvaire;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-518;21;Filles du Calvaire;Filles du Calvaire;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-410;33;Pierre et Marie Curie;Pierre et Marie Curie;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-411;34;Mairie d'Ivry;Mairie d'Issy;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
-312;1;La Courneuve - 8 Mai 1945;La Courneuve 8 Mai 1945;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-313;2;Fort d'Aubervilliers;Fort d'Aubervilliers;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-8;9;Franklin D. Roosevelt;Franklin D. Roosevelt;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-41;17;Franklin D. Roosevelt;Franklin D. Roosevelt;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-550;15;Franklin D. Roosevelt;Franklin D. Roosevelt;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-595;15;Franklin D. Roosevelt;Franklin D. Roosevelt;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-676;0;Front Populaire ;Front Populaire;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-733;29;Front Populaire ;Front Populaire;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-807;22;Gabriel Péri;Gabriel Péri;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-812;3;Gabriel Péri;Gabriel Péri;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-740;7;Gaîté;Gaîté;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-779;20;Gaîté;Gaîté;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-792;7;Gaîté;Gaîté;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-827;18;Gaîté;Gaîté;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-124;25;Gallieni;Gallieni;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-125;25;Gallieni;Gallieni;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-122;23;Gambetta;Gambetta;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-127;23;Gambetta;Gambetta;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-150;1;Gambetta;Gambetta;3b;0;0;0;Gambetta;Porte des Lilas;Gambetta -> Porte des Lilas
-157;4;Gambetta;Gambetta;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
-230;19;Gare d'Austerlitz;Gare d'Austerlitz;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-237;4;Gare d'Austerlitz;Gare d'Austerlitz;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-629;20;Gare d'Austerlitz;Gare d'Austerlitz;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-630;1;Gare d'Austerlitz;Gare d'Austerlitz;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-164;7;Gare de l'Est;Gare de l'Est;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-205;21;Gare de l'Est;Gare de l'Est;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-222;11;Gare de l'Est;Gare de l'Est;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-245;12;Gare de l'Est;Gare de l'Est;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-314;3;Aubervilliers - Pantin - Quatre Chemins;Aubervilliers-Pantin Quatre Chemins;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-315;4;Porte de la Villette;Pte de la Villette;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-316;5;Corentin Cariou;Corentin Cariou;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-317;6;Crimée;Crimée;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-18;19;Gare de Lyon;Gare de Lyon;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-31;7;Gare de Lyon;Gare de Lyon;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-842;9;Gare de Lyon ;Gare de Lyon;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-851;5;Gare de Lyon ;Gare de Lyon;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-163;6;Gare du Nord;Gare du Nord;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-206;22;Gare du Nord;Gare du Nord;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-221;10;Gare du Nord;Gare du Nord;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-246;13;Gare du Nord;Gare du Nord;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-754;21;Garibaldi;Garibaldi;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-765;6;Garibaldi;Garibaldi;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-7;8;George V;George V;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-42;18;George V;George V;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-272;17;Glacière;Glacière;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-295;17;Glacière;Glacière;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-655;6;Goncourt;Goncourt;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-670;8;Goncourt;Goncourt;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-473;14;Grands Boulevards;Grands Boulevards;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-522;25;Grands Boulevards;Grands Boulevards;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-557;22;Grands Boulevards;Grands Boulevards;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-588;22;Grands Boulevards;Grands Boulevards;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-752;19;Guy Môquet;Guy Moquet;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-767;8;Guy Môquet;Guy Moquet;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-110;11;Havre - Caumartin;Havre-Caumartin;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-139;11;Havre - Caumartin;Havre-Caumartin;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-554;19;Havre - Caumartin;Havre-Caumartin;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-591;19;Havre - Caumartin;Havre-Caumartin;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-215;4;Hoche;Hoche;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-252;19;Hoche;Hoche;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-15;16;Hôtel de Ville;Hôtel de Ville;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-34;10;Hôtel de Ville;Hôtel de Ville;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-651;2;Hôtel de Ville;Hôtel de Ville;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-674;12;Hôtel de Ville;Hôtel de Ville;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-548;13;Iéna;Iena;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-597;13;Iéna;Iena;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-468;9;Invalides;Invalides;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-527;30;Invalides;Invalides;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-745;12;Invalides;Invalides;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-774;15;Invalides;Invalides;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-797;12;Invalides;Invalides;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-822;13;Invalides;Invalides;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-223;12;Jacques Bonsergent;Jacques Bonsergent;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-244;11;Jacques Bonsergent;Jacques Bonsergent;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-543;8;Jasmin;Jasmin;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-602;8;Jasmin;Jasmin;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-65;16;Jaurès;Jaurès;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-84;10;Jaurès;Jaurès;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-219;8;Jaurès;Jaurès;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-248;15;Jaurès;Jaurès;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-447;2;Jaurès;Jaurès;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
-458;7;Jaurès;Jaurès;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
-615;6;Javel - André Citroën;Javel;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-644;15;Javel - André Citroën;Javel;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-658;9;Jourdain;Jourdain;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-667;5;Jourdain;Jourdain;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-680;4;Jules Joffrin;Jules Joffrin;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-729;25;Jules Joffrin;Jules Joffrin;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-318;7;Riquet;Riquet;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-319;8;Stalingrad;Stalingrad;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-320;9;Louis Blanc;Louis Blanc;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-321;10;Château-Landon;Château Landon;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-628;19;Jussieu;Jussieu;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-631;2;Jussieu;Jussieu;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-257;2;Kléber;Kleber;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-310;2;Kléber;Kleber;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-63;14;La Chapelle;La Chapelle;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-86;12;La Chapelle;La Chapelle;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-322;11;Gare de l'Est;Gare de l'Est;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-323;12;Poissonnière;Poissonière;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-324;13;Cadet;Cadet;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-325;14;Le Peletier;Le Pelletier;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-0;1;La Défense;La Défense-Gde Arche;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-49;25;La Défense;La Défense-Gde Arche;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-751;18;La Fourche;La Fourche;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-768;9;La Fourche;La Fourche;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-803;18;La Fourche;La Fourche;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-816;7;La Fourche;La Fourche;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-263;8;La Motte-Picquet - Grenelle;La Motte Picquet-Grenelle;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-304;8;La Motte-Picquet - Grenelle;La Motte Picquet-Grenelle;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-465;6;La Motte-Picquet - Grenelle;La Motte Picquet-Grenelle;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-530;33;La Motte-Picquet - Grenelle;La Motte Picquet-Grenelle;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-618;9;La Motte-Picquet - Grenelle;La Motte Picquet-Grenelle;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-641;12;La Motte-Picquet - Grenelle;La Motte Picquet-Grenelle;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-545;10;La Muette;La Muette;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-600;10;La Muette;La Muette;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-467;8;La Tour-Maubourg;La Tour Maubourg;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-528;31;La Tour-Maubourg;La Tour Maubourg;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-681;5;Lamarck - Caulaincourt;Lamarck-Caulaincourt;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-728;24;Lamarck - Caulaincourt;Lamarck-Caulaincourt;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-218;7;Laumière;Laumière;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-249;16;Laumière;Laumière;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-326;15;Chaussée d'Antin - La Fayette;Chaussée d'Antin - La Fayette;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-327;16;Opéra;Opéra;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-328;17;Pyramides;Pyramides;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-329;18;Palais-Royal - Musée du Louvre;Palais Royal-Musée du Louvre;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-330;19;Pont-Neuf;Pont Neuf;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-331;20;Châtelet;Châtelet;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-481;22;Ledru-Rollin;Ledru-Rollin;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-514;17;Ledru-Rollin;Ledru-Rollin;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-808;23;Les Agnettes ;Les Agnettes;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-811;2;Les Agnettes ;Les Agnettes;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-332;21;Pont Marie;Pont Marie;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-333;22;Sully - Morland;Sully-Morland;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-334;23;Jussieu;Jussieu;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-335;24;Place Monge;Place Monge;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-169;12;Les Halles;Les Halles;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-200;16;Les Halles;Les Halles;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-3;4;Les Sablons;Les Sablons;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-46;22;Les Sablons;Les Sablons;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-489;30;Liberté;Liberté;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-506;9;Liberté;Liberté;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-749;16;Liège;Liège;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-770;11;Liège;Liège;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-801;16;Liège;Liège;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-818;9;Liège;Liège;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-336;25;Censier - Daubenton;Censier-Daubenton;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-337;26;Les Gobelins;Les Gobelins;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-338;27;Place d'Italie;Place d'Italie;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-339;28;Tolbiac;Tolbiac;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-446;1;Louis Blanc;Louis Blanc;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
-459;8;Louis Blanc;Louis Blanc;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
-102;3;"Louise Michel	";Louise Michel;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-147;3;"Louise Michel	";Louise Michel;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-461;2;Lourmel;Lourmel;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-534;37;Lourmel;Lourmel;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-13;14;Louvre - Rivoli;Louvre-Rivoli;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-36;12;Louvre - Rivoli;Louvre-Rivoli;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-623;14;Mabillon;Mabillon;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-636;7;Mabillon;Mabillon;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-470;11;Madeleine;Madeleine;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-525;28;Madeleine;Madeleine;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-688;12;Madeleine;Madeleine;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-721;17;Madeleine;Madeleine;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-839;6;Madeleine ;Madeleine;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-854;8;Madeleine ;Madeleine;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-806;21;Mairie de Clichy;Mairie de Clichy;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-813;4;Mairie de Clichy;Mairie de Clichy;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-572;37;Mairie de Montreuil;Mairie de Montreuil;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-573;37;Mairie de Montreuil;Mairie de Montreuil;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-184;27;Mairie de Montrouge ;Mairie de Montrouge;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-185;1;Mairie de Montrouge ;Mairie de Montrouge;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-755;22;Mairie de Saint-Ouen;Mairie de St-Ouen;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-764;5;Mairie de Saint-Ouen;Mairie de St-Ouen;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-834;1;Mairie de Saint-Ouen;Mairie de St-Ouen - Région Île-de-France;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-859;13;Mairie de Saint-Ouen;Mairie de St-Ouen - Région Île-de-France;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-662;13;Mairie des Lilas;Mairie des Lilas;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-663;1;Mairie des Lilas;Mairie des Lilas;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-704;28;Mairie d'Issy;Mairie d'Issy;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-705;1;Mairie d'Issy;Mairie d'Issy;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-340;29;Maison Blanche;Maison Blanche;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-341;30;Le Kremlin-Bicêtre;Le Kremlin-Bicêtre;7;1;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-342;31;Villejuif - Léo Lagrange;Villejuif-Léo Lagrange;7;1;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-343;32;Villejuif - Paul Vaillant-Couturier;Villejuif Paul Vaillant-Couturier;7;1;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-344;33;Villejuif - Louis Aragon;Villejuif-Louis Aragon;7;1;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
-412;1;Mairie d'Ivry;Mairie d'Ivry;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-493;34;Maisons-Alfort - Les Juilliottes;Maisons-Alfort-les-Julliottes;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-502;5;Maisons-Alfort - Les Juilliottes;Maisons-Alfort-les-Julliottes;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-492;33;Maisons-Alfort - Stade;Maisons-Alfort Stade;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-503;6;Maisons-Alfort - Stade;Maisons-Alfort Stade;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-736;3;Malakoff - Plateau de Vanves;Malakoff-Plateau de Vanves;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-783;24;Malakoff - Plateau de Vanves;Malakoff-Plateau de Vanves;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-788;3;Malakoff - Plateau de Vanves;Malakoff-Plateau de Vanves;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-831;22;Malakoff - Plateau de Vanves;Malakoff-Plateau de Vanves;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-735;2;Malakoff - Rue Étienne-Dolet;Malakoff-Rue Etienne Dolet;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-784;25;Malakoff - Rue Étienne-Dolet;Malakoff-Rue Etienne Dolet;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-787;2;Malakoff - Rue Étienne-Dolet;Malakoff-Rue Etienne Dolet;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-832;23;Malakoff - Rue Étienne-Dolet;Malakoff-Rue Etienne Dolet;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-106;7;Malesherbes;Malesherbes;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-143;7;Malesherbes;Malesherbes;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-568;33;Maraîchers;Maraîchers;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-577;33;Maraîchers;Maraîchers;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-160;3;Marcadet - Poissonniers;Marcadet-Poissonniers;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-209;25;Marcadet - Poissonniers;Marcadet-Poissonniers;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-679;3;Marcadet - Poissonniers;Marcadet-Poissonniers;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-730;26;Marcadet - Poissonniers;Marcadet-Poissonniers;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-538;3;Marcel Sembat;Marcel Sembat;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-607;3;Marcel Sembat;Marcel Sembat;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-678;2;Marx Dormoy;Marx Dormoy;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-731;27;Marx Dormoy;Marx Dormoy;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-626;17;Maubert - Mutualité;Maubert-Mutualité;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-633;4;Maubert - Mutualité;Maubert-Mutualité;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-69;20;Ménilmontant;Ménilmontant;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-80;6;Ménilmontant;Ménilmontant;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-486;27;Michel Bizot;Michel Bizot;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-509;12;Michel Bizot;Michel Bizot;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-542;7;Michel-Ange - Auteuil;Michel Ange-Auteuil;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-603;7;Michel-Ange - Auteuil;Michel Ange-Auteuil;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-646;17;Michel-Ange - Auteuil;Michel Ange-Auteuil;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-541;6;Michel-Ange - Molitor;Michel Ange-Molitor;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-604;6;Michel-Ange - Molitor;Michel Ange-Molitor;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-612;3;Michel-Ange - Molitor;Michel Ange-Molitor;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-614;5;Mirabeau;Mirabeau;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-552;17;Miromesnil;Miromesnil;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-593;17;Miromesnil;Miromesnil;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-747;14;Miromesnil;Miromesnil;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-772;13;Miromesnil;Miromesnil;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-799;14;Miromesnil;Miromesnil;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-820;11;Miromesnil;Miromesnil;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-55;6;Monceau;Monceau;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-94;20;Monceau;Monceau;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-484;25;Montgallet;Montgallet;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-511;14;Montgallet;Montgallet;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-177;20;Montparnasse - Bienvenüe;Montparnasse;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-192;8;Montparnasse - Bienvenüe;Montparnasse;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-267;12;Montparnasse - Bienvenüe;Montparnasse;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-300;12;Montparnasse - Bienvenüe;Montparnasse;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-696;20;Montparnasse - Bienvenüe;Montparnasse;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-713;9;Montparnasse - Bienvenüe;Montparnasse;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-741;8;Montparnasse - Bienvenüe;Montparnasse;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-778;19;Montparnasse - Bienvenüe;Montparnasse;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-793;8;Montparnasse - Bienvenüe;Montparnasse;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-826;17;Montparnasse - Bienvenüe;Montparnasse;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-181;24;Mouton-Duvernet;Mouton-Duvernet;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-188;4;Mouton-Duvernet;Mouton-Duvernet;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-20;21;Nation;Nation;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-29;5;Nation;Nation;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-74;25;Nation;Nation;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-75;1;Nation;Nation;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-283;28;Nation;Nation;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-284;28;Nation;Nation;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-566;31;Nation;Nation;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-579;31;Nation;Nation;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-275;20;Nationale;Nationale;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-292;20;Nationale;Nationale;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-685;9;Notre-Dame-de-Lorette;Notre-Dame-de-Lorette;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-724;20;Notre-Dame-de-Lorette;Notre-Dame-de-Lorette;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-695;19;Notre-Dame-des-Champs;Notre-Dame-Des-Champs;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-714;10;Notre-Dame-des-Champs;Notre-Dame-Des-Champs;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-225;14;Oberkampf;Oberkampf;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-242;9;Oberkampf;Oberkampf;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-561;26;Oberkampf;Oberkampf;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-584;26;Oberkampf;Oberkampf;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-173;16;Odéon;Odéon;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-196;12;Odéon;Odéon;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-624;15;Odéon;Odéon;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-635;6;Odéon;Odéon;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-846;13;Olympiades ;Olympiades;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-847;1;Olympiades ;Olympiades;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-111;12;Opéra;Opéra;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-138;12;Opéra;Opéra;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-413;2;Pierre et Marie Curie;Pierre et Marie Curie;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-414;3;Porte d'Ivry;Pte d'Ivry;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-415;4;Porte de Choisy;Pte de Choisy;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-416;5;Porte d'Italie;Pte d'Italie;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-471;12;Opéra;Opéra;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-524;27;Opéra;Opéra;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-217;6;Ourcq;Ourcq;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-250;17;Ourcq;Ourcq;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-12;13;Palais-Royal - Musée du Louvre;Palais Royal-Musée du Louvre;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-37;13;Palais-Royal - Musée du Louvre;Palais Royal-Musée du Louvre;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-417;6;Maison Blanche;Maison Blanche;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-418;7;Tolbiac;Tolbiac;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-419;8;Place d'Italie;Place d'Italie;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-420;9;Les Gobelins;Les Gobelins;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-119;20;Parmentier;Parmentier;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-130;20;Parmentier;Parmentier;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-260;5;Passy;Passy;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-307;5;Passy;Passy;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-266;11;Pasteur;Pasteur;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-301;11;Pasteur;Pasteur;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-698;22;Pasteur;Pasteur;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-711;7;Pasteur;Pasteur;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-151;2;Pelleport;Pelleport;3b;0;0;0;Gambetta;Porte des Lilas;Gambetta -> Porte des Lilas
-156;3;Pelleport;Pelleport;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
-70;21;Père Lachaise;Père Lachaise;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-79;5;Père Lachaise;Père Lachaise;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-121;22;Père Lachaise;Père Lachaise;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-128;22;Père Lachaise;Père Lachaise;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-104;5;Pereire;Pereire-levallois;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-145;5;Pereire;Pereire-levallois;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-739;6;Pernety;Pernety;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-780;21;Pernety;Pernety;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-791;6;Pernety;Pernety;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-828;19;Pernety;Pernety;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-71;22;Philippe Auguste;Philippe Auguste;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-78;4;Philippe Auguste;Philippe Auguste;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-282;27;Picpus;Picpus;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-285;27;Picpus;Picpus;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-421;10;Censier - Daubenton;Censier-Daubenton;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-422;11;Place Monge;Place Monge;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-60;11;Pigalle;Pigalle;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-89;15;Pigalle;Pigalle;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-683;7;Pigalle;Pigalle;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-726;22;Pigalle;Pigalle;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-58;9;Place de Clichy;Place de Clichy;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-91;17;Place de Clichy;Place de Clichy;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-750;17;Place de Clichy;Place de Clichy;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-769;10;Place de Clichy;Place de Clichy;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-802;17;Place de Clichy;Place de Clichy;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-817;8;Place de Clichy;Place de Clichy;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-454;3;Place des Fêtes;Place des Fêtes;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
-659;10;Place des Fêtes;Place des Fêtes;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-666;4;Place des Fêtes;Place des Fêtes;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-233;22;Place d'Italie;Place d'Italie;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-234;1;Place d'Italie;Place d'Italie;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-274;19;Place d'Italie;Place d'Italie;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-293;19;Place d'Italie;Place d'Italie;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-423;12;Jussieu;Jussieu;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-424;13;Sully - Morland;Sully-Morland;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-425;14;Pont Marie;Pont Marie;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-426;15;Châtelet;Châtelet;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-427;16;Pont-Neuf;Pont Neuf;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-428;17;Palais-Royal - Musée du Louvre;Palais Royal-Musée du Louvre;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-429;18;Pyramides;Pyramides;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-430;19;Opéra;Opéra;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-738;5;Plaisance;Plaisance;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-781;22;Plaisance;Plaisance;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-790;5;Plaisance;Plaisance;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-829;20;Plaisance;Plaisance;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-497;38;Pointe du Lac;Créteil-Pointe du Lac;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-498;1;Pointe du Lac;Créteil-Pointe du Lac;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-431;20;Chaussée d'Antin - La Fayette;Chaussée d'Antin - La Fayette;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-432;21;Le Peletier;Le Pelletier;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-433;22;Cadet;Cadet;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-434;23;Poissonnière;Poissonière;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-837;4;Pont Cardinet ;Pont Cardinet;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-856;10;Pont Cardinet ;Pont Cardinet;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-100;1;Pont de Levallois - Bécon;Pont de Levallois-Bécon;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-149;1;Pont de Levallois - Bécon;Pont de Levallois-Bécon;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-2;3;Pont de Neuilly;Pont de Neuilly;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-47;23;Pont de Neuilly;Pont de Neuilly;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-536;1;Pont de Sèvres;Pont de Sèvres;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-609;1;Pont de Sèvres;Pont de Sèvres;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-435;24;Gare de l'Est;Gare de l'Est;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-436;25;Château-Landon;Château Landon;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-437;26;Louis Blanc;Louis Blanc;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-438;27;Stalingrad;Stalingrad;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-439;28;Riquet;Riquet;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-440;29;Crimée;Crimée;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-441;30;Corentin Cariou;Corentin Cariou;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-442;31;Porte de la Villette;Pte de la Villette;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-50;1;Porte Dauphine;Pte Dauphine;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-99;25;Porte Dauphine;Pte Dauphine;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-647;18;Porte d'Auteuil;Pte d'Auteuil;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-123;24;Porte de Bagnolet;Pte de Bagnolet;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-126;24;Porte de Bagnolet;Pte de Bagnolet;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-103;4;Porte de Champerret;Pte de Champerret;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-146;4;Porte de Champerret;Pte de Champerret;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-488;29;Porte de Charenton;Pte de Charenton;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-507;10;Porte de Charenton;Pte de Charenton;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-443;32;Aubervilliers - Pantin - Quatre Chemins;Aubervilliers-Pantin Quatre Chemins;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-444;33;Fort d'Aubervilliers;Fort d'Aubervilliers;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-805;20;Porte de Clichy;Pte de Clichy;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-814;5;Porte de Clichy;Pte de Clichy;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-836;3;Porte de Clichy;Porte de Clichy - Tribunal De Paris;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-857;11;Porte de Clichy;Porte de Clichy - Tribunal De Paris;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-158;1;Porte de Clignancourt;Pte de Clignacourt;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-211;27;Porte de Clignancourt;Pte de Clignacourt;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-677;1;Porte de la Chapelle;Pte de la Chapelle;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-732;28;Porte de la Chapelle;Pte de la Chapelle;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-445;34;La Courneuve - 8 Mai 1945;La Courneuve 8 Mai 1945;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
-345;33;Villejuif - Louis Aragon;Villejuif-Louis Aragon;7;1;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-346;32;Villejuif - Paul Vaillant-Couturier;Villejuif Paul Vaillant-Couturier;7;1;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-347;31;Villejuif - Léo Lagrange;Villejuif-Léo Lagrange;7;1;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-569;34;Porte de Montreuil;Pte de Montreuil;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-576;34;Porte de Montreuil;Pte de Montreuil;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-216;5;Porte de Pantin;Pte de Pantin;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-251;18;Porte de Pantin;Pte de Pantin;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-539;4;Porte de Saint-Cloud;Pte de St-Cloud;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-606;4;Porte de Saint-Cloud;Pte de St-Cloud;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-753;20;Porte de Saint-Ouen;Pte de St-Ouen;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-766;7;Porte de Saint-Ouen;Pte de St-Ouen;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-737;4;Porte de Vanves;Pte de Vanves;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-782;23;Porte de Vanves;Pte de Vanves;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-789;4;Porte de Vanves;Pte de Vanves;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-830;21;Porte de Vanves;Pte de Vanves;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-702;26;Porte de Versailles;Pte de Versailles;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-707;3;Porte de Versailles;Pte de Versailles;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-21;22;Porte de Vincennes;Pte de Vincennes;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-28;4;Porte de Vincennes;Pte de Vincennes;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-153;4;Porte des Lilas;Pte des Lilas;3b;0;0;0;Gambetta;Porte des Lilas;Gambetta -> Porte des Lilas
-154;1;Porte des Lilas;Pte des Lilas;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
-661;12;Porte des Lilas;Pte des Lilas;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-664;2;Porte des Lilas;Pte des Lilas;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-348;30;Le Kremlin-Bicêtre;Le Kremlin-Bicêtre;7;1;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-349;29;Maison Blanche;Maison Blanche;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-350;28;Tolbiac;Tolbiac;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-351;27;Place d'Italie;Place d'Italie;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-487;28;Porte Dorée;Pte Dorée;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-508;11;Porte Dorée;Pte Dorée;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-183;26;Porte d'Orléans ;Pte d'Orléans;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-186;2;Porte d'Orléans ;Pte d'Orléans;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-4;5;Porte Maillot;Pte Maillot;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-45;21;Porte Maillot;Pte Maillot;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-451;6;Pré-Saint-Gervais;Pré-St-Gervais;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
-452;1;Pré-Saint-Gervais;Pré-St-Gervais;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
-352;26;Les Gobelins;Les Gobelins;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-353;25;Censier - Daubenton;Censier-Daubenton;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-354;24;Place Monge;Place Monge;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-355;23;Jussieu;Jussieu;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-840;7;Pyramides ;Pyramides;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-853;7;Pyramides ;Pyramides;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-657;8;Pyrénées;Pyrénées;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-668;6;Pyrénées;Pyrénées;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-277;22;Quai de la Gare;Quai de la Gare;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-290;22;Quai de la Gare;Quai de la Gare;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-229;18;Quai de la Rapée;Quai de la Rapée;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-238;5;Quai de la Rapée;Quai de la Rapée;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-112;13;Quatre-Septembre;Quatre Septembre;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-137;13;Quatre-Septembre;Quatre Septembre;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-652;3;Rambuteau;Rambuteau;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-673;11;Rambuteau;Rambuteau;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-544;9;Ranelagh;Ranelagh;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-601;9;Ranelagh;Ranelagh;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-179;22;Raspail;Raspail;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-190;6;Raspail;Raspail;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-269;14;Raspail;Raspail;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-298;14;Raspail;Raspail;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-115;16;Réaumur - Sébastopol;Réaumur-Sébastopol;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-134;16;Réaumur - Sébastopol;Réaumur-Sébastopol;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-167;10;Réaumur - Sébastopol;Réaumur-Sébastopol;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-202;18;Réaumur - Sébastopol;Réaumur-Sébastopol;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-694;18;Rennes;Rennes;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-715;11;Rennes;Rennes;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-118;19;République;République;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-131;19;République;République;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-224;13;République;République;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-243;10;République;République;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-476;17;République;République;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-519;22;République;République;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-560;25;République;République;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-585;25;République;République;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-654;5;République;République;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-671;9;République;République;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-19;20;Reuilly - Diderot;Reuilly-Diderot;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-30;6;Reuilly - Diderot;Reuilly-Diderot;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-483;24;Reuilly - Diderot;Reuilly-Diderot;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-512;15;Reuilly - Diderot;Reuilly-Diderot;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-226;15;Richard-Lenoir;Richard Lenoir;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-241;8;Richard-Lenoir;Richard Lenoir;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-472;13;Richelieu - Drouot;Richelieu-Drouot;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-523;26;Richelieu - Drouot;Richelieu-Drouot;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-556;21;Richelieu - Drouot;Richelieu-Drouot;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-589;21;Richelieu - Drouot;Richelieu-Drouot;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-356;22;Sully - Morland;Sully-Morland;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-357;21;Pont Marie;Pont Marie;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-358;20;Châtelet;Châtelet;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-359;19;Pont-Neuf;Pont Neuf;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-570;35;Robespierre;Robespierre;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-575;35;Robespierre;Robespierre;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-57;8;Rome;Rome;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-92;18;Rome;Rome;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-546;11;Rue de la Pompe;Rue de la Pompe;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-599;11;Rue de la Pompe;Rue de la Pompe;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-565;30;Rue des Boulets;Rue des Boulets;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-580;30;Rue des Boulets;Rue des Boulets;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-692;16;Rue du Bac;Rue du Bac;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-717;13;Rue du Bac;Rue du Bac;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-120;21;Rue Saint-Maur;St-Maur;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-129;21;Rue Saint-Maur;St-Maur;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-562;27;Saint-Ambroise;St-Ambroise;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-583;27;Saint-Ambroise;St-Ambroise;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-553;18;Saint-Augustin;St-Augustin;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-592;18;Saint-Augustin;St-Augustin;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-757;24;Saint-Denis - Porte de Paris;St-Denis-Pte de Paris;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-762;3;Saint-Denis - Porte de Paris;St-Denis-Pte de Paris;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-759;26;Saint-Denis - Université ;St-Denis-Université;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-760;1;Saint-Denis - Université ;St-Denis-Université;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-152;3;Saint-Fargeau;St-Fargeau;3b;0;0;0;Gambetta;Porte des Lilas;Gambetta -> Porte des Lilas
-155;2;Saint-Fargeau;St-Fargeau;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
-743;10;Saint-François-Xavier;St-François-Xavier;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-776;17;Saint-François-Xavier;St-François-Xavier;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-795;10;Saint-François-Xavier;St-François-Xavier;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-824;15;Saint-François-Xavier;St-François-Xavier;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-684;8;Saint-Georges;St-Georges;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-725;21;Saint-Georges;St-Georges;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-174;17;Saint-Germain-des-Prés;St-Germain-Des-Prés;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-195;11;Saint-Germain-des-Prés;St-Germain-Des-Prés;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-271;16;Saint-Jacques;St-Jacques;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-296;16;Saint-Jacques;St-Jacques;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-109;10;Saint-Lazare;St-Lazare;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-140;10;Saint-Lazare;St-Lazare;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-687;11;Saint-Lazare;Gare Saint-Lazare;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-722;18;Saint-Lazare;Gare Saint-Lazare;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-748;15;Saint-Lazare;St-Lazare;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-771;12;Saint-Lazare;St-Lazare;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-800;15;Saint-Lazare;St-Lazare;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-819;10;Saint-Lazare;St-Lazare;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-838;5;Saint-Lazare ;St-Lazare;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-855;9;Saint-Lazare ;St-Lazare;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-22;23;Saint-Mandé;St-Mandé;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-27;3;Saint-Mandé;St-Mandé;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-231;20;Saint-Marcel;St-Marcel;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-236;3;Saint-Marcel;St-Marcel;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-172;15;Saint-Michel;St-Michel;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-197;13;Saint-Michel;St-Michel;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-835;2;Saint-Ouen ;Saint-Ouen;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-858;12;Saint-Ouen ;Saint-Ouen;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-16;17;Saint-Paul;St-Paul;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-33;9;Saint-Paul;St-Paul;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-551;16;Saint-Philippe du Roule;St-Philippe du Roule;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-594;16;Saint-Philippe du Roule;St-Philippe du Roule;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-176;19;Saint-Placide;St-Placide;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-193;9;Saint-Placide;St-Placide;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-478;19;Saint-Sébastien - Froissart;St-Sébastien-Froissart;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-517;20;Saint-Sébastien - Froissart;St-Sébastien-Froissart;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-175;18;Saint-Sulpice;St-Sulpice;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-194;10;Saint-Sulpice;St-Sulpice;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-619;10;Ségur;Ségur;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-640;11;Ségur;Ségur;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-114;15;Sentier;Sentier;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-135;15;Sentier;Sentier;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-622;13;Sèvres - Babylone;Sèvres-Babylone;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-637;8;Sèvres - Babylone;Sèvres-Babylone;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-693;17;Sèvres - Babylone;Sèvres-Babylone;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-716;12;Sèvres - Babylone;Sèvres-Babylone;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-265;10;Sèvres - Lecourbe;Sèvres-lecourbe;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-302;10;Sèvres - Lecourbe;Sèvres-lecourbe;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-159;2;Simplon;Simplon;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-210;26;Simplon;Simplon;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-691;15;Solférino;Solferino;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-718;14;Solférino;Solferino;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-64;15;Stalingrad;Stalingrad;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-85;11;Stalingrad;Stalingrad;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-220;9;Stalingrad;Stalingrad;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
-247;14;Stalingrad;Stalingrad;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
-360;18;Palais-Royal - Musée du Louvre;Palais Royal-Musée du Louvre;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-361;17;Pyramides;Pyramides;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-362;16;Opéra;Opéra;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-363;15;Chaussée d'Antin - La Fayette;Chaussée d'Antin - La Fayette;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-166;9;Strasbourg - Saint-Denis;Strasbourg-St-Denis;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-203;19;Strasbourg - Saint-Denis;Strasbourg-St-Denis;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-475;16;Strasbourg - Saint-Denis;Strasbourg-St-Denis;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
-520;23;Strasbourg - Saint-Denis;Strasbourg-St-Denis;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
-559;24;Strasbourg - Saint-Denis;Strasbourg-St-Denis;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-586;24;Strasbourg - Saint-Denis;Strasbourg-St-Denis;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-364;14;Le Peletier;Le Pelletier;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-365;13;Cadet;Cadet;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-366;12;Poissonnière;Poissonière;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-367;11;Gare de l'Est;Gare de l'Est;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-660;11;Télégraphe;Télégraphe;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
-665;3;Télégraphe;Télégraphe;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-117;18;Temple;Temple;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-132;18;Temple;Temple;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-53;4;Ternes;Ternes;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-96;22;Ternes;Ternes;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-368;10;Château-Landon;Château Landon;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-369;9;Louis Blanc;Louis Blanc;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-370;8;Stalingrad;Stalingrad;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-371;7;Riquet;Riquet;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-686;10;Trinité - d'Estienne d'Orves;Trinité d'Estienne D'Orves;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-723;19;Trinité - d'Estienne d'Orves;Trinité d'Estienne D'Orves;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-259;4;Trocadéro;Trocadéro;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
-308;4;Trocadéro;Trocadéro;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
-547;12;Trocadéro;Trocadéro;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-598;12;Trocadéro;Trocadéro;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-11;12;Tuileries;Tuileries;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-38;14;Tuileries;Tuileries;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-621;12;Vaneau;Vaneau;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
-638;9;Vaneau;Vaneau;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
-744;11;Varenne;Varenne;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-775;16;Varenne;Varenne;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-796;11;Varenne;Varenne;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-823;14;Varenne;Varenne;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-700;24;Vaugirard;Vaugirard;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-709;5;Vaugirard;Vaugirard;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-178;21;Vavin;Vavin;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-191;7;Vavin;Vavin;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-51;2;Victor Hugo;Victor Hugo;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-98;24;Victor Hugo;Victor Hugo;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-372;6;Crimée;Crimée;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-373;5;Corentin Cariou;Corentin Cariou;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-374;4;Porte de la Villette;Pte de la Villette;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-375;3;Aubervilliers - Pantin - Quatre Chemins;Aubervilliers-Pantin Quatre Chemins;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-376;2;Fort d'Aubervilliers;Fort d'Aubervilliers;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-377;1;La Courneuve - 8 Mai 1945;La Courneuve 8 Mai 1945;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
-56;7;Villiers;Villiers;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
-93;19;Villiers;Villiers;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
-107;8;Villiers;Villiers;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-142;8;Villiers;Villiers;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-699;23;Volontaires;Volontaires;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-710;6;Volontaires;Volontaires;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-563;28;Voltaire;Voltaire;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
-582;28;Voltaire;Voltaire;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
-105;6;Wagram;Wagram;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-144;6;Wagram;Wagram;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+﻿entry_id;order;station_name;line;branch;split;direction;station_origin;station_destination;service
+0;1;La Défense;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+1;2;Esplanade de La Défense ;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+2;3;Pont de Neuilly;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+3;4;Les Sablons;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+4;5;Porte Maillot;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+5;6;Argentine;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+6;7;Charles de Gaulle - Étoile;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+7;8;George V;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+8;9;Franklin D. Roosevelt;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+9;10;Champs-Élysées - Clemenceau;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+10;11;Concorde;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+11;12;Tuileries;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+12;13;Palais-Royal - Musée du Louvre;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+13;14;Louvre - Rivoli;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+14;15;Châtelet;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+15;16;Hôtel de Ville;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+16;17;Saint-Paul;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+17;18;Bastille;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+18;19;Gare de Lyon;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+19;20;Reuilly - Diderot;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+20;21;Nation;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+21;22;Porte de Vincennes;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+22;23;Saint-Mandé;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+23;24;Bérault;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+24;25;Château de Vincennes;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+25;1;Château de Vincennes;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+26;2;Bérault;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+27;3;Saint-Mandé;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+28;4;Porte de Vincennes;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+29;5;Nation;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+30;6;Reuilly - Diderot;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+31;7;Gare de Lyon;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+32;8;Bastille;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+33;9;Saint-Paul;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+34;10;Hôtel de Ville;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+35;11;Châtelet;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+36;12;Louvre - Rivoli;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+37;13;Palais-Royal - Musée du Louvre;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+38;14;Tuileries;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+39;15;Concorde;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+40;16;Champs-Élysées - Clemenceau;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+41;17;Franklin D. Roosevelt;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+42;18;George V;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+43;19;Charles de Gaulle - Étoile;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+44;20;Argentine;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+45;21;Porte Maillot;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+46;22;Les Sablons;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+47;23;Pont de Neuilly;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+48;24;Esplanade de La Défense ;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+49;25;La Défense;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+50;1;Porte Dauphine;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+51;2;Victor Hugo;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+52;3;Charles de Gaulle - Étoile;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+53;4;Ternes;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+54;5;Courcelles;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+55;6;Monceau;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+56;7;Villiers;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+57;8;Rome;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+58;9;Place de Clichy;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+59;10;Blanche;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+60;11;Pigalle;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+61;12;Anvers;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+62;13;Barbès - Rochechouart;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+63;14;La Chapelle;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+64;15;Stalingrad;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+65;16;Jaurès;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+66;17;Colonel Fabien;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+67;18;Belleville;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+68;19;Couronnes;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+69;20;Ménilmontant;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+70;21;Père Lachaise;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+71;22;Philippe Auguste;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+72;23;Alexandre Dumas;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+73;24;Avron;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+74;25;Nation;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
+75;1;Nation;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+76;2;Avron;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+77;3;Alexandre Dumas;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+78;4;Philippe Auguste;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+79;5;Père Lachaise;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+80;6;Ménilmontant;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+81;7;Couronnes;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+82;8;Belleville;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+83;9;Colonel Fabien;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+84;10;Jaurès;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+85;11;Stalingrad;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+86;12;La Chapelle;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+87;13;Barbès - Rochechouart;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+88;14;Anvers;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+89;15;Pigalle;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+90;16;Blanche;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+91;17;Place de Clichy;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+92;18;Rome;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+93;19;Villiers;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+94;20;Monceau;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+95;21;Courcelles;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+96;22;Ternes;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+97;23;Charles de Gaulle - Étoile;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+98;24;Victor Hugo;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+99;25;Porte Dauphine;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
+100;1;Pont de Levallois - Bécon;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+101;2;Anatole France;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+102;3;Louise Michel;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+103;4;Porte de Champerret;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+104;5;Pereire;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+105;6;Wagram;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+106;7;Malesherbes;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+107;8;Villiers;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+108;9;Europe;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+109;10;Saint-Lazare;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+110;11;Havre - Caumartin;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+111;12;Opéra;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+112;13;Quatre-Septembre;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+113;14;Bourse;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+114;15;Sentier;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+115;16;Réaumur - Sébastopol;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+116;17;Arts et Métiers;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+117;18;Temple;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+118;19;République;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+119;20;Parmentier;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+120;21;Rue Saint-Maur;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+121;22;Père Lachaise;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+122;23;Gambetta;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+123;24;Porte de Bagnolet;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+124;25;Gallieni;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+125;25;Gallieni;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+126;24;Porte de Bagnolet;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+127;23;Gambetta;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+128;22;Père Lachaise;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+129;21;Rue Saint-Maur;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+130;20;Parmentier;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+131;19;République;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+132;18;Temple;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+133;17;Arts et Métiers;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+134;16;Réaumur - Sébastopol;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+135;15;Sentier;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+136;14;Bourse;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+137;13;Quatre-Septembre;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+138;12;Opéra;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+139;11;Havre - Caumartin;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+140;10;Saint-Lazare;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+141;9;Europe;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+142;8;Villiers;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+143;7;Malesherbes;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+144;6;Wagram;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+145;5;Pereire;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+146;4;Porte de Champerret;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+147;3;Louise Michel;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+148;2;Anatole France;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+149;1;Pont de Levallois - Bécon;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+150;1;Gambetta;3b;0;0;0;Gambetta;Porte des Lilas;Gambetta -> Porte des Lilas
+151;2;Pelleport;3b;0;0;0;Gambetta;Porte des Lilas;Gambetta -> Porte des Lilas
+152;3;Saint-Fargeau;3b;0;0;0;Gambetta;Porte des Lilas;Gambetta -> Porte des Lilas
+153;4;Porte des Lilas;3b;0;0;0;Gambetta;Porte des Lilas;Gambetta -> Porte des Lilas
+154;1;Porte des Lilas;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
+155;2;Saint-Fargeau;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
+156;3;Pelleport;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
+157;4;Gambetta;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
+158;1;Porte de Clignancourt;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+159;2;Simplon;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+160;3;Marcadet - Poissonniers;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+161;4;Château Rouge;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+162;5;Barbès - Rochechouart;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+163;6;Gare du Nord;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+164;7;Gare de l'Est;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+165;8;Château d'Eau;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+166;9;Strasbourg - Saint-Denis;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+167;10;Réaumur - Sébastopol;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+168;11;Étienne Marcel;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+169;12;Les Halles;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+170;13;Châtelet;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+171;14;Cité;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+172;15;Saint-Michel;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+173;16;Odéon;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+174;17;Saint-Germain-des-Prés;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+175;18;Saint-Sulpice;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+176;19;Saint-Placide;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+177;20;Montparnasse - Bienvenüe;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+178;21;Vavin;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+179;22;Raspail;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+180;23;Denfert-Rochereau;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+181;24;Mouton-Duvernet;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+182;25;Alésia;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+183;26;Porte d'Orléans ;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+184;27;Mairie de Montrouge ;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
+185;1;Mairie de Montrouge ;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+186;2;Porte d'Orléans ;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+187;3;Alésia;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+188;4;Mouton-Duvernet;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+189;5;Denfert-Rochereau;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+190;6;Raspail;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+191;7;Vavin;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+192;8;Montparnasse - Bienvenüe;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+193;9;Saint-Placide;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+194;10;Saint-Sulpice;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+195;11;Saint-Germain-des-Prés;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+196;12;Odéon;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+197;13;Saint-Michel;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+198;14;Cité;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+199;15;Châtelet;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+200;16;Les Halles;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+201;17;Étienne Marcel;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+202;18;Réaumur - Sébastopol;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+203;19;Strasbourg - Saint-Denis;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+204;20;Château d'Eau;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+205;21;Gare de l'Est;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+206;22;Gare du Nord;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+207;23;Barbès - Rochechouart;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+208;24;Château Rouge;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+209;25;Marcadet - Poissonniers;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+210;26;Simplon;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+211;27;Porte de Clignancourt;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+212;1;Bobigny - Pablo Picasso;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+213;2;Bobigny - Pantin - Raymond Queneau;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+214;3;Église de Pantin;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+215;4;Hoche;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+216;5;Porte de Pantin;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+217;6;Ourcq;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+218;7;Laumière;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+219;8;Jaurès;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+220;9;Stalingrad;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+221;10;Gare du Nord;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+222;11;Gare de l'Est;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+223;12;Jacques Bonsergent;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+224;13;République;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+225;14;Oberkampf;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+226;15;Richard-Lenoir;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+227;16;Bréguet - Sabin;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+228;17;Bastille;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+229;18;Quai de la Rapée;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+230;19;Gare d'Austerlitz;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+231;20;Saint-Marcel;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+232;21;Campo-Formio;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+233;22;Place d'Italie;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
+234;1;Place d'Italie;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+235;2;Campo-Formio;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+236;3;Saint-Marcel;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+237;4;Gare d'Austerlitz;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+238;5;Quai de la Rapée;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+239;6;Bastille;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+240;7;Bréguet - Sabin;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+241;8;Richard-Lenoir;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+242;9;Oberkampf;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+243;10;République;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+244;11;Jacques Bonsergent;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+245;12;Gare de l'Est;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+246;13;Gare du Nord;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+247;14;Stalingrad;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+248;15;Jaurès;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+249;16;Laumière;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+250;17;Ourcq;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+251;18;Porte de Pantin;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+252;19;Hoche;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+253;20;Église de Pantin;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+254;21;Bobigny - Pantin - Raymond Queneau;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+255;22;Bobigny - Pablo Picasso;5;0;0;1;Place d'Italie;Bobigny - Pablo Picasso;Place d'Italie -> Bobigny - Pablo Picasso
+256;1;Charles de Gaulle - Étoile;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+257;2;Kléber;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+258;3;Boissière;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+259;4;Trocadéro;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+260;5;Passy;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+261;6;Bir-Hakeim;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+262;7;Dupleix;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+263;8;La Motte-Picquet - Grenelle;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+264;9;Cambronne;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+265;10;Sèvres - Lecourbe;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+266;11;Pasteur;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+267;12;Montparnasse - Bienvenüe;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+268;13;Edgar Quinet;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+269;14;Raspail;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+270;15;Denfert-Rochereau;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+271;16;Saint-Jacques;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+272;17;Glacière;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+273;18;Corvisart;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+274;19;Place d'Italie;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+275;20;Nationale;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+276;21;Chevaleret;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+277;22;Quai de la Gare;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+278;23;Bercy;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+279;24;Dugommier;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+280;25;Daumesnil;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+281;26;Bel-Air;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+282;27;Picpus;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+283;28;Nation;6;0;0;0;Charles de Gaulle - Étoile;Nation;Charles de Gaulle - Étoile -> Nation
+284;28;Nation;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+285;27;Picpus;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+286;26;Bel-Air;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+287;25;Daumesnil;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+288;24;Dugommier;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+289;23;Bercy;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+290;22;Quai de la Gare;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+291;21;Chevaleret;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+292;20;Nationale;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+293;19;Place d'Italie;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+294;18;Corvisart;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+295;17;Glacière;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+296;16;Saint-Jacques;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+297;15;Denfert-Rochereau;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+298;14;Raspail;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+299;13;Edgar Quinet;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+300;12;Montparnasse - Bienvenüe;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+301;11;Pasteur;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+302;10;Sèvres - Lecourbe;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+303;9;Cambronne;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+304;8;La Motte-Picquet - Grenelle;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+305;7;Dupleix;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+306;6;Bir-Hakeim;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+307;5;Passy;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+308;4;Trocadéro;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+309;3;Boissière;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+310;2;Kléber;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+311;1;Charles de Gaulle - Étoile;6;0;0;1;Nation;Charles de Gaulle - Étoile;Nation -> Charles de Gaulle - Étoile
+312;1;La Courneuve - 8 Mai 1945;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+313;2;Fort d'Aubervilliers;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+314;3;Aubervilliers - Pantin - Quatre Chemins;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+315;4;Porte de la Villette;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+316;5;Corentin Cariou;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+317;6;Crimée;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+318;7;Riquet;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+319;8;Stalingrad;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+320;9;Louis Blanc;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+321;10;Château-Landon;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+322;11;Gare de l'Est;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+323;12;Poissonnière;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+324;13;Cadet;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+325;14;Le Peletier;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+326;15;Chaussée d'Antin - La Fayette;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+327;16;Opéra;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+328;17;Pyramides;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+329;18;Palais-Royal - Musée du Louvre;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+330;19;Pont-Neuf;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+331;20;Châtelet;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+332;21;Pont Marie;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+333;22;Sully - Morland;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+334;23;Jussieu;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+335;24;Place Monge;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+336;25;Censier - Daubenton;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+337;26;Les Gobelins;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+338;27;Place d'Italie;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+339;28;Tolbiac;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+340;29;Maison Blanche;7;0;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+341;30;Le Kremlin-Bicêtre;7;1;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+342;31;Villejuif - Léo Lagrange;7;1;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+343;32;Villejuif - Paul Vaillant-Couturier;7;1;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+344;33;Villejuif - Louis Aragon;7;1;0;0;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945 -> Villejuif - Louis Aragon
+345;33;Villejuif - Louis Aragon;7;1;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+346;32;Villejuif - Paul Vaillant-Couturier;7;1;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+347;31;Villejuif - Léo Lagrange;7;1;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+348;30;Le Kremlin-Bicêtre;7;1;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+349;29;Maison Blanche;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+350;28;Tolbiac;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+351;27;Place d'Italie;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+352;26;Les Gobelins;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+353;25;Censier - Daubenton;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+354;24;Place Monge;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+355;23;Jussieu;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+356;22;Sully - Morland;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+357;21;Pont Marie;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+358;20;Châtelet;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+359;19;Pont-Neuf;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+360;18;Palais-Royal - Musée du Louvre;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+361;17;Pyramides;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+362;16;Opéra;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+363;15;Chaussée d'Antin - La Fayette;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+364;14;Le Peletier;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+365;13;Cadet;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+366;12;Poissonnière;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+367;11;Gare de l'Est;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+368;10;Château-Landon;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+369;9;Louis Blanc;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+370;8;Stalingrad;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+371;7;Riquet;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+372;6;Crimée;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+373;5;Corentin Cariou;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+374;4;Porte de la Villette;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+375;3;Aubervilliers - Pantin - Quatre Chemins;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+376;2;Fort d'Aubervilliers;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+377;1;La Courneuve - 8 Mai 1945;7;0;0;1;Villejuif - Louis Aragon;La Courneuve - 8 Mai 1945;Villejuif - Louis Aragon -> La Courneuve - 8 Mai 1945
+378;1;La Courneuve - 8 Mai 1945;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+379;2;Fort d'Aubervilliers;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+380;3;Aubervilliers - Pantin - Quatre Chemins;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+381;4;Porte de la Villette;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+382;5;Corentin Cariou;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+383;6;Crimée;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+384;7;Riquet;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+385;8;Stalingrad;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+386;9;Louis Blanc;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+387;10;Château-Landon;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+388;11;Gare de l'Est;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+389;12;Poissonnière;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+390;13;Cadet;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+391;14;Le Peletier;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+392;15;Chaussée d'Antin - La Fayette;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+393;16;Opéra;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+394;17;Pyramides;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+395;18;Palais-Royal - Musée du Louvre;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+396;19;Pont-Neuf;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+397;20;Châtelet;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+398;21;Pont Marie;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+399;22;Sully - Morland;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+400;23;Jussieu;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+401;24;Place Monge;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+402;25;Censier - Daubenton;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+403;26;Les Gobelins;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+404;27;Place d'Italie;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+405;28;Tolbiac;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+406;29;Maison Blanche;7;0;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+407;30;Porte d'Italie;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+408;31;Porte de Choisy;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+409;32;Porte d'Ivry;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+410;33;Pierre et Marie Curie;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+411;34;Mairie d'Ivry;7;2;0;0;La Courneuve - 8 Mai 1945;Mairie d'Ivry;La Courneuve - 8 Mai 1945 -> Mairie d'Ivry
+412;1;Mairie d'Ivry;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+413;2;Pierre et Marie Curie;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+414;3;Porte d'Ivry;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+415;4;Porte de Choisy;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+416;5;Porte d'Italie;7;2;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+417;6;Maison Blanche;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+418;7;Tolbiac;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+419;8;Place d'Italie;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+420;9;Les Gobelins;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+421;10;Censier - Daubenton;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+422;11;Place Monge;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+423;12;Jussieu;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+424;13;Sully - Morland;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+425;14;Pont Marie;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+426;15;Châtelet;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+427;16;Pont-Neuf;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+428;17;Palais-Royal - Musée du Louvre;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+429;18;Pyramides;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+430;19;Opéra;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+431;20;Chaussée d'Antin - La Fayette;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+432;21;Le Peletier;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+433;22;Cadet;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+434;23;Poissonnière;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+435;24;Gare de l'Est;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+436;25;Château-Landon;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+437;26;Louis Blanc;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+438;27;Stalingrad;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+439;28;Riquet;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+440;29;Crimée;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+441;30;Corentin Cariou;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+442;31;Porte de la Villette;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+443;32;Aubervilliers - Pantin - Quatre Chemins;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+444;33;Fort d'Aubervilliers;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+445;34;La Courneuve - 8 Mai 1945;7;0;0;1;Mairie d'Ivry;La Courneuve - 8 Mai 1945;Mairie d'Ivry -> La Courneuve - 8 Mai 1945
+446;1;Louis Blanc;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
+447;2;Jaurès;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
+448;3;Bolivar;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
+449;4;Buttes Chaumont;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
+450;5;Botzaris;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
+451;6;Pré-Saint-Gervais;7b;0;0;0;Louis Blanc;Pré-Saint-Gervais;Louis Blanc -> Pré-Saint-Gervais
+452;1;Pré-Saint-Gervais;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
+453;2;Danube;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
+454;3;Place des Fêtes;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
+455;4;Botzaris;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
+456;5;Buttes Chaumont;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
+457;6;Bolivar;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
+458;7;Jaurès;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
+459;8;Louis Blanc;7b;0;0;1;Pré-Saint-Gervais;Louis Blanc;Pré-Saint-Gervais -> Louis Blanc
+460;1;Balard;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+461;2;Lourmel;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+462;3;Boucicaut;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+463;4;Félix Faure;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+464;5;Commerce;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+465;6;La Motte-Picquet - Grenelle;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+466;7;École Militaire;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+467;8;La Tour-Maubourg;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+468;9;Invalides;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+469;10;Concorde;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+470;11;Madeleine;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+471;12;Opéra;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+472;13;Richelieu - Drouot;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+473;14;Grands Boulevards;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+474;15;Bonne-Nouvelle;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+475;16;Strasbourg - Saint-Denis;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+476;17;République;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+477;18;Filles du Calvaire;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+478;19;Saint-Sébastien - Froissart;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+479;20;Chemin Vert;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+480;21;Bastille;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+481;22;Ledru-Rollin;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+482;23;Faidherbe - Chaligny;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+483;24;Reuilly - Diderot;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+484;25;Montgallet;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+485;26;Daumesnil;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+486;27;Michel Bizot;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+487;28;Porte Dorée;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+488;29;Porte de Charenton;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+489;30;Liberté;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+490;31;Charenton - Écoles;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+491;32;École vétérinaire de Maisons-Alfort;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+492;33;Maisons-Alfort - Stade;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+493;34;Maisons-Alfort - Les Juilliottes;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+494;35;Créteil - L'Échat;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+495;36;Créteil - Université;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+496;37;Créteil - Préfecture;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+497;38;Pointe du Lac;8;0;0;0;Balard;Pointe du Lac;Balard -> Pointe du Lac
+498;1;Pointe du Lac;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+499;2;Créteil - Préfecture;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+500;3;Créteil - Université;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+501;4;Créteil - L'Échat;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+502;5;Maisons-Alfort - Les Juilliottes;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+503;6;Maisons-Alfort - Stade;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+504;7;École vétérinaire de Maisons-Alfort;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+505;8;Charenton - Écoles;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+506;9;Liberté;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+507;10;Porte de Charenton;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+508;11;Porte Dorée;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+509;12;Michel Bizot;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+510;13;Daumesnil;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+511;14;Montgallet;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+512;15;Reuilly - Diderot;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+513;16;Faidherbe - Chaligny;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+514;17;Ledru-Rollin;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+515;18;Bastille;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+516;19;Chemin Vert;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+517;20;Saint-Sébastien - Froissart;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+518;21;Filles du Calvaire;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+519;22;République;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+520;23;Strasbourg - Saint-Denis;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+521;24;Bonne-Nouvelle;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+522;25;Grands Boulevards;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+523;26;Richelieu - Drouot;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+524;27;Opéra;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+525;28;Madeleine;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+526;29;Concorde;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+527;30;Invalides;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+528;31;La Tour-Maubourg;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+529;32;École Militaire;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+530;33;La Motte-Picquet - Grenelle;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+531;34;Commerce;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+532;35;Félix Faure;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+533;36;Boucicaut;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+534;37;Lourmel;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+535;38;Balard;8;0;0;1;Pointe du Lac;Balard;Pointe du Lac -> Balard
+536;1;Pont de Sèvres;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+537;2;Billancourt;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+538;3;Marcel Sembat;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+539;4;Porte de Saint-Cloud;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+540;5;Exelmans;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+541;6;Michel-Ange - Molitor;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+542;7;Michel-Ange - Auteuil;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+543;8;Jasmin;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+544;9;Ranelagh;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+545;10;La Muette;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+546;11;Rue de la Pompe;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+547;12;Trocadéro;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+548;13;Iéna;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+549;14;Alma - Marceau;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+550;15;Franklin D. Roosevelt;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+551;16;Saint-Philippe du Roule;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+552;17;Miromesnil;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+553;18;Saint-Augustin;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+554;19;Havre - Caumartin;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+555;20;Chaussée d'Antin - La Fayette;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+556;21;Richelieu - Drouot;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+557;22;Grands Boulevards;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+558;23;Bonne-Nouvelle;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+559;24;Strasbourg - Saint-Denis;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+560;25;République;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+561;26;Oberkampf;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+562;27;Saint-Ambroise;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+563;28;Voltaire;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+564;29;Charonne;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+565;30;Rue des Boulets;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+566;31;Nation;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+567;32;Buzenval;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+568;33;Maraîchers;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+569;34;Porte de Montreuil;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+570;35;Robespierre;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+571;36;Croix de Chavaux;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+572;37;Mairie de Montreuil;9;0;0;0;Pont de Sèvres;Mairie de Montreuil;Pont de Sèvres -> Mairie de Montreuil
+573;37;Mairie de Montreuil;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+574;36;Croix de Chavaux;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+575;35;Robespierre;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+576;34;Porte de Montreuil;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+577;33;Maraîchers;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+578;32;Buzenval;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+579;31;Nation;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+580;30;Rue des Boulets;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+581;29;Charonne;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+582;28;Voltaire;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+583;27;Saint-Ambroise;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+584;26;Oberkampf;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+585;25;République;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+586;24;Strasbourg - Saint-Denis;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+587;23;Bonne-Nouvelle;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+588;22;Grands Boulevards;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+589;21;Richelieu - Drouot;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+590;20;Chaussée d'Antin - La Fayette;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+591;19;Havre - Caumartin;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+592;18;Saint-Augustin;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+593;17;Miromesnil;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+594;16;Saint-Philippe du Roule;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+595;15;Franklin D. Roosevelt;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+596;14;Alma - Marceau;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+597;13;Iéna;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+598;12;Trocadéro;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+599;11;Rue de la Pompe;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+600;10;La Muette;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+601;9;Ranelagh;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+602;8;Jasmin;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+603;7;Michel-Ange - Auteuil;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+604;6;Michel-Ange - Molitor;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+605;5;Exelmans;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+606;4;Porte de Saint-Cloud;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+607;3;Marcel Sembat;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+608;2;Billancourt;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+609;1;Pont de Sèvres;9;0;0;1;Mairie de Montreuil;Pont de Sèvres;Mairie de Montreuil -> Pont de Sèvres
+610;1;Boulogne - Pont de Saint-Cloud;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+611;2;Boulogne - Jean Jaurès;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+612;3;Michel-Ange - Molitor;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+613;4;Chardon-Lagache;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+614;5;Mirabeau;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+615;6;Javel - André Citroën;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+616;7;Charles Michels;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+617;8;Avenue Émile-Zola;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+618;9;La Motte-Picquet - Grenelle;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+619;10;Ségur;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+620;11;Duroc;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+621;12;Vaneau;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+622;13;Sèvres - Babylone;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+623;14;Mabillon;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+624;15;Odéon;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+625;16;Cluny - La Sorbonne;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+626;17;Maubert - Mutualité;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+627;18;Cardinal Lemoine;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+628;19;Jussieu;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+629;20;Gare d'Austerlitz;10;0;0;0;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud -> Gare d'Austerlitz
+630;1;Gare d'Austerlitz;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+631;2;Jussieu;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+632;3;Cardinal Lemoine;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+633;4;Maubert - Mutualité;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+634;5;Cluny - La Sorbonne;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+635;6;Odéon;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+636;7;Mabillon;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+637;8;Sèvres - Babylone;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+638;9;Vaneau;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+639;10;Duroc;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+640;11;Ségur;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+641;12;La Motte-Picquet - Grenelle;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+642;13;Avenue Émile-Zola;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+643;14;Charles Michels;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+644;15;Javel - André Citroën;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+645;16;Église d'Auteuil;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+646;17;Michel-Ange - Auteuil;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+647;18;Porte d'Auteuil;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+648;19;Boulogne - Jean Jaurès;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+649;20;Boulogne - Pont de Saint-Cloud;10;0;0;1;Gare d'Austerlitz;Boulogne - Pont de Saint-Cloud;Gare d'Austerlitz -> Boulogne - Pont de Saint-Cloud
+650;1;Châtelet;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+651;2;Hôtel de Ville;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+652;3;Rambuteau;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+653;4;Arts et Métiers;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+654;5;République;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+655;6;Goncourt;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+656;7;Belleville;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+657;8;Pyrénées;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+658;9;Jourdain;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+659;10;Place des Fêtes;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+660;11;Télégraphe;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+661;12;Porte des Lilas;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+662;13;Mairie des Lilas;11;0;0;0;Châtelet;Mairie des Lilas;Châtelet -> Mairie des Lilas
+663;1;Mairie des Lilas;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+664;2;Porte des Lilas;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+665;3;Télégraphe;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+666;4;Place des Fêtes;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+667;5;Jourdain;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+668;6;Pyrénées;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+669;7;Belleville;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+670;8;Goncourt;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+671;9;République;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+672;10;Arts et Métiers;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+673;11;Rambuteau;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+674;12;Hôtel de Ville;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+675;13;Châtelet;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
+676;0;Front Populaire ;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+677;1;Porte de la Chapelle;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+678;2;Marx Dormoy;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+679;3;Marcadet - Poissonniers;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+680;4;Jules Joffrin;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+681;5;Lamarck - Caulaincourt;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+682;6;Abbesses;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+683;7;Pigalle;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+684;8;Saint-Georges;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+685;9;Notre-Dame-de-Lorette;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+686;10;Trinité - d'Estienne d'Orves;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+687;11;Saint-Lazare;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+688;12;Madeleine;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+689;13;Concorde;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+690;14;Assemblée nationale;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+691;15;Solférino;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+692;16;Rue du Bac;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+693;17;Sèvres - Babylone;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+694;18;Rennes;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+695;19;Notre-Dame-des-Champs;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+696;20;Montparnasse - Bienvenüe;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+697;21;Falguière;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+698;22;Pasteur;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+699;23;Volontaires;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+700;24;Vaugirard;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+701;25;Convention;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+702;26;Porte de Versailles;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+703;27;Corentin Celton;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+704;28;Mairie d'Issy;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
+705;1;Mairie d'Issy;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+706;2;Corentin Celton;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+707;3;Porte de Versailles;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+708;4;Convention;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+709;5;Vaugirard;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+710;6;Volontaires;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+711;7;Pasteur;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+712;8;Falguière;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+713;9;Montparnasse - Bienvenüe;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+714;10;Notre-Dame-des-Champs;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+715;11;Rennes;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+716;12;Sèvres - Babylone;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+717;13;Rue du Bac;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+718;14;Solférino;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+719;15;Assemblée nationale;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+720;16;Concorde;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+721;17;Madeleine;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+722;18;Saint-Lazare;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+723;19;Trinité - d'Estienne d'Orves;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+724;20;Notre-Dame-de-Lorette;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+725;21;Saint-Georges;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+726;22;Pigalle;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+727;23;Abbesses;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+728;24;Lamarck - Caulaincourt;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+729;25;Jules Joffrin;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+730;26;Marcadet - Poissonniers;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+731;27;Marx Dormoy;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+732;28;Porte de la Chapelle;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+733;29;Front Populaire ;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
+734;1;Châtillon - Montrouge;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+735;2;Malakoff - Rue Étienne-Dolet;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+736;3;Malakoff - Plateau de Vanves;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+737;4;Porte de Vanves;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+738;5;Plaisance;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+739;6;Pernety;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+740;7;Gaîté;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+741;8;Montparnasse - Bienvenüe;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+742;9;Duroc;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+743;10;Saint-François-Xavier;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+744;11;Varenne;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+745;12;Invalides;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+746;13;Champs-Élysées - Clemenceau;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+747;14;Miromesnil;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+748;15;Saint-Lazare;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+749;16;Liège;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+750;17;Place de Clichy;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+751;18;La Fourche;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+752;19;Guy Môquet;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+753;20;Porte de Saint-Ouen;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+754;21;Garibaldi;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+755;22;Mairie de Saint-Ouen;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+756;23;Carrefour Pleyel;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+757;24;Saint-Denis - Porte de Paris;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+758;25;Basilique de Saint-Denis;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+759;26;Saint-Denis - Université ;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
+760;1;Saint-Denis - Université ;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+761;2;Basilique de Saint-Denis;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+762;3;Saint-Denis - Porte de Paris;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+763;4;Carrefour Pleyel;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+764;5;Mairie de Saint-Ouen;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+765;6;Garibaldi;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+766;7;Porte de Saint-Ouen;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+767;8;Guy Môquet;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+768;9;La Fourche;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+769;10;Place de Clichy;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+770;11;Liège;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+771;12;Saint-Lazare;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+772;13;Miromesnil;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+773;14;Champs-Élysées - Clemenceau;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+774;15;Invalides;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+775;16;Varenne;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+776;17;Saint-François-Xavier;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+777;18;Duroc;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+778;19;Montparnasse - Bienvenüe;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+779;20;Gaîté;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+780;21;Pernety;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+781;22;Plaisance;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+782;23;Porte de Vanves;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+783;24;Malakoff - Plateau de Vanves;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+784;25;Malakoff - Rue Étienne-Dolet;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+785;26;Châtillon - Montrouge;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
+786;1;Châtillon - Montrouge;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+787;2;Malakoff - Rue Étienne-Dolet;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+788;3;Malakoff - Plateau de Vanves;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+789;4;Porte de Vanves;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+790;5;Plaisance;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+791;6;Pernety;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+792;7;Gaîté;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+793;8;Montparnasse - Bienvenüe;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+794;9;Duroc;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+795;10;Saint-François-Xavier;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+796;11;Varenne;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+797;12;Invalides;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+798;13;Champs-Élysées - Clemenceau;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+799;14;Miromesnil;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+800;15;Saint-Lazare;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+801;16;Liège;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+802;17;Place de Clichy;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+803;18;La Fourche;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+804;19;Brochant;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+805;20;Porte de Clichy;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+806;21;Mairie de Clichy;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+807;22;Gabriel Péri;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+808;23;Les Agnettes ;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+809;24;Asnières - Gennevilliers - Les Courtilles ;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
+810;1;Asnières - Gennevilliers - Les Courtilles ;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+811;2;Les Agnettes ;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+812;3;Gabriel Péri;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+813;4;Mairie de Clichy;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+814;5;Porte de Clichy;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+815;6;Brochant;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+816;7;La Fourche;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+817;8;Place de Clichy;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+818;9;Liège;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+819;10;Saint-Lazare;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+820;11;Miromesnil;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+821;12;Champs-Élysées - Clemenceau;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+822;13;Invalides;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+823;14;Varenne;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+824;15;Saint-François-Xavier;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+825;16;Duroc;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+826;17;Montparnasse - Bienvenüe;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+827;18;Gaîté;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+828;19;Pernety;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+829;20;Plaisance;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+830;21;Porte de Vanves;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+831;22;Malakoff - Plateau de Vanves;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+832;23;Malakoff - Rue Étienne-Dolet;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+833;24;Châtillon - Montrouge;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
+834;1;Mairie de Saint-Ouen;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+835;2;Saint-Ouen ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+836;3;Porte de Clichy;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+837;4;Pont Cardinet ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+838;5;Saint-Lazare;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+839;6;Madeleine ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+840;7;Pyramides ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+841;8;Châtelet ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+842;9;Gare de Lyon ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+843;10;Bercy ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+844;11;Cour Saint-Émilion ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+845;12;Bibliothèque François-Mitterrand ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+846;13;Olympiades ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+847;1;Olympiades ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+848;2;Bibliothèque François-Mitterrand ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+849;3;Cour Saint-Émilion ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+850;4;Bercy ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+851;5;Gare de Lyon ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+852;6;Châtelet ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+853;7;Pyramides ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+854;8;Madeleine ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+855;9;Saint-Lazare;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+856;10;Pont Cardinet ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+857;11;Porte de Clichy;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+858;12;Saint-Ouen ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+859;13;Mairie de Saint-Ouen;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
