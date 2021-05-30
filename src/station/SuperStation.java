@@ -11,5 +11,5 @@ public class SuperStation {
         this.name = name;
     }
 
-    Map<String, Station> stations = new HashMap<>();
+    public Map<String, Station> stations = new HashMap<>();
 }

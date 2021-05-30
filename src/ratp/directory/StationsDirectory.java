@@ -31,16 +31,18 @@ public class StationsDirectory {
 
     List<Station> allStations;
 
+    Map<String, Station> stations;
+
     Map<String, SuperStation> superStations;
 
     private StationsDirectory()
     {
         allStations = allStationsReader(Constants.STATIONS_FILENAME);
+        stations = computeStationsMap(allStations);
         superStations = initializeSuperStations(allStations);
     }
 
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
     public static List<Station> allStationsReader(String name){
         List<Station> s = new ArrayList<>();
         try {
@@ -58,6 +60,14 @@ public class StationsDirectory {
         return s;
     }
 
+    public static Map<String, Station> computeStationsMap(List<Station> stations){
+        Map<String, Station> s = new HashMap<>();
+        for(Station station : stations){
+            s.put(station.name, station);
+        }
+        return s;
+    }
+
     Map<String, SuperStation> initializeSuperStations(List<Station> allStations){
 
         Map<String, SuperStation> superStations = new HashMap<>();
@@ -71,10 +81,13 @@ public class StationsDirectory {
         return superStations;
     }
 
-    public void computeStationsAccordingToSchedulesDirectory(List<SchedulesDirectory.Schedule> allSchedules){
-
-        for()
-
+    public void addStationsToSuperStations(List<SchedulesDirectory.Schedule> allSchedules){
+        //Todo: isTerminus
+       //for()
+        for(SchedulesDirectory.Schedule schedule : allSchedules){
+            superStations.get(schedule.station.name).stations.put(schedule.line,schedule.station);
+        }
+        int i =0;
     }
 
     /*On Debug*/

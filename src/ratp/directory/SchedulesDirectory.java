@@ -1,6 +1,7 @@
 package ratp.directory;
 
 import global.Constants;
+import station.Station;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -53,7 +54,7 @@ public class SchedulesDirectory {
             List<String> servicesNames = new ArrayList<>();
             //Yeah, fuck the complexity...
             for(Schedule s : schedulesByLine.get(line)){
-                servicesNames.add(s.service);
+                servicesNames.add(s.serviceName);
             }
             servicesNames = servicesNames.stream()
                     .distinct()
@@ -64,7 +65,7 @@ public class SchedulesDirectory {
             }
 
             for(Schedule s : schedulesByLine.get(line)){
-                schedules.get(line).get(s.service).add(s);
+                schedules.get(line).get(s.serviceName).add(s);
             }
         }
     int i =0;
@@ -76,41 +77,39 @@ public class SchedulesDirectory {
         //The dirty way... Initialize this before schedules
         computeSchedulesByLine();
         computeSchedules();
+        StationsDirectory.getInstance().addStationsToSuperStations(allSchedules);
     }
 
     public static class Schedule {
 
         int entry_id;
         int order;
-        //TODO: Replace station by station_legacyname -- please use station for now
-        String station_legacyname;
-        String station_name;
+        //String station_name;
         String line;
         int branch;
         int split;
+        Station station;
+        Station origin;
+        Station destination;
+        int direction;
+        String serviceName;
 
-        public Schedule(int entry_id, int order, String station_legacyname, String station, String line, int branch, int split, int direction, String station_origin, String station_destination, String service) {
+        StationsDirectory s = StationsDirectory.getInstance();
+        public Schedule(int entry_id, int order, String station_name, String line, int branch, int split, int direction, String stationOriginName, String stationDestinationName, String serviceName) {
             this.entry_id = entry_id;
             this.order = order;
-            this.station_legacyname = station_legacyname;
-            this.station_name = station;
             this.line = line;
             this.branch = branch;
             this.split = split;
-            this.direction = direction;
-            this.station_origin = station_origin;
-            this.station_destination = station_destination;
-            this.service = service;
+            this.direction  = direction;
+            this.station = StationsDirectory.getInstance().stations.get(station_name);
+            this.origin = StationsDirectory.getInstance().stations.get(stationOriginName);
+            this.destination = StationsDirectory.getInstance().stations.get(stationDestinationName);
+            this.serviceName = serviceName;
+            //this.station_name = station_name;
         }
-
-        int direction;
-        String station_origin;
-        String station_destination;
-        String service;
-
     }
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
     public static List<Schedule> scheduleReader(String name){
 
         List<Schedule> schedules = new ArrayList<>();
@@ -124,13 +123,12 @@ public class SchedulesDirectory {
                             Integer.parseInt(line.split(";")[1]),
                             line.split(";")[2],
                             line.split(";")[3],
-                            line.split(";")[4],
+                            Integer.parseInt(line.split(";")[4]),
                             Integer.parseInt(line.split(";")[5]),
                             Integer.parseInt(line.split(";")[6]),
-                            Integer.parseInt(line.split(";")[7]),
+                            line.split(";")[7],
                             line.split(";")[8],
-                            line.split(";")[9],
-                            line.split(";")[10]
+                            line.split(";")[9]
                     ))
                     .collect(Collectors.toList());
         } catch (Exception e) {

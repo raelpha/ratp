@@ -101,7 +101,7 @@
 99;25;Porte Dauphine;2;0;0;1;Nation;Porte Dauphine;Nation -> Porte Dauphine
 100;1;Pont de Levallois - Bécon;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
 101;2;Anatole France;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
-102;3;"Louise Michel	";3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
+102;3;Louise Michel;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
 103;4;Porte de Champerret;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
 104;5;Pereire;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
 105;6;Wagram;3;0;0;0;Pont de Levallois - Bécon;Gallieni;Pont de Levallois - Bécon -> Gallieni
@@ -146,7 +146,7 @@
 144;6;Wagram;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
 145;5;Pereire;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
 146;4;Porte de Champerret;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
-147;3;"Louise Michel	";3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
+147;3;Louise Michel;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
 148;2;Anatole France;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
 149;1;Pont de Levallois - Bécon;3;0;0;1;Gallieni;Pont de Levallois - Bécon;Gallieni -> Pont de Levallois - Bécon
 150;1;Gambetta;3b;0;0;0;Gambetta;Porte des Lilas;Gambetta -> Porte des Lilas
@@ -837,7 +837,7 @@
 835;2;Saint-Ouen ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
 836;3;Porte de Clichy;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
 837;4;Pont Cardinet ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-838;5;Saint-Lazare ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
+838;5;Saint-Lazare;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
 839;6;Madeleine ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
 840;7;Pyramides ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
 841;8;Châtelet ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
@@ -854,7 +854,7 @@
 852;6;Châtelet ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
 853;7;Pyramides ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
 854;8;Madeleine ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-855;9;Saint-Lazare ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+855;9;Saint-Lazare;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
 856;10;Pont Cardinet ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
 857;11;Porte de Clichy;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
 858;12;Saint-Ouen ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
