@@ -82,12 +82,14 @@ public class StationsDirectory {
     }
 
     public void addStationsToSuperStations(List<SchedulesDirectory.Schedule> allSchedules){
-        //Todo: isTerminus
-       //for()
         for(SchedulesDirectory.Schedule schedule : allSchedules){
             superStations.get(schedule.station.name).stations.put(schedule.line,schedule.station);
+            //If the superStation<-station equals the schedule destination or origin, we label the station as a terminus
+            if(schedule.destination == superStations.get(schedule.station.name).stations.get(schedule.line)
+            || schedule.origin == superStations.get(schedule.station.name).stations.get(schedule.line)){
+                superStations.get(schedule.station.name).stations.get(schedule.line).terminus = true;
+            }
         }
-        int i =0;
     }
 
     /*On Debug*/
