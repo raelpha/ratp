@@ -20,7 +20,7 @@ import java.util.Map;
 public class FileImporter {
 
     //TODO: Move this in Constants
-    public static List<String> defaultAttributes = Arrays.asList("line", "stroke", "sectionId","origin","destinatio");
+    public static List<String> defaultAttributes = Arrays.asList("line", "color", "sectionId","origin","destinatio");
 
     public static void shapeFileImporterByLine(String name, Map<String,GeomVectorField> lines){
 
@@ -64,13 +64,13 @@ public class FileImporter {
                     origin_station_mg.addStringAttribute("type", "station");
                     origin_station_mg.addStringAttribute("name", mg.getStringAttribute("origin"));
                     origin_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
-                    origin_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
+                    origin_station_mg.addStringAttribute("color", mg.getStringAttribute("color"));
 
                     MasonGeometry destination_station_mg = new MasonGeometry(destination_station_point);
                     destination_station_mg.addStringAttribute("type", "station");
                     destination_station_mg.addStringAttribute("name", mg.getStringAttribute("destinatio"));
                     destination_station_mg.addStringAttribute("line", mg.getStringAttribute("line"));
-                    destination_station_mg.addStringAttribute("stroke", mg.getStringAttribute("stroke"));
+                    destination_station_mg.addStringAttribute("color", mg.getStringAttribute("color"));
 
                     //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
                     if(!lines.get(mg.getStringAttribute("line")).getGeometries().contains(origin_station_mg))

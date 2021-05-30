@@ -1,4 +1,4 @@
-package ratp.lines;
+package ratp.directory;
 
 import global.Constants;
 
@@ -11,18 +11,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Schedules {
+public class SchedulesDirectory {
 
-    private static Schedules INSTANCE = new Schedules();
+    private static SchedulesDirectory INSTANCE = new SchedulesDirectory();
 
-    public static Schedules getInstance()
+    public static SchedulesDirectory getInstance()
     {   
         return INSTANCE;
     }
 
     public static void initialize()
     {
-        Schedules s = getInstance();
+        SchedulesDirectory s = getInstance();
     }
     
     List<Schedule> allSchedules;
@@ -70,7 +70,7 @@ public class Schedules {
     int i =0;
     }
 
-    private Schedules()
+    private SchedulesDirectory()
     {
         allSchedules = scheduleReader(Constants.SCHEDULES_FILENAME);
         //The dirty way... Initialize this before schedules
@@ -84,7 +84,7 @@ public class Schedules {
         int order;
         //TODO: Replace station by station_legacyname -- please use station for now
         String station_legacyname;
-        String station;
+        String station_name;
         String line;
         int branch;
         int split;
@@ -93,7 +93,7 @@ public class Schedules {
             this.entry_id = entry_id;
             this.order = order;
             this.station_legacyname = station_legacyname;
-            this.station = station;
+            this.station_name = station;
             this.line = line;
             this.branch = branch;
             this.split = split;
@@ -142,7 +142,7 @@ public class Schedules {
 
     /*On Debug*/
     public static void main(String[] args) throws IOException {
-        Schedules s = Schedules.getInstance();
+        SchedulesDirectory s = SchedulesDirectory.getInstance();
     }
 
 

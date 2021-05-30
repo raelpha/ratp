@@ -12,4 +12,5 @@ public class Constants {
 
 
     public static final String SCHEDULES_FILENAME = "data/schedule/schedule.csv";
+    public static final String STATIONS_FILENAME = "data/stations/stations.csv";
 }
