@@ -4,8 +4,6 @@ import ratp.directory.SchedulesDirectory;
 import ratp.directory.StationsDirectory;
 import sim.display.Console;
 
-import java.io.IOException;
-
 public class RatpMain {
 
 

@@ -1,7 +1,6 @@
 package lines;
 
 import global.Constants;
-import ratp.directory.LinesDirectory;
 import sim.field.geo.GeomVectorField;
 import sim.portrayal.DrawInfo2D;
 import sim.portrayal.geo.GeomPortrayal;
