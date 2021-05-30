@@ -106,7 +106,6 @@ public class SchedulesDirectory {
             this.origin = StationsDirectory.getInstance().stations.get(stationOriginName);
             this.destination = StationsDirectory.getInstance().stations.get(stationDestinationName);
             this.serviceName = serviceName;
-            //this.station_name = station_name;
         }
     }
 

@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class StationsDirectory {
 
-    /**WARNING: SCHEDULES DIRECTIORY MUST BE INITIALIZED*/
+    /**WARNING: SCHEDULES DIRECTIORY MUST BE INITIALIZED (DATA LOADED)*/
 
     private static StationsDirectory INSTANCE = new StationsDirectory();
 
