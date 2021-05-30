@@ -1,5 +1,7 @@
 package station;
 
+import sim.util.geo.MasonGeometry;
+
 public class Station {
     public int id;
     public String name;
@@ -8,4 +10,7 @@ public class Station {
         this.id = id;
         this.name = name;
     }
+
+    MasonGeometry mg = new MasonGeometry();
+
 }

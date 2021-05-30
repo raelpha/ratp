@@ -1,6 +1,8 @@
 package ratp;
 
+import com.sun.org.apache.bcel.internal.classfile.ConstantString;
 import global.Constants;
+import ratp.directory.LinesDirectory;
 import sim.display.Controller;
 import sim.display.Display2D;
 import sim.display.GUIState;
@@ -30,9 +32,9 @@ public class RatpStateWithUI extends GUIState {
         super(state);
 
         //Initialize a GeomVectorFieldPortrayal for each (hardcoded) line
-        for (String s : Constants.listOfLinesNames) {
+        /*for (String s : Constants.listOfLinesNames) {
             linesPortrayals.put(s, new GeomVectorFieldPortrayal());
-        }
+        }*/
     }
 
     /**
@@ -47,7 +49,7 @@ public class RatpStateWithUI extends GUIState {
         display = new Display2D(Constants.DISPLAY_SIZE, Constants.DISPLAY_SIZE, this);
 
         for (String s : Constants.listOfLinesNames) {
-            display.attach(linesPortrayals.get(s), "Ligne " + s);
+            display.attach(LinesDirectory.getInstance().lines.get(s).geomVectorFieldPortrayal, "Ligne " + s);
         }
 
         displayFrame = display.createFrame();
@@ -88,27 +90,8 @@ public class RatpStateWithUI extends GUIState {
     private void setupPortrayals() {
         RatpNetwork ratpNetwork = (RatpNetwork) state;
 
-        for (Map.Entry<String, GeomVectorFieldPortrayal> l : this.linesPortrayals.entrySet()) {
-            l.getValue().setField(ratpNetwork.linesGeomVectorField.get(l.getKey()));
-            l.getValue().setPortrayalForAll(new GeomPortrayal() {
-                                                /** Here, we redraw each LineString and Point according to its line color*/
-                                                public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
-                                                    MasonGeometry geometry = (MasonGeometry) object;
-                                                    paint = Color.decode(geometry.getStringAttribute("color"));
-
-                                                    //If the geometry is a station
-                                                    if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("station"))
-                                                        filled = true;
-
-                                                    //If the geometry is a section (line)
-                                                    if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("section"))
-                                                        filled = false;
-
-                                                    scale = 0.000003D;
-                                                    super.draw(object, graphics, info);
-                                                }
-                                            }
-            );
+        for(String lineName : Constants.listOfLinesNames){
+            LinesDirectory.getInstance().lines.get(lineName).setupPortrayal();
         }
 
         display.reset();
