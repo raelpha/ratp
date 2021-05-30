@@ -7,6 +7,7 @@ import sim.portrayal.DrawInfo2D;
 import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.util.geo.MasonGeometry;
+import station.Station;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -22,8 +23,7 @@ public class Line {
     Color lineColor;
     public GeomVectorField geomVectorField = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
     public GeomVectorFieldPortrayal geomVectorFieldPortrayal =  new GeomVectorFieldPortrayal();
-    public Map<Integer, Section> sections = new HashMap<>();
-
+    public Map<String, Station> stations = new HashMap<>();
 
     public void setupPortrayal() {
 

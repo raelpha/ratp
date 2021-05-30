@@ -93,9 +93,24 @@ public class LinesDirectory {
                     if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(origin_station_mg))
                         lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(origin_station_mg);
 
+                    //We add a reference (from StationsDirectory) to the map of stations in the line
+                    lines.get(mg.getStringAttribute("line")).stations.put(
+                            mg.getStringAttribute("origin"),
+                            StationsDirectory.getInstance().superStations.get(mg.getStringAttribute("origin")).stations.get(mg.getStringAttribute("origin"))
+                    );
+
+
                     //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
                     if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(destination_station_mg))
                         lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(destination_station_mg);
+
+
+                    //We add a reference (from StationsDirectory) to the map of stations in the line
+                    lines.get(mg.getStringAttribute("line")).stations.put(
+                            mg.getStringAttribute("destinatio"),
+                            StationsDirectory.getInstance().superStations.get(mg.getStringAttribute("destinatio")).stations.get(mg.getStringAttribute("destinatio"))
+                    );
+
 
                 }
             } catch (ParseException e) {

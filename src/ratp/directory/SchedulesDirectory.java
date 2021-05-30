@@ -101,10 +101,26 @@ public class SchedulesDirectory {
             this.line = line;
             this.branch = branch;
             this.split = split;
-            this.direction  = direction;
+            this.direction  = direction;/*
             this.station = StationsDirectory.getInstance().stations.get(station_name);
             this.origin = StationsDirectory.getInstance().stations.get(stationOriginName);
-            this.destination = StationsDirectory.getInstance().stations.get(stationDestinationName);
+            this.destination = StationsDirectory.getInstance().stations.get(stationDestinationName);*/
+
+            //Dirty trick here:
+            if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.line)){
+                StationsDirectory.getInstance().superStations.get(station_name).stations.put(this.line, new Station(this.line, station_name));
+            }
+            if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.line)){
+                StationsDirectory.getInstance().superStations.get(stationOriginName).stations.put(this.line, new Station(this.line, stationOriginName));
+            }
+            if(!StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.containsKey(this.line)) {
+                StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.put(this.line, new Station(this.line, stationDestinationName));
+            }
+
+
+            this.station = StationsDirectory.getInstance().superStations.get(station_name).stations.get(this.line);
+            this.origin = StationsDirectory.getInstance().superStations.get(stationOriginName).stations.get(this.line);
+            this.destination = StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.get(this.line);
             this.serviceName = serviceName;
         }
     }
@@ -138,7 +154,7 @@ public class SchedulesDirectory {
     }
 
     /*On Debug*/
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         SchedulesDirectory s = SchedulesDirectory.getInstance();
     }
 
