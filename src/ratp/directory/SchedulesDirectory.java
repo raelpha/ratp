@@ -111,6 +111,8 @@ public class SchedulesDirectory {
             if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.line)){
                 StationsDirectory.getInstance().superStations.get(station_name).stations.put(this.line, new Station(this.line, station_name));
             }
+            //LinesDirectory.getInstance().lines.get(line).stations.put(station_name, StationsDirectory.getInstance().getStation(line, station_name));
+
             LinesDirectory.getInstance().lines.get(line).stations.put(station_name, StationsDirectory.getInstance().getStation(line, station_name));
 
             if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.line)){
