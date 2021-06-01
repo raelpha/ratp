@@ -1,6 +1,6 @@
 ﻿entry_id;order;station_name;line;branch;split;direction;station_origin;station_destination;service
 0;1;La Défense;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
-1;2;Esplanade de La Défense ;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
+1;2;Esplanade de La Défense;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
 2;3;Pont de Neuilly;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
 3;4;Les Sablons;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
 4;5;Porte Maillot;1;0;0;0;La Défense;Château de Vincennes;La Défense -> Château de Vincennes
@@ -47,7 +47,7 @@
 45;21;Porte Maillot;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
 46;22;Les Sablons;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
 47;23;Pont de Neuilly;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
-48;24;Esplanade de La Défense ;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
+48;24;Esplanade de La Défense;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
 49;25;La Défense;1;0;0;1;Château de Vincennes;La Défense;Château de Vincennes -> La Défense
 50;1;Porte Dauphine;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
 51;2;Victor Hugo;2;0;0;0;Porte Dauphine;Nation;Porte Dauphine -> Nation
@@ -157,60 +157,60 @@
 155;2;Saint-Fargeau;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
 156;3;Pelleport;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
 157;4;Gambetta;3b;0;0;1;Porte des Lilas;Gambetta;Porte des Lilas -> Gambetta
-158;1;Porte de Clignancourt;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-159;2;Simplon;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-160;3;Marcadet - Poissonniers;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-161;4;Château Rouge;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-162;5;Barbès - Rochechouart;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-163;6;Gare du Nord;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-164;7;Gare de l'Est;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-165;8;Château d'Eau;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-166;9;Strasbourg - Saint-Denis;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-167;10;Réaumur - Sébastopol;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-168;11;Étienne Marcel;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-169;12;Les Halles;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-170;13;Châtelet;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-171;14;Cité;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-172;15;Saint-Michel;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-173;16;Odéon;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-174;17;Saint-Germain-des-Prés;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-175;18;Saint-Sulpice;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-176;19;Saint-Placide;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-177;20;Montparnasse - Bienvenüe;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-178;21;Vavin;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-179;22;Raspail;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-180;23;Denfert-Rochereau;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-181;24;Mouton-Duvernet;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-182;25;Alésia;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-183;26;Porte d'Orléans ;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-184;27;Mairie de Montrouge ;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge ;Porte de Clignancourt -> Mairie de Montrouge 
-185;1;Mairie de Montrouge ;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-186;2;Porte d'Orléans ;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-187;3;Alésia;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-188;4;Mouton-Duvernet;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-189;5;Denfert-Rochereau;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-190;6;Raspail;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-191;7;Vavin;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-192;8;Montparnasse - Bienvenüe;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-193;9;Saint-Placide;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-194;10;Saint-Sulpice;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-195;11;Saint-Germain-des-Prés;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-196;12;Odéon;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-197;13;Saint-Michel;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-198;14;Cité;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-199;15;Châtelet;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-200;16;Les Halles;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-201;17;Étienne Marcel;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-202;18;Réaumur - Sébastopol;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-203;19;Strasbourg - Saint-Denis;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-204;20;Château d'Eau;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-205;21;Gare de l'Est;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-206;22;Gare du Nord;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-207;23;Barbès - Rochechouart;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-208;24;Château Rouge;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-209;25;Marcadet - Poissonniers;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-210;26;Simplon;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
-211;27;Porte de Clignancourt;4;0;0;1;Mairie de Montrouge ;Porte de Clignancourt;Mairie de Montrouge  -> Porte de Clignancourt
+158;1;Porte de Clignancourt;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+159;2;Simplon;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+160;3;Marcadet - Poissonniers;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+161;4;Château Rouge;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+162;5;Barbès - Rochechouart;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+163;6;Gare du Nord;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+164;7;Gare de l'Est;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+165;8;Château d'Eau;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+166;9;Strasbourg - Saint-Denis;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+167;10;Réaumur - Sébastopol;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+168;11;Étienne Marcel;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+169;12;Les Halles;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+170;13;Châtelet;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+171;14;Cité;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+172;15;Saint-Michel;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+173;16;Odéon;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+174;17;Saint-Germain-des-Prés;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+175;18;Saint-Sulpice;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+176;19;Saint-Placide;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+177;20;Montparnasse - Bienvenüe;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+178;21;Vavin;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+179;22;Raspail;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+180;23;Denfert-Rochereau;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+181;24;Mouton-Duvernet;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+182;25;Alésia;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+183;26;Porte d'Orléans;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+184;27;Mairie de Montrouge;4;0;0;0;Porte de Clignancourt;Mairie de Montrouge;Porte de Clignancourt -> Mairie de Montrouge
+185;1;Mairie de Montrouge;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+186;2;Porte d'Orléans;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+187;3;Alésia;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+188;4;Mouton-Duvernet;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+189;5;Denfert-Rochereau;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+190;6;Raspail;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+191;7;Vavin;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+192;8;Montparnasse - Bienvenüe;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+193;9;Saint-Placide;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+194;10;Saint-Sulpice;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+195;11;Saint-Germain-des-Prés;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+196;12;Odéon;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+197;13;Saint-Michel;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+198;14;Cité;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+199;15;Châtelet;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+200;16;Les Halles;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+201;17;Étienne Marcel;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+202;18;Réaumur - Sébastopol;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+203;19;Strasbourg - Saint-Denis;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+204;20;Château d'Eau;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+205;21;Gare de l'Est;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+206;22;Gare du Nord;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+207;23;Barbès - Rochechouart;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+208;24;Château Rouge;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+209;25;Marcadet - Poissonniers;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+210;26;Simplon;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
+211;27;Porte de Clignancourt;4;0;0;1;Mairie de Montrouge;Porte de Clignancourt;Mairie de Montrouge -> Porte de Clignancourt
 212;1;Bobigny - Pablo Picasso;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
 213;2;Bobigny - Pantin - Raymond Queneau;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
 214;3;Église de Pantin;5;0;0;0;Bobigny - Pablo Picasso;Place d'Italie;Bobigny - Pablo Picasso -> Place d'Italie
@@ -675,187 +675,187 @@
 673;11;Rambuteau;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
 674;12;Hôtel de Ville;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
 675;13;Châtelet;11;0;0;1;Mairie des Lilas;Châtelet;Mairie des Lilas -> Châtelet
-676;0;Front Populaire ;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-677;1;Porte de la Chapelle;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-678;2;Marx Dormoy;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-679;3;Marcadet - Poissonniers;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-680;4;Jules Joffrin;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-681;5;Lamarck - Caulaincourt;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-682;6;Abbesses;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-683;7;Pigalle;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-684;8;Saint-Georges;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-685;9;Notre-Dame-de-Lorette;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-686;10;Trinité - d'Estienne d'Orves;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-687;11;Saint-Lazare;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-688;12;Madeleine;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-689;13;Concorde;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-690;14;Assemblée nationale;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-691;15;Solférino;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-692;16;Rue du Bac;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-693;17;Sèvres - Babylone;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-694;18;Rennes;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-695;19;Notre-Dame-des-Champs;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-696;20;Montparnasse - Bienvenüe;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-697;21;Falguière;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-698;22;Pasteur;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-699;23;Volontaires;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-700;24;Vaugirard;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-701;25;Convention;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-702;26;Porte de Versailles;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-703;27;Corentin Celton;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-704;28;Mairie d'Issy;12;0;0;0;Front Populaire ;Mairie d'Issy;Front Populaire  -> Mairie d'Issy
-705;1;Mairie d'Issy;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-706;2;Corentin Celton;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-707;3;Porte de Versailles;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-708;4;Convention;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-709;5;Vaugirard;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-710;6;Volontaires;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-711;7;Pasteur;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-712;8;Falguière;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-713;9;Montparnasse - Bienvenüe;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-714;10;Notre-Dame-des-Champs;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-715;11;Rennes;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-716;12;Sèvres - Babylone;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-717;13;Rue du Bac;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-718;14;Solférino;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-719;15;Assemblée nationale;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-720;16;Concorde;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-721;17;Madeleine;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-722;18;Saint-Lazare;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-723;19;Trinité - d'Estienne d'Orves;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-724;20;Notre-Dame-de-Lorette;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-725;21;Saint-Georges;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-726;22;Pigalle;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-727;23;Abbesses;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-728;24;Lamarck - Caulaincourt;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-729;25;Jules Joffrin;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-730;26;Marcadet - Poissonniers;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-731;27;Marx Dormoy;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-732;28;Porte de la Chapelle;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-733;29;Front Populaire ;12;0;0;1;Mairie d'Issy;Front Populaire ;Mairie d'Issy -> Front Populaire 
-734;1;Châtillon - Montrouge;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-735;2;Malakoff - Rue Étienne-Dolet;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-736;3;Malakoff - Plateau de Vanves;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-737;4;Porte de Vanves;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-738;5;Plaisance;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-739;6;Pernety;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-740;7;Gaîté;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-741;8;Montparnasse - Bienvenüe;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-742;9;Duroc;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-743;10;Saint-François-Xavier;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-744;11;Varenne;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-745;12;Invalides;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-746;13;Champs-Élysées - Clemenceau;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-747;14;Miromesnil;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-748;15;Saint-Lazare;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-749;16;Liège;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-750;17;Place de Clichy;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-751;18;La Fourche;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-752;19;Guy Môquet;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-753;20;Porte de Saint-Ouen;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-754;21;Garibaldi;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-755;22;Mairie de Saint-Ouen;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-756;23;Carrefour Pleyel;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-757;24;Saint-Denis - Porte de Paris;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-758;25;Basilique de Saint-Denis;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-759;26;Saint-Denis - Université ;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université ;Châtillon - Montrouge -> Saint-Denis - Université 
-760;1;Saint-Denis - Université ;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-761;2;Basilique de Saint-Denis;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-762;3;Saint-Denis - Porte de Paris;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-763;4;Carrefour Pleyel;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-764;5;Mairie de Saint-Ouen;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-765;6;Garibaldi;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-766;7;Porte de Saint-Ouen;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-767;8;Guy Môquet;13;0;1;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-768;9;La Fourche;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-769;10;Place de Clichy;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-770;11;Liège;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-771;12;Saint-Lazare;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-772;13;Miromesnil;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-773;14;Champs-Élysées - Clemenceau;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-774;15;Invalides;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-775;16;Varenne;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-776;17;Saint-François-Xavier;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-777;18;Duroc;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-778;19;Montparnasse - Bienvenüe;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-779;20;Gaîté;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-780;21;Pernety;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-781;22;Plaisance;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-782;23;Porte de Vanves;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-783;24;Malakoff - Plateau de Vanves;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-784;25;Malakoff - Rue Étienne-Dolet;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-785;26;Châtillon - Montrouge;13;0;0;1;Saint-Denis - Université ;Châtillon - Montrouge;Saint-Denis - Université  -> Châtillon - Montrouge
-786;1;Châtillon - Montrouge;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-787;2;Malakoff - Rue Étienne-Dolet;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-788;3;Malakoff - Plateau de Vanves;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-789;4;Porte de Vanves;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-790;5;Plaisance;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-791;6;Pernety;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-792;7;Gaîté;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-793;8;Montparnasse - Bienvenüe;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-794;9;Duroc;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-795;10;Saint-François-Xavier;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-796;11;Varenne;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-797;12;Invalides;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-798;13;Champs-Élysées - Clemenceau;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-799;14;Miromesnil;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-800;15;Saint-Lazare;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-801;16;Liège;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-802;17;Place de Clichy;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-803;18;La Fourche;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-804;19;Brochant;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-805;20;Porte de Clichy;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-806;21;Mairie de Clichy;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-807;22;Gabriel Péri;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-808;23;Les Agnettes ;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-809;24;Asnières - Gennevilliers - Les Courtilles ;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles 
-810;1;Asnières - Gennevilliers - Les Courtilles ;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-811;2;Les Agnettes ;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-812;3;Gabriel Péri;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-813;4;Mairie de Clichy;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-814;5;Porte de Clichy;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-815;6;Brochant;13;0;2;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-816;7;La Fourche;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-817;8;Place de Clichy;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-818;9;Liège;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-819;10;Saint-Lazare;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-820;11;Miromesnil;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-821;12;Champs-Élysées - Clemenceau;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-822;13;Invalides;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-823;14;Varenne;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-824;15;Saint-François-Xavier;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-825;16;Duroc;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-826;17;Montparnasse - Bienvenüe;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-827;18;Gaîté;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-828;19;Pernety;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-829;20;Plaisance;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-830;21;Porte de Vanves;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-831;22;Malakoff - Plateau de Vanves;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-832;23;Malakoff - Rue Étienne-Dolet;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-833;24;Châtillon - Montrouge;13;0;0;1;Asnières - Gennevilliers - Les Courtilles ;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles  -> Châtillon - Montrouge
-834;1;Mairie de Saint-Ouen;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-835;2;Saint-Ouen ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-836;3;Porte de Clichy;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-837;4;Pont Cardinet ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-838;5;Saint-Lazare;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-839;6;Madeleine ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-840;7;Pyramides ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-841;8;Châtelet ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-842;9;Gare de Lyon ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-843;10;Bercy ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-844;11;Cour Saint-Émilion ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-845;12;Bibliothèque François-Mitterrand ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-846;13;Olympiades ;14;0;0;0;Mairie de Saint-Ouen;Olympiades ;Mairie de Saint-Ouen -> Olympiades 
-847;1;Olympiades ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-848;2;Bibliothèque François-Mitterrand ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-849;3;Cour Saint-Émilion ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-850;4;Bercy ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-851;5;Gare de Lyon ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-852;6;Châtelet ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-853;7;Pyramides ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-854;8;Madeleine ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-855;9;Saint-Lazare;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-856;10;Pont Cardinet ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-857;11;Porte de Clichy;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-858;12;Saint-Ouen ;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
-859;13;Mairie de Saint-Ouen;14;0;0;1;Olympiades ;Mairie de Saint-Ouen;Olympiades  -> Mairie de Saint-Ouen
+676;0;Front Populaire;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+677;1;Porte de la Chapelle;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+678;2;Marx Dormoy;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+679;3;Marcadet - Poissonniers;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+680;4;Jules Joffrin;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+681;5;Lamarck - Caulaincourt;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+682;6;Abbesses;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+683;7;Pigalle;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+684;8;Saint-Georges;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+685;9;Notre-Dame-de-Lorette;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+686;10;Trinité - d'Estienne d'Orves;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+687;11;Saint-Lazare;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+688;12;Madeleine;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+689;13;Concorde;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+690;14;Assemblée nationale;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+691;15;Solférino;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+692;16;Rue du Bac;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+693;17;Sèvres - Babylone;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+694;18;Rennes;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+695;19;Notre-Dame-des-Champs;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+696;20;Montparnasse - Bienvenüe;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+697;21;Falguière;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+698;22;Pasteur;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+699;23;Volontaires;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+700;24;Vaugirard;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+701;25;Convention;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+702;26;Porte de Versailles;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+703;27;Corentin Celton;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+704;28;Mairie d'Issy;12;0;0;0;Front Populaire;Mairie d'Issy;Front Populaire -> Mairie d'Issy
+705;1;Mairie d'Issy;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+706;2;Corentin Celton;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+707;3;Porte de Versailles;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+708;4;Convention;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+709;5;Vaugirard;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+710;6;Volontaires;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+711;7;Pasteur;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+712;8;Falguière;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+713;9;Montparnasse - Bienvenüe;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+714;10;Notre-Dame-des-Champs;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+715;11;Rennes;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+716;12;Sèvres - Babylone;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+717;13;Rue du Bac;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+718;14;Solférino;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+719;15;Assemblée nationale;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+720;16;Concorde;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+721;17;Madeleine;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+722;18;Saint-Lazare;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+723;19;Trinité - d'Estienne d'Orves;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+724;20;Notre-Dame-de-Lorette;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+725;21;Saint-Georges;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+726;22;Pigalle;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+727;23;Abbesses;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+728;24;Lamarck - Caulaincourt;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+729;25;Jules Joffrin;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+730;26;Marcadet - Poissonniers;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+731;27;Marx Dormoy;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+732;28;Porte de la Chapelle;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+733;29;Front Populaire;12;0;0;1;Mairie d'Issy;Front Populaire;Mairie d'Issy -> Front Populaire
+734;1;Châtillon - Montrouge;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+735;2;Malakoff - Rue Étienne-Dolet;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+736;3;Malakoff - Plateau de Vanves;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+737;4;Porte de Vanves;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+738;5;Plaisance;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+739;6;Pernety;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+740;7;Gaîté;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+741;8;Montparnasse - Bienvenüe;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+742;9;Duroc;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+743;10;Saint-François-Xavier;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+744;11;Varenne;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+745;12;Invalides;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+746;13;Champs-Élysées - Clemenceau;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+747;14;Miromesnil;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+748;15;Saint-Lazare;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+749;16;Liège;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+750;17;Place de Clichy;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+751;18;La Fourche;13;0;0;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+752;19;Guy Môquet;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+753;20;Porte de Saint-Ouen;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+754;21;Garibaldi;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+755;22;Mairie de Saint-Ouen;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+756;23;Carrefour Pleyel;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+757;24;Saint-Denis - Porte de Paris;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+758;25;Basilique de Saint-Denis;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+759;26;Saint-Denis - Université;13;0;1;0;Châtillon - Montrouge;Saint-Denis - Université;Châtillon - Montrouge -> Saint-Denis - Université
+760;1;Saint-Denis - Université;13;0;1;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+761;2;Basilique de Saint-Denis;13;0;1;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+762;3;Saint-Denis - Porte de Paris;13;0;1;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+763;4;Carrefour Pleyel;13;0;1;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+764;5;Mairie de Saint-Ouen;13;0;1;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+765;6;Garibaldi;13;0;1;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+766;7;Porte de Saint-Ouen;13;0;1;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+767;8;Guy Môquet;13;0;1;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+768;9;La Fourche;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+769;10;Place de Clichy;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+770;11;Liège;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+771;12;Saint-Lazare;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+772;13;Miromesnil;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+773;14;Champs-Élysées - Clemenceau;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+774;15;Invalides;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+775;16;Varenne;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+776;17;Saint-François-Xavier;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+777;18;Duroc;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+778;19;Montparnasse - Bienvenüe;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+779;20;Gaîté;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+780;21;Pernety;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+781;22;Plaisance;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+782;23;Porte de Vanves;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+783;24;Malakoff - Plateau de Vanves;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+784;25;Malakoff - Rue Étienne-Dolet;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+785;26;Châtillon - Montrouge;13;0;0;1;Saint-Denis - Université;Châtillon - Montrouge;Saint-Denis - Université -> Châtillon - Montrouge
+786;1;Châtillon - Montrouge;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+787;2;Malakoff - Rue Étienne-Dolet;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+788;3;Malakoff - Plateau de Vanves;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+789;4;Porte de Vanves;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+790;5;Plaisance;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+791;6;Pernety;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+792;7;Gaîté;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+793;8;Montparnasse - Bienvenüe;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+794;9;Duroc;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+795;10;Saint-François-Xavier;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+796;11;Varenne;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+797;12;Invalides;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+798;13;Champs-Élysées - Clemenceau;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+799;14;Miromesnil;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+800;15;Saint-Lazare;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+801;16;Liège;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+802;17;Place de Clichy;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+803;18;La Fourche;13;0;0;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+804;19;Brochant;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+805;20;Porte de Clichy;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+806;21;Mairie de Clichy;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+807;22;Gabriel Péri;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+808;23;Les Agnettes;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+809;24;Asnières - Gennevilliers - Les Courtilles;13;0;2;0;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles
+810;1;Asnières - Gennevilliers - Les Courtilles;13;0;2;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+811;2;Les Agnettes;13;0;2;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+812;3;Gabriel Péri;13;0;2;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+813;4;Mairie de Clichy;13;0;2;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+814;5;Porte de Clichy;13;0;2;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+815;6;Brochant;13;0;2;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+816;7;La Fourche;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+817;8;Place de Clichy;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+818;9;Liège;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+819;10;Saint-Lazare;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+820;11;Miromesnil;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+821;12;Champs-Élysées - Clemenceau;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+822;13;Invalides;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+823;14;Varenne;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+824;15;Saint-François-Xavier;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+825;16;Duroc;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+826;17;Montparnasse - Bienvenüe;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+827;18;Gaîté;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+828;19;Pernety;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+829;20;Plaisance;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+830;21;Porte de Vanves;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+831;22;Malakoff - Plateau de Vanves;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+832;23;Malakoff - Rue Étienne-Dolet;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+833;24;Châtillon - Montrouge;13;0;0;1;Asnières - Gennevilliers - Les Courtilles;Châtillon - Montrouge;Asnières - Gennevilliers - Les Courtilles -> Châtillon - Montrouge
+834;1;Mairie de Saint-Ouen;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+835;2;Saint-Ouen;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+836;3;Porte de Clichy;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+837;4;Pont Cardinet;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+838;5;Saint-Lazare;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+839;6;Madeleine;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+840;7;Pyramides;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+841;8;Châtelet;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+842;9;Gare de Lyon;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+843;10;Bercy;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+844;11;Cour Saint-Émilion;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+845;12;Bibliothèque François-Mitterrand;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+846;13;Olympiades;14;0;0;0;Mairie de Saint-Ouen;Olympiades;Mairie de Saint-Ouen -> Olympiades
+847;1;Olympiades;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+848;2;Bibliothèque François-Mitterrand;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+849;3;Cour Saint-Émilion;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+850;4;Bercy;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+851;5;Gare de Lyon;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+852;6;Châtelet;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+853;7;Pyramides;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+854;8;Madeleine;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+855;9;Saint-Lazare;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+856;10;Pont Cardinet;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+857;11;Porte de Clichy;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+858;12;Saint-Ouen;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen
+859;13;Mairie de Saint-Ouen;14;0;0;1;Olympiades;Mairie de Saint-Ouen;Olympiades -> Mairie de Saint-Ouen

@@ -1,10 +1,16 @@
 package ratp.directory;
 
+import com.vividsolutions.jts.geom.LineString;
+import com.vividsolutions.jts.geom.Point;
+import com.vividsolutions.jts.io.ParseException;
+import com.vividsolutions.jts.io.WKTReader;
 import global.Constants;
 import lines.Line;
+import sim.util.geo.MasonGeometry;
 import station.Station;
 import station.SuperStation;
 
+import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -112,6 +118,23 @@ public class StationsDirectory {
             if(schedule.destination == superStations.get(schedule.station.name).stations.get(schedule.lineNumber)
             || schedule.origin == superStations.get(schedule.station.name).stations.get(schedule.lineNumber)){
                 superStations.get(schedule.station.name).stations.get(schedule.lineNumber).terminus = true;
+            }
+        }
+    }
+
+    public void affectPointsToStations(){
+        WKTReader rdr = new WKTReader();
+        for(String lineNumber : Constants.listOfLinesNames){
+            for (Object o : LinesDirectory.getInstance().lines.get(lineNumber).geomVectorField.getGeometries()) {
+                MasonGeometry mg = (MasonGeometry) o;
+                //Dangerous...
+                if(mg.getStringAttribute("type").equals("station")){
+                    //We affect a refference to the station (object)
+                    Station station = StationsDirectory.getInstance().getStation(mg.getStringAttribute("line"),mg.getStringAttribute("name"));
+                    mg.addAttribute("station", station);
+                    //We put the location of the station in the station (object)
+                    station.location = mg.getGeometry().getCentroid();
+                }
             }
         }
     }

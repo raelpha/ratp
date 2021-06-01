@@ -1,5 +1,6 @@
 package station;
 
+import com.vividsolutions.jts.geom.Point;
 import lines.Line;
 import sim.util.geo.MasonGeometry;
 
@@ -12,7 +13,7 @@ public class Station {
     public Boolean terminus = false;
     public Color color = new Color(255,255,255);
     public Color legacyColor = new Color(255,255,255);
-
+    public Point location;
     //Deprecated
     /*
     public Station(String lineId, String name) {

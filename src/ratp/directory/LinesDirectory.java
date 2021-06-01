@@ -55,9 +55,10 @@ public class LinesDirectory {
         lines.get(lineId).stations.put(stationName, station);
     }
 
+    private GeomVectorField allLinesReadGVF = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
+
     public void loadLines(Map<String, Line> lines){
 
-        GeomVectorField allLines = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
 
         Bag attributes = new Bag();
         attributes.addAll(Constants.LINE_DEFAULTATTRIBUTES);
@@ -66,7 +67,7 @@ public class LinesDirectory {
                     Constants.LINES_FILESNAMES+".shp").getCanonicalPath()).toURI();
             URI absolute_db = new File(new File(
                     Constants.LINES_FILESNAMES+".dbf").getCanonicalPath()).toURI();
-            ShapeFileImporter.read(absolute_shp.toString(), absolute_db.toString(), allLines, attributes);
+            ShapeFileImporter.read(absolute_shp.toString(), absolute_db.toString(), allLinesReadGVF, attributes);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -74,7 +75,7 @@ public class LinesDirectory {
         //Probably not the best way of doing it...
         WKTReader rdr = new WKTReader();
 
-        for (Object o : allLines.getGeometries()) {
+        for (Object o : allLinesReadGVF.getGeometries()) {
             MasonGeometry mg = (MasonGeometry) o;
 
             //Adding lines
@@ -96,7 +97,6 @@ public class LinesDirectory {
 
                     origin_station_mg.addAttribute("station", StationsDirectory.getInstance().getStation(mg.getStringAttribute("line"), mg.getStringAttribute("origin")));
 
-
                     MasonGeometry destination_station_mg = new MasonGeometry(destination_station_point);
                     destination_station_mg.addStringAttribute("type", "station");
                     destination_station_mg.addStringAttribute("name", mg.getStringAttribute("destinatio"));
@@ -104,6 +104,7 @@ public class LinesDirectory {
                     destination_station_mg.addStringAttribute("color", mg.getStringAttribute("color"));
 
                     destination_station_mg.addAttribute("station", StationsDirectory.getInstance().getStation(mg.getStringAttribute("line"), mg.getStringAttribute("destinatio")));
+
 
                     //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
                     if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(origin_station_mg)){
@@ -139,6 +140,10 @@ public class LinesDirectory {
             lines.get(lineNumber).geomVectorField.setMBR(MBR);
         }
 
+    }
+
+    public GeomVectorField getAllLinesReadGVF(){
+        return allLinesReadGVF;
     }
 
     /*On Debug*/
