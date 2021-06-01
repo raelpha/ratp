@@ -19,7 +19,7 @@ public class Line {
     }
 
     String number;
-    Color lineColor;
+    public Color lineColor = Color.RED; // To spot errors
     public GeomVectorField geomVectorField = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
     public GeomVectorFieldPortrayal geomVectorFieldPortrayal =  new GeomVectorFieldPortrayal();
     public Map<String, Station> stations = new HashMap<>();
@@ -32,8 +32,9 @@ public class Line {
                                             /** Here, we redraw each LineString and Point according to its line color*/
                                             public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
                                                 MasonGeometry geometry = (MasonGeometry) object;
-                                                paint = Color.decode(geometry.getStringAttribute("color"));
+                                                paint = lineColor;
 
+                                                //TODO: The station should set its own portrayal
                                                 //If the geometry is a station
                                                 if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("station"))
                                                     filled = true;
