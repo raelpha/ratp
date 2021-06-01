@@ -18,7 +18,7 @@ public class Line {
         this.number = number;
     }
 
-    String number;
+    public String number;
     public Color lineColor = Color.RED; // To spot errors
     public GeomVectorField geomVectorField = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
     public GeomVectorFieldPortrayal geomVectorFieldPortrayal =  new GeomVectorFieldPortrayal();

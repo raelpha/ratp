@@ -1,6 +1,7 @@
 package ratp.directory;
 
 import global.Constants;
+import lines.Line;
 import station.Station;
 import station.SuperStation;
 
@@ -44,6 +45,14 @@ public class StationsDirectory {
         return superStations.get(stationName).getStation(lineId);
     }
 
+    public void instantiateStation(String lineNumber, String stationName){
+        superStations.get(stationName).stations.put(lineNumber, new Station(lineNumber, stationName));
+    }
+
+    public void instantiateStation(Line line, String stationName){
+        superStations.get(stationName).stations.put(line.number, new Station(line, stationName));
+    }
+
 
     public static List<SuperStation> allSuperStationsReader(String name){
         List<SuperStation> ss = new ArrayList<>();
@@ -85,12 +94,12 @@ public class StationsDirectory {
 
     public void addStationsToSuperStations(List<SchedulesDirectory.Schedule> allSchedules){
         for(SchedulesDirectory.Schedule schedule : allSchedules){
-            superStations.get(schedule.station.name).stations.put(schedule.line,schedule.station);
+            superStations.get(schedule.station.name).stations.put(schedule.lineNumber,schedule.station);
 
             //We label the station as a terminus if the superStation<-station equals the schedule destination or origin
-            if(schedule.destination == superStations.get(schedule.station.name).stations.get(schedule.line)
-            || schedule.origin == superStations.get(schedule.station.name).stations.get(schedule.line)){
-                superStations.get(schedule.station.name).stations.get(schedule.line).terminus = true;
+            if(schedule.destination == superStations.get(schedule.station.name).stations.get(schedule.lineNumber)
+            || schedule.origin == superStations.get(schedule.station.name).stations.get(schedule.lineNumber)){
+                superStations.get(schedule.station.name).stations.get(schedule.lineNumber).terminus = true;
             }
         }
     }
