@@ -45,13 +45,17 @@ public class StationsDirectory {
         return superStations.get(stationName).getStation(lineId);
     }
 
+    //Deprecated
+    /*
     public void instantiateStation(String lineNumber, String stationName){
         superStations.get(stationName).stations.put(lineNumber, new Station(lineNumber, stationName));
     }
+    */
 
     public void instantiateStation(Line line, String stationName){
         superStations.get(stationName).stations.put(line.number, new Station(line, stationName));
     }
+
 
 
     public static List<SuperStation> allSuperStationsReader(String name){
@@ -69,14 +73,6 @@ public class StationsDirectory {
         }
 
         return ss;
-    }
-
-    public static Map<String, Station> computeStationsMap(List<Station> stations){
-        Map<String, Station> s = new HashMap<>();
-        for(Station station : stations){
-            s.put(station.name+" "+station.name, station);
-        }
-        return s;
     }
 
     Map<String, SuperStation> fillSuperStationsMap(List<SuperStation> allStations){

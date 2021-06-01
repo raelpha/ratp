@@ -106,13 +106,13 @@ public class LinesDirectory {
                     //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
                     if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(origin_station_mg)){
                         lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(origin_station_mg);
-                        lines.get(mg.getStringAttribute("line")).lineColor =  Color.decode(origin_station_mg.getStringAttribute("color"));
+                        lines.get(mg.getStringAttribute("line")).color =  Color.decode(origin_station_mg.getStringAttribute("color"));
                     }
 
                     //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
                     if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(destination_station_mg)){
                         lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(destination_station_mg);
-                        lines.get(mg.getStringAttribute("line")).lineColor =  Color.decode(destination_station_mg.getStringAttribute("color"));
+                        lines.get(mg.getStringAttribute("line")).color =  Color.decode(destination_station_mg.getStringAttribute("color"));
                     }
 
                 }
