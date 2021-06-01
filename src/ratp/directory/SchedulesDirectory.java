@@ -1,6 +1,7 @@
 package ratp.directory;
 
 import global.Constants;
+import lines.Line;
 import station.Station;
 
 import java.nio.file.Files;
@@ -91,12 +92,15 @@ public class SchedulesDirectory {
         Station destination;
         int direction;
         String serviceName;
+        Line line;
 
         StationsDirectory s = StationsDirectory.getInstance();
         public Schedule(int entry_id, int order, String station_name, String lineNumber, int branch, int split, int direction, String stationOriginName, String stationDestinationName, String serviceName) {
             this.entry_id = entry_id;
             this.order = order;
             this.lineNumber = lineNumber;
+            //Temporary ?
+            this.line = LinesDirectory.getInstance().lines.get(lineNumber);
             this.branch = branch;
             this.split = split;
             this.direction  = direction;
@@ -104,15 +108,15 @@ public class SchedulesDirectory {
             //Dirty trick here:
             if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.lineNumber)){
                 //StationsDirectory.getInstance().instantiateStation(this.line, station_name);
-                StationsDirectory.getInstance().instantiateStation(this.lineNumber, station_name);
+                StationsDirectory.getInstance().instantiateStation(line, station_name);
             }
             if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.lineNumber)){
                 //StationsDirectory.getInstance().instantiateStation(this.line, stationOriginName);
-                StationsDirectory.getInstance().instantiateStation(this.lineNumber, stationOriginName);
+                StationsDirectory.getInstance().instantiateStation(line, stationOriginName);
             }
             if(!StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.containsKey(this.lineNumber)) {
                 //StationsDirectory.getInstance().instantiateStation(this.line, stationDestinationName);
-                StationsDirectory.getInstance().instantiateStation(this.lineNumber, stationDestinationName);
+                StationsDirectory.getInstance().instantiateStation(line, stationDestinationName);
             }
 
             LinesDirectory.getInstance().lines.get(lineNumber).stations.put(station_name, StationsDirectory.getInstance().getStation(lineNumber, station_name));
