@@ -1,12 +1,13 @@
 package ratp;
 
-import com.sun.org.apache.bcel.internal.classfile.ConstantString;
+//import com.sun.org.apache.bcel.internal.classfile.ConstantString;
 import global.Constants;
 import ratp.directory.LinesDirectory;
 import sim.display.Controller;
 import sim.display.Display2D;
 import sim.display.GUIState;
 import sim.engine.SimState;
+import sim.field.geo.GeomVectorField;
 import sim.portrayal.DrawInfo2D;
 import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
@@ -51,7 +52,6 @@ public class RatpStateWithUI extends GUIState {
         for (String s : Constants.listOfLinesNames) {
             display.attach(LinesDirectory.getInstance().lines.get(s).geomVectorFieldPortrayal, "Ligne " + s);
         }
-
         displayFrame = display.createFrame();
         // make the display appears in the "displays" list in Console
         controller.registerFrame(displayFrame);
@@ -93,7 +93,6 @@ public class RatpStateWithUI extends GUIState {
         for(String lineName : Constants.listOfLinesNames){
             LinesDirectory.getInstance().lines.get(lineName).setupPortrayal();
         }
-
         display.reset();
         display.setBackdrop(Color.BLACK);
         display.repaint();
