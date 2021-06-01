@@ -13,6 +13,7 @@ import sim.util.Bag;
 import sim.util.geo.MasonGeometry;
 import station.Station;
 
+import java.awt.*;
 import java.io.File;
 import java.net.URI;
 import java.util.HashMap;
@@ -45,9 +46,11 @@ public class LinesDirectory {
     public Station getStation(String lineId, String stationName){
         return lines.get(lineId).stations.get(stationName);
     }
+
     public Boolean isStation(String lineId, String stationName){
         return lines.get(lineId).stations.containsKey(stationName);
     }
+
     public void putStation(String lineId, String stationName, Station station){
         lines.get(lineId).stations.put(stationName, station);
     }
@@ -103,12 +106,16 @@ public class LinesDirectory {
                     destination_station_mg.addAttribute("station", StationsDirectory.getInstance().getStation(mg.getStringAttribute("line"), mg.getStringAttribute("destinatio")));
 
                     //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
-                    if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(origin_station_mg))
+                    if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(origin_station_mg)){
                         lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(origin_station_mg);
+                        lines.get(mg.getStringAttribute("line")).color =  Color.decode(origin_station_mg.getStringAttribute("color"));
+                    }
 
                     //Quickfix, because the two ends of the sections are added, we do not add a station if it's been added before
-                    if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(destination_station_mg))
+                    if(!lines.get(mg.getStringAttribute("line")).geomVectorField.getGeometries().contains(destination_station_mg)){
                         lines.get(mg.getStringAttribute("line")).geomVectorField.addGeometry(destination_station_mg);
+                        lines.get(mg.getStringAttribute("line")).color =  Color.decode(destination_station_mg.getStringAttribute("color"));
+                    }
 
                 }
             } catch (ParseException e) {
@@ -137,6 +144,7 @@ public class LinesDirectory {
     /*On Debug*/
     public static void main(String[] args){
         LinesDirectory ld = LinesDirectory.getInstance();
+        int dshbjksd =0;
     }
 
 }
