@@ -41,8 +41,12 @@ public class Line {
                                                 //If the geometry is a section (line)
                                                 if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("section"))
                                                     filled = false;
-
                                                 scale = 0.000003D;
+
+                                                if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("rame")){
+                                                    scale = 0.00001D;
+                                                }
+
                                                 super.draw(object, graphics, info);
                                             }
                                         }
