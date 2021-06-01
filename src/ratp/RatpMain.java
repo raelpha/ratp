@@ -4,6 +4,9 @@ import ratp.directory.LinesDirectory;
 import ratp.directory.SchedulesDirectory;
 import ratp.directory.StationsDirectory;
 import sim.display.Console;
+import station.Station;
+
+import java.util.List;
 
 public class RatpMain {
 

@@ -1,10 +1,12 @@
 package ratp.directory;
 
 import global.Constants;
+import sim.engine.Schedule;
 import station.Station;
 import station.SuperStation;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -44,6 +46,31 @@ public class StationsDirectory {
         return superStations.get(stationName).getStation(lineId);
     }
 
+    public List<Station> getAdjacentStations(Station station){
+        List<Station> adjacentStations = new ArrayList<>();
+        //Get stations of the belonging superstation
+        for (Map.Entry<String, Station> entry : superStations.get(station.name).stations.entrySet()) {
+            if(entry.getValue()!=station)
+                adjacentStations.add(entry.getValue());
+        }
+        //Get one or two neighbours from line
+        for(Map.Entry<String, List<SchedulesDirectory.Schedule>> entry : SchedulesDirectory.getInstance().schedules.get(station.line).entrySet()){
+            //System.out.println(entry.getKey() + "/" + entry.getValue());
+            for(int i=0;i<entry.getValue().size();i++){
+                List<SchedulesDirectory.Schedule> listOfStations = entry.getValue();
+                if(listOfStations.get(i).station==station){
+                    //On se met sur la station étudiée
+                    //On ne regarde que la +1 car la -1 sera traitée dans l'autre direction
+                    //Corner cases: 7b
+                    if(i<entry.getValue().size()-1){
+                        if(!adjacentStations.contains(listOfStations.get(i+1).station))
+                            adjacentStations.add(listOfStations.get(i+1).station);
+                    }
+                }
+            }
+        }
+        return adjacentStations;
+    }
 
     public static List<SuperStation> allSuperStationsReader(String name){
         List<SuperStation> ss = new ArrayList<>();

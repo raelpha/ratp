@@ -25,11 +25,11 @@ public class SchedulesDirectory {
         SchedulesDirectory s = getInstance();
     }
     
-    List<Schedule> allSchedules;
+    private List<Schedule> allSchedules;
 
-    Map<String, List<Schedule>> schedulesByLine = new HashMap<>();
+    private Map<String, List<Schedule>> schedulesByLine = new HashMap<>();
 
-    Map<String, Map<String, List<Schedule>>> schedules = new HashMap<>();
+    public Map<String, Map<String, List<Schedule>>> schedules = new HashMap<>();
 
     private void computeSchedulesByLine(){
         //Initialize each list for each line
