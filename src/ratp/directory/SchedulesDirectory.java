@@ -107,15 +107,12 @@ public class SchedulesDirectory {
 
             //Dirty trick here:
             if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.lineNumber)){
-                //StationsDirectory.getInstance().instantiateStation(this.line, station_name);
                 StationsDirectory.getInstance().instantiateStation(line, station_name);
             }
             if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.lineNumber)){
-                //StationsDirectory.getInstance().instantiateStation(this.line, stationOriginName);
                 StationsDirectory.getInstance().instantiateStation(line, stationOriginName);
             }
             if(!StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.containsKey(this.lineNumber)) {
-                //StationsDirectory.getInstance().instantiateStation(this.line, stationDestinationName);
                 StationsDirectory.getInstance().instantiateStation(line, stationDestinationName);
             }
 
@@ -156,11 +153,9 @@ public class SchedulesDirectory {
         return schedules;
     }
 
-
     /*On Debug*/
     public static void main(String[] args){
         SchedulesDirectory s = SchedulesDirectory.getInstance();
     }
-
 
 }

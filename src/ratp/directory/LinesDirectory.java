@@ -46,9 +46,11 @@ public class LinesDirectory {
     public Station getStation(String lineId, String stationName){
         return lines.get(lineId).stations.get(stationName);
     }
+
     public Boolean isStation(String lineId, String stationName){
         return lines.get(lineId).stations.containsKey(stationName);
     }
+
     public void putStation(String lineId, String stationName, Station station){
         lines.get(lineId).stations.put(stationName, station);
     }

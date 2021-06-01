@@ -37,7 +37,6 @@ public class StationsDirectory {
     private StationsDirectory()
     {
         allSuperStations = allSuperStationsReader(Constants.STATIONS_FILENAME);
-        //stations = computeStationsMap(allSuperStations);
         superStations = fillSuperStationsMap(allSuperStations);
     }
 
@@ -45,18 +44,9 @@ public class StationsDirectory {
         return superStations.get(stationName).getStation(lineId);
     }
 
-    //Deprecated
-    /*
-    public void instantiateStation(String lineNumber, String stationName){
-        superStations.get(stationName).stations.put(lineNumber, new Station(lineNumber, stationName));
-    }
-    */
-
     public void instantiateStation(Line line, String stationName){
         superStations.get(stationName).stations.put(line.number, new Station(line, stationName));
     }
-
-
 
     public static List<SuperStation> allSuperStationsReader(String name){
         List<SuperStation> ss = new ArrayList<>();
