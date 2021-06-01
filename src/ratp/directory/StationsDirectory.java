@@ -1,17 +1,11 @@
 package ratp.directory;
 
-import com.vividsolutions.jts.geom.LineString;
-import com.vividsolutions.jts.geom.Point;
-import com.vividsolutions.jts.io.ParseException;
-import com.vividsolutions.jts.io.WKTReader;
 import global.Constants;
 import lines.Line;
 import sim.util.geo.MasonGeometry;
 import station.Station;
 import station.SuperStation;
 
-import java.awt.*;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -123,7 +117,6 @@ public class StationsDirectory {
     }
 
     public void affectPointsToStations(){
-        WKTReader rdr = new WKTReader();
         for(String lineNumber : Constants.listOfLinesNames){
             for (Object o : LinesDirectory.getInstance().lines.get(lineNumber).geomVectorField.getGeometries()) {
                 MasonGeometry mg = (MasonGeometry) o;
@@ -140,7 +133,7 @@ public class StationsDirectory {
     }
 
     /*On Debug*/
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         StationsDirectory s = StationsDirectory.getInstance();
     }
 

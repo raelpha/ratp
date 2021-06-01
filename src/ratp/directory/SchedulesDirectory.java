@@ -68,7 +68,6 @@ public class SchedulesDirectory {
                 schedules.get(line).get(s.serviceName).add(s);
             }
         }
-    int i =0;
     }
 
     private SchedulesDirectory()
@@ -94,7 +93,6 @@ public class SchedulesDirectory {
         String serviceName;
         Line line;
 
-        StationsDirectory s = StationsDirectory.getInstance();
         public Schedule(int entry_id, int order, String station_name, String lineNumber, int branch, int split, int direction, String stationOriginName, String stationDestinationName, String serviceName) {
             this.entry_id = entry_id;
             this.order = order;
