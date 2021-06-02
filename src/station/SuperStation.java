@@ -53,8 +53,9 @@ public class SuperStation {
         for (Station s: stations.values()) {
             MasonGeometry geom = new MasonGeometry(s.location);
             yard.addGeometry(geom);
-        }
+            MBR.expandToInclude(s.location.getX(), s.location.getY());
 
+        }
         MBR.expandBy(MBR.getHeight()*0.1, MBR.getWidth()*0.5*0.1);
 
         yard.setMBR(MBR);

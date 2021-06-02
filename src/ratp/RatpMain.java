@@ -17,7 +17,7 @@ public class RatpMain {
 
         // loop over all super station and create corresponding GVF
         for (SuperStation superStation : StationsDirectory.getInstance().getAllSuperStations()) {
-
+            superStation.buildFieldFromStation();
         }
     }
 
