@@ -1,8 +1,11 @@
 package ratp;
 
 import lines.Line;
+import rame.Rame;
 import ratp.directory.LinesDirectory;
+import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
+import sim.field.geo.GeomVectorField;
 
 import java.util.Map;
 
@@ -24,7 +27,22 @@ public class RatpNetwork extends SimState {
         }*/
         //FileImporter.shapeFileImporterByLine("lines/lines", linesGeomVectorField);
 
+    }
+    public Pair<String, GeomVectorField> getLine(String name){
+        GeomVectorField l = lines.get(name).geomVectorField;
+        Pair returnValue = new Pair <String, GeomVectorField>(name,l);
+        return returnValue;
+    }
 
+    private void addAgent(String lineName){
+        Rame r = new Rame(this, lineName);
+        getLine("1").getRight().addGeometry(r.getGeometry());
+        this.schedule.scheduleRepeating(r);
+    }
+
+    public void start() {
+        super.start();
+        addAgent("1");
     }
 
 }
