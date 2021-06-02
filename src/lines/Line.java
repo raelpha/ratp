@@ -37,8 +37,9 @@ public class Line {
 
                 //TODO: The station should set its own portrayal
                 //If the geometry is a station
-                if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("station"))
+                if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("station")) {
                     filled = true;
+                }
 
                 //If the geometry is a section (line)
                 if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("section"))

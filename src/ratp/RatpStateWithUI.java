@@ -93,7 +93,13 @@ public class RatpStateWithUI extends GUIState {
         RatpNetwork ratpNetwork = (RatpNetwork) state;
 
         for(String lineName : Constants.listOfLinesNames){
-            LinesDirectory.getInstance().lines.get(lineName).setupPortrayal();
+
+            for(Object obj : LinesDirectory.getInstance().lines.get(lineName).geomVectorField.getGeometries()) {
+                MasonGeometry geo = (MasonGeometry) obj;
+                if (geo.getStringAttribute("type").equals("station")) {
+
+                }
+            }
         }
 
         for(SuperStation ss : StationsDirectory.getInstance().getAllSuperStations()) {
