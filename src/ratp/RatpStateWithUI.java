@@ -3,6 +3,7 @@ package ratp;
 import com.sun.org.apache.bcel.internal.classfile.ConstantString;
 import global.Constants;
 import ratp.directory.LinesDirectory;
+import ratp.directory.StationsDirectory;
 import sim.display.Controller;
 import sim.display.Display2D;
 import sim.display.GUIState;
@@ -11,6 +12,7 @@ import sim.portrayal.DrawInfo2D;
 import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.util.geo.MasonGeometry;
+import station.SuperStation;
 
 import javax.swing.*;
 import java.awt.*;
@@ -92,6 +94,10 @@ public class RatpStateWithUI extends GUIState {
 
         for(String lineName : Constants.listOfLinesNames){
             LinesDirectory.getInstance().lines.get(lineName).setupPortrayal();
+        }
+
+        for(SuperStation ss : StationsDirectory.getInstance().getAllSuperStations()) {
+            ss.setupPortrayal();
         }
 
         display.reset();

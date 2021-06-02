@@ -4,6 +4,7 @@ import ratp.directory.LinesDirectory;
 import ratp.directory.SchedulesDirectory;
 import ratp.directory.StationsDirectory;
 import sim.display.Console;
+import station.SuperStation;
 
 public class RatpMain {
 
@@ -13,6 +14,11 @@ public class RatpMain {
         StationsDirectory.initialize();
         LinesDirectory.initialize();
         StationsDirectory.getInstance().affectPointsToStations();
+
+        // loop over all super station and create corresponding GVF
+        for (SuperStation superStation : StationsDirectory.getInstance().getAllSuperStations()) {
+
+        }
     }
 
     public static void main(String[] args){
