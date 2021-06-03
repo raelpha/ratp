@@ -1,6 +1,7 @@
 package ratp.directory;
 
 import global.Constants;
+import lines.Line;
 import station.Station;
 
 import java.nio.file.Files;
@@ -38,8 +39,8 @@ public class SchedulesDirectory {
         }
         //TODO: move this elsewhere
         for(Schedule s : allSchedules){
-            if(schedulesByLine.containsKey(s.line))
-                schedulesByLine.get(s.line).add(s);
+            if(schedulesByLine.containsKey(s.lineNumber))
+                schedulesByLine.get(s.lineNumber).add(s);
         }
     }
 
@@ -67,7 +68,6 @@ public class SchedulesDirectory {
                 schedules.get(line).get(s.serviceName).add(s);
             }
         }
-    int i =0;
     }
 
     private SchedulesDirectory()
@@ -83,7 +83,7 @@ public class SchedulesDirectory {
 
         int entry_id;
         int order;
-        String line;
+        String lineNumber;
         int branch;
         int split;
         Station station;
@@ -91,32 +91,34 @@ public class SchedulesDirectory {
         Station destination;
         int direction;
         String serviceName;
+        Line line;
 
-        StationsDirectory s = StationsDirectory.getInstance();
-        public Schedule(int entry_id, int order, String station_name, String line, int branch, int split, int direction, String stationOriginName, String stationDestinationName, String serviceName) {
+        public Schedule(int entry_id, int order, String station_name, String lineNumber, int branch, int split, int direction, String stationOriginName, String stationDestinationName, String serviceName) {
             this.entry_id = entry_id;
             this.order = order;
-            this.line = line;
+            this.lineNumber = lineNumber;
+            //Temporary ?
+            this.line = LinesDirectory.getInstance().lines.get(lineNumber);
             this.branch = branch;
             this.split = split;
             this.direction  = direction;
 
             //Dirty trick here:
-            if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.line)){
-                StationsDirectory.getInstance().superStations.get(station_name).stations.put(this.line, new Station(this.line, station_name));
+            if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.lineNumber)){
+                StationsDirectory.getInstance().instantiateStation(line, station_name);
             }
-            if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.line)){
-                StationsDirectory.getInstance().superStations.get(stationOriginName).stations.put(this.line, new Station(this.line, stationOriginName));
+            if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.lineNumber)){
+                StationsDirectory.getInstance().instantiateStation(line, stationOriginName);
             }
-            if(!StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.containsKey(this.line)) {
-                StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.put(this.line, new Station(this.line, stationDestinationName));
+            if(!StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.containsKey(this.lineNumber)) {
+                StationsDirectory.getInstance().instantiateStation(line, stationDestinationName);
             }
 
-            LinesDirectory.getInstance().lines.get(line).stations.put(station_name, StationsDirectory.getInstance().getStation(line, station_name));
+            LinesDirectory.getInstance().lines.get(lineNumber).stations.put(station_name, StationsDirectory.getInstance().getStation(lineNumber, station_name));
 
-            this.station = StationsDirectory.getInstance().superStations.get(station_name).stations.get(this.line);
-            this.origin = StationsDirectory.getInstance().superStations.get(stationOriginName).stations.get(this.line);
-            this.destination = StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.get(this.line);
+            this.station = StationsDirectory.getInstance().superStations.get(station_name).stations.get(this.lineNumber);
+            this.origin = StationsDirectory.getInstance().superStations.get(stationOriginName).stations.get(this.lineNumber);
+            this.destination = StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.get(this.lineNumber);
             this.serviceName = serviceName;
         }
     }
@@ -149,11 +151,9 @@ public class SchedulesDirectory {
         return schedules;
     }
 
-
     /*On Debug*/
     public static void main(String[] args){
         SchedulesDirectory s = SchedulesDirectory.getInstance();
     }
-
 
 }
