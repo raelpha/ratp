@@ -155,24 +155,6 @@ public class StationsDirectory {
         }
     }
 
-
-
-    /**
-     *     Help function used to compute centroid
-     * @param allPoints
-     * @return centroid
-     */
-    private Coordinate centroid(ArrayList<Point> allPoints)  {
-        double centroidX = 0, centroidY = 0;
-
-        for(Point point : allPoints) {
-            centroidX += point.getX();
-            centroidY += point.getY();
-        }
-        Coordinate centroid = new Coordinate(centroidX / allPoints.size(), centroidY / allPoints.size());
-        return centroid;
-    }
-
     /*
     This method is used to create all geometries used to display Gare rectangle (around stations)
      */
@@ -191,23 +173,27 @@ public class StationsDirectory {
                     Station valueSubStation = entrySubStation.getValue();
 
                     allPoints.add(valueSubStation.location);
+
                 }
-                // computing centroid from all point (all sub station location)
-                Point centroid = gf.createPoint(centroid(allPoints));
-                MasonGeometry pointSubStation = new MasonGeometry(centroid);
+                // build a geometry from all substation location
+                Geometry geom = gf.buildGeometry(allPoints);
+
+                // Point centroid = gf.createPoint(centroid(allPoints));
+                MasonGeometry pointSubStation = new MasonGeometry(geom.getCentroid());
 
                 // adding station name to the geometry
                 pointSubStation.addStringAttribute(Constants.STATION_NAME_STR, key);
-
                 geomVectorFieldGare.addGeometry(pointSubStation);
             }
         }
+        geomVectorFieldGare.setMBR(LinesDirectory.getInstance().lines.get("1").geomVectorField.getMBR());
     }
 
     /*
     This method is used to draw rectangle around each super station centroid
      */
     public void setUpGarePortrayal() {
+
         geomVectorFieldGarePortrayal.setField(geomVectorFieldGare);
 
         geomVectorFieldGarePortrayal.setPortrayalForAll(
@@ -219,7 +205,7 @@ public class StationsDirectory {
                                 scale = 0.000013D;
                                 super.draw(object, graphics, info);
                             }
-                }, 5.0, null, Color.WHITE, false)
+                }, 5.0, null, Color.WHITE, true)
         );
 
     }
