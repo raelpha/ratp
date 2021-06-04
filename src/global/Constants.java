@@ -16,4 +16,6 @@ public class Constants {
     public static final String SCHEDULES_FILENAME = "data/schedule/schedule.csv";
     public static final String STATIONS_FILENAME = "data/stations/stations.csv";
 
+    // argument of Gare geometries
+    public static final String STATION_NAME_STR = "stationName";
 }

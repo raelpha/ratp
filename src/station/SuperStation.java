@@ -7,6 +7,7 @@ public class SuperStation {
     public int id;
     public String name;
 
+
     public SuperStation(int id, String name) {
         this.id = id;
         this.name = name;
@@ -17,5 +18,7 @@ public class SuperStation {
     public Station getStation(String lineId){
         return stations.get(lineId);
     }
+
+
 
 }

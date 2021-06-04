@@ -1,11 +1,21 @@
 package ratp.directory;
 
+import com.vividsolutions.jts.geom.*;
+import com.vividsolutions.jts.geom.Point;
 import global.Constants;
 import lines.Line;
+import sim.field.geo.GeomVectorField;
+import sim.portrayal.DrawInfo2D;
+import sim.portrayal.geo.GeomPortrayal;
+import sim.portrayal.geo.GeomVectorFieldPortrayal;
+import sim.portrayal.simple.LabelledPortrayal2D;
+import sim.portrayal.simple.OvalPortrayal2D;
+import sim.portrayal.simple.RectanglePortrayal2D;
 import sim.util.geo.MasonGeometry;
 import station.Station;
 import station.SuperStation;
 
+import java.awt.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -30,10 +40,23 @@ public class StationsDirectory {
         StationsDirectory s = getInstance();
     }
 
+    public List<SuperStation> getAllSuperStations() {
+        return allSuperStations;
+    }
+
     private List<SuperStation> allSuperStations;
 
     Map<String, SuperStation> superStations;
 
+    //geomVectorField used to store all Gare (SuperStations with > 1 station) geometries
+    public GeomVectorField geomVectorFieldGare = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
+    // Field portrayal in which we're drawing
+    public GeomVectorFieldPortrayal geomVectorFieldGarePortrayal =  new GeomVectorFieldPortrayal();
+
+
+    /**
+     * Constructor: fill allSuperStations from external file then create associated map
+     */
     private StationsDirectory()
     {
         allSuperStations = allSuperStationsReader(Constants.STATIONS_FILENAME);
@@ -132,6 +155,77 @@ public class StationsDirectory {
         }
     }
 
+
+
+    /**
+     *     Help function used to compute centroid
+     * @param allPoints
+     * @return centroid
+     */
+    private Coordinate centroid(ArrayList<Point> allPoints)  {
+        double centroidX = 0, centroidY = 0;
+
+        for(Point point : allPoints) {
+            centroidX += point.getX();
+            centroidY += point.getY();
+        }
+        Coordinate centroid = new Coordinate(centroidX / allPoints.size(), centroidY / allPoints.size());
+        return centroid;
+    }
+
+    /*
+    This method is used to create all geometries used to display Gare rectangle (around stations)
+     */
+    public void createAllGeomVectorFieldForGares(){
+        GeometryFactory gf = new GeometryFactory();
+        // looping through each station of superStationsMap
+        for (Map.Entry<String, SuperStation> entry : StationsDirectory.getInstance().superStations.entrySet()) {
+            String key = entry.getKey();
+            SuperStation value = entry.getValue();
+            // we're looking only for Gare (SuperStations with more than one station)
+            if (value.stations.size() > 1) {
+                ArrayList<Point> allPoints = new ArrayList<Point>();
+                // looping through each station of the Gare
+                for (Map.Entry<String, Station> entrySubStation : value.stations.entrySet()) {
+                    String keySubStation = entrySubStation.getKey();
+                    Station valueSubStation = entrySubStation.getValue();
+                    // create Geometry from point
+                    allPoints.add(valueSubStation.location);
+                }
+                // computing centroid from all point (all sub station location)
+                Point centroid = gf.createPoint(centroid(allPoints));
+                MasonGeometry pointSubStation = new MasonGeometry(centroid);
+
+                // adding station name to the geometry
+                pointSubStation.addStringAttribute(Constants.STATION_NAME_STR, key);
+
+                geomVectorFieldGare.addGeometry(pointSubStation);
+            }
+        }
+    }
+
+    /*
+    This method is used to draw rectangle around each super station centroid
+     */
+    public void setUpGarePortrayal() {
+        System.out.println("Setup portrayal for gares...");
+        geomVectorFieldGarePortrayal.setField(geomVectorFieldGare);
+
+
+
+        geomVectorFieldGarePortrayal.setPortrayalForAll(
+                new LabelledPortrayal2D(
+                        new GeomPortrayal() {
+                            public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
+                                System.out.println("draw " + object);
+                                MasonGeometry geometry = (MasonGeometry) object;
+                                scale = 0.000013D;
+                                super.draw(object, graphics, info);
+                            }
+                }, 5.0, null, Color.WHITE, false)
+        );
+
+    }
     /*On Debug*/
     public static void main(String[] args) {
         StationsDirectory s = StationsDirectory.getInstance();

@@ -13,6 +13,9 @@ public class RatpMain {
         StationsDirectory.initialize();
         LinesDirectory.initialize();
         StationsDirectory.getInstance().affectPointsToStations();
+        //TODO appeler méthode construct geomvectorfield // équivalent affect point to stations
+        StationsDirectory.getInstance().createAllGeomVectorFieldForGares();
+        //TODO
     }
 
     public static void main(String[] args){
@@ -20,6 +23,7 @@ public class RatpMain {
         RatpNetwork model = new RatpNetwork(System.currentTimeMillis());
         RatpStateWithUI gui = new RatpStateWithUI(model);
 
+        System.out.println("Starting mason console");
         Console console = new Console(gui);
         console.setVisible(true);
         console.pressPlay();
