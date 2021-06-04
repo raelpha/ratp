@@ -189,7 +189,7 @@ public class StationsDirectory {
                 for (Map.Entry<String, Station> entrySubStation : value.stations.entrySet()) {
                     String keySubStation = entrySubStation.getKey();
                     Station valueSubStation = entrySubStation.getValue();
-                    // create Geometry from point
+
                     allPoints.add(valueSubStation.location);
                 }
                 // computing centroid from all point (all sub station location)
@@ -208,17 +208,14 @@ public class StationsDirectory {
     This method is used to draw rectangle around each super station centroid
      */
     public void setUpGarePortrayal() {
-        System.out.println("Setup portrayal for gares...");
         geomVectorFieldGarePortrayal.setField(geomVectorFieldGare);
-
-
 
         geomVectorFieldGarePortrayal.setPortrayalForAll(
                 new LabelledPortrayal2D(
                         new GeomPortrayal() {
                             public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
-                                System.out.println("draw " + object);
                                 MasonGeometry geometry = (MasonGeometry) object;
+                                filled = false;
                                 scale = 0.000013D;
                                 super.draw(object, graphics, info);
                             }
