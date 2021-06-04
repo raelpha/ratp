@@ -12,6 +12,7 @@ import sim.portrayal.simple.LabelledPortrayal2D;
 import sim.portrayal.simple.OvalPortrayal2D;
 import sim.portrayal.simple.RectanglePortrayal2D;
 import sim.util.geo.MasonGeometry;
+import station.Gare;
 import station.Station;
 import station.SuperStation;
 
@@ -200,7 +201,11 @@ public class StationsDirectory {
 
                 // adding station name to the geometry
                 rectangleAroundSubStation.addStringAttribute(Constants.STATION_NAME_STR, key);
-                geomVectorFieldGare.addGeometry(rectangleAroundSubStation);
+
+                // casting to gare
+                Gare gare = new Gare(rectangleAroundSubStation);
+
+                geomVectorFieldGare.addGeometry(gare);
             }
         }
         // setting MBR according to line MBR (here we take the first, but it can be anything)
@@ -218,13 +223,13 @@ public class StationsDirectory {
                 new LabelledPortrayal2D(
                         new GeomPortrayal() {
                             public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
-                                MasonGeometry geometry = (MasonGeometry) object;
                                 filled = false;
+                                paint = Color.WHITE;
                                 super.draw(object, graphics, info);
                             }
-                }, 5.0, null , Color.WHITE, true)  //TODO make the label correspond to station name
-                                                                                // TODO it can be maybe be done by extending MasonGeometry and putting a toString function in it
-                                                                                //TODO otherwise, we well have to print manually the name beside the centroid...
+                // "null" indicate that it will use toString of object
+                }, 8.0, null , Color.WHITE, true)
+
         );
 
     }
