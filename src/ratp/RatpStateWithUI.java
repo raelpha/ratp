@@ -54,7 +54,7 @@ public class RatpStateWithUI extends GUIState {
         for (String s : Constants.listOfLinesNames) {
             display.attach(LinesDirectory.getInstance().lines.get(s).geomVectorFieldPortrayal, "Ligne " + s);
         }
-        //TODO loop sur tous les superstations pour récuperer leur portrayal
+        display.attach(StationsDirectory.getInstance().geomVectorFieldGarePortrayal, "Super Station Info");
 
         displayFrame = display.createFrame();
         // make the display appears in the "displays" list in Console
