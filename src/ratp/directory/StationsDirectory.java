@@ -54,6 +54,7 @@ public class StationsDirectory {
     public GeomVectorFieldPortrayal geomVectorFieldGarePortrayal =  new GeomVectorFieldPortrayal();
 
 
+
     /**
      * Constructor: fill allSuperStations from external file then create associated map
      */
@@ -155,11 +156,23 @@ public class StationsDirectory {
         }
     }
 
+
+
     /*
     This method is used to create all geometries used to display Gare rectangle (around stations)
+     *
+     *  |----------------|
+     *  |  x             |
+     *  |            x   |   All x are points, and o is the centroid
+     *  |                |
+     *  |       o        |
+     *  |                |
+     *  |            x   |
+     *  |   x            |
+     *  |----------------|
+     *
      */
     public void createAllGeomVectorFieldForGares(){
-        GeometryFactory gf = new GeometryFactory();
         // looping through each station of superStationsMap
         for (Map.Entry<String, SuperStation> entry : StationsDirectory.getInstance().superStations.entrySet()) {
             String key = entry.getKey();
@@ -175,17 +188,22 @@ public class StationsDirectory {
                     allPoints.add(valueSubStation.location);
 
                 }
-                // build a geometry from all substation location
+                GeometryFactory gf = new GeometryFactory();
+                // build a geometry from all substation location (just a list of point)
                 Geometry geom = gf.buildGeometry(allPoints);
 
-                // Point centroid = gf.createPoint(centroid(allPoints));
-                MasonGeometry pointSubStation = new MasonGeometry(geom.getCentroid());
+                // getting the envelope of all points
+                Envelope envelope = geom.getEnvelopeInternal();
+                envelope.expandBy(0.000009);
+
+                MasonGeometry rectangleAroundSubStation = new MasonGeometry(gf.toGeometry(envelope));
 
                 // adding station name to the geometry
-                pointSubStation.addStringAttribute(Constants.STATION_NAME_STR, key);
-                geomVectorFieldGare.addGeometry(pointSubStation);
+                rectangleAroundSubStation.addStringAttribute(Constants.STATION_NAME_STR, key);
+                geomVectorFieldGare.addGeometry(rectangleAroundSubStation);
             }
         }
+        // setting MBR according to line MBR (here we take the first, but it can be anything)
         geomVectorFieldGare.setMBR(LinesDirectory.getInstance().lines.get("1").geomVectorField.getMBR());
     }
 
@@ -195,17 +213,18 @@ public class StationsDirectory {
     public void setUpGarePortrayal() {
 
         geomVectorFieldGarePortrayal.setField(geomVectorFieldGare);
-
+        String name;
         geomVectorFieldGarePortrayal.setPortrayalForAll(
                 new LabelledPortrayal2D(
                         new GeomPortrayal() {
                             public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
                                 MasonGeometry geometry = (MasonGeometry) object;
                                 filled = false;
-                                scale = 0.000013D;
                                 super.draw(object, graphics, info);
                             }
-                }, 5.0, null, Color.WHITE, true)
+                }, 5.0, null , Color.WHITE, true)  //TODO make the label correspond to station name
+                                                                                // TODO it can be maybe be done by extending MasonGeometry and putting a toString function in it
+                                                                                //TODO otherwise, we well have to print manually the name beside the centroid...
         );
 
     }
