@@ -1,0 +1,306 @@
+﻿id;name
+1;Abbesses
+2;Alésia
+3;Alexandre Dumas
+4;Alma - Marceau
+5;Anatole France
+6;Anvers
+7;Argentine
+8;Arts et Métiers
+9;Asnières - Gennevilliers - Les Courtilles
+10;Assemblée nationale
+11;Aubervilliers - Pantin - Quatre Chemins
+12;Avenue Émile-Zola
+13;Avron
+14;Balard
+15;Barbès - Rochechouart
+16;Basilique de Saint-Denis
+17;Bastille
+18;Bel-Air
+19;Belleville
+20;Bérault
+21;Bercy
+22;Bibliothèque François-Mitterrand
+23;Billancourt
+24;Bir-Hakeim
+25;Blanche
+26;Bobigny - Pablo Picasso
+27;Bobigny - Pantin - Raymond Queneau
+28;Boissière
+29;Bolivar
+30;Bonne-Nouvelle
+31;Botzaris
+32;Boucicaut
+33;Boulogne - Jean Jaurès
+34;Boulogne - Pont de Saint-Cloud
+35;Bourse
+36;Bréguet - Sabin
+37;Brochant
+38;Buttes Chaumont
+39;Buzenval
+40;Cadet
+41;Cambronne
+42;Campo-Formio
+43;Cardinal Lemoine
+44;Carrefour Pleyel
+45;Censier - Daubenton
+46;Champs-Élysées - Clemenceau
+47;Chardon-Lagache
+48;Charenton - Écoles
+49;Charles de Gaulle - Étoile
+50;Charles Michels
+51;Charonne
+52;Château de Vincennes
+53;Château d'Eau
+54;Château Rouge
+55;Château-Landon
+56;Châtelet
+57;Châtillon - Montrouge
+58;Chaussée d'Antin - La Fayette
+59;Chemin Vert
+60;Chevaleret
+61;Cité
+62;Cluny - La Sorbonne
+63;Colonel Fabien
+64;Commerce
+65;Concorde
+66;Convention
+67;Corentin Cariou
+68;Corentin Celton
+69;Corvisart
+70;Cour Saint-Émilion
+71;Courcelles
+72;Couronnes
+73;Créteil - L'Échat
+74;Créteil - Préfecture
+75;Créteil - Université
+76;Crimée
+77;Croix de Chavaux
+78;Danube
+79;Daumesnil
+80;Denfert-Rochereau
+81;Dugommier
+82;Dupleix
+83;Duroc
+84;École Militaire
+85;École vétérinaire de Maisons-Alfort
+86;Edgar Quinet
+87;Église d'Auteuil
+88;Église de Pantin
+89;Esplanade de La Défense
+90;Étienne Marcel
+91;Europe
+92;Exelmans
+93;Faidherbe - Chaligny
+94;Falguière
+95;Félix Faure
+96;Filles du Calvaire
+97;Fort d'Aubervilliers
+98;Franklin D. Roosevelt
+99;Front Populaire
+100;Gabriel Péri
+101;Gaîté
+102;Gallieni
+103;Gambetta
+104;Gare d'Austerlitz
+105;Gare de l'Est
+106;Gare de Lyon
+107;Gare de Lyon
+108;Gare du Nord
+109;Garibaldi
+110;George V
+111;Glacière
+112;Goncourt
+113;Grands Boulevards
+114;Guy Môquet
+115;Havre - Caumartin
+116;Hoche
+117;Hôtel de Ville
+118;Iéna
+119;Invalides
+120;Jacques Bonsergent
+121;Jasmin
+122;Jaurès
+123;Javel - André Citroën
+124;Jourdain
+125;Jules Joffrin
+126;Jussieu
+127;Kléber
+128;La Chapelle
+129;La Courneuve - 8 Mai 1945
+130;La Défense
+131;La Fourche
+132;La Motte-Picquet - Grenelle
+133;La Muette
+134;La Tour-Maubourg
+135;Lamarck - Caulaincourt
+136;Laumière
+137;Le Kremlin-Bicêtre
+138;Le Peletier
+139;Ledru-Rollin
+140;Les Agnettes
+141;Les Gobelins
+142;Les Halles
+143;Les Sablons
+144;Liberté
+145;Liège
+146;Louis Blanc
+147;Louise Michel
+148;Lourmel
+149;Louvre - Rivoli
+150;Mabillon
+151;Madeleine
+152;Mairie de Clichy
+153;Mairie de Montreuil
+154;Mairie de Montrouge
+155;Mairie de Saint-Ouen
+156;Mairie des Lilas
+157;Mairie d'Issy
+158;Mairie d'Ivry
+159;Maison Blanche
+160;Maisons-Alfort - Les Juilliottes
+161;Maisons-Alfort - Stade
+162;Malakoff - Plateau de Vanves
+163;Malakoff - Rue Étienne-Dolet
+164;Malesherbes
+165;Maraîchers
+166;Marcadet - Poissonniers
+167;Marcel Sembat
+168;Marx Dormoy
+169;Maubert - Mutualité
+170;Ménilmontant
+171;Michel Bizot
+172;Michel-Ange - Auteuil
+173;Michel-Ange - Molitor
+174;Mirabeau
+175;Miromesnil
+176;Monceau
+177;Montgallet
+178;Montparnasse - Bienvenüe
+179;Mouton-Duvernet
+180;Nation
+181;Nationale
+182;Notre-Dame-de-Lorette
+183;Notre-Dame-des-Champs
+184;Oberkampf
+185;Odéon
+186;Olympiades
+187;Opéra
+188;Ourcq
+189;Palais-Royal - Musée du Louvre
+190;Parmentier
+191;Passy
+192;Pasteur
+193;Pelleport
+194;Père Lachaise
+195;Pereire
+196;Pernety
+197;Philippe Auguste
+198;Picpus
+199;Pierre et Marie Curie
+200;Pigalle
+201;Place de Clichy
+202;Place des Fêtes
+203;Place d'Italie
+204;Place Monge
+205;Plaisance
+206;Pointe du Lac
+207;Poissonnière
+208;Pont Cardinet
+209;Pont de Levallois - Bécon
+210;Pont de Neuilly
+211;Pont de Sèvres
+212;Pont Marie
+213;Pont-Neuf
+214;Porte Dauphine
+215;Porte d'Auteuil
+216;Porte de Bagnolet
+217;Porte de Champerret
+218;Porte de Charenton
+219;Porte de Choisy
+220;Porte de Clichy
+221;Porte de Clignancourt
+222;Porte de la Chapelle
+223;Porte de la Villette
+224;Porte de Montreuil
+225;Porte de Pantin
+226;Porte de Saint-Cloud
+227;Porte de Saint-Ouen
+228;Porte de Vanves
+229;Porte de Versailles
+230;Porte de Vincennes
+231;Porte des Lilas
+232;Porte d'Italie
+233;Porte d'Ivry
+234;Porte Dorée
+235;Porte d'Orléans
+236;Porte Maillot
+237;Pré-Saint-Gervais
+238;Pyramides
+239;Pyrénées
+240;Quai de la Gare
+241;Quai de la Rapée
+242;Quatre-Septembre
+243;Rambuteau
+244;Ranelagh
+245;Raspail
+246;Réaumur - Sébastopol
+247;Rennes
+248;République
+249;Reuilly - Diderot
+250;Richard-Lenoir
+251;Richelieu - Drouot
+252;Riquet
+253;Robespierre
+254;Rome
+255;Rue de la Pompe
+256;Rue des Boulets
+257;Rue du Bac
+258;Rue Saint-Maur
+259;Saint-Ambroise
+260;Saint-Augustin
+261;Saint-Denis - Porte de Paris
+262;Saint-Denis - Université
+263;Saint-Fargeau
+264;Saint-François-Xavier
+265;Saint-Georges
+266;Saint-Germain-des-Prés
+267;Saint-Jacques
+268;Saint-Lazare
+269;Saint-Mandé
+270;Saint-Marcel
+271;Saint-Michel
+272;Saint-Ouen
+273;Saint-Paul
+274;Saint-Philippe du Roule
+275;Saint-Placide
+276;Saint-Sébastien - Froissart
+277;Saint-Sulpice
+278;Ségur
+279;Sentier
+280;Sèvres - Babylone
+281;Sèvres - Lecourbe
+282;Simplon
+283;Solférino
+284;Stalingrad
+285;Strasbourg - Saint-Denis
+286;Sully - Morland
+287;Télégraphe
+288;Temple
+289;Ternes
+290;Tolbiac
+291;Trinité - d'Estienne d'Orves
+292;Trocadéro
+293;Tuileries
+294;Vaneau
+295;Varenne
+296;Vaugirard
+297;Vavin
+298;Victor Hugo
+299;Villejuif - Léo Lagrange
+300;Villejuif - Louis Aragon
+301;Villejuif - Paul Vaillant-Couturier
+302;Villiers
+303;Volontaires
+304;Voltaire
+305;Wagram
