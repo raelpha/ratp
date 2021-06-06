@@ -9,8 +9,6 @@ import sim.portrayal.DrawInfo2D;
 import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.portrayal.simple.LabelledPortrayal2D;
-import sim.portrayal.simple.OvalPortrayal2D;
-import sim.portrayal.simple.RectanglePortrayal2D;
 import sim.util.geo.MasonGeometry;
 import station.Gare;
 import station.Station;
