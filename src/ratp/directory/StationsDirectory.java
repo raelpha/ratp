@@ -214,9 +214,8 @@ public class StationsDirectory {
     This method is used to draw rectangle around each super station centroid
      */
     public void setUpGarePortrayal() {
-
         geomVectorFieldGarePortrayal.setField(geomVectorFieldGare);
-        String name;
+
         geomVectorFieldGarePortrayal.setPortrayalForAll(
                 new LabelledPortrayal2D(
                         new GeomPortrayal() {
