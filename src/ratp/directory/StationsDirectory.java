@@ -177,34 +177,38 @@ public class StationsDirectory {
             String key = entry.getKey();
             SuperStation value = entry.getValue();
             // we're looking only for Gare (SuperStations with more than one station)
-            if (value.stations.size() > 1) {
-                ArrayList<Point> allPoints = new ArrayList<Point>();
-                // looping through each station of the Gare
-                for (Map.Entry<String, Station> entrySubStation : value.stations.entrySet()) {
-                    String keySubStation = entrySubStation.getKey();
-                    Station valueSubStation = entrySubStation.getValue();
 
-                    allPoints.add(valueSubStation.location);
+            ArrayList<Point> allPoints = new ArrayList<Point>();
+            // looping through each station of the Gare
+            for (Map.Entry<String, Station> entrySubStation : value.stations.entrySet()) {
+                String keySubStation = entrySubStation.getKey();
+                Station valueSubStation = entrySubStation.getValue();
 
-                }
-                GeometryFactory gf = new GeometryFactory();
-                // build a geometry from all substation location (just a list of point)
-                Geometry geom = gf.buildGeometry(allPoints);
+                allPoints.add(valueSubStation.location);
 
-                // getting the envelope of all points
-                Envelope envelope = geom.getEnvelopeInternal();
-                envelope.expandBy(0.000009);
-
-                MasonGeometry rectangleAroundSubStation = new MasonGeometry(gf.toGeometry(envelope));
-
-                // adding station name to the geometry
-                rectangleAroundSubStation.addStringAttribute(Constants.STATION_NAME_STR, key);
-
-                // casting to gare
-                Gare gare = new Gare(rectangleAroundSubStation);
-
-                geomVectorFieldGare.addGeometry(gare);
             }
+            GeometryFactory gf = new GeometryFactory();
+            // build a geometry from all substation location (just a list of point)
+            Geometry geom = gf.buildGeometry(allPoints);
+
+            // getting the envelope of all points
+            Envelope envelope = geom.getEnvelopeInternal();
+            envelope.expandBy(0.000009);
+
+            MasonGeometry rectangleAroundSubStation = new MasonGeometry(gf.toGeometry(envelope));
+
+            // adding station name to the geometry
+            rectangleAroundSubStation.addStringAttribute(Constants.STATION_NAME_STR, key);
+            if (value.stations.size() > 1) {
+                rectangleAroundSubStation.addStringAttribute(Constants.IS_MULTIPLE_STATION_STR, Constants.TRUE);
+            } else {
+                rectangleAroundSubStation.addStringAttribute(Constants.IS_MULTIPLE_STATION_STR, Constants.FALSE);
+            }
+            // casting to gare
+            Gare gare = new Gare(rectangleAroundSubStation);
+
+            geomVectorFieldGare.addGeometry(gare);
+
         }
         // setting MBR according to line MBR (here we take the first, but it can be anything)
         geomVectorFieldGare.setMBR(LinesDirectory.getInstance().lines.get("1").geomVectorField.getMBR());
@@ -221,7 +225,13 @@ public class StationsDirectory {
                         new GeomPortrayal() {
                             public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
                                 filled = false;
-                                paint = Color.WHITE;
+                                Gare gare = (Gare) object;
+                                if (gare.getStringAttribute(Constants.IS_MULTIPLE_STATION_STR).equals(Constants.TRUE)) {
+                                    paint = Color.WHITE;
+                                } else {
+                                    // adding translucent color if Gare.nbStation == 1
+                                    paint = new Color(128,128,128,0);;
+                                }
                                 super.draw(object, graphics, info);
                             }
                 // "null" indicate that it will use toString of object

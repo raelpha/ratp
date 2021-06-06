@@ -8,6 +8,9 @@ public class Constants {
     public static final int FIELD_SIZE = 1000;
     public static final int DISPLAY_SIZE = 700;
 
+    public static final String TRUE = "true";
+    public static final String FALSE = "false";
+
     public static final List<String> listOfLinesNames = Arrays.asList("1", "2", "3", "3b", "4", "5", "6", "7", "7b", "8", "9", "10", "11", "12", "13", "14");
     public static List<String> LINE_DEFAULTATTRIBUTES = Arrays.asList("line", "color", "sectionId","origin","destinatio");
 
@@ -18,4 +21,6 @@ public class Constants {
 
     // argument of Gare geometries
     public static final String STATION_NAME_STR = "stationName";
+    public static final String IS_MULTIPLE_STATION_STR = "isMultipleStation";
+
 }
