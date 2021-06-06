@@ -193,7 +193,7 @@ public class StationsDirectory {
 
             // getting the envelope of all points
             Envelope envelope = geom.getEnvelopeInternal();
-            envelope.expandBy(0.000009);
+            envelope.expandBy(0.000008);
 
             MasonGeometry rectangleAroundSubStation = new MasonGeometry(gf.toGeometry(envelope));
 
@@ -235,7 +235,7 @@ public class StationsDirectory {
                                 super.draw(object, graphics, info);
                             }
                 // "null" indicate that it will use toString of object
-                }, 8.0, null , Color.WHITE, true)
+                }, 4.0, null , Color.WHITE, true)
 
         );
 
