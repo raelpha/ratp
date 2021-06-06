@@ -18,7 +18,7 @@ public class StationsDirectory {
 
     /**WARNING: SCHEDULES DIRECTIORY MUST BE INITIALIZED (DATA LOADED)*/
 
-    private static StationsDirectory INSTANCE = new StationsDirectory();
+    public static StationsDirectory INSTANCE = new StationsDirectory();
 
     public static StationsDirectory getInstance()
     {
@@ -30,11 +30,11 @@ public class StationsDirectory {
         StationsDirectory s = getInstance();
     }
 
-    private List<SuperStation> allSuperStations;
+    public List<SuperStation> allSuperStations;
 
     Map<String, SuperStation> superStations;
 
-    private StationsDirectory()
+    public StationsDirectory()
     {
         allSuperStations = allSuperStationsReader(Constants.STATIONS_FILENAME);
         superStations = fillSuperStationsMap(allSuperStations);

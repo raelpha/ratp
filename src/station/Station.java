@@ -3,6 +3,7 @@ package station;
 import com.vividsolutions.jts.geom.Point;
 import lines.Line;
 import rame.Rame;
+import ratp.directory.StationsDirectory;
 import sim.util.geo.MasonGeometry;
 
 import java.awt.*;
@@ -138,17 +139,17 @@ public class Station implements Steppable{
 
     }
 
-    /*
-    public void dechargerRame(Rame rame){
-        int nbDescendant = 0;//utiliser methode rame pour les passagers qui descendent
+    /*public void dechargerRame(Rame rame,String name){
         List<AgentVoyageur> listDescedants = new ArrayList<AgentVoyageur>();
         listDescedants=rame.removeUser(this.name);
         for(AgentVoyageur a: listDescedants){
-            if(){
+            //remove la station de la liste de station du voyageur
+            //Si la liste est vide , ça signifie que c'est son terminus donc on le remove
+            if(a.listStation.isEmpty()){ // terminus
                 //retirer l'agent
             }
-            else{
-
+            else{ //sinon on le change de quai
+                StationsDirectory.getInstance().
             }
         }
     }*/
@@ -163,9 +164,6 @@ public class Station implements Steppable{
     }*/
 
 
-    /*public String toString() {
-        return String.valueOf(getNomQuai());
-    }*/
 
 
 
