@@ -2,6 +2,8 @@ package ratp;
 
 import lines.Line;
 import ratp.directory.LinesDirectory;
+import ratp.directory.SchedulesDirectory;
+import ratp.directory.SchedulesDirectory.*;
 import sim.engine.SimState;
 
 
@@ -11,6 +13,7 @@ import sim.app.geo.campusworld.Agent;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.field.geo.GeomVectorField;
 import rame.Rame;
+import sim.util.geo.MasonGeometry;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,15 +48,22 @@ public class RatpNetwork extends SimState {
         return returnValue;
     }
 
-    private void addAgent(String lineName){
-        Rame r = new Rame(this, lineName);
-        getLine("1").getRight().addGeometry(r.getGeometry());
+    private void addAgent(String lineName, List<Schedule> schedules){
+        Rame r = new Rame(this, lineName, schedules);
+        MasonGeometry rameGeometry = r.getGeometry();
+        rameGeometry.addAttribute("direction", Integer.toString(schedules.get(0).direction));
+        getLine(lineName).getRight().addGeometry(r.getGeometry());
         this.schedule.scheduleRepeating(r);
     }
 
     public void start() {
         super.start();
-        addAgent("1");
+        SchedulesDirectory sd = SchedulesDirectory.getInstance();
+        List<Schedule> schedules = sd.schedules.get("1").get("La Défense -> Château de Vincennes");
+        addAgent("1", schedules);
+        addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
+        //addAgent("3");
+        //addAgent("6");
     }
 
 }

@@ -45,6 +45,11 @@ public class Line {
                     filled = false;
 
                 scale = 0.000003D;
+                if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("rame")){
+                    filled = true;
+                    scale = 0.00001D;
+                    paint = color.darker().darker();
+                }
                 super.draw(object, graphics, info);
             }
         }
