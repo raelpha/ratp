@@ -27,11 +27,6 @@ public class RatpStateWithUI extends GUIState {
 
     public RatpStateWithUI(SimState state) {
         super(state);
-
-        //Initialize a GeomVectorFieldPortrayal for each (hardcoded) line
-        /*for (String s : Constants.listOfLinesNames) {
-            linesPortrayals.put(s, new GeomVectorFieldPortrayal());
-        }*/
     }
 
     /**

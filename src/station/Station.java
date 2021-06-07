@@ -14,13 +14,6 @@ public class Station {
     public Color color = new Color(255,255,255);
     public Color legacyColor = new Color(255,255,255);
     public Point location;
-    //Deprecated
-    /*
-    public Station(String lineId, String name) {
-        this.lineNumber = lineId;
-        this.name = name;
-    }
-    */
 
     public Station(Line line, String name) {
         this.line = line;
