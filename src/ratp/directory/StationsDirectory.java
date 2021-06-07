@@ -10,7 +10,6 @@ import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.portrayal.simple.LabelledPortrayal2D;
 import sim.util.geo.MasonGeometry;
-import station.GareGeometry;
 import station.Station;
 import station.Gare;
 
@@ -205,7 +204,7 @@ public class StationsDirectory {
                 rectangleAroundSubStation.addStringAttribute(Constants.IS_MULTIPLE_STATION_STR, Constants.FALSE);
             }
             // casting to gare
-            GareGeometry gareGeometry = new GareGeometry(rectangleAroundSubStation);
+            Gare gareGeometry = new Gare(rectangleAroundSubStation);
 
             geomVectorFieldGare.addGeometry(gareGeometry);
 
@@ -225,7 +224,7 @@ public class StationsDirectory {
                         new GeomPortrayal() {
                             public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
                                 filled = false;
-                                GareGeometry gareGeometry = (GareGeometry) object;
+                                Gare gareGeometry = (Gare) object;
                                 if (gareGeometry.getStringAttribute(Constants.IS_MULTIPLE_STATION_STR).equals(Constants.TRUE)) {
                                     paint = Color.WHITE;
                                 } else {
