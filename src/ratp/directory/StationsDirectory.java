@@ -10,9 +10,9 @@ import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.portrayal.simple.LabelledPortrayal2D;
 import sim.util.geo.MasonGeometry;
-import station.Gare;
+import station.GareGeometry;
 import station.Station;
-import station.SuperStation;
+import station.Gare;
 
 import java.awt.*;
 import java.nio.file.Files;
@@ -39,15 +39,15 @@ public class StationsDirectory {
         StationsDirectory s = getInstance();
     }
 
-    public List<SuperStation> getAllSuperStations() {
-        return allSuperStations;
+    public List<Gare> getAllGares() {
+        return allGares;
     }
 
-    private List<SuperStation> allSuperStations;
+    private List<Gare> allGares;
 
-    Map<String, SuperStation> superStations;
+    Map<String, Gare> gares;
 
-    //geomVectorField used to store all Gare (SuperStations with > 1 station) geometries
+    //geomVectorField used to store all Gare geometries
     public GeomVectorField geomVectorFieldGare = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
     // Field portrayal in which we're drawing
     public GeomVectorFieldPortrayal geomVectorFieldGarePortrayal =  new GeomVectorFieldPortrayal();
@@ -55,26 +55,26 @@ public class StationsDirectory {
 
 
     /**
-     * Constructor: fill allSuperStations from external file then create associated map
+     * Constructor: fill allGares from external file then create associated map
      */
     private StationsDirectory()
     {
-        allSuperStations = allSuperStationsReader(Constants.STATIONS_FILENAME);
-        superStations = fillSuperStationsMap(allSuperStations);
+        allGares = allGaresReader(Constants.STATIONS_FILENAME);
+        gares = fillGaresMap(allGares);
     }
 
     public Station getStation(String lineId, String stationName){
-        return superStations.get(stationName).getStation(lineId);
+        return gares.get(stationName).getStation(lineId);
     }
 
     public void instantiateStation(Line line, String stationName){
-        superStations.get(stationName).stations.put(line.number, new Station(line, stationName));
+        gares.get(stationName).stations.put(line.number, new Station(line, stationName));
     }
 
     public List<Station> getAdjacentStations(Station station){
         List<Station> adjacentStations = new ArrayList<>();
-        //Get stations of the belonging superstation
-        for (Map.Entry<String, Station> entry : superStations.get(station.name).stations.entrySet()) {
+        //Get stations of the belonging Gares
+        for (Map.Entry<String, Station> entry : gares.get(station.name).stations.entrySet()) {
             if(entry.getValue()!=station)
                 adjacentStations.add(entry.getValue());
         }
@@ -97,13 +97,13 @@ public class StationsDirectory {
         return adjacentStations;
     }
 
-    public static List<SuperStation> allSuperStationsReader(String name){
-        List<SuperStation> ss = new ArrayList<>();
+    public static List<Gare> allGaresReader(String name){
+        List<Gare> ss = new ArrayList<>();
         try {
             ss = Files.readAllLines(Paths.get(name))
                     .stream()
                     .skip(1) // to skip the header
-                    .map(line -> new SuperStation(
+                    .map(line -> new Gare(
                             Integer.parseInt(line.split(";")[0]),
                             line.split(";")[1]))
                     .collect(Collectors.toList());
@@ -114,27 +114,27 @@ public class StationsDirectory {
         return ss;
     }
 
-    Map<String, SuperStation> fillSuperStationsMap(List<SuperStation> allStations){
+    Map<String, Gare> fillGaresMap(List<Gare> allStations){
 
-        Map<String, SuperStation> superStations = new HashMap<>();
+        Map<String, Gare> gares = new HashMap<>();
 
-        for(SuperStation superStation : allStations){
+        for(Gare gare : allStations){
             //If the map does not contains (yet)
-            if(!superStations.containsKey(superStation.name)){
-                superStations.put(superStation.name, superStation);
+            if(!gares.containsKey(gare.name)){
+                gares.put(gare.name, gare);
             }
         }
-        return superStations;
+        return gares;
     }
 
-    public void addStationsToSuperStations(List<SchedulesDirectory.Schedule> allSchedules){
+    public void addStationsToGares(List<SchedulesDirectory.Schedule> allSchedules){
         for(SchedulesDirectory.Schedule schedule : allSchedules){
-            superStations.get(schedule.station.name).stations.put(schedule.lineNumber,schedule.station);
+            gares.get(schedule.station.name).stations.put(schedule.lineNumber,schedule.station);
 
-            //We label the station as a terminus if the superStation<-station equals the schedule destination or origin
-            if(schedule.destination == superStations.get(schedule.station.name).stations.get(schedule.lineNumber)
-            || schedule.origin == superStations.get(schedule.station.name).stations.get(schedule.lineNumber)){
-                superStations.get(schedule.station.name).stations.get(schedule.lineNumber).terminus = true;
+            //We label the station as a terminus if the Gares <-station equals the schedule destination or origin
+            if(schedule.destination == gares.get(schedule.station.name).stations.get(schedule.lineNumber)
+            || schedule.origin == gares.get(schedule.station.name).stations.get(schedule.lineNumber)){
+                gares.get(schedule.station.name).stations.get(schedule.lineNumber).terminus = true;
             }
         }
     }
@@ -172,11 +172,11 @@ public class StationsDirectory {
      *
      */
     public void createAllGeomVectorFieldForGares(){
-        // looping through each station of superStationsMap
-        for (Map.Entry<String, SuperStation> entry : StationsDirectory.getInstance().superStations.entrySet()) {
+        // looping through each station of Gares
+        for (Map.Entry<String, Gare> entry : StationsDirectory.getInstance().gares.entrySet()) {
             String key = entry.getKey();
-            SuperStation value = entry.getValue();
-            // we're looking only for Gare (SuperStations with more than one station)
+            Gare value = entry.getValue();
+            // we're looking only for Gare
 
             ArrayList<Point> allPoints = new ArrayList<Point>();
             // looping through each station of the Gare
@@ -205,9 +205,9 @@ public class StationsDirectory {
                 rectangleAroundSubStation.addStringAttribute(Constants.IS_MULTIPLE_STATION_STR, Constants.FALSE);
             }
             // casting to gare
-            Gare gare = new Gare(rectangleAroundSubStation);
+            GareGeometry gareGeometry = new GareGeometry(rectangleAroundSubStation);
 
-            geomVectorFieldGare.addGeometry(gare);
+            geomVectorFieldGare.addGeometry(gareGeometry);
 
         }
         // setting MBR according to line MBR (here we take the first, but it can be anything)
@@ -215,7 +215,7 @@ public class StationsDirectory {
     }
 
     /*
-    This method is used to draw rectangle around each super station centroid
+    This method is used to draw rectangle around each Gare centroid
      */
     public void setUpGarePortrayal() {
         geomVectorFieldGarePortrayal.setField(geomVectorFieldGare);
@@ -225,8 +225,8 @@ public class StationsDirectory {
                         new GeomPortrayal() {
                             public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
                                 filled = false;
-                                Gare gare = (Gare) object;
-                                if (gare.getStringAttribute(Constants.IS_MULTIPLE_STATION_STR).equals(Constants.TRUE)) {
+                                GareGeometry gareGeometry = (GareGeometry) object;
+                                if (gareGeometry.getStringAttribute(Constants.IS_MULTIPLE_STATION_STR).equals(Constants.TRUE)) {
                                     paint = Color.WHITE;
                                 } else {
                                     // adding translucent color if Gare.nbStation == 1
