@@ -1,16 +1,13 @@
 package ratp;
 
-import com.sun.org.apache.bcel.internal.classfile.ConstantString;
 import global.Constants;
 import ratp.directory.LinesDirectory;
+import ratp.directory.StationsDirectory;
 import sim.display.Controller;
 import sim.display.Display2D;
 import sim.display.GUIState;
 import sim.engine.SimState;
-import sim.portrayal.DrawInfo2D;
-import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
-import sim.util.geo.MasonGeometry;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,11 +27,6 @@ public class RatpStateWithUI extends GUIState {
 
     public RatpStateWithUI(SimState state) {
         super(state);
-
-        //Initialize a GeomVectorFieldPortrayal for each (hardcoded) line
-        /*for (String s : Constants.listOfLinesNames) {
-            linesPortrayals.put(s, new GeomVectorFieldPortrayal());
-        }*/
     }
 
     /**
@@ -51,6 +43,7 @@ public class RatpStateWithUI extends GUIState {
         for (String s : Constants.listOfLinesNames) {
             display.attach(LinesDirectory.getInstance().lines.get(s).geomVectorFieldPortrayal, "Ligne " + s);
         }
+        display.attach(StationsDirectory.getInstance().geomVectorFieldGarePortrayal, "Gares informations");
 
         displayFrame = display.createFrame();
         // make the display appears in the "displays" list in Console
@@ -66,24 +59,6 @@ public class RatpStateWithUI extends GUIState {
     }
 
     /**
-     * @return HTML string parsed for "about" section in MASON window
-     */
-    public static Object getInfo() {
-        return "<h1 style='color: #5e9ca0;' data-darkreader-inline-color=''>RATP Simulation</h1>" +
-                "<h2 style='color: #2e6c80;' data-darkreader-inline-color=''>Purpose of the simulation</h2>" +
-                "<p>This simulation simulate the Paris's subway traffic and how passengers " +
-                "reacts to pertubation on the network.</p>" +
-                "<h2 style='color: #2e6c80;' data-darkreader-inline-color=''>Authors</h2>" +
-                "<ul>" +
-                "<li>Yvain</li>" +
-                "<li>Rapha&euml;l</li>" +
-                "<li>Hugo</li>" +
-                "<li>Jimmy</li>" +
-                "<li>Cl&eacute;ment</li>" +
-                "</ul>";
-    }
-
-    /**
      * Where we set up the visualization when the user is
      * about to start playing the simulation
      */
@@ -93,6 +68,8 @@ public class RatpStateWithUI extends GUIState {
         for(String lineName : Constants.listOfLinesNames){
             LinesDirectory.getInstance().lines.get(lineName).setupPortrayal();
         }
+
+        StationsDirectory.getInstance().setUpGarePortrayal();
 
         display.reset();
         display.setBackdrop(Color.BLACK);

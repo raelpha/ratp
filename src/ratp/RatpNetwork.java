@@ -11,12 +11,6 @@ import java.util.Map;
 
 public class RatpNetwork extends SimState {
 
-    /**linesGeomVectorField contains all the LineString of the network*/
-    //Map<String,GeomVectorField> linesGeomVectorField = new HashMap<>();
-
-    /**We WILL make another Graph here for passenger interconnection*/
-    //public GeomPlanarGraph passengerNetwork = new GeomPlanarGraph();
-
     Map<String, Line> lines = LinesDirectory.getInstance().lines;
 
     public RatpNetwork(long seed){
