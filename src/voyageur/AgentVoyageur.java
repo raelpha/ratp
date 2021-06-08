@@ -1,29 +1,15 @@
 package voyageur;
 
-import com.vividsolutions.jts.awt.PointShapeFactory;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import global.Constants;
-import org.jfree.data.function.NormalDistributionFunction2D;
 import ratp.RatpNetwork;
 
-import ratp.directory.LinesDirectory;
 import ratp.directory.StationsDirectory;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.field.continuous.Continuous2D;
 import sim.util.Double2D;
-import sim.util.geo.GeomPlanarGraph;
-import sim.util.geo.MasonGeometry;
 import station.Station;
-
-import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.util.*;
 import java.util.List;
-import java.awt.*;
 
 
 // la rame doit instantier les voyageurs avec la bonne station courante
@@ -64,16 +50,18 @@ public class AgentVoyageur implements Steppable {
     public void InitialisationDansStation(Station station, Continuous2D yard){
         this.stationCourante = station;
         // TODO : prévenir la station d'ou on veut aller
-        System.out.println("Station prévenue");
-        Double2D location = GetRandomPointCircle(VoyageurConstants.maximumDistanceStation);
+        Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
+        Double2D stationPosCont = ConversionGeomToContinuous(stationPosGeom);
+        Double2D location = GetRandomPointCircle(stationPosCont, VoyageurConstants.maximumDistanceStation);
         //var stationPos = ConversionGeomToContinuous(new Double2D(station.location.getX(), station.location.getY()));
-        yard.setObjectLocation(this, ConversionGeomToContinuous(location));
+        yard.setObjectLocation(this, location);
+        //yard.setObjectLocation(this, stationPos);
         x = location.x;
         y = location.y;
     }
 
     private Double2D ConversionGeomToContinuous(Double2D c){
-        return new Double2D(c.x + 339, c.y + 742);
+        return new Double2D(c.x*456374.2102649563 + 621637.6325538646, c.y*(-441528.2983009379) - 2640599.3936298448);
     }
 
     // On suppose qu'un voyageur ne peut pas être instancié si sa liste est vide
@@ -86,7 +74,9 @@ public class AgentVoyageur implements Steppable {
         if(etat == 0){
             if(Math.random() < VoyageurConstants.probabiliteDeBouger){
                 // Random point
-                Double2D goal = GetRandomPointCircle(VoyageurConstants.maximumDistanceStation);
+                Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
+                Double2D stationPosCont = ConversionGeomToContinuous(stationPosGeom);
+                Double2D goal = GetRandomPointCircle(stationPosCont, VoyageurConstants.maximumDistanceStation);
                 goalX = goal.x;
                 goalY = goal.y;
                 // Calcul direction
@@ -109,7 +99,7 @@ public class AgentVoyageur implements Steppable {
         }
     }
 
-    private Double2D GetRandomPointCircle(double distance){
+    private Double2D GetRandomPointCircle(Double2D point, double distance){
         /**
          * Décider d'un endroit où aller dans le rayon possible de la station
          */
@@ -117,8 +107,8 @@ public class AgentVoyageur implements Steppable {
         double r = distance * Math.sqrt(Math.random());
         double theta = Math.random() * 2 * Math.PI;
         // Conversion en cartésien
-        double x = stationCourante.location.getX() + r * Math.cos(theta);
-        double y = stationCourante.location.getY() + r * Math.sin(theta);
+        double x = point.getX() + r * Math.cos(theta);
+        double y = point.getY() + r * Math.sin(theta);
         return new Double2D(x, y);
     }
 
@@ -136,7 +126,7 @@ public class AgentVoyageur implements Steppable {
     private void Move(Continuous2D yard){
         x += movementDirectionX*VoyageurConstants.vitesse;
         y += movementDirectionY*VoyageurConstants.vitesse;
-        yard.setObjectLocation(this, ConversionGeomToContinuous(new Double2D(x,y)));
+        yard.setObjectLocation(this, new Double2D(x,y));
     }
 
     private boolean isArrive(){
