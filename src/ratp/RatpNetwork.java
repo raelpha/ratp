@@ -36,11 +36,7 @@ public class RatpNetwork extends SimState {
         //FileImporter.shapeFileImporterByLine("lines/lines", linesGeomVectorField);
         //this.schedule.scheduleRepeating(a);
 
-        for (Map.Entry<String, Gare> g: StationsDirectory.getInstance().gares.entrySet()) {
-            for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
-                this.schedule.scheduleRepeating(entry.getValue());
-            }
-        }
+
     }
     public Pair<String, GeomVectorField> getLine(String name){
         GeomVectorField l = lines.get(name).geomVectorField;
@@ -60,7 +56,11 @@ public class RatpNetwork extends SimState {
         super.start();
         yard.clear();
         //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
-
+        for (Map.Entry<String, Gare> g: StationsDirectory.getInstance().gares.entrySet()) {
+            for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
+                this.schedule.scheduleRepeating(entry.getValue());
+            }
+        }
     }
 
 

@@ -102,14 +102,14 @@ public class Station implements Steppable{
     @Override
     public void step(SimState simState) {
         RatpNetwork ratpNetwork =(RatpNetwork) simState;
-        System.out.println("hello");
+        //System.out.println("hello");
         if(!spawn){
             System.out.println("hey");
             int nbVoyageurSpawn = (int)doubleNormale(7,5);
-            for(int i=0;i<nbVoyageurSpawn;i++){
-                ratpNetwork.addVoyageur(StationsDirectory.getInstance().getStation("1", "Nation"));
+            for(int i=0;i<=1;i++){
+                ratpNetwork.addVoyageur(this);
             }
-            spawn=true;
+            this.spawn=true;
         }
     }
 
