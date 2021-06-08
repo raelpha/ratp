@@ -38,6 +38,8 @@ public class StationsDirectory {
         StationsDirectory s = getInstance();
     }
 
+    public List<SuperStation> allSuperStations;
+
     public List<Gare> getAllGares() {
         return allGares;
     }

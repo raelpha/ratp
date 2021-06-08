@@ -7,7 +7,18 @@ import sim.display.Controller;
 import sim.display.Display2D;
 import sim.display.GUIState;
 import sim.engine.SimState;
+
+import sim.field.continuous.Continuous2D;
+import sim.portrayal.DrawInfo2D;
+import sim.portrayal.continuous.ContinuousPortrayal2D;
+import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
+import sim.util.geo.MasonGeometry;
+import voyageur.AgentVoyageur;
+import voyageur.VoyageurPortrayal;
+
+import sim.portrayal.geo.GeomVectorFieldPortrayal;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +27,7 @@ import java.util.Map;
 
 public class RatpStateWithUI extends GUIState {
 
+    ContinuousPortrayal2D yardPortrayal = new ContinuousPortrayal2D();
     public Display2D display;
 
     public JFrame displayFrame;
@@ -69,10 +81,19 @@ public class RatpStateWithUI extends GUIState {
             LinesDirectory.getInstance().lines.get(lineName).setupPortrayal();
         }
 
+        display.attach(yardPortrayal, "Voyageurs");
+        yardPortrayal.setField(ratpNetwork.yard);
+        yardPortrayal.setPortrayalForClass(AgentVoyageur.class, getVoyageurPortrayal());
+
         StationsDirectory.getInstance().setUpGarePortrayal();
 
         display.reset();
         display.setBackdrop(Color.BLACK);
         display.repaint();
+    }
+
+    private VoyageurPortrayal getVoyageurPortrayal(){
+        VoyageurPortrayal vp = new VoyageurPortrayal();
+        return vp;
     }
 }
