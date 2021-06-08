@@ -7,6 +7,7 @@ import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.field.continuous.Continuous2D;
 import sim.util.Double2D;
+import station.Gare;
 import station.Station;
 import java.util.*;
 import java.util.List;
@@ -19,6 +20,7 @@ public class AgentVoyageur implements Steppable {
     Station destination;
     Station stationCourante;
     Queue<Station> cheminEnvisage;
+    int nChangementCheminenvisage;
 
     int etat = 0;
     double x,y;
@@ -37,8 +39,10 @@ public class AgentVoyageur implements Steppable {
     public AgentVoyageur(Station stationCourante, Continuous2D yard){
         InitialisationDansStation(stationCourante, yard);
         destination = DeterminerDestination();
-        System.out.println("Je suis à : " + stationCourante.name + " et je veux aller à : " + destination.name);
+        System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
         cheminEnvisage = trouverChemin(stationCourante, destination);
+
+        System.out.println("Nbr chgt : " + nChangementCheminenvisage);
 
         Random R = new Random();
         int rand = (int)(R.nextGaussian()*80);
@@ -140,9 +144,12 @@ public class AgentVoyageur implements Steppable {
     // permet d'informer l'agent qu'une station a été fermée, si elle est sur son chemin il recalcule son trajet
     public void FermetureStation(Station station){
         if(cheminEnvisage.contains(station)){
+            int previousCheminSize = cheminEnvisage.size();
+            int previousNChangement = nChangementCheminenvisage;
             trouverChemin(stationCourante, destination);
-            addToColere(VoyageurConstants.augmentationColereStationFermee);
-            // TODO pondérer avec taille du chgt
+            addToColere(VoyageurConstants.augmentationColereStationFermee
+            + VoyageurConstants.augmentationColereParStationSupplementaire*(cheminEnvisage.size() - previousCheminSize)
+            + VoyageurConstants.augmentationColereParNvChgtLigne*(nChangementCheminenvisage - previousNChangement));
         }
     }
 
@@ -155,9 +162,9 @@ public class AgentVoyageur implements Steppable {
 
     // détermine une destination au hasard
     private Station DeterminerDestination(){
-        var ssList = StationsDirectory.getInstance().getAllGares();
+        List<Gare> ssList = StationsDirectory.getInstance().getAllGares();
         List<Station> stations = new ArrayList<>();
-        for(var ss : ssList){
+        for(Gare ss : ssList){
             stations.addAll(ss.stations.values());
         }
         int n = stations.size();
@@ -202,7 +209,11 @@ public class AgentVoyageur implements Steppable {
 
             for(Station s : StationsDirectory.getInstance().getAdjacentStations(n.station)){
                 if(!(stationFermees.contains(s) || ExisteCoutInferieur(stationOuvertes, s, n.cout+1))){
-                    Node newN = new Node(s, n.cout+1, Distance(s, arriveeS), n);
+                    int cout = 1;
+                    if(s.lineNumber != n.station.lineNumber){
+                        cout = VoyageurConstants.coutChgtStation;
+                    }
+                    Node newN = new Node(s, n.cout+cout, Distance(s, arriveeS), n);
                     stationOuvertes.add(newN);
                 }
             }
@@ -212,11 +223,14 @@ public class AgentVoyageur implements Steppable {
         return null;
     }
 
-
     private Queue<Station> BuildPath(Node arrivee){
+        nChangementCheminenvisage = 0;
         List<Station> stationPath = new ArrayList<>();
         Node currentNode = arrivee;
         while(currentNode.previousNode != null){
+            if(currentNode.previousNode.station.lineNumber != currentNode.station.lineNumber){
+                nChangementCheminenvisage++;
+            }
             stationPath.add(currentNode.station);
             currentNode = currentNode.previousNode;
         }
@@ -240,16 +254,4 @@ public class AgentVoyageur implements Steppable {
         }
         return false;
     }
-    /*
-    private List<Node> trouverChemin(Node depart, Node destination){
-        AStar aStar = new AStar();
-        List<GeomPlanarGraphDirectedEdge> edges = aStar.astarPath(depart, destination);
-        List<Node> chemin = new ArrayList<>();
-        for(var edge : edges){
-            chemin.add(edge.getFromNode());
-        }
-        chemin.add(destination);
-        return chemin;
-    }
-    */
 }
