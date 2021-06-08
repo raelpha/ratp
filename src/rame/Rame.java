@@ -1,10 +1,7 @@
 package rame;
 
 
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.LineString;
-import com.vividsolutions.jts.geom.Point;
+import com.vividsolutions.jts.geom.*;
 import com.vividsolutions.jts.planargraph.DirectedEdgeStar;
 import com.vividsolutions.jts.planargraph.Node;
 import global.Constants;
@@ -23,18 +20,21 @@ import ratp.directory.SchedulesDirectory.Schedule;
 
 public class Rame implements Steppable {
 
+    private LineString currentLine;
+    private LineString nextLine;
     private MasonGeometry location;
     private List<Schedule> scheduleStation;
     private Iterator itSchedule;
     private String nextStation;
-    private double basemoveRate = 0.000001D;
+    private String nextnextStation;
+    private double basemoveRate = 0.00001D;
     private double moveRate;
-    private int detect = 10;
     private LengthIndexedLine segment;
     private int attente;
     double startIndex;
     double endIndex;
     double currentIndex;
+    double nextStartIndex;
     PointMoveTo pointMoveTo;
     private static GeometryFactory fact = new GeometryFactory();
     private int maxUser = Constants.MAX_USER_RAME;
@@ -50,6 +50,7 @@ public class Rame implements Steppable {
         this.startIndex = 0.0D;
         this.endIndex = 0.0D;
         this.currentIndex = 0.0D;
+        this.nextStartIndex = 0.00D;
         this.pointMoveTo = new PointMoveTo();
         this.location = new MasonGeometry(fact.createPoint(new Coordinate(0.1D, 0.1D)));
         this.location.isMovable = true;
@@ -67,6 +68,18 @@ public class Rame implements Steppable {
         return this.location;
     }
 
+    public LineString getCurrentLine() { return this.currentLine;}
+
+    public double getCurrentIndex() {return this.currentIndex;}
+
+    public double getStartIndex() {return this.startIndex;}
+
+    public int getDirection() {return this.scheduleStation.get(0).direction;}
+
+    public Schedule getTerminus() {return this.scheduleStation.get(this.scheduleStation.size()-1);}
+
+    public String getNameLine() {return this.nameLine;}
+
     public void step(SimState state) {
         RatpNetwork network = (RatpNetwork) state;
         this.move(network);
@@ -77,6 +90,8 @@ public class Rame implements Steppable {
     }
 
     private void setDepart(RatpNetwork geo, String stationName){
+        nextStation = stationName;
+        nextnextStation = ((Schedule)itSchedule.next()).station.name;
         GeomPlanarGraph network = new GeomPlanarGraph();
         network.createFromGeomField(geo.getLine(this.nameLine).getRight());
         Iterator it = network.edgeIterator();
@@ -85,47 +100,123 @@ public class Rame implements Steppable {
             originEdge = (GeomPlanarGraphEdge) it.next();
             //System.out.println("Origine : "+ originEdge.getStringAttribute("origin")+ originEdge.getStringAttribute("destinatio"));
         }
-        LineString originLine = originEdge.getLine();
-        if(originEdge.getStringAttribute("origin").equals(stationName)){
-            this.setNewRoute(originLine, true);
-        } else {
-            this.setNewRoute(originLine, false);
+        currentLine = originEdge.getLine();
+        it = network.edgeIterator();
+        GeomPlanarGraphEdge nextEdge = null;
+        while(it.hasNext() && ((nextEdge == null) || (nextEdge!=null && !nextEdge.getStringAttribute("destinatio").equals(nextnextStation) && !nextEdge.getStringAttribute("origin").equals(nextnextStation) ))){
+            nextEdge = (GeomPlanarGraphEdge) it.next();
+            //System.out.println("Origine : "+ originEdge.getStringAttribute("origin")+ originEdge.getStringAttribute("destinatio"));
         }
-        nextStation = ((Schedule)itSchedule.next()).station.name;
+        nextLine = nextEdge.getLine();
+        if(originEdge.getStringAttribute("origin").equals(stationName)){
+            this.setNewRoute(currentLine, true);
+        } else {
+            this.setNewRoute(currentLine, false);
+        }
+        this.nextStation = this.nextnextStation;
+        this.nextnextStation = ((Schedule)itSchedule.next()).station.name;
     }
 
-    private void findNewPath(RatpNetwork geoTest) {
+    private List<Rame> getRameOnLine(RatpNetwork geo, LineString line){
+        List<Rame> rameInLine = new ArrayList<>();
+        Bag objectGeo = geo.getLine(nameLine).getRight().getGeometries();
+        Iterator objectIt = objectGeo.iterator();
+        while(objectIt.hasNext()){
+            MasonGeometry mElem = (MasonGeometry)objectIt.next();
+            if(mElem.hasAttribute("type") && mElem.getStringAttribute("type").equals("rame")){
+                Rame r = (Rame)(((AttributeValue)mElem.getAttribute("rame")).getValue());
+                LineString lineOfRame = r.getCurrentLine();
+                if(lineOfRame.equals(line) && !r.getGeometry().equals(this.location)) {
+                    rameInLine.add(r);
+                }
+            }
+        }
+        return rameInLine;
+    }
+
+    private boolean isRameCloseOnLine (RatpNetwork geo, LineString line, double index, double distance){
+        List<Rame> rameOnLine = getRameOnLine(geo, line);
+        Iterator rameIterator = rameOnLine.iterator();
+        while(rameIterator.hasNext()){
+            Rame r = (Rame) rameIterator.next();
+            if(index==-1 && Math.abs(r.getStartIndex()-r.getCurrentIndex())<=distance){
+                return true;
+            }
+            if (index >=0 && Math.abs(r.getCurrentIndex()-index)<=distance){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean isRameClose(RatpNetwork geo, double distance) {
+
+        if(isRameCloseOnLine(geo, this.currentLine, this.currentIndex, distance)){
+            return true;
+        }
+        if(Math.abs(this.currentIndex-this.endIndex)<distance){
+            if(isRameCloseOnLine(geo, this.nextLine, -1, distance-Math.abs(this.endIndex-this.currentIndex))){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void findNewPath(RatpNetwork geo) {
+        this.currentLine = getLineForStation(geo, this.location.getGeometry().getCoordinate(), this.nextStation);
+        Point startPoint = this.currentLine.getStartPoint();
+        Point endPoint = this.currentLine.getEndPoint();
+        Point nextBegin = null;
+        if (startPoint.equals(this.location.geometry)) {
+            this.setNewRoute(this.currentLine, true);
+            if(!nextStation.equals(nextnextStation)) {
+                this.nextLine = getLineForStation(geo, endPoint.getCoordinate(), this.nextnextStation);
+                nextBegin = endPoint;
+            }
+        } else if (endPoint.equals(this.location.geometry)) {
+            this.setNewRoute(this.currentLine, false);
+            if(!nextStation.equals(nextnextStation)) {
+                this.nextLine = getLineForStation(geo, startPoint.getCoordinate(), this.nextnextStation);
+                nextBegin = startPoint;
+            }
+        } else {
+            System.err.println("Where am I?");
+        }
+        LengthIndexedLine l = new LengthIndexedLine(this.nextLine);
+        if(nextBegin != null && this.nextLine.getStartPoint().equals(nextBegin)) {
+            this.nextStartIndex = l.getStartIndex();
+        } else if (nextBegin!=null && this.nextLine.getEndPoint().equals(nextBegin)){
+            this.nextStartIndex = l.getEndIndex();
+        } else {
+            //nothing happen
+        }
+    }
+
+    private LineString getLineForStation (RatpNetwork geo, Coordinate coord, String station) {
         GeomPlanarGraph network = new GeomPlanarGraph();
-        network.createFromGeomField(geoTest.getLine(this.nameLine).getRight());
-        Node currentJunction = network.findNode(this.location.getGeometry().getCoordinate());
+        network.createFromGeomField(geo.getLine(this.nameLine).getRight());
+        Node currentJunction = network.findNode(coord);
         if (currentJunction != null) {
             DirectedEdgeStar directedEdgeStar = currentJunction.getOutEdges();
             Object[] edges = directedEdgeStar.getEdges().toArray();
             if (edges.length > 0) {
                 GeomPlanarGraphDirectedEdge directedEdge;
-                if(edges.length>1) {
+                if (edges.length > 1) {
                     int i = 0;
-                    while (!((GeomPlanarGraphEdge)((GeomPlanarGraphDirectedEdge)edges[i]).getEdge()).getStringAttribute("destinatio").equals(this.nextStation) && !((GeomPlanarGraphEdge)((GeomPlanarGraphDirectedEdge)edges[i]).getEdge()).getStringAttribute("origin").equals(this.nextStation)) {
+                    while (!((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[i]).getEdge()).getStringAttribute("destinatio").equals(station) && !((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[i]).getEdge()).getStringAttribute("origin").equals(station)) {
                         i++;
                     }
                     directedEdge = (GeomPlanarGraphDirectedEdge) edges[i];
                 } else {
+                   // System.out.println("hello");
+                    System.out.println(((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[0]).getEdge()).getStringAttribute("origin") + " +-+ " +((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[0]).getEdge()).getStringAttribute("destinatio"));
                     directedEdge = (GeomPlanarGraphDirectedEdge) edges[0];
                 }
-                GeomPlanarGraphEdge edge = (GeomPlanarGraphEdge)directedEdge.getEdge();
-                LineString newRoute = edge.getLine();
-                Point startPoint = newRoute.getStartPoint();
-                Point endPoint = newRoute.getEndPoint();
-                if (startPoint.equals(this.location.geometry)) {
-                    this.setNewRoute(newRoute, true);
-                } else if (endPoint.equals(this.location.geometry)) {
-                    this.setNewRoute(newRoute, false);
-                } else {
-                    System.err.println("Where am I?");
-                }
+                GeomPlanarGraphEdge edge = (GeomPlanarGraphEdge) directedEdge.getEdge();
+                return edge.getLine();
             }
         }
-
+        return null;
     }
 
     private void setNewRoute(LineString line, boolean start) {
@@ -153,18 +244,24 @@ public class Rame implements Steppable {
     }
 
     private void move(RatpNetwork geoTest) {
-
-        otherTrainDetected(geoTest);
+        if(isRameClose(geoTest,0.0001D)){
+            this.moveRate = 0;
+            this.basemoveRate = 0;
+        }
         if (!this.arrived()) {
             this.moveAlongPath();
         } else {
-            if(itSchedule.hasNext() && attente == -1) {
+            if(!this.nextStation.equals(this.nextnextStation) && attente == -1) {
                 attente = 100;
-            } else if (itSchedule.hasNext() && attente > 0) {
+            } else if (!this.nextStation.equals(this.nextnextStation) && attente > 0) {
                 attente--;
-            } else if(itSchedule.hasNext() && attente == 0) {
+            } else if(!this.nextStation.equals(this.nextnextStation) && attente == 0) {
                 attente --;
-                nextStation = ((Schedule) itSchedule.next()).station.name;
+                nextStation = this.nextnextStation;
+                if(itSchedule.hasNext()) {
+                    this.nextnextStation = ((Schedule) itSchedule.next()).station.name;
+                }
+                //System.out.println(nextStation + " " + nextnextStation);
                 this.findNewPath(geoTest);
             } else {
                 //delete (event ou auto delete)
@@ -184,7 +281,6 @@ public class Rame implements Steppable {
 
         Coordinate currentPos = this.segment.extractPoint(this.currentIndex);
         this.moveTo(currentPos);
-        //System.out.println("Current : " + this.currentIndex + " Start : " + this.startIndex + " End : " + this.endIndex);
 
     }
 
@@ -213,32 +309,5 @@ public class Rame implements Steppable {
         }
         return returnList;
     }
-
-    private boolean otherTrainDetected (RatpNetwork geo){
-        GeomVectorField geoLine = geo.getLine(this.nameLine).getRight();
-        Bag nearestObject = geoLine.getObjectsWithinDistance(this.location.getGeometry(), 0.0009D);
-        if (!nearestObject.isEmpty()){
-            Iterator i = nearestObject.iterator();
-            while(i.hasNext()){
-                MasonGeometry element = (MasonGeometry) i.next();
-                if(element.getStringAttribute("type").equals("rame")){
-                    //System.out.println(element.getGeometry().toString());
-                    //System.out.println("End");
-                    System.out.println("hello");
-                    if(!this.location.getGeometry().equals(element.getGeometry())) {
-                        //System.out.println("Begin");
-                        //System.out.println("Us" + this.location.getGeometry().toString());
-                        //System.out.println("End");
-                        //System.out.println(element.getGeometry().toString());
-                        this.moveRate = 0;
-                        this.basemoveRate = 0;
-                    }
-                }
-            }
-        }
-        return true;
-    }
-
-
 
 }
