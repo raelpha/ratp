@@ -16,7 +16,6 @@ import sim.util.Double2D;
 import sim.util.geo.GeomPlanarGraph;
 import sim.util.geo.MasonGeometry;
 import station.Station;
-import station.SuperStation;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
@@ -166,9 +165,9 @@ public class AgentVoyageur implements Steppable {
 
     // détermine une destination au hasard
     private Station DeterminerDestination(){
-        var ssList = StationsDirectory.getInstance().allSuperStations;
+        var ssList = StationsDirectory.getInstance().getAllGares();
         List<Station> stations = new ArrayList<>();
-        for(SuperStation ss : ssList){
+        for(var ss : ssList){
             stations.addAll(ss.stations.values());
         }
         int n = stations.size();
