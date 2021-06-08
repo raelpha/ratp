@@ -13,10 +13,12 @@ public class RatpMain {
         StationsDirectory.initialize();
         LinesDirectory.initialize();
         StationsDirectory.getInstance().affectPointsToStations();
+        StationsDirectory.getInstance().createAllGeomVectorFieldForGares();
     }
 
     public static void main(String[] args){
         initializeDirectories();
+
         RatpNetwork model = new RatpNetwork(System.currentTimeMillis());
         RatpStateWithUI gui = new RatpStateWithUI(model);
 

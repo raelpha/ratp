@@ -17,13 +17,6 @@ import java.util.Map;
 
 public class RatpNetwork extends SimState {
 
-    public Continuous2D yard = new Continuous2D(VoyageurConstants.Discretisation, Constants.FIELD_SIZE, Constants.FIELD_SIZE);
-
-    /**linesGeomVectorField contains all the LineString of the network*/
-    //Map<String,GeomVectorField> linesGeomVectorField = new HashMap<>();
-
-    /**We WILL make another Graph here for passenger interconnection*/
-    //public GeomPlanarGraph passengerNetwork = new GeomPlanarGraph();
 
     Map<String, Line> lines = LinesDirectory.getInstance().lines;
 
@@ -55,19 +48,6 @@ public class RatpNetwork extends SimState {
 
     public void removeVoyageur(AgentVoyageur voyageur){
         yard.remove(voyageur);
-    }
 
-    /*public GeomVectorField geomVectorField = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
-    public GeomVectorFieldPortrayal geomVectorFieldPortrayal = new GeomVectorFieldPortrayal();
-    public void setupPortrayal(){
-        geomVectorFieldPortrayal.setField(geomVectorField);
-        geomVectorFieldPortrayal.setPortrayalForAll(new GeomPortrayal(){
-            public void draw(Object object, Graphics2D graphics, DrawInfo2D info){
-                MasonGeometry geometry = (MasonGeometry) object;
-                paint = Color.decode(geometry.getStringAttribute("color"));
-                filled = true;
-                scale = 0.000003D;
-                super.draw(object, graphics, info);
-            }
-        });*/
+    }
 }
