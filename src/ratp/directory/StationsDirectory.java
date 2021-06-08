@@ -30,7 +30,7 @@ public class StationsDirectory {
         StationsDirectory s = getInstance();
     }
 
-    private List<SuperStation> allSuperStations;
+    public List<SuperStation> allSuperStations;
 
     Map<String, SuperStation> superStations;
 
