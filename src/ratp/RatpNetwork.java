@@ -61,6 +61,7 @@ public class RatpNetwork extends SimState {
                 this.schedule.scheduleRepeating(entry.getValue());
             }
         }
+        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("4", "Simplon"));
     }
 
 
