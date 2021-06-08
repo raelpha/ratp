@@ -15,8 +15,9 @@ import sim.field.continuous.Continuous2D;
 import sim.util.Double2D;
 import sim.util.geo.GeomPlanarGraph;
 import sim.util.geo.MasonGeometry;
+import station.Gare;
 import station.Station;
-import station.SuperStation;
+
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
@@ -54,7 +55,7 @@ public class AgentVoyageur implements Steppable, Delayed {
     public AgentVoyageur(Station stationCourante, Continuous2D yard){
         InitialisationDansStation(stationCourante, yard);
         destination = DeterminerDestination();
-        System.out.println("Je suis à : " + stationCourante.name + " et je veux aller à : " + destination.name);
+        //System.out.println("Je suis à : " + stationCourante.name + " et je veux aller à : " + destination.name);
         cheminEnvisage = trouverChemin(stationCourante, destination);
 
         Random R = new Random();
@@ -67,7 +68,7 @@ public class AgentVoyageur implements Steppable, Delayed {
     public void InitialisationDansStation(Station station, Continuous2D yard){
         this.stationCourante = station;
         // TODO : prévenir la station d'ou on veut aller
-        System.out.println("Station prévenue");
+        //System.out.println("Station prévenue");
         Double2D location = GetRandomPointCircle(VoyageurConstants.maximumDistanceStation);
         //var stationPos = ConversionGeomToContinuous(new Double2D(station.location.getX(), station.location.getY()));
         yard.setObjectLocation(this, ConversionGeomToContinuous(location));
@@ -168,10 +169,10 @@ public class AgentVoyageur implements Steppable, Delayed {
 
     // détermine une destination au hasard
     private Station DeterminerDestination(){
-        var ssList = StationsDirectory.getInstance().allSuperStations;
+        List<Gare> gareList = StationsDirectory.getInstance().allGares;
         List<Station> stations = new ArrayList<>();
-        for(SuperStation ss : ssList){
-            stations.addAll(ss.stations.values());
+        for(Gare gare : gareList){
+            stations.addAll(gare.stations.values());
         }
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
@@ -263,7 +264,7 @@ public class AgentVoyageur implements Steppable, Delayed {
         }
         Collections.reverse(stationPath);
         System.out.println("J'emprunterai le chemin suivant : ");
-        for(var s : stationPath){
+        for(Station s : stationPath){
             System.out.println(s.name + " " + s.lineNumber);
         }
         return new LinkedList<>(stationPath);

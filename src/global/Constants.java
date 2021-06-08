@@ -24,5 +24,7 @@ public class Constants {
     public static final String IS_MULTIPLE_STATION_STR = "isMultipleStation";
 
     public static int MAX_USER_RAME =518;
+    public static final int NB_PIC_MATIN = 20;
+    public static final int NB_PIC_SOIR = 20;
 
 }

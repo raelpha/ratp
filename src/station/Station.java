@@ -14,7 +14,7 @@ import sim.display.Console;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.util.geo.MasonGeometry;
-
+import global.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,10 +26,12 @@ public class Station implements Steppable{
     public Color color = new Color(255,255,255);
     public Color legacyColor = new Color(255,255,255);
     public Point location;
+    public Boolean spawn=false;
     private List<AgentVoyageur> listAttenteRame ;
     private int colereStation;
     private int nbVoyageurs;
     private Boolean fermee=false;
+    public Rame rameSurPlace;
     //Deprecated
     /*
     public Station(String lineId, String name) {
@@ -71,15 +73,15 @@ public class Station implements Steppable{
     }
 
 
-    public Station(Line line, String name) {
+    /*public Station(Line line, String name) {
         this.line = line;
         this.lineNumber = line.number;
         this.name = name;
         this.color = line.color;
         this.legacyColor = line.color;
-    }
+    }*/
 
-    public Station(Line line, String name,int nbVoyageurs) {
+    public Station(Line line, String name) {
         this.line = line;
         this.lineNumber = line.number;
         this.name = name;
@@ -87,12 +89,12 @@ public class Station implements Steppable{
         this.legacyColor = line.color;
         this.colereStation=0;
         this.nbVoyageurs=nbVoyageurs;
-        List<AgentVoyageur> _listAttenteRame=new ArrayList<AgentVoyageur>();
+        /*List<AgentVoyageur> _listAttenteRame=new ArrayList<AgentVoyageur>();
         for(int i=0;i<nbVoyageurs;i++){
-            AgentVoyageur nv= new AgentVoyageur(this);
-            _listAttenteRame.add(nv);
-        }
-        this.listAttenteRame=_listAttenteRame;
+            //AgentVoyageur nv= new AgentVoyageur(this);
+            //_listAttenteRame.add(nv);
+        }*/
+        this.listAttenteRame=new ArrayList<AgentVoyageur>();
     }
 
     MasonGeometry mg = new MasonGeometry();
@@ -100,27 +102,37 @@ public class Station implements Steppable{
     @Override
     public void step(SimState simState) {
         RatpNetwork ratpNetwork =(RatpNetwork) simState;
+        System.out.println("hello");
+        if(!spawn){
+            System.out.println("hey");
+            int nbVoyageurSpawn = (int)doubleNormale(7,5);
+            for(int i=0;i<nbVoyageurSpawn;i++){
+                ratpNetwork.addVoyageur(StationsDirectory.getInstance().getStation("1", "Nation"));
+            }
+            spawn=true;
+        }
     }
 
     public static double fonctionNormale(double d) {
         return Math.exp(-Math.pow(d,2));
     }
-    public static double doubleNormale(double x) {
-        return fonctionNormale((x-7.5)/3)*15 + fonctionNormale((x-18)/4)*10;
+    public static double doubleNormale(int heure, int minutes) {
+        int minuteHeure = heure*60;
+        int minuteTot=minuteHeure + minutes;
+        double x = minuteTot/60;
+        return fonctionNormale((x-7.5)/3)*Constants.NB_PIC_MATIN + fonctionNormale((x-18)/4)*Constants.NB_PIC_SOIR;
     }
 
-    public List<AgentVoyageur> createVoyageurs(double horaire){
-        //TODO something
+    /*public List<AgentVoyageur> createVoyageurs(double horaire){
         listAttenteRame=new ArrayList<AgentVoyageur>();
-        int nb=(int)doubleNormale(horaire);
         //System.out.println(nb);
         this.setNbVoyageurs(nb);
         for(int i=0;i<getNbVoyageurs();i++){
-            AgentVoyageur nv= new AgentVoyageur(this);
-            listAttenteRame.add(nv);
+            //AgentVoyageur nv= new AgentVoyageur(this);
+            //listAttenteRame.add(nv);
         }
         return listAttenteRame;
-    }
+    }*/
 
     public void colereStationTot(List<AgentVoyageur> listVoyageur){
         int colereTot=0;
@@ -155,7 +167,7 @@ public class Station implements Steppable{
     }*/
 
     public void addToMctList(String name,AgentVoyageur a){
-        StationsDirectory.getInstance().superStations.get(name).queueMct.add(a);
+        StationsDirectory.getInstance().gares.get(name).queueMct.add(a);
     }
 
     public int demanderNbPlaceRame(Rame rame) {
@@ -173,8 +185,7 @@ public class Station implements Steppable{
 
     public static void main(String[] args){
 
-        Line line = new Line("1");
-        Station station = new Station(line,"Châtelet",5);
+
 
     }
 

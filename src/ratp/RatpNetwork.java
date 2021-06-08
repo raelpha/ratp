@@ -1,5 +1,6 @@
 package ratp;
 
+import com.vividsolutions.jts.geom.Envelope;
 import global.Constants;
 import lines.Line;
 import rame.Rame;
@@ -8,6 +9,7 @@ import ratp.directory.StationsDirectory;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
 import sim.util.Double2D;
+import station.Gare;
 import station.Station;
 import voyageur.AgentVoyageur;
 import voyageur.VoyageurConstants;
@@ -19,9 +21,10 @@ import sim.field.geo.GeomVectorField;
 import java.awt.*;
 import java.util.Map;
 
+
 public class RatpNetwork extends SimState {
 
-
+    public Continuous2D yard = new Continuous2D(VoyageurConstants.Discretisation, Constants.FIELD_SIZE, Constants.FIELD_SIZE);
     Map<String, Line> lines = LinesDirectory.getInstance().lines;
 
     public RatpNetwork(long seed){
@@ -31,7 +34,13 @@ public class RatpNetwork extends SimState {
             linesGeomVectorField.put(s, new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE));
         }*/
         //FileImporter.shapeFileImporterByLine("lines/lines", linesGeomVectorField);
+        //this.schedule.scheduleRepeating(a);
 
+        for (Map.Entry<String, Gare> g: StationsDirectory.getInstance().gares.entrySet()) {
+            for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
+                this.schedule.scheduleRepeating(entry.getValue());
+            }
+        }
     }
     public Pair<String, GeomVectorField> getLine(String name){
         GeomVectorField l = lines.get(name).geomVectorField;
@@ -45,17 +54,15 @@ public class RatpNetwork extends SimState {
         this.schedule.scheduleRepeating(r);
     }
 
-    public void start() {
-        super.start();
-        addAgent("1");
-    }
 
     public void start()
     {
         super.start();
         yard.clear();
-        for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
+        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
+
     }
+
 
     public void addVoyageur(Station currentStation){
         AgentVoyageur a = new AgentVoyageur(currentStation, yard);

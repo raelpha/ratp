@@ -38,15 +38,15 @@ public class StationsDirectory {
         StationsDirectory s = getInstance();
     }
 
-    public List<SuperStation> allSuperStations;
+    //public List<SuperStation> allSuperStations;
 
     public List<Gare> getAllGares() {
         return allGares;
     }
 
-    private List<Gare> allGares;
+    public List<Gare> allGares;
 
-    Map<String, Gare> gares;
+    public Map<String, Gare> gares;
 
     //geomVectorField used to store all Gare geometries
     public GeomVectorField geomVectorFieldGare = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
