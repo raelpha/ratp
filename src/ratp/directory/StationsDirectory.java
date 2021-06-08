@@ -32,7 +32,7 @@ public class StationsDirectory {
 
     public List<SuperStation> allSuperStations;
 
-    Map<String, SuperStation> superStations;
+    public Map<String, SuperStation> superStations;
 
     public StationsDirectory()
     {

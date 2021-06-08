@@ -1,11 +1,12 @@
 package station;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.DelayQueue;
+
 import ratp.RatpMain;
 import ratp.RatpNetwork;
+import ratp.directory.StationsDirectory;
 import sim.app.virus.Agent;
 import sim.engine.SimState;
 import sim.engine.Steppable;
@@ -15,16 +16,8 @@ public class SuperStation implements Steppable{
     public int id;
     public String name;
 
-    public List<AgentVoyageur> listMct;
+    public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
     //private List<QuaiAgent> listQuai;
-
-    public List<AgentVoyageur> getListMct() {
-        return listMct;
-    }
-
-    public void setListMct(List<AgentVoyageur> listMct) {
-        this.listMct = listMct;
-    }
 
 
 
@@ -35,13 +28,13 @@ public class SuperStation implements Steppable{
 
     public void setListQuai(List<QuaiAgent> listQuai) {
         this.listQuai = listQuai;
+        this.listQuai = listQuai;
     }*/
 
 
     public SuperStation(int id, String name) {
         this.id = id;
         this.name = name;
-        this.listMct=new ArrayList<AgentVoyageur>();
     }
 
 

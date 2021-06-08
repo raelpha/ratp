@@ -145,14 +145,18 @@ public class Station implements Steppable{
         for(AgentVoyageur a: listDescedants){
             //remove la station de la liste de station du voyageur
             //Si la liste est vide , ça signifie que c'est son terminus donc on le remove
-            if(a.listStation.isEmpty()){ // terminus
+            if(a.chemi.isEmpty()){ // terminus
                 //retirer l'agent
             }
             else{ //sinon on le change de quai
-                StationsDirectory.getInstance().
+                addToMctList(name,a);
             }
         }
     }*/
+
+    public void addToMctList(String name,AgentVoyageur a){
+        StationsDirectory.getInstance().superStations.get(name).queueMct.add(a);
+    }
 
     public int demanderNbPlaceRame(Rame rame) {
         return rame.freePlaces();
@@ -171,7 +175,6 @@ public class Station implements Steppable{
 
         Line line = new Line("1");
         Station station = new Station(line,"Châtelet",5);
-
 
     }
 
