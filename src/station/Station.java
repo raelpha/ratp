@@ -106,7 +106,7 @@ public class Station implements Steppable{
         if(!spawn){
             System.out.println("hey");
             int nbVoyageurSpawn = (int)doubleNormale(7,5);
-            for(int i=0;i<=1;i++){
+            for(int i=0;i<1;i++){
                 ratpNetwork.addVoyageur(this);
             }
             this.spawn=true;
