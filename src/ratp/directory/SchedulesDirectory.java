@@ -76,7 +76,7 @@ public class SchedulesDirectory {
         //The dirty way... Initialize this before schedules
         computeSchedulesByLine();
         computeSchedules();
-        StationsDirectory.getInstance().addStationsToSuperStations(allSchedules);
+        StationsDirectory.getInstance().addStationsToGares(allSchedules);
     }
 
     public static class Schedule {
@@ -104,21 +104,21 @@ public class SchedulesDirectory {
             this.direction  = direction;
 
             //Dirty trick here:
-            if(!StationsDirectory.getInstance().superStations.get(station_name).stations.containsKey(this.lineNumber)){
+            if(!StationsDirectory.getInstance().gares.get(station_name).stations.containsKey(this.lineNumber)){
                 StationsDirectory.getInstance().instantiateStation(line, station_name);
             }
-            if(!StationsDirectory.getInstance().superStations.get(stationOriginName).stations.containsKey(this.lineNumber)){
+            if(!StationsDirectory.getInstance().gares.get(stationOriginName).stations.containsKey(this.lineNumber)){
                 StationsDirectory.getInstance().instantiateStation(line, stationOriginName);
             }
-            if(!StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.containsKey(this.lineNumber)) {
+            if(!StationsDirectory.getInstance().gares.get(stationDestinationName).stations.containsKey(this.lineNumber)) {
                 StationsDirectory.getInstance().instantiateStation(line, stationDestinationName);
             }
 
             LinesDirectory.getInstance().lines.get(lineNumber).stations.put(station_name, StationsDirectory.getInstance().getStation(lineNumber, station_name));
 
-            this.station = StationsDirectory.getInstance().superStations.get(station_name).stations.get(this.lineNumber);
-            this.origin = StationsDirectory.getInstance().superStations.get(stationOriginName).stations.get(this.lineNumber);
-            this.destination = StationsDirectory.getInstance().superStations.get(stationDestinationName).stations.get(this.lineNumber);
+            this.station = StationsDirectory.getInstance().gares.get(station_name).stations.get(this.lineNumber);
+            this.origin = StationsDirectory.getInstance().gares.get(stationOriginName).stations.get(this.lineNumber);
+            this.destination = StationsDirectory.getInstance().gares.get(stationDestinationName).stations.get(this.lineNumber);
             this.serviceName = serviceName;
         }
     }
