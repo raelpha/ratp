@@ -121,9 +121,10 @@ public class Rame implements Steppable {
         List<Rame> rameInLine = new ArrayList<>();
         Bag objectGeo = geo.getLine(nameLine).getRight().getGeometries();
         Iterator objectIt = objectGeo.iterator();
+        String direction = Integer.toString(getDirection());
         while(objectIt.hasNext()){
             MasonGeometry mElem = (MasonGeometry)objectIt.next();
-            if(mElem.hasAttribute("type") && mElem.getStringAttribute("type").equals("rame")){
+            if(mElem.hasAttribute("type") && mElem.getStringAttribute("type").equals("rame") && mElem.getStringAttribute("direction").equals(direction)){
                 Rame r = (Rame)(((AttributeValue)mElem.getAttribute("rame")).getValue());
                 LineString lineOfRame = r.getCurrentLine();
                 if(lineOfRame.equals(line) && !r.getGeometry().equals(this.location)) {

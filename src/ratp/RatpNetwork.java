@@ -60,7 +60,7 @@ public class RatpNetwork extends SimState {
         SchedulesDirectory sd = SchedulesDirectory.getInstance();
         //List<Schedule> schedules = sd.schedules.get("1").get("La Défense -> Château de Vincennes");
         //addAgent("1", schedules);
-        addAgent("14", sd.schedules.get("14").get("Olympiades -> Mairie de Saint-Ouen"));
+        addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
         //addAgent("3", sd.schedules.get("3").get("Pont de Levallois - Bécon -> Gallieni"));
         //addAgent("6");
     }
