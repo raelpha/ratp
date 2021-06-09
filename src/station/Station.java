@@ -31,7 +31,7 @@ public class Station implements Steppable{
     private int colereStation;
     private int nbVoyageurs;
     private Boolean fermee=false;
-    public Rame rameSurPlace;
+    private List<Rame> rameSurPlace = new ArrayList<>();
     //Deprecated
     /*
     public Station(String lineId, String name) {
@@ -39,6 +39,12 @@ public class Station implements Steppable{
         this.name = name;
     }
     */
+
+    public String getName() {return name;}
+
+    public void addRame(Rame r){rameSurPlace.add(r);}
+
+    public void removeRame(Rame r) {rameSurPlace.remove(r);}
 
     public List<AgentVoyageur> getListAttenteRame() {
         return listAttenteRame;

@@ -8,6 +8,8 @@ import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.planargraph.DirectedEdgeStar;
 import com.vividsolutions.jts.planargraph.Node;
 import global.Constants;
+import station.Station;
+import voyageur.AgentVoyageur;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import com.vividsolutions.jts.linearref.LengthIndexedLine;
@@ -23,6 +25,7 @@ import ratp.directory.SchedulesDirectory.Schedule;
 
 public class Rame implements Steppable {
 
+    private Station currentStation = null;
     private LineString currentLine;
     private LineString nextLine;
     private MasonGeometry location;
@@ -30,7 +33,7 @@ public class Rame implements Steppable {
     private Iterator itSchedule;
     private String nextStation;
     private String nextnextStation;
-    private double basemoveRate = 0.00001D;
+    private double basemoveRate = 0.000001D;
     private double moveRate;
     private LengthIndexedLine segment;
     private int attente;
@@ -41,7 +44,7 @@ public class Rame implements Steppable {
     PointMoveTo pointMoveTo;
     private static GeometryFactory fact = new GeometryFactory();
     private int maxUser = Constants.MAX_USER_RAME;
-    private List<Object> users = new ArrayList<Object>();
+    private List<AgentVoyageur> users = new ArrayList<>();
     private String nameLine;
 
     public Rame(RatpNetwork state, String nameLine, List<Schedule> schedule, Object ... params) {
@@ -213,7 +216,7 @@ public class Rame implements Steppable {
                     directedEdge = (GeomPlanarGraphDirectedEdge) edges[i];
                 } else {
                    // System.out.println("hello");
-                    System.out.println(((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[0]).getEdge()).getStringAttribute("origin") + " +-+ " +((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[0]).getEdge()).getStringAttribute("destinatio"));
+                    //System.out.println(((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[0]).getEdge()).getStringAttribute("origin") + " +-+ " +((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[0]).getEdge()).getStringAttribute("destinatio"));
                     directedEdge = (GeomPlanarGraphDirectedEdge) edges[0];
                 }
                 GeomPlanarGraphEdge edge = (GeomPlanarGraphEdge) directedEdge.getEdge();
@@ -256,10 +259,13 @@ public class Rame implements Steppable {
             this.moveAlongPath();
         } else {
             if(!this.nextStation.equals(this.nextnextStation) && attente == -1) {
-                attente = 100;
+                if(enterInStation(geoTest)) {
+                    attente = 100;
+                }
             } else if (!this.nextStation.equals(this.nextnextStation) && attente > 0) {
                 attente--;
             } else if(!this.nextStation.equals(this.nextnextStation) && attente == 0) {
+                leaveStation();
                 attente --;
                 nextStation = this.nextnextStation;
                 if(itSchedule.hasNext()) {
@@ -288,6 +294,31 @@ public class Rame implements Steppable {
 
     }
 
+    private boolean enterInStation (RatpNetwork geo) {
+        Bag object = geo.getLine(this.nameLine).getRight().getGeometries();
+        if(object.isEmpty()){
+            return false;
+        } else {
+            Iterator itObject = object.iterator();
+            while(itObject.hasNext()){
+                MasonGeometry mg = (MasonGeometry) itObject.next();
+                if (mg.hasAttribute("type") && mg.getStringAttribute("type").equals("station")){
+                    currentStation = (Station)((AttributeValue)mg.getAttribute("station")).getValue();
+                    if (currentStation.getName().equals(this.nextStation)){
+                        currentStation.addRame(this);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private void leaveStation() {
+        currentStation.removeRame(this);
+        currentStation = null;
+    }
+
     public int numberOfUser(){
         return users.size();
     }
@@ -296,7 +327,7 @@ public class Rame implements Steppable {
         return maxUser-numberOfUser();
     }
 
-    public boolean addUser(Object u){
+    public boolean addUser(AgentVoyageur u){
         if(freePlaces()!=0){
             users.add(u);
             return true;
@@ -305,11 +336,11 @@ public class Rame implements Steppable {
         }
     }
 
-    public List<Object> removeUser (String stationName) {
-        List<Object> returnList = new ArrayList<Object>();
-        ListIterator<Object> it = users.listIterator();
+    public List<AgentVoyageur> removeUser (String stationName) {
+        List<AgentVoyageur> returnList = new ArrayList<>();
+        ListIterator<AgentVoyageur> it = users.listIterator();
         while(it.hasNext()){
-            //precédure de détection et d'ajout
+            //procédure de détection et d'ajout
         }
         return returnList;
     }

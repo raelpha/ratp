@@ -1,36 +1,25 @@
 package ratp;
 
-import com.vividsolutions.jts.geom.Envelope;
 import global.Constants;
 import lines.Line;
 import rame.RameFactory;
+import rame.Rame;
 import ratp.directory.LinesDirectory;
 import ratp.directory.SchedulesDirectory;
 import ratp.directory.SchedulesDirectory.*;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
-import sim.util.Double2D;
 import station.Gare;
 import station.Station;
 import voyageur.AgentVoyageur;
 import voyageur.VoyageurConstants;
 import voyageur.VoyageurDonnees;
 import sim.app.geo.masoncsc.util.Pair;
-import sim.engine.SimState;
 import sim.field.geo.GeomVectorField;
-
-
-
-import global.Constants;
-import rame.Rame;
-import sim.app.geo.campusworld.Agent;
-import sim.app.geo.masoncsc.util.Pair;
-import sim.field.geo.GeomVectorField;
-import rame.Rame;
+import ratp.directory.StationsDirectory;
 import sim.util.geo.MasonGeometry;
 
 import java.util.*;
-import java.awt.*;
 
 
 public class RatpNetwork extends SimState {
@@ -50,32 +39,6 @@ public class RatpNetwork extends SimState {
 
 
     }
-    public Pair<String, GeomVectorField> getLine(String name){
-        GeomVectorField l = lines.get(name).geomVectorField;
-        Pair returnValue = new Pair <String, GeomVectorField>(name,l);
-        return returnValue;
-    }
-
-    private void addAgent(String lineName){
-        Rame r = new Rame(this, lineName);
-        getLine("1").getRight().addGeometry(r.getGeometry());
-        this.schedule.scheduleRepeating(r);
-    }
-
-
-    public void start()
-    {
-        super.start();
-        yard.clear();
-        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
-        for (Map.Entry<String, Gare> g: StationsDirectory.getInstance().gares.entrySet()) {
-            for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
-                this.schedule.scheduleRepeating(entry.getValue());
-            }
-        }
-        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("4", "Simplon"));
-    }
-
 
     public void addVoyageur(Station currentStation){
         AgentVoyageur a = new AgentVoyageur(currentStation, yard);
@@ -101,6 +64,13 @@ public class RatpNetwork extends SimState {
 
     public void start() {
         super.start();
+        yard.clear();
+        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
+        for (Map.Entry<String, Gare> g: StationsDirectory.getInstance().gares.entrySet()) {
+            for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
+                this.schedule.scheduleRepeating(entry.getValue());
+            }
+        }
         // ce code est la fameuse factory qui crée un rame pour chaque schedule (attention les rame qui arrive en face s'arrêteront)
         /*factory.setBaseRame(this);
         List<Pair<String, Rame>> listeRame =  factory.getRame();
