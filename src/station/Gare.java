@@ -1,19 +1,25 @@
 package station;
 
 import global.Constants;
+import ratp.RatpNetwork;
+import sim.engine.SimState;
+import sim.engine.Steppable;
 import sim.util.geo.MasonGeometry;
+import voyageur.AgentVoyageur;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.DelayQueue;
 
 /**
  * A gare is made of one or more Station.
  * This class is also used to display associated MasonGeometry with a portrayal
  */
-public class Gare extends MasonGeometry {
+public class Gare extends MasonGeometry implements Steppable {
     public int id;
     public String name;
     public Map<String, Station> stations = new HashMap<>();
+    public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
 
     /**
      * Main constructor, used when instantiating new gare (without associated MasonGeometry)
@@ -49,6 +55,9 @@ public class Gare extends MasonGeometry {
         return stations.get(lineId);
     }
 
-
+    @Override
+    public void step(SimState simState) {
+        RatpNetwork ratpNetwork = (RatpNetwork) simState;
+    }
 
 }
