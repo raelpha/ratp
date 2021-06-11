@@ -5,8 +5,9 @@ import lines.Line;
 import rame.RameFactory;
 import rame.Rame;
 import ratp.directory.LinesDirectory;
-import ratp.directory.SchedulesDirectory;
+import ratp.directory.StationsDirectory;
 import ratp.directory.SchedulesDirectory.*;
+import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
 import station.Gare;
@@ -21,6 +22,9 @@ import sim.util.geo.MasonGeometry;
 
 import java.util.*;
 
+
+import java.util.List;
+import java.util.Map;
 
 public class RatpNetwork extends SimState {
 
@@ -38,6 +42,17 @@ public class RatpNetwork extends SimState {
         //this.schedule.scheduleRepeating(a);
 
 
+    public void start()
+    {
+        super.start();
+        yard.clear();
+        for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("13", "Liège"));
+        /*List<Pair<Station, List<Station>>> fdsjhvbjd = StationsDirectory.getInstance().getAdjacentStationsWithDestination(StationsDirectory.getInstance().getStation("13","Liège"));
+        for(var p : fdsjhvbjd){
+            for(var s : p.getRight()){
+                System.out.println(s.name + " " + s.lineNumber);
+            }
+        }*/
     }
 
     public void addVoyageur(Station currentStation){
