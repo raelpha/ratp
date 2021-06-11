@@ -42,6 +42,8 @@ public class RatpNetwork extends SimState {
 
     public void addVoyageur(Station currentStation){
         AgentVoyageur a = new AgentVoyageur(currentStation, yard);
+        currentStation.getListAttenteRame().add(a);
+        System.out.println(currentStation.getListAttenteRame());
         schedule.scheduleRepeating(a);
     }
 
@@ -82,19 +84,20 @@ public class RatpNetwork extends SimState {
 
         //ce code permet de tester en ajouter des rames à l'unité, il suffit de préciser la ligne et la liste de schedule de la rame
         SchedulesDirectory sd = SchedulesDirectory.getInstance();
+
         //List<Schedule> schedules = sd.schedules.get("1").get("La Défense -> Château de Vincennes");
         //addAgent("1", schedules);
-        addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
+        //addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
+        addAgent("1", sd.schedules.get("1").get("La Défense -> Château de Vincennes"));
         //addAgent("3", sd.schedules.get("3").get("Pont de Levallois - Bécon -> Gallieni"));
         //addAgent("6");
     }
 
-    public void addVoyageur(VoyageurDonnees vD, Station currentStation){
-        new AgentVoyageur(vD, currentStation, yard);
+    public void addVoyageur(VoyageurDonnees vD, Station currentStation) {
+        AgentVoyageur a =new AgentVoyageur(vD, currentStation, yard);
     }
 
     public void removeVoyageur(AgentVoyageur voyageur){
         yard.remove(voyageur);
-
     }
 }

@@ -50,15 +50,18 @@ public class AgentVoyageur implements Steppable, Delayed {
 
     public AgentVoyageur(Station stationCourante, Continuous2D yard){
         InitialisationDansStation(stationCourante, yard);
-        destination = DeterminerDestination();
+        //destination = DeterminerDestination();
         //System.out.println("Je suis à : " + stationCourante.name + " et je veux aller à : " + destination.name);
+        destination=StationsDirectory.getInstance().getStation("1","Château de Vincennes");
         cheminEnvisage = trouverChemin(stationCourante, destination);
-
         Random R = new Random();
         int rand = (int)(R.nextGaussian()*80);
         if(rand < 0) colere = 0;
         else if(rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
         else colere = rand;
+        for(Station s : cheminEnvisage){
+            System.out.println(s.name + " " + s.lineNumber);
+        }
     }
 
     public void InitialisationDansStation(Station station, Continuous2D yard){
@@ -263,10 +266,10 @@ public class AgentVoyageur implements Steppable, Delayed {
             currentNode = currentNode.previousNode;
         }
         Collections.reverse(stationPath);
-        System.out.println("J'emprunterai le chemin suivant : ");
-        for(Station s : stationPath){
+        //System.out.println("J'emprunterai le chemin suivant : ");
+        /*for(Station s : stationPath){
             System.out.println(s.name + " " + s.lineNumber);
-        }
+        }*/
         return new LinkedList<>(stationPath);
     }
 

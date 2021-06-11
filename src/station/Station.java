@@ -32,6 +32,7 @@ public class Station implements Steppable{
     private int nbVoyageurs;
     private Boolean fermee=false;
     private List<Rame> rameSurPlace = new ArrayList<>();
+    public Boolean test=false;
     //Deprecated
     /*
     public Station(String lineId, String name) {
@@ -109,13 +110,42 @@ public class Station implements Steppable{
     public void step(SimState simState) {
         RatpNetwork ratpNetwork =(RatpNetwork) simState;
         //System.out.println("hello");
-        if(!spawn){
-            System.out.println("hey");
+        /*/if(!spawn){
             int nbVoyageurSpawn = (int)doubleNormale(7,5);
             for(int i=0;i<1;i++){
                 ratpNetwork.addVoyageur(this);
             }
             this.spawn=true;
+        }*/
+        if(test){
+            //System.out.println("yo");
+            //System.out.println(this.name);
+            if(!spawn){
+                System.out.println("caca");
+                int nbVoyageurSpawn = (int)doubleNormale(7,5);
+                for(int i=0;i<1;i++){
+                    ratpNetwork.addVoyageur(this);
+                }
+                this.spawn=true;
+            }
+            //addToMctList(this.name,listAttenteRame.remove(0));
+            //System.out.println(StationsDirectory.getInstance().gares.get(this.name).queueMct);
+        }
+        if(StationsDirectory.getInstance().getStation("1","Nation").test==false){
+            StationsDirectory.getInstance().getStation("1","Nation").test=true;
+            System.out.println("ok");
+        }
+        if(!rameSurPlace.isEmpty()){
+            //System.out.println("hey1");
+            Rame rame = rameSurPlace.remove(0);
+            if(!getListAttenteRame().isEmpty()){
+                System.out.println("hey2");
+                AgentVoyageur a =getListAttenteRame().remove(0);
+                System.out.println(rame.freePlaces());
+                rame.addUser(a);
+                System.out.println(rame.freePlaces());
+                ratpNetwork.removeVoyageur(a);
+            }
         }
     }
 
