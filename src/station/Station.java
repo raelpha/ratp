@@ -16,8 +16,11 @@ import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.util.geo.MasonGeometry;
 import global.Constants;
+import voyageur.VoyageurDonnees;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class Station implements Steppable{
     public Line line;
@@ -169,7 +172,13 @@ public class Station implements Steppable{
             if(!getListAttenteRame().isEmpty()){
                 AgentVoyageur a =getListAttenteRame().remove(0);
                 System.out.println(rame.freePlaces());
-                rame.addUser(a);
+                //TODO convertir AgentVoyageur en VoyageurDonnees
+                int colere = a.colere;
+                Station destinationVoyageur = a.destination;
+                Station stationCourante=  a.stationCourante;
+                Queue<Pair<Station, List<Station>>> cheminEnvisage = a.cheminEnvisage;
+                VoyageurDonnees vD = new VoyageurDonnees(colere,destinationVoyageur,stationCourante,cheminEnvisage);
+                rame.addUser(vD);
                 System.out.println(rame.freePlaces());
                 ratpNetwork.removeVoyageur(a);
             }

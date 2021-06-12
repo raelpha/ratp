@@ -14,7 +14,7 @@ public class Constants {
     public static final String FALSE = "false";
 
     public static final List<String> listOfLinesNames = Arrays.asList("1", "2", "3", "3b", "4", "5", "6", "7", "7b", "8", "9", "10", "11", "12", "13", "14");
-    public static final Map<String, Integer> listOfCapacity = new HashMap<>(){
+    public static final Map<String, Integer> listOfCapacity = new HashMap<String,Integer>(){
         {
             put("1",698);
             put("2",557);

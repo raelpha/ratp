@@ -31,7 +31,7 @@ import station.Station;
 public class AgentVoyageur implements Steppable, Delayed {
 
     public int colere;
-    Station destination;
+    public Station destination;
     public Station stationCourante;
     public Queue<Pair<Station, List<Station>>> cheminEnvisage;
     public long   time;

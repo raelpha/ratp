@@ -269,7 +269,7 @@ public class Rame implements Steppable {
         double maxSpeedStation = resSpeed.doubleValue();
         double brakingLimitDistance = resBrak.doubleValue();
 
-        System.out.println(this.lineDirection);
+        //System.out.println(this.lineDirection);
 
         if(isRameClose(geo, Constants.DETECTION_DISTANCE)){
             if(this.lineDirection==-1) {
