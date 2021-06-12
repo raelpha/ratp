@@ -379,7 +379,7 @@ public class Rame implements Steppable {
     }
 
     public int numberOfUser(){
-        return users.size();
+        return users.size()+forceUser.size();
     }
 
     public int freePlaces(){
@@ -402,11 +402,14 @@ public class Rame implements Steppable {
         ListIterator<AgentVoyageur> it = users.listIterator();
         while(it.hasNext()){
             AgentVoyageur a = it.next();
+            if(!a.cheminEnvisage.isEmpty() && a.cheminEnvisage.peek().getLeft().name.equals(stationName)){
+                a.cheminEnvisage.poll();
+            }
             if (a.cheminEnvisage.isEmpty()){
                 forceUser.add(a);
                 users.remove(a);
             }
-            if (a.cheminEnvisage.poll().getLeft().name.equals(stationName)){
+            if (!a.cheminEnvisage.peek().getLeft().line.equals(this.nameLine)){
                 if(!isClosed) {
                     returnList.add(a);
                     users.remove(a);
