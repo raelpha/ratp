@@ -2,6 +2,7 @@ package station;
 
 import global.Constants;
 import ratp.RatpNetwork;
+import ratp.directory.StationsDirectory;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.util.geo.MasonGeometry;
@@ -20,6 +21,7 @@ public class Gare extends MasonGeometry implements Steppable {
     public String name;
     public Map<String, Station> stations = new HashMap<>();
     public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
+    private Boolean test=false;
 
     /**
      * Main constructor, used when instantiating new gare (without associated MasonGeometry)
@@ -55,9 +57,16 @@ public class Gare extends MasonGeometry implements Steppable {
         return stations.get(lineId);
     }
 
+    public DelayQueue<AgentVoyageur> getQueueMct() {
+        return queueMct;
+    }
+
     @Override
     public void step(SimState simState) {
         RatpNetwork ratpNetwork = (RatpNetwork) simState;
+        if(StationsDirectory.getInstance().allGares.get(249).test==false){
+            //System.out.println(StationsDirectory.getInstance().gares.get("Nation");
+        }
     }
 
 }

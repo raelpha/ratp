@@ -5,6 +5,7 @@ import lines.Line;
 import rame.RameFactory;
 import rame.Rame;
 import ratp.directory.LinesDirectory;
+import ratp.directory.SchedulesDirectory;
 import ratp.directory.StationsDirectory;
 import ratp.directory.SchedulesDirectory.*;
 import sim.app.geo.masoncsc.util.Pair;
@@ -32,7 +33,7 @@ public class RatpNetwork extends SimState {
     Map<String, Line> lines = LinesDirectory.getInstance().lines;
     RameFactory factory = RameFactory.getInstance();
 
-    public RatpNetwork(long seed){
+    public RatpNetwork(long seed) {
         super(seed);
 
         /*for (String s : Constants.listOfLinesNames){
@@ -40,55 +41,51 @@ public class RatpNetwork extends SimState {
         }*/
         //FileImporter.shapeFileImporterByLine("lines/lines", linesGeomVectorField);
         //this.schedule.scheduleRepeating(a);
+    }
 
+        public AgentVoyageur addVoyageur (Station currentStation){
+            AgentVoyageur a = new AgentVoyageur(currentStation, yard,Constants.ATTENTE_MCT);
+            currentStation.getListAttenteRame().add(a);
+            System.out.println(currentStation.getListAttenteRame());
+            schedule.scheduleRepeating(a);
+            return a;
+        }
 
-    public void start()
-    {
-        super.start();
-        yard.clear();
-        for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("13", "Liège"));
-        /*List<Pair<Station, List<Station>>> fdsjhvbjd = StationsDirectory.getInstance().getAdjacentStationsWithDestination(StationsDirectory.getInstance().getStation("13","Liège"));
+        public Pair<String, GeomVectorField> getLine (String name){
+            GeomVectorField l = lines.get(name).geomVectorField;
+            Pair returnValue = new Pair<String, GeomVectorField>(name, l);
+            return returnValue;
+        }
+
+        private void addAgent (String lineName, List < Schedule > schedules){
+            Rame r = new Rame(this, lineName, schedules);
+            MasonGeometry rameGeometry = r.getGeometry();
+            rameGeometry.addAttribute("type", "rame");
+            rameGeometry.addAttribute("direction", Integer.toString(schedules.get(0).direction));
+            rameGeometry.addAttribute("rame", r);
+            getLine(lineName).getRight().addGeometry(r.getGeometry());
+            this.schedule.scheduleRepeating(r);
+
+        }
+
+        public void start () {
+            super.start();
+            yard.clear();
+            //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
+            for (Map.Entry<String, Gare> g : StationsDirectory.getInstance().gares.entrySet()) {
+                this.schedule.scheduleRepeating(g.getValue());
+                for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
+                    this.schedule.scheduleRepeating(entry.getValue());
+                }
+            }
+                /*List<Pair<Station, List<Station>>> fdsjhvbjd = StationsDirectory.getInstance().getAdjacentStationsWithDestination(StationsDirectory.getInstance().getStation("13","Liège"));
         for(var p : fdsjhvbjd){
             for(var s : p.getRight()){
                 System.out.println(s.name + " " + s.lineNumber);
             }
         }*/
-    }
 
-    public void addVoyageur(Station currentStation){
-        AgentVoyageur a = new AgentVoyageur(currentStation, yard);
-        currentStation.getListAttenteRame().add(a);
-        System.out.println(currentStation.getListAttenteRame());
-        schedule.scheduleRepeating(a);
-    }
-
-    public Pair<String, GeomVectorField> getLine(String name){
-        GeomVectorField l = lines.get(name).geomVectorField;
-        Pair returnValue = new Pair <String, GeomVectorField>(name,l);
-        return returnValue;
-    }
-
-    private void addAgent(String lineName, List<Schedule> schedules){
-        Rame r = new Rame(this, lineName, schedules);
-        MasonGeometry rameGeometry = r.getGeometry();
-        rameGeometry.addAttribute("type", "rame");
-        rameGeometry.addAttribute("direction", Integer.toString(schedules.get(0).direction));
-        rameGeometry.addAttribute("rame", r);
-        getLine(lineName).getRight().addGeometry(r.getGeometry());
-        this.schedule.scheduleRepeating(r);
-
-    }
-
-    public void start() {
-        super.start();
-        yard.clear();
-        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
-        for (Map.Entry<String, Gare> g: StationsDirectory.getInstance().gares.entrySet()) {
-            for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
-                this.schedule.scheduleRepeating(entry.getValue());
-            }
-        }
-        // ce code est la fameuse factory qui crée un rame pour chaque schedule (attention les rame qui arrive en face s'arrêteront)
+            // ce code est la fameuse factory qui crée un rame pour chaque schedule (attention les rame qui arrive en face s'arrêteront)
         /*factory.setBaseRame(this);
         List<Pair<String, Rame>> listeRame =  factory.getRame();
         Iterator rameIterator = listeRame.iterator();
@@ -97,22 +94,22 @@ public class RatpNetwork extends SimState {
             this.schedule.scheduleRepeating(r);
         }*/
 
-        //ce code permet de tester en ajouter des rames à l'unité, il suffit de préciser la ligne et la liste de schedule de la rame
-        SchedulesDirectory sd = SchedulesDirectory.getInstance();
+            //ce code permet de tester en ajouter des rames à l'unité, il suffit de préciser la ligne et la liste de schedule de la rame
+            SchedulesDirectory sd = SchedulesDirectory.getInstance();
 
-        //List<Schedule> schedules = sd.schedules.get("1").get("La Défense -> Château de Vincennes");
-        //addAgent("1", schedules);
-        //addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
-        addAgent("1", sd.schedules.get("1").get("La Défense -> Château de Vincennes"));
-        //addAgent("3", sd.schedules.get("3").get("Pont de Levallois - Bécon -> Gallieni"));
-        //addAgent("6");
-    }
+            //List<Schedule> schedules = sd.schedules.get("1").get("La Défense -> Château de Vincennes");
+            //addAgent("1", schedules);
+            //addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
+            addAgent("1", sd.schedules.get("1").get("La Défense -> Château de Vincennes"));
+            //addAgent("3", sd.schedules.get("3").get("Pont de Levallois - Bécon -> Gallieni"));
+            //addAgent("6");
+        }
 
-    public void addVoyageur(VoyageurDonnees vD, Station currentStation) {
-        AgentVoyageur a =new AgentVoyageur(vD, currentStation, yard);
-    }
+        /*public void addVoyageur (VoyageurDonnees vD, Station currentStation){
+            AgentVoyageur a = new AgentVoyageur(vD, currentStation, yard);
+        }*/
 
-    public void removeVoyageur(AgentVoyageur voyageur){
-        yard.remove(voyageur);
-    }
+        public void removeVoyageur (AgentVoyageur voyageur){
+            yard.remove(voyageur);
+        }
 }

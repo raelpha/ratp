@@ -4,6 +4,7 @@ import com.vividsolutions.jts.geom.Point;
 import lines.Line;
 import rame.Rame;
 import ratp.directory.StationsDirectory;
+import sim.app.geo.masoncsc.util.Pair;
 import sim.util.geo.MasonGeometry;
 
 import java.awt.*;
@@ -33,6 +34,8 @@ public class Station implements Steppable{
     private Boolean fermee=false;
     private List<Rame> rameSurPlace = new ArrayList<>();
     public Boolean test=false;
+    public Boolean tets2=false;
+    private List<AgentVoyageur> voyageurDescendu=new ArrayList<>();
     //Deprecated
     /*
     public Station(String lineId, String name) {
@@ -121,25 +124,49 @@ public class Station implements Steppable{
             //System.out.println("yo");
             //System.out.println(this.name);
             if(!spawn){
-                System.out.println("caca");
-                int nbVoyageurSpawn = (int)doubleNormale(7,5);
+                //int nbVoyageurSpawn = (int)doubleNormale(7,5);
                 for(int i=0;i<1;i++){
-                    ratpNetwork.addVoyageur(this);
+                    AgentVoyageur temp = ratpNetwork.addVoyageur(this);
+                    this.voyageurDescendu.add(temp);
                 }
                 this.spawn=true;
             }
             //addToMctList(this.name,listAttenteRame.remove(0));
             //System.out.println(StationsDirectory.getInstance().gares.get(this.name).queueMct);
         }
-        if(StationsDirectory.getInstance().getStation("1","Nation").test==false){
-            StationsDirectory.getInstance().getStation("1","Nation").test=true;
-            System.out.println("ok");
+
+        if(!this.voyageurDescendu.isEmpty()){
+            for(AgentVoyageur a : this.voyageurDescendu){
+                if(this.tets2==false){
+                    System.out.println(a.stationCourante.name);
+                    System.out.println(a.cheminEnvisage.peek().getLeft().name);
+                    if(a.stationCourante.name.equals(a.cheminEnvisage.peek().getLeft().name)){
+                        this.addToMctList(a.stationCourante.name,a);
+                        Gare g=StationsDirectory.getInstance().gares.get(a.stationCourante.name);
+                        a.cheminEnvisage.poll();
+                        String lineNumber = a.cheminEnvisage.peek().getLeft().lineNumber;
+                        String stationName = a.cheminEnvisage.peek().getLeft().name;
+                        Station s = StationsDirectory.getInstance().getStation(lineNumber,stationName);
+                        System.out.println("avant :"+s.getListAttenteRame());
+                        s.getListAttenteRame().add(g.getQueueMct().poll());
+                        System.out.println("apres: "+s.getListAttenteRame());
+                        //System.out.println("tiens :"+StationsDirectory.getInstance().gares.get("Nation"));
+                        //Gare g = StationsDirectory.getInstance().gares.get("Nation");
+                        //System.out.println(g.name);
+                    }
+
+                    this.tets2=true;
+                }
+            }
         }
+
+        if(StationsDirectory.getInstance().getStation("8","Reuilly - Diderot").test==false){
+            StationsDirectory.getInstance().getStation("8","Reuilly - Diderot").test=true;
+        }
+
         if(!rameSurPlace.isEmpty()){
-            //System.out.println("hey1");
             Rame rame = rameSurPlace.remove(0);
             if(!getListAttenteRame().isEmpty()){
-                System.out.println("hey2");
                 AgentVoyageur a =getListAttenteRame().remove(0);
                 System.out.println(rame.freePlaces());
                 rame.addUser(a);
@@ -187,6 +214,14 @@ public class Station implements Steppable{
 
     }
 
+    /*public void checkDestinationVoyageur(List<AgentVoyageur> listAgent,List<Rame> listRame){
+        for(AgentVoyageur a : listAgent){
+            for(Rame r : listRame){
+                if(r.)
+            }
+        }
+    }*/
+
     /*public void dechargerRame(Rame rame,String name){
         List<AgentVoyageur> listDescedants = new ArrayList<AgentVoyageur>();
         listDescedants=rame.removeUser(this.name);
@@ -220,8 +255,6 @@ public class Station implements Steppable{
 
 
     public static void main(String[] args){
-
-
 
     }
 

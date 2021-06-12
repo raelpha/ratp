@@ -1,5 +1,6 @@
 package voyageur;
 
+import global.Constants;
 import ratp.RatpNetwork;
 
 import ratp.directory.StationsDirectory;
@@ -31,9 +32,10 @@ public class AgentVoyageur implements Steppable, Delayed {
 
     public int colere;
     Station destination;
-    Station stationCourante;
-    Queue<Pair<Station, List<Station>>> cheminEnvisage;
-    private long   momentDeLiberation;
+    public Station stationCourante;
+    public Queue<Pair<Station, List<Station>>> cheminEnvisage;
+    public long   time;
+    //Constants.ATTENTE_MCT;
     int nChangementCheminenvisage;
 
     int etat = 0;
@@ -51,25 +53,29 @@ public class AgentVoyageur implements Steppable, Delayed {
         InitialisationDansStation(stationCourante, yard);
     }
 
-    public AgentVoyageur(Station stationCourante, Continuous2D yard){
+    public AgentVoyageur(Station stationCourante, Continuous2D yard,long delayTime){
         InitialisationDansStation(stationCourante, yard);
         //destination = DeterminerDestination();
         //System.out.println("Je suis à : " + stationCourante.name + " et je veux aller à : " + destination.name);
-//destination=StationsDirectory.getInstance().getStation("1","Château de Vincennes");
-//cheminEnvisage = trouverChemin(stationCourante, destination);
-        destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
-        System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
+        destination=StationsDirectory.getInstance().getStation("1","Château de Vincennes");
+        //cheminEnvisage = trouverChemin(stationCourante, destination);
+        //destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
+        //System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
         cheminEnvisage = trouverChemin(stationCourante, destination);
+        this.time=time+delayTime;
 
-        System.out.println("Nbr chgt : " + nChangementCheminenvisage);
+        //System.out.println("Nbr chgt : " + nChangementCheminenvisage);
 
         Random R = new Random();
         int rand = (int)(R.nextGaussian()*80);
         if(rand < 0) colere = 0;
         else if(rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
         else colere = rand;
-        for(Station s : cheminEnvisage){
-            System.out.println(s.name + " " + s.lineNumber);
+        for(Pair<Station, List<Station>> s : cheminEnvisage){
+            System.out.println(s.getLeft().name + " " + s.getLeft().lineNumber);
+            for(Station station: s.getRight()){
+                System.out.println(station.name);
+            }
         }
     }
 
@@ -198,19 +204,24 @@ public class AgentVoyageur implements Steppable, Delayed {
 
     @Override
     public long getDelay(TimeUnit unit) {
-        long diff = momentDeLiberation - System.currentTimeMillis();
+        long diff = time - System.currentTimeMillis();
         return unit.convert(diff, TimeUnit.MILLISECONDS);
     }
+
+    /*@Override public String toString()
+    {
+        return "\n{ time : "+time +" }";
+    }*/
 
     @Override
     public int compareTo(Delayed o) {
         int resultat = -1;
         if (o instanceof AgentVoyageur) {
             AgentVoyageur agentVoyageur = (AgentVoyageur) o;
-            if (this.momentDeLiberation < agentVoyageur.momentDeLiberation) {
+            if (this.time < agentVoyageur.time) {
                 resultat = -1;
             } else {
-                if (this.momentDeLiberation > agentVoyageur.momentDeLiberation) {
+                if (this.time > agentVoyageur.time) {
                     resultat = 1;
                 } else {
                     resultat = 0;
@@ -273,7 +284,7 @@ public class AgentVoyageur implements Steppable, Delayed {
             }
             stationFermees.add(n);
         }
-        System.out.println("Erreur, pas de chemin trouvé.");
+        //System.out.println("Erreur, pas de chemin trouvé.");
         return null;
     }
 
@@ -296,14 +307,14 @@ public class AgentVoyageur implements Steppable, Delayed {
             previousDestinations = currentNode.destinations;
         }
         Collections.reverse(stationPath);
-        System.out.println("J'emprunterai le chemin suivant : ");
-        for(Pair<Station, List<Station>> station_destination : stationPath){
+        //System.out.println("J'emprunterai le chemin suivant : ");
+        /*for(Pair<Station, List<Station>> station_destination : stationPath){
             System.out.println(station_destination.getLeft().name + " " + station_destination.getLeft().lineNumber);
             System.out.println("Train à destinations de : ");
             for(Station s : station_destination.getRight()){
                 System.out.println("    " + s.name + ", " + s.lineNumber);
             }
-        }
+        }*/
         return new LinkedList<>(stationPath);
     }
 
