@@ -8,6 +8,7 @@ import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.planargraph.DirectedEdgeStar;
 import com.vividsolutions.jts.planargraph.Node;
 import global.Constants;
+import sim.app.virus.Agent;
 import station.Station;
 import voyageur.AgentVoyageur;
 import sim.engine.SimState;
@@ -49,8 +50,8 @@ public class Rame implements Steppable {
     PointMoveTo pointMoveTo;
     private static GeometryFactory fact = new GeometryFactory();
     private int maxUser = Constants.MAX_USER_RAME;
-    private List<VoyageurDonnees> users = new ArrayList<>();
-    private List<VoyageurDonnees> forceUser = new ArrayList<>();
+    private List<AgentVoyageur> users = new ArrayList<>();
+    private List<AgentVoyageur> forceUser = new ArrayList<>();
     private String nameLine;
 
     public Rame(RatpNetwork state, String nameLine, List<Schedule> schedule, Object ... params) {
@@ -316,6 +317,8 @@ public class Rame implements Steppable {
             if(!this.nextStation.equals(this.nextnextStation) && attente == -1) {
                 if(enterInStation(geo)) {
                     attente = 100;
+                } else {
+                    removeUser();
                 }
             } else if (!this.nextStation.equals(this.nextnextStation) && attente > 0) {
                 attente--;
@@ -360,7 +363,7 @@ public class Rame implements Steppable {
                 MasonGeometry mg = (MasonGeometry) itObject.next();
                 if (mg.hasAttribute("type") && mg.getStringAttribute("type").equals("station")){
                     currentStation = (Station)((AttributeValue)mg.getAttribute("station")).getValue();
-                    if (currentStation.getName().equals(this.nextStation)){
+                    if (currentStation.getName().equals(this.nextStation) && !currentStation.isFermee()){
                         currentStation.addRame(this);
                         return true;
                     }
@@ -383,7 +386,7 @@ public class Rame implements Steppable {
         return maxUser-numberOfUser();
     }
 
-    public boolean addUser(VoyageurDonnees u){
+    public boolean addUser(AgentVoyageur u){
         if(freePlaces()!=0){
             users.add(u);
             return true;
@@ -392,17 +395,31 @@ public class Rame implements Steppable {
         }
     }
 
-    public List<VoyageurDonnees> removeUser () {
+    public List<AgentVoyageur> removeUser () {
         String stationName = currentStation.getName();
-        List<VoyageurDonnees> returnList = new ArrayList<>();
-        ListIterator<VoyageurDonnees> it = users.listIterator();
+        Boolean isClosed = currentStation.isFermee();
+        List<AgentVoyageur> returnList = new ArrayList<>();
+        ListIterator<AgentVoyageur> it = users.listIterator();
         while(it.hasNext()){
-            //procédure de détection et d'ajout
+            AgentVoyageur a = it.next();
+            if (a.cheminEnvisage.isEmpty()){
+                forceUser.add(a);
+                users.remove(a);
+            }
+            if (a.cheminEnvisage.poll().getLeft().name.equals(stationName)){
+                if(!isClosed) {
+                    returnList.add(a);
+                    users.remove(a);
+                } else {
+                    forceUser.add(a);
+                    users.remove(a);
+                }
+            }
         }
         return returnList;
     }
 
-    public List<VoyageurDonnees> forceRemoveUser() {
+    public List<AgentVoyageur> forceRemoveUser() {
         return forceRemoveUser();
     }
 

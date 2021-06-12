@@ -18,7 +18,6 @@ import voyageur.VoyageurConstants;
 import voyageur.VoyageurDonnees;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.field.geo.GeomVectorField;
-import ratp.directory.StationsDirectory;
 import sim.util.geo.MasonGeometry;
 
 import java.util.*;
@@ -57,35 +56,42 @@ public class RatpNetwork extends SimState {
             return returnValue;
         }
 
-        private void addAgent (String lineName, List < Schedule > schedules){
-            Rame r = new Rame(this, lineName, schedules);
-            MasonGeometry rameGeometry = r.getGeometry();
-            rameGeometry.addAttribute("type", "rame");
-            rameGeometry.addAttribute("direction", Integer.toString(schedules.get(0).direction));
-            rameGeometry.addAttribute("rame", r);
-            getLine(lineName).getRight().addGeometry(r.getGeometry());
-            this.schedule.scheduleRepeating(r);
+    }
 
+    public void addVoyageur(Station currentStation){
+        AgentVoyageur a = new AgentVoyageur(currentStation, yard);
+        schedule.scheduleRepeating(a);
+    }
+
+    public Pair<String, GeomVectorField> getLine(String name){
+        GeomVectorField l = lines.get(name).geomVectorField;
+        Pair returnValue = new Pair <String, GeomVectorField>(name,l);
+        return returnValue;
+    }
+
+    private void addAgent(String lineName, List<Schedule> schedules){
+        Rame r = new Rame(this, lineName, schedules);
+        MasonGeometry rameGeometry = r.getGeometry();
+        rameGeometry.addAttribute("type", "rame");
+        rameGeometry.addAttribute("direction", Integer.toString(schedules.get(0).direction));
+        rameGeometry.addAttribute("rame", r);
+        getLine(lineName).getRight().addGeometry(r.getGeometry());
+        this.schedule.scheduleRepeating(r);
+
+    }
+
+    public void start() {
+        super.start();
+        yard.clear();
+        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
+        for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("13", "Liège"));
+        for (Map.Entry<String, Gare> g: StationsDirectory.getInstance().gares.entrySet()) {
+          this.schedule.scheduleRepeating(g.getValue());
+            for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
+                this.schedule.scheduleRepeating(entry.getValue());
+            }
         }
-
-        public void start () {
-            super.start();
-            yard.clear();
-            //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
-            for (Map.Entry<String, Gare> g : StationsDirectory.getInstance().gares.entrySet()) {
-                this.schedule.scheduleRepeating(g.getValue());
-                for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
-                    this.schedule.scheduleRepeating(entry.getValue());
-                }
-            }
-                /*List<Pair<Station, List<Station>>> fdsjhvbjd = StationsDirectory.getInstance().getAdjacentStationsWithDestination(StationsDirectory.getInstance().getStation("13","Liège"));
-        for(var p : fdsjhvbjd){
-            for(var s : p.getRight()){
-                System.out.println(s.name + " " + s.lineNumber);
-            }
-        }*/
-
-            // ce code est la fameuse factory qui crée un rame pour chaque schedule (attention les rame qui arrive en face s'arrêteront)
+        // ce code est la fameuse factory qui crée un rame pour chaque schedule (attention les rame qui arrive en face s'arrêteront)
         /*factory.setBaseRame(this);
         List<Pair<String, Rame>> listeRame =  factory.getRame();
         Iterator rameIterator = listeRame.iterator();
