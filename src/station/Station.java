@@ -20,6 +20,7 @@ import voyageur.VoyageurDonnees;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 
 public class Station implements Steppable{
@@ -165,6 +166,8 @@ public class Station implements Steppable{
 
         if(StationsDirectory.getInstance().getStation("8","Reuilly - Diderot").test==false){
             StationsDirectory.getInstance().getStation("8","Reuilly - Diderot").test=true;
+            System.out.println("get toutes les lignes d'une station");
+            //System.out.println(StationsDirectory.getInstance().gares.get("Nation").stations.entrySet());
         }
 
         if(!rameSurPlace.isEmpty()){

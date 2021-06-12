@@ -24,6 +24,7 @@ public class Gare extends MasonGeometry implements Steppable {
     public Map<String, Station> stations = new HashMap<>();
     public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
     private Boolean test=false;
+    private Boolean fermee=false;
 
     /**
      * Main constructor, used when instantiating new gare (without associated MasonGeometry)
@@ -62,6 +63,19 @@ public class Gare extends MasonGeometry implements Steppable {
     public DelayQueue<AgentVoyageur> getQueueMct() {
         return queueMct;
     }
+
+    public Boolean isFermee() {
+        return fermee;
+    }
+
+    public void setFermee() {
+        this.fermee = true;
+        //On ferme toutes les stations dans la Gare
+        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
+            StationsDirectory.getInstance().getStation(entry.getKey(),this.name).setFermee();
+        }
+    }
+
 
     @Override
     public void step(SimState simState) {
