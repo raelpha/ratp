@@ -3,6 +3,7 @@ package voyageur;
 import ratp.RatpNetwork;
 
 import ratp.directory.StationsDirectory;
+import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.field.continuous.Continuous2D;
@@ -31,8 +32,8 @@ public class AgentVoyageur implements Steppable, Delayed {
     public int colere;
     Station destination;
     Station stationCourante;
-    Queue<Station> cheminEnvisage;
-    private long   momentDeLiberation;
+    Queue<Pair<Station, List<Station>>> cheminEnvisage;
+    int nChangementCheminenvisage;
 
     int etat = 0;
     double x,y;
@@ -44,15 +45,19 @@ public class AgentVoyageur implements Steppable, Delayed {
     public AgentVoyageur(VoyageurDonnees donnees, Station stationCourante, Continuous2D yard){
         destination = donnees.destination;
         cheminEnvisage = donnees.cheminEnvisage;
+        // TODO : récup list dest
         colere = donnees.colere;
         InitialisationDansStation(stationCourante, yard);
     }
 
     public AgentVoyageur(Station stationCourante, Continuous2D yard){
         InitialisationDansStation(stationCourante, yard);
-        destination = DeterminerDestination();
-        //System.out.println("Je suis à : " + stationCourante.name + " et je veux aller à : " + destination.name);
+        //destination = DeterminerDestination();
+        destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
+        System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
         cheminEnvisage = trouverChemin(stationCourante, destination);
+
+        System.out.println("Nbr chgt : " + nChangementCheminenvisage);
 
         Random R = new Random();
         int rand = (int)(R.nextGaussian()*80);
@@ -154,9 +159,12 @@ public class AgentVoyageur implements Steppable, Delayed {
     // permet d'informer l'agent qu'une station a été fermée, si elle est sur son chemin il recalcule son trajet
     public void FermetureStation(Station station){
         if(cheminEnvisage.contains(station)){
+            int previousCheminSize = cheminEnvisage.size();
+            int previousNChangement = nChangementCheminenvisage;
             trouverChemin(stationCourante, destination);
-            addToColere(VoyageurConstants.augmentationColereStationFermee);
-            // TODO pondérer avec taille du chgt
+            addToColere(VoyageurConstants.augmentationColereStationFermee
+            + VoyageurConstants.augmentationColereParStationSupplementaire*(cheminEnvisage.size() - previousCheminSize)
+            + VoyageurConstants.augmentationColereParNvChgtLigne*(nChangementCheminenvisage - previousNChangement));
         }
     }
 
@@ -169,10 +177,10 @@ public class AgentVoyageur implements Steppable, Delayed {
 
     // détermine une destination au hasard
     private Station DeterminerDestination(){
-        List<Gare> gareList = StationsDirectory.getInstance().allGares;
+        List<Gare> ssList = StationsDirectory.getInstance().getAllGares();
         List<Station> stations = new ArrayList<>();
-        for(Gare gare : gareList){
-            stations.addAll(gare.stations.values());
+        for(Gare ss : ssList){
+            stations.addAll(ss.stations.values());
         }
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
@@ -212,12 +220,14 @@ public class AgentVoyageur implements Steppable, Delayed {
         public double heuristique;
         public int cout;
         public Node previousNode;
+        public List<Station> destinations;
 
-        public Node(Station station, int cout, double heuristique, Node previousNode){
+        public Node(Station station, int cout, double heuristique, Node previousNode, List<Station> destinations){
             this.station = station;
             this.cout = cout;
             this.heuristique = heuristique;
             this.previousNode = previousNode;
+            this.destinations = destinations;
         }
     }
 
@@ -230,8 +240,8 @@ public class AgentVoyageur implements Steppable, Delayed {
         }
     }
 
-    private Queue<Station> trouverChemin(Station departS, Station arriveeS){
-        Node depart = new Node(departS, 0, 0, null);
+    private Queue<Pair<Station, List<Station>>> trouverChemin(Station departS, Station arriveeS){
+        Node depart = new Node(departS, 0, 0, null, null);
         Queue<Node> stationFermees = new LinkedList<>();
         PriorityQueue<Node> stationOuvertes = new PriorityQueue<>(new NodeComparator());
         stationOuvertes.add(depart);
@@ -241,10 +251,16 @@ public class AgentVoyageur implements Steppable, Delayed {
                 // reconstituer chemin
                 return BuildPath(n);
             }
-
-            for(Station s : StationsDirectory.getInstance().getAdjacentStations(n.station)){
+            List<Pair<Station, List<Station>>> voisins_destinations = StationsDirectory.getInstance().getAdjacentStationsWithDestination(n.station);
+            for(Pair<Station, List<Station>> voisin_destinations : voisins_destinations){
+                Station s = voisin_destinations.getLeft();
+                List<Station> destinations = voisin_destinations.getRight();
                 if(!(stationFermees.contains(s) || ExisteCoutInferieur(stationOuvertes, s, n.cout+1))){
-                    Node newN = new Node(s, n.cout+1, Distance(s, arriveeS), n);
+                    int cout = 1;
+                    if(s.lineNumber != n.station.lineNumber){
+                        cout = VoyageurConstants.coutChgtStation;
+                    }
+                    Node newN = new Node(s, n.cout+cout, Distance(s, arriveeS), n, destinations);
                     stationOuvertes.add(newN);
                 }
             }
@@ -254,18 +270,32 @@ public class AgentVoyageur implements Steppable, Delayed {
         return null;
     }
 
-
-    private Queue<Station> BuildPath(Node arrivee){
-        List<Station> stationPath = new ArrayList<>();
+    private Queue<Pair<Station, List<Station>>> BuildPath(Node arrivee){
+        nChangementCheminenvisage = 0;
+        List<Pair<Station, List<Station>>> stationPath = new ArrayList<>();
         Node currentNode = arrivee;
+        String previousLine = currentNode.station.lineNumber;
+        List<Station> previousDestinations = currentNode.destinations;
         while(currentNode.previousNode != null){
-            stationPath.add(currentNode.station);
+            if(currentNode.previousNode.station.lineNumber != currentNode.station.lineNumber){
+                nChangementCheminenvisage++;
+            }
+            stationPath.add(new Pair(currentNode.station, currentNode.destinations));
             currentNode = currentNode.previousNode;
+            if(previousLine.equals(currentNode.station.lineNumber)){
+                currentNode.destinations = previousDestinations;
+            }
+            previousLine = currentNode.station.lineNumber;
+            previousDestinations = currentNode.destinations;
         }
         Collections.reverse(stationPath);
         System.out.println("J'emprunterai le chemin suivant : ");
-        for(Station s : stationPath){
-            System.out.println(s.name + " " + s.lineNumber);
+        for(Pair<Station, List<Station>> station_destination : stationPath){
+            System.out.println(station_destination.getLeft().name + " " + station_destination.getLeft().lineNumber);
+            System.out.println("Train à destinations de : ");
+            for(Station s : station_destination.getRight()){
+                System.out.println("    " + s.name + ", " + s.lineNumber);
+            }
         }
         return new LinkedList<>(stationPath);
     }
@@ -282,16 +312,4 @@ public class AgentVoyageur implements Steppable, Delayed {
         }
         return false;
     }
-    /*
-    private List<Node> trouverChemin(Node depart, Node destination){
-        AStar aStar = new AStar();
-        List<GeomPlanarGraphDirectedEdge> edges = aStar.astarPath(depart, destination);
-        List<Node> chemin = new ArrayList<>();
-        for(var edge : edges){
-            chemin.add(edge.getFromNode());
-        }
-        chemin.add(destination);
-        return chemin;
-    }
-    */
 }

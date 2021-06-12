@@ -4,6 +4,7 @@ import com.vividsolutions.jts.geom.*;
 import com.vividsolutions.jts.geom.Point;
 import global.Constants;
 import lines.Line;
+import sim.app.geo.masoncsc.util.Pair;
 import sim.field.geo.GeomVectorField;
 import sim.portrayal.DrawInfo2D;
 import sim.portrayal.geo.GeomPortrayal;
@@ -91,6 +92,68 @@ public class StationsDirectory {
                     if(i<entry.getValue().size()-1){
                         if(!adjacentStations.contains(listOfStations.get(i+1).station))
                             adjacentStations.add(listOfStations.get(i+1).station);
+                    }
+                }
+            }
+        }
+        return adjacentStations;
+    }
+
+    public List<Station> getTowardsStation(Station origin, Station objective){
+        List<Station> towards = new ArrayList<>();
+        //Si on est sur la même ligne, on retourne les vraies destinations
+        if(origin.lineNumber.equals(objective.lineNumber)) {
+            //Pour chaque service de la ligne sur laquelle se situe la station
+            for (Map.Entry<String, List<SchedulesDirectory.Schedule>> schedules : SchedulesDirectory.getInstance().schedules.get(origin.lineNumber).entrySet()) {
+                //Pour chaque
+                boolean originDetected = false;
+                boolean destinationDetected = false;
+                Station destination = null;
+                for (SchedulesDirectory.Schedule s : schedules.getValue()) {
+                    destination = s.destination;
+                    if (s.station.equals(origin))
+                        originDetected = true;
+                    if (originDetected)
+                        if (s.station.equals(objective))
+                            destinationDetected = true;
+                }
+                if (destinationDetected && destination != null) {
+                    //TODO: on parle ici de la destination de la ligne, pas de
+                    towards.add(destination);
+                }
+            }
+        }else{ // Si on n'est pas sur la même ligne, on retourne toutes les destinations possibles, il faudra mettre un coup de ponceuse après (destination=destination n+1)
+            // TODO OR NOT TODO ?
+        }
+
+        return towards;
+    }
+
+    public List<Pair<Station, List<Station>>> getAdjacentStationsWithDestination(Station station){
+        List<Pair<Station,List<Station>>> adjacentStations = new ArrayList<>();
+        //Get stations of the belonging Gares
+        for (Map.Entry<String, Station> entry : gares.get(station.name).stations.entrySet()) {
+            if(entry.getValue()!=station){
+                //Warning ! Nullptr warning !
+                Pair<Station,List<Station>> s = new Pair<Station,List<Station>>(entry.getValue(),getTowardsStation(station,entry.getValue()));
+                adjacentStations.add(s);
+            }
+        }
+        //Get one or two neighbours from line
+        for(Map.Entry<String, List<SchedulesDirectory.Schedule>> entry : SchedulesDirectory.getInstance().schedules.get(station.lineNumber).entrySet()){
+            //System.out.println(entry.getKey() + "/" + entry.getValue());
+            for(int i=0;i<entry.getValue().size();i++){
+                List<SchedulesDirectory.Schedule> listOfStations = entry.getValue();
+                if(listOfStations.get(i).station==station){
+                    //On se met sur la station étudiée
+                    //On ne regarde que la +1 car la -1 sera traitée dans l'autre direction
+                    //Corner cases: 7b
+                    if(i<entry.getValue().size()-1){
+                        if(!adjacentStations.contains(listOfStations.get(i+1).station)){
+                            //adjacentStations.add(listOfStations.get(i+1).station);
+                            Pair<Station,List<Station>> s = new Pair<Station,List<Station>>(listOfStations.get(i+1).station,getTowardsStation(station, listOfStations.get(i+1).station));
+                            adjacentStations.add(s);
+                        }
                     }
                 }
             }

@@ -1,6 +1,6 @@
 package voyageur;
 
-
+import sim.app.geo.masoncsc.util.Pair;
 import station.Station;
 
 
@@ -11,9 +11,10 @@ public class VoyageurDonnees {
     public int colere;
     public Station destination;
     public Station stationCourante;
-    public Queue<Station> cheminEnvisage;
+    Queue<Pair<Station, List<Station>>> cheminEnvisage;
 
-    public VoyageurDonnees(int colere, Station destination, Station stationCourante, Queue<Station> cheminEnvisage) {
+    public VoyageurDonnees(int colere, Station destination, Station stationCourante, Queue<Pair<Station, List<Station>>> cheminEnvisage)
+    {
         this.colere = colere;
         this.destination = destination;
         this.stationCourante = stationCourante;
@@ -21,4 +22,3 @@ public class VoyageurDonnees {
     }
 
 }
-
