@@ -32,7 +32,7 @@ public class AgentVoyageur implements Steppable {
     public int colere;
     Station destination;
     Station stationCourante;
-    Queue<Pair<Station, List<Station>>> cheminEnvisage;
+    public Queue<Pair<Station, List<Station>>> cheminEnvisage;
     int nChangementCheminenvisage;
 
     int etat = 0;
