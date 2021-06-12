@@ -6,6 +6,8 @@ import rame.RameFactory;
 import rame.Rame;
 import ratp.directory.LinesDirectory;
 import ratp.directory.StationsDirectory;
+import ratp.directory.SchedulesDirectory.Schedule;
+import ratp.directory.SchedulesDirectory;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
@@ -16,7 +18,6 @@ import voyageur.VoyageurConstants;
 import voyageur.VoyageurDonnees;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.field.geo.GeomVectorField;
-import ratp.directory.StationsDirectory;
 import sim.util.geo.MasonGeometry;
 
 import java.util.*;

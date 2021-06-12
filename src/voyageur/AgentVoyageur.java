@@ -27,7 +27,7 @@ import station.Station;
 
 
 // la rame doit instantier les voyageurs avec la bonne station courante
-public class AgentVoyageur implements Steppable, Delayed {
+public class AgentVoyageur implements Steppable {
 
     public int colere;
     Station destination;
@@ -36,13 +36,13 @@ public class AgentVoyageur implements Steppable, Delayed {
     int nChangementCheminenvisage;
 
     int etat = 0;
-    double x,y;
+    double x, y;
     double goalX, goalY;
     double movementDirectionX;
     double movementDirectionY;
 
     // Réapparition d'un voyageur au sortir d'une rame
-    public AgentVoyageur(VoyageurDonnees donnees, Station stationCourante, Continuous2D yard){
+    public AgentVoyageur(VoyageurDonnees donnees, Station stationCourante, Continuous2D yard) {
         destination = donnees.destination;
         cheminEnvisage = donnees.cheminEnvisage;
         // TODO : récup list dest
@@ -50,7 +50,7 @@ public class AgentVoyageur implements Steppable, Delayed {
         InitialisationDansStation(stationCourante, yard);
     }
 
-    public AgentVoyageur(Station stationCourante, Continuous2D yard){
+    public AgentVoyageur(Station stationCourante, Continuous2D yard) {
         InitialisationDansStation(stationCourante, yard);
         //destination = DeterminerDestination();
         destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
@@ -60,13 +60,13 @@ public class AgentVoyageur implements Steppable, Delayed {
         System.out.println("Nbr chgt : " + nChangementCheminenvisage);
 
         Random R = new Random();
-        int rand = (int)(R.nextGaussian()*80);
-        if(rand < 0) colere = 0;
-        else if(rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
+        int rand = (int) (R.nextGaussian() * 80);
+        if (rand < 0) colere = 0;
+        else if (rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
         else colere = rand;
     }
 
-    public void InitialisationDansStation(Station station, Continuous2D yard){
+    public void InitialisationDansStation(Station station, Continuous2D yard) {
         this.stationCourante = station;
         // TODO : prévenir la station d'ou on veut aller
         Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
@@ -79,8 +79,8 @@ public class AgentVoyageur implements Steppable, Delayed {
         y = location.y;
     }
 
-    private Double2D ConversionGeomToContinuous(Double2D c){
-        return new Double2D(c.x*456374.2102649563 + 621637.6325538646, c.y*(-441528.2983009379) - 2640599.3936298448);
+    private Double2D ConversionGeomToContinuous(Double2D c) {
+        return new Double2D(c.x * 456374.2102649563 + 621637.6325538646, c.y * (-441528.2983009379) - 2640599.3936298448);
     }
 
     // On suppose qu'un voyageur ne peut pas être instancié si sa liste est vide
@@ -90,8 +90,8 @@ public class AgentVoyageur implements Steppable, Delayed {
 
         // Attente du départ
         // Soit on décide d'une position(0), soit se déplace(1), soit on reste fixe(2)
-        if(etat == 0){
-            if(Math.random() < VoyageurConstants.probabiliteDeBouger){
+        if (etat == 0) {
+            if (Math.random() < VoyageurConstants.probabiliteDeBouger) {
                 // Random point
                 Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
                 Double2D stationPosCont = ConversionGeomToContinuous(stationPosGeom);
@@ -99,26 +99,26 @@ public class AgentVoyageur implements Steppable, Delayed {
                 goalX = goal.x;
                 goalY = goal.y;
                 // Calcul direction
-                Double2D movementDirection = GetDirection(x,y,goalX,goalY);
+                Double2D movementDirection = GetDirection(x, y, goalX, goalY);
                 movementDirectionX = movementDirection.x;
                 movementDirectionY = movementDirection.y;
                 etat = 1;
                 return;
             }
         }
-        if(etat == 1){
+        if (etat == 1) {
             Move(ratpState.yard);
-            if(isArrive()){
+            if (isArrive()) {
                 etat = 0;
             }
         }
 
-        if(Math.random() < colere * VoyageurConstants.probabiliteIncidentVoyageur){
+        if (Math.random() < colere * VoyageurConstants.probabiliteIncidentVoyageur) {
             // incident voyageur, avertir la station courante
         }
     }
 
-    private Double2D GetRandomPointCircle(Double2D point, double distance){
+    private Double2D GetRandomPointCircle(Double2D point, double distance) {
         /**
          * Décider d'un endroit où aller dans le rayon possible de la station
          */
@@ -131,89 +131,61 @@ public class AgentVoyageur implements Steppable, Delayed {
         return new Double2D(x, y);
     }
 
-    private Double2D GetDirection(double fromX, double fromY, double toX, double toY){
+    private Double2D GetDirection(double fromX, double fromY, double toX, double toY) {
         double movementDirectionX = toX - fromX;
         double movementDirectionY = toY - fromY;
         // Normalisation
-        double magnitude = Math.sqrt(movementDirectionX*movementDirectionX
-                + movementDirectionY*movementDirectionY);
+        double magnitude = Math.sqrt(movementDirectionX * movementDirectionX
+                + movementDirectionY * movementDirectionY);
         movementDirectionX = movementDirectionX / magnitude;
         movementDirectionY = movementDirectionY / magnitude;
         return new Double2D(movementDirectionX, movementDirectionY);
     }
 
-    private void Move(Continuous2D yard){
-        x += movementDirectionX*VoyageurConstants.vitesse;
-        y += movementDirectionY*VoyageurConstants.vitesse;
-        yard.setObjectLocation(this, new Double2D(x,y));
+    private void Move(Continuous2D yard) {
+        x += movementDirectionX * VoyageurConstants.vitesse;
+        y += movementDirectionY * VoyageurConstants.vitesse;
+        yard.setObjectLocation(this, new Double2D(x, y));
     }
 
-    private boolean isArrive(){
-        return Math.sqrt((goalX - x)*(goalX - x) + (goalY - y)*(goalY - y)) < 0.5f;
+    private boolean isArrive() {
+        return Math.sqrt((goalX - x) * (goalX - x) + (goalY - y) * (goalY - y)) < 0.5f;
     }
 
-    private float RandomRange(float min, float max){
-        return min + (float)Math.random()*max;
+    private float RandomRange(float min, float max) {
+        return min + (float) Math.random() * max;
     }
 
     // permet d'informer l'agent qu'une station a été fermée, si elle est sur son chemin il recalcule son trajet
-    public void FermetureStation(Station station){
-        if(cheminEnvisage.contains(station)){
+    public void FermetureStation(Station station) {
+        if (cheminEnvisage.contains(station)) {
             int previousCheminSize = cheminEnvisage.size();
             int previousNChangement = nChangementCheminenvisage;
             trouverChemin(stationCourante, destination);
             addToColere(VoyageurConstants.augmentationColereStationFermee
-            + VoyageurConstants.augmentationColereParStationSupplementaire*(cheminEnvisage.size() - previousCheminSize)
-            + VoyageurConstants.augmentationColereParNvChgtLigne*(nChangementCheminenvisage - previousNChangement));
+                    + VoyageurConstants.augmentationColereParStationSupplementaire * (cheminEnvisage.size() - previousCheminSize)
+                    + VoyageurConstants.augmentationColereParNvChgtLigne * (nChangementCheminenvisage - previousNChangement));
         }
     }
 
-    private void addToColere(int a){
+    private void addToColere(int a) {
         colere += a;
-        if(colere > VoyageurConstants.colereMax){
+        if (colere > VoyageurConstants.colereMax) {
             colere = VoyageurConstants.colereMax;
         }
     }
 
     // détermine une destination au hasard
-    private Station DeterminerDestination(){
+    private Station DeterminerDestination() {
         List<Gare> ssList = StationsDirectory.getInstance().getAllGares();
         List<Station> stations = new ArrayList<>();
-        for(Gare ss : ssList){
+        for (Gare ss : ssList) {
             stations.addAll(ss.stations.values());
         }
         int n = stations.size();
-        int rand = (int)RandomRange(0,n-1);
+        int rand = (int) RandomRange(0, n - 1);
         return stations.get(rand);
     }
-
-
-
-    @Override
-    public long getDelay(TimeUnit unit) {
-        long diff = momentDeLiberation - System.currentTimeMillis();
-        return unit.convert(diff, TimeUnit.MILLISECONDS);
-    }
-
-    @Override
-    public int compareTo(Delayed o) {
-        int resultat = -1;
-        if (o instanceof AgentVoyageur) {
-            AgentVoyageur agentVoyageur = (AgentVoyageur) o;
-            if (this.momentDeLiberation < agentVoyageur.momentDeLiberation) {
-                resultat = -1;
-            } else {
-                if (this.momentDeLiberation > agentVoyageur.momentDeLiberation) {
-                    resultat = 1;
-                } else {
-                    resultat = 0;
-                }
-            }
-        }
-        return resultat;
-    }
-
-
 
     class Node{
         public Station station;

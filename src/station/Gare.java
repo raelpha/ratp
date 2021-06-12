@@ -9,6 +9,8 @@ import voyageur.AgentVoyageur;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.concurrent.DelayQueue;
 
 /**
@@ -19,7 +21,7 @@ public class Gare extends MasonGeometry implements Steppable {
     public int id;
     public String name;
     public Map<String, Station> stations = new HashMap<>();
-    public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
+    public Queue<AgentVoyageur> queueMct=new PriorityQueue<AgentVoyageur>();
 
     /**
      * Main constructor, used when instantiating new gare (without associated MasonGeometry)
