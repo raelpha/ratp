@@ -152,7 +152,7 @@ public class Station implements Steppable{
         int nbPlace = demanderNbPlaceRame(rame);
         for(int i =0;i<nbPlace;i++){
             AgentVoyageur a = getListAttenteRame().remove(0);
-            rame.addUser(a);
+            //rame.addUser(a);
         }
 
     }
