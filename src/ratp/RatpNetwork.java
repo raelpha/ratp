@@ -42,26 +42,14 @@ public class RatpNetwork extends SimState {
         //this.schedule.scheduleRepeating(a);
     }
 
-        public AgentVoyageur addVoyageur (Station currentStation){
-            AgentVoyageur a = new AgentVoyageur(currentStation, yard,Constants.ATTENTE_MCT);
-            currentStation.getListAttenteRame().add(a);
-            System.out.println(currentStation.getListAttenteRame());
-            schedule.scheduleRepeating(a);
-            return a;
-        }
-
-        public Pair<String, GeomVectorField> getLine (String name){
-            GeomVectorField l = lines.get(name).geomVectorField;
-            Pair returnValue = new Pair<String, GeomVectorField>(name, l);
-            return returnValue;
-        }
-
-    }
-
-    public void addVoyageur(Station currentStation){
-        AgentVoyageur a = new AgentVoyageur(currentStation, yard);
+    public AgentVoyageur addVoyageur (Station currentStation){
+        AgentVoyageur a = new AgentVoyageur(currentStation, yard,Constants.ATTENTE_MCT);
+        currentStation.getListAttenteRame().add(a);
+        System.out.println(currentStation.getListAttenteRame());
         schedule.scheduleRepeating(a);
+        return a;
     }
+
 
     public Pair<String, GeomVectorField> getLine(String name){
         GeomVectorField l = lines.get(name).geomVectorField;

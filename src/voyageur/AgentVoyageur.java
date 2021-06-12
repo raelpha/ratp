@@ -28,7 +28,7 @@ import station.Station;
 
 
 // la rame doit instantier les voyageurs avec la bonne station courante
-public class AgentVoyageur implements Steppable {
+public class AgentVoyageur implements Steppable ,Delayed{
 
     public int colere;
     public Station destination;

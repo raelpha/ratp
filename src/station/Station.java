@@ -178,7 +178,7 @@ public class Station implements Steppable{
                 Station stationCourante=  a.stationCourante;
                 Queue<Pair<Station, List<Station>>> cheminEnvisage = a.cheminEnvisage;
                 VoyageurDonnees vD = new VoyageurDonnees(colere,destinationVoyageur,stationCourante,cheminEnvisage);
-                rame.addUser(vD);
+                //rame.addUser(vD);
                 System.out.println(rame.freePlaces());
                 ratpNetwork.removeVoyageur(a);
             }
