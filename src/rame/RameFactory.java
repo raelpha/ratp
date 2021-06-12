@@ -32,7 +32,7 @@ public class RameFactory implements Steppable {
             String lineName = (String) lineNameIterator.next();
             Map<String, List<SchedulesDirectory.Schedule>> scheduleOnLine = s.get(lineName);
             Iterator scheduleIterator = scheduleOnLine.values().iterator();
-            while(scheduleIterator.hasNext()){
+            while (scheduleIterator.hasNext()) {
                 Rame r = new Rame(geo, lineName, (List<SchedulesDirectory.Schedule>) scheduleIterator.next());
                 addRameToGeometry(geo, r);
                 Pair<String, Rame> newRame = new Pair(lineName, r);
@@ -54,7 +54,7 @@ public class RameFactory implements Steppable {
         MasonGeometry rameGeometry = r.getGeometry();
         rameGeometry.addAttribute("type", "rame");
         rameGeometry.addAttribute("rame", r);
-        rameGeometry.addAttribute("direction", r.getDirection());
+        rameGeometry.addAttribute("direction", Integer.toString(r.getDirection()));
         geo.getLine(r.getNameLine()).getRight().addGeometry(rameGeometry);
     }
 }
