@@ -3,11 +3,14 @@ package voyageur;
 import ratp.RatpNetwork;
 
 import ratp.directory.StationsDirectory;
+import sim.app.geo.campusworld.Agent;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.field.continuous.Continuous2D;
+import sim.util.Bag;
 import sim.util.Double2D;
+import sim.util.Int2D;
 import station.Gare;
 import station.Station;
 import java.util.*;
@@ -22,6 +25,7 @@ public class AgentVoyageur implements Steppable {
     Station stationCourante;
     Queue<Pair<Station, List<Station>>> cheminEnvisage;
     int nChangementCheminenvisage;
+    Queue<Pair<Station, List<Station>>> descentes;
 
     int etat = 0;
     double x,y;
@@ -29,19 +33,25 @@ public class AgentVoyageur implements Steppable {
     double movementDirectionX;
     double movementDirectionY;
 
+    public boolean enTrain = false;
+
+    int updateColere = -1;
+
+    double colereMoyenneAdjacente = -1;
+
     // Réapparition d'un voyageur au sortir d'une rame
     public AgentVoyageur(VoyageurDonnees donnees, Station stationCourante, Continuous2D yard){
         destination = donnees.destination;
         cheminEnvisage = donnees.cheminEnvisage;
-        // TODO : récup list dest
         colere = donnees.colere;
+        colereMoyenneAdjacente = colere;
         InitialisationDansStation(stationCourante, yard);
     }
 
     public AgentVoyageur(Station stationCourante, Continuous2D yard){
         InitialisationDansStation(stationCourante, yard);
-        //destination = DeterminerDestination();
-        destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
+        destination = DeterminerDestination();
+        //destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
         System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
         cheminEnvisage = trouverChemin(stationCourante, destination);
 
@@ -52,11 +62,11 @@ public class AgentVoyageur implements Steppable {
         if(rand < 0) colere = 0;
         else if(rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
         else colere = rand;
+        System.out.println(colere);
     }
 
     public void InitialisationDansStation(Station station, Continuous2D yard){
         this.stationCourante = station;
-        // TODO : prévenir la station d'ou on veut aller
         Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
         Double2D stationPosCont = ConversionGeomToContinuous(stationPosGeom);
         Double2D location = GetRandomPointCircle(stationPosCont, VoyageurConstants.maximumDistanceStation);
@@ -74,6 +84,9 @@ public class AgentVoyageur implements Steppable {
     // On suppose qu'un voyageur ne peut pas être instancié si sa liste est vide
     @Override
     public void step(SimState simState) {
+        if(enTrain){
+            return;
+        }
         RatpNetwork ratpState = (RatpNetwork) simState;
 
         // Attente du départ
@@ -91,19 +104,49 @@ public class AgentVoyageur implements Steppable {
                 movementDirectionX = movementDirection.x;
                 movementDirectionY = movementDirection.y;
                 etat = 1;
-                return;
             }
         }
-        if(etat == 1){
+        else if(etat == 1){
             Move(ratpState.yard);
             if(isArrive()){
                 etat = 0;
             }
         }
 
-        if(Math.random() < colere * VoyageurConstants.probabiliteIncidentVoyageur){
-            // incident voyageur, avertir la station courante
+
+        updateColere++;
+        if(updateColere % 200 != 0){
+            return;
         }
+
+        int sommeColeresAdjacente = 0;
+        int avNb = 0;
+
+        Bag nearObjects = ratpState.yard.getNeighborsWithinDistance(new Double2D(x,y), VoyageurConstants.distanceInfluence, false, false);
+
+        if(nearObjects != null){
+            for(Object o : nearObjects){
+                AgentVoyageur av = (AgentVoyageur) o;
+                if(av != null){
+                    sommeColeresAdjacente += av.colere;
+                    avNb++;
+                }
+            }
+        }
+
+
+        if(colereMoyenneAdjacente > colere){
+            addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
+        }
+        else if(colereMoyenneAdjacente < colere){
+            addToColere(-1);
+        }
+
+        colereMoyenneAdjacente = sommeColeresAdjacente / avNb;
+
+        /*if(Math.random() < colere * VoyageurConstants.probabiliteIncidentVoyageur){
+            // incident voyageur, avertir la station courante
+        }*/
     }
 
     private Double2D GetRandomPointCircle(Double2D point, double distance){
@@ -146,13 +189,23 @@ public class AgentVoyageur implements Steppable {
 
     // permet d'informer l'agent qu'une station a été fermée, si elle est sur son chemin il recalcule son trajet
     public void FermetureStation(Station station){
-        if(cheminEnvisage.contains(station)){
-            int previousCheminSize = cheminEnvisage.size();
-            int previousNChangement = nChangementCheminenvisage;
-            trouverChemin(stationCourante, destination);
-            addToColere(VoyageurConstants.augmentationColereStationFermee
-            + VoyageurConstants.augmentationColereParStationSupplementaire*(cheminEnvisage.size() - previousCheminSize)
-            + VoyageurConstants.augmentationColereParNvChgtLigne*(nChangementCheminenvisage - previousNChangement));
+        Station previousStation = cheminEnvisage.peek().getLeft();
+        Iterator<Pair<Station, List<Station>>> itr = cheminEnvisage.iterator();
+        itr.next();
+        while(itr.hasNext()){
+            Station currentStation = itr.next().getLeft();
+            if(previousStation.name == station.name && previousStation.lineNumber == station.lineNumber){
+                if(currentStation.lineNumber != previousStation.lineNumber){
+                    int previousCheminSize = cheminEnvisage.size();
+                    int previousNChangement = nChangementCheminenvisage;
+                    trouverChemin(stationCourante, destination);
+                    addToColere(VoyageurConstants.augmentationColereStationFermee
+                            + VoyageurConstants.augmentationColereParStationSupplementaire*(cheminEnvisage.size() - previousCheminSize)
+                            + VoyageurConstants.augmentationColereParNvChgtLigne*(nChangementCheminenvisage - previousNChangement));
+
+                    return;
+                }
+            }
         }
     }
 
@@ -161,17 +214,26 @@ public class AgentVoyageur implements Steppable {
         if(colere > VoyageurConstants.colereMax){
             colere = VoyageurConstants.colereMax;
         }
+        else if(colere < 0){
+            colere = 0;
+        }
     }
 
     // détermine une destination au hasard
     private Station DeterminerDestination(){
-        List<Gare> ssList = StationsDirectory.getInstance().getAllGares();
+        // TODO chercher parmi les stations non fermées
+        /*List<Gare> ssList = StationsDirectory.getInstance().getAllGares();
         List<Station> stations = new ArrayList<>();
         for(Gare ss : ssList){
-            stations.addAll(ss.stations.values());
-        }
+            for(Station s : ss.stations.values()){
+                stations.add(s);
+            }
+        }*/
+        List<Station> stations = StationsDirectory.getInstance().stationsOuvertes;
+
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
+
         return stations.get(rand);
     }
 
@@ -218,6 +280,10 @@ public class AgentVoyageur implements Steppable {
                 if(!(stationFermees.contains(s) || ExisteCoutInferieur(stationOuvertes, s, n.cout+1))){
                     int cout = 1;
                     if(s.lineNumber != n.station.lineNumber){
+                        if(n.station.fermee){
+                            // on veut changer de ligne, mais la ligne est cassée
+                            continue;
+                        }
                         cout = VoyageurConstants.coutChgtStation;
                     }
                     Node newN = new Node(s, n.cout+cout, Distance(s, arriveeS), n, destinations);

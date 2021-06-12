@@ -3,7 +3,7 @@ package voyageur;
 public class VoyageurConstants
 {
     public static int coutChgtStation = 3;
-    public static float Discretisation = 0.00001f;
+    public static float Discretisation = 0.1f;
 
     // Dans Station
     public static float voyageurScale = 2.5f;
@@ -17,4 +17,6 @@ public class VoyageurConstants
     public static int augmentationColereStationFermee = 5;
     public static int augmentationColereParStationSupplementaire = 1;
     public static int augmentationColereParNvChgtLigne = 5;
+    public static int distanceInfluence = 3;
+    public static double vitesseDeColerisation = 0.00000001;
 }

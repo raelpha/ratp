@@ -36,7 +36,7 @@ public class RatpNetwork extends SimState {
     {
         super.start();
         yard.clear();
-        for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("13", "Liège"));
+        for(int i = 0; i < 30; i++) addVoyageur(StationsDirectory.getInstance().getStation("13", "Liège"));
         /*List<Pair<Station, List<Station>>> fdsjhvbjd = StationsDirectory.getInstance().getAdjacentStationsWithDestination(StationsDirectory.getInstance().getStation("13","Liège"));
         for(var p : fdsjhvbjd){
             for(var s : p.getRight()){

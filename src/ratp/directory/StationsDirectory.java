@@ -15,6 +15,7 @@ import station.Station;
 import station.Gare;
 
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class StationsDirectory {
     // Field portrayal in which we're drawing
     public GeomVectorFieldPortrayal geomVectorFieldGarePortrayal =  new GeomVectorFieldPortrayal();
 
-
+    public List<Station> stationsOuvertes = new ArrayList<>();
 
     /**
      * Constructor: fill allGares from external file then create associated map
@@ -62,6 +63,11 @@ public class StationsDirectory {
         allGares = allGaresReader(Constants.STATIONS_FILENAME);
         gares = fillGaresMap(allGares);
     }
+    public void OuvrirStations(){
+        for(Gare g : allGares) stationsOuvertes.addAll(g.stations.values());
+    }
+    public void fermerStation(Station s) { stationsOuvertes.remove(s); }
+    public void ouvrirStation(Station s) { stationsOuvertes.add(s); }
 
     public Station getStation(String lineId, String stationName){
         return gares.get(stationName).getStation(lineId);
@@ -199,6 +205,7 @@ public class StationsDirectory {
                 gares.get(schedule.station.name).stations.get(schedule.lineNumber).terminus = true;
             }
         }
+        StationsDirectory.getInstance().OuvrirStations();
     }
 
     public void affectPointsToStations(){

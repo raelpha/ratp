@@ -19,7 +19,7 @@ public class VoyageurPortrayal extends OvalPortrayal2D
     @Override
     public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
         AgentVoyageur agent = (AgentVoyageur) object;
-        Color color = new Color(agent.colere,0,255 - agent.colere);
+        Color color = new Color(agent.colere*(255/100),0,255 - agent.colere*(255/100));
         paint = color;
         super.draw(object, graphics, info);
     }
