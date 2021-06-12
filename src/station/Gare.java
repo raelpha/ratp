@@ -25,6 +25,7 @@ public class Gare extends MasonGeometry implements Steppable {
     public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
     private Boolean test=false;
     private Boolean fermee=false;
+    private int nbVoyageurs;
 
     /**
      * Main constructor, used when instantiating new gare (without associated MasonGeometry)
@@ -46,6 +47,16 @@ public class Gare extends MasonGeometry implements Steppable {
         this.addAttribute(Constants.STATION_NAME_STR, gem.getStringAttribute(Constants.STATION_NAME_STR));
         this.geometry = gem.getGeometry();
         this.name = this.getStringAttribute(Constants.STATION_NAME_STR);
+    }
+
+    public int getNbVoyageurs(){
+        int nbVoya=0;
+        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
+            nbVoya+=StationsDirectory.getInstance().getStation(entry.getKey(),this.name).getNbVoyageurs();
+        }
+        nbVoya +=queueMct.size();
+        this.nbVoyageurs=nbVoya;
+        return nbVoyageurs;
     }
 
     public String getName() {
