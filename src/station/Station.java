@@ -5,6 +5,7 @@ import lines.Line;
 import rame.Rame;
 import ratp.directory.StationsDirectory;
 import sim.app.geo.masoncsc.util.Pair;
+import sim.app.virus.Agent;
 import sim.util.geo.MasonGeometry;
 
 import java.awt.*;
@@ -40,6 +41,8 @@ public class Station implements Steppable{
     public Boolean test=false;
     public Boolean tets2=false;
     private List<AgentVoyageur> voyageurDescendu=new ArrayList<>();
+    public int attente=0;
+    private Boolean testClear=false;
     //Deprecated
     /*
     public Station(String lineId, String name) {
@@ -71,6 +74,7 @@ public class Station implements Steppable{
     }
 
     public int getNbVoyageurs() {
+        nbVoyageurs=getListAttenteRame().size();
         return nbVoyageurs;
     }
 
@@ -116,75 +120,73 @@ public class Station implements Steppable{
     @Override
     public void step(SimState simState) {
         RatpNetwork ratpNetwork =(RatpNetwork) simState;
-        //System.out.println("hello");
-        /*/if(!spawn){
-            int nbVoyageurSpawn = (int)doubleNormale(7,5);
-            for(int i=0;i<1;i++){
-                ratpNetwork.addVoyageur(this);
-            }
-            this.spawn=true;
-        }*/
-        if(test){
+        if(!testClear){
+            //System.out.println("je clear");
+            this.rameSurPlace.clear();
+            //System.out.println("listeAttenteRame : "+this.rameSurPlace);
+            this.getListAttenteRame().clear();
+            testClear=true;
+        }
+        this.descenteRame();
+
+        if (test) {
             //System.out.println("yo");
             //System.out.println(this.name);
-            if(!spawn){
+            if (!spawn) {
                 //int nbVoyageurSpawn = (int)doubleNormale(7,5);
-                for(int i=0;i<1;i++){
+                for (int i = 0; i < 1; i++) {
                     AgentVoyageur temp = ratpNetwork.addVoyageur(this);
-                    this.voyageurDescendu.add(temp);
+                    if(!this.getListAttenteRame().contains(temp)) {
+                        this.getListAttenteRame().add(temp);
+                    }
                 }
+                AgentVoyageur temp = ratpNetwork.addVoyageur(this);
+                temp.destination=StationsDirectory.getInstance().getStation("1","George V");
+                if(!this.getListAttenteRame().contains(temp)) {
+                    this.getListAttenteRame().add(temp);
+                }
+                //System.out.println("nv : "+this.getNbVoyageurs()+ " get : "+this.getListAttenteRame());
                 this.spawn=true;
             }
+            //System.out.println(this.getListAttenteRame());
             //addToMctList(this.name,listAttenteRame.remove(0));
             //System.out.println(StationsDirectory.getInstance().gares.get(this.name).queueMct);
         }
 
-        if(!this.voyageurDescendu.isEmpty()){
-            for(AgentVoyageur a : this.voyageurDescendu){
-                if(this.tets2==false){
-                    System.out.println(a.stationCourante.name);
-                    System.out.println(a.cheminEnvisage.peek().getLeft().name);
-                    if(a.stationCourante.name.equals(a.cheminEnvisage.peek().getLeft().name)){
-                        this.addToMctList(a.stationCourante.name,a);
-                        Gare g=StationsDirectory.getInstance().gares.get(a.stationCourante.name);
-                        a.cheminEnvisage.poll();
-                        String lineNumber = a.cheminEnvisage.peek().getLeft().lineNumber;
-                        String stationName = a.cheminEnvisage.peek().getLeft().name;
-                        Station s = StationsDirectory.getInstance().getStation(lineNumber,stationName);
-                        System.out.println("avant :"+s.getListAttenteRame());
-                        s.getListAttenteRame().add(g.getQueueMct().poll());
-                        System.out.println("apres: "+s.getListAttenteRame());
-                        //System.out.println("tiens :"+StationsDirectory.getInstance().gares.get("Nation"));
-                        //Gare g = StationsDirectory.getInstance().gares.get("Nation");
-                        //System.out.println(g.name);
+            /*if (!this.voyageurDescendu.isEmpty()) {
+                for (AgentVoyageur a : this.voyageurDescendu) {
+                    if (this.tets2 == false) {
+                        //System.out.println(a.stationCourante.name);
+                        //System.out.println(a.cheminEnvisage.peek().getLeft().name);
+                        if (a.stationCourante.name.equals(a.cheminEnvisage.peek().getLeft().name)) {
+                            this.addToMctList(a.stationCourante.name, a);
+                            Gare g = StationsDirectory.getInstance().gares.get(a.stationCourante.name);
+                            a.cheminEnvisage.poll();
+                            String lineNumber = a.cheminEnvisage.peek().getLeft().lineNumber;
+                            System.out.println("lineNumber : " + lineNumber);
+                            String stationName = a.cheminEnvisage.peek().getLeft().name;
+                            Station s = StationsDirectory.getInstance().getStation(lineNumber, stationName);
+                            System.out.println("avant :" + s.getListAttenteRame());
+                            s.getListAttenteRame().add(g.getQueueMct().take());
+
+                            System.out.println("apres: " + s.getListAttenteRame());
+                            //System.out.println("tiens :"+StationsDirectory.getInstance().gares.get("Nation"));
+                            //Gare g = StationsDirectory.getInstance().gares.get("Nation");
+                            //System.out.println(g.name);
+                        }
+
+                        //this.tets2=true;
                     }
-
-                    this.tets2=true;
                 }
-            }
-        }
+                //Station s1 = StationsDirectory.getInstance().getStation("1", "Nation");
+                //System.out.println("après :"+s1.getListAttenteRame());
+            }*/
 
-        if(StationsDirectory.getInstance().getStation("8","Reuilly - Diderot").test==false){
-            StationsDirectory.getInstance().getStation("8","Reuilly - Diderot").test=true;
-            System.out.println("get toutes les lignes d'une station");
+        if (StationsDirectory.getInstance().getStation("1", "Nation").test == false) {
+            StationsDirectory.getInstance().getStation("1", "Nation").test = true;
+            //System.out.println("get toutes les lignes d'une station");
             //System.out.println(StationsDirectory.getInstance().gares.get("Nation").stations.entrySet());
-        }
-
-        if(!rameSurPlace.isEmpty()){
-            Rame rame = rameSurPlace.remove(0);
-            if(!getListAttenteRame().isEmpty()){
-                AgentVoyageur a =getListAttenteRame().remove(0);
-                System.out.println(rame.freePlaces());
-                //TODO convertir AgentVoyageur en VoyageurDonnees
-                int colere = a.colere;
-                Station destinationVoyageur = a.destination;
-                Station stationCourante=  a.stationCourante;
-                Queue<Pair<Station, List<Station>>> cheminEnvisage = a.cheminEnvisage;
-                VoyageurDonnees vD = new VoyageurDonnees(colere,destinationVoyageur,stationCourante,cheminEnvisage);
-                //rame.addUser(vD);
-                System.out.println(rame.freePlaces());
-                ratpNetwork.removeVoyageur(a);
-            }
+            //System.out.println(" nb : " +StationsDirectory.getInstance().getStation("1", "Nation").getNbVoyageurs());
         }
     }
 
@@ -196,6 +198,42 @@ public class Station implements Steppable{
         int minuteTot=minuteHeure + minutes;
         double x = minuteTot/60;
         return fonctionNormale((x-7.5)/3)*Constants.NB_PIC_MATIN + fonctionNormale((x-18)/4)*Constants.NB_PIC_SOIR;
+    }
+
+
+    public void descenteRame(){
+        if (!this.rameSurPlace.isEmpty()) {
+            System.out.println("rameSurPlace : " + this.rameSurPlace + " station : "+this.name);
+            for (int i = 0; i < this.rameSurPlace.size(); i++) {
+                Rame rame = this.rameSurPlace.remove(0);
+                if (!this.getRemoveUserRame(rame).isEmpty()) {
+                    for(AgentVoyageur aV : this.getRemoveForceUserRame(rame)){
+                        if(aV.cheminEnvisage.isEmpty()){
+                            System.out.println("Je suis arrivé : "+aV);
+                        }else{
+                            this.addToMctList(this.name,aV);
+                            //getRemoveForceUserRame(rame).remove(aV);
+                            System.out.println("Liste mct : "+this.getGare(this.name).getListMct());
+                        }
+                    }
+                }
+                if(!this.getRemoveForceUserRame(rame).isEmpty()){
+                    System.out.println("cc");
+                    //TODO recalcul a*
+                }
+                /*
+                for (AgentVoyageur aV : getListAttenteRame()) {
+                    if (rame.freePlaces() > 0) {
+                        System.out.println("chemin Destination voyageur : " + aV.cheminEnvisage.peek().getRight().get(0).name);
+                        System.out.println("chemin destination rame : " + rame.getTerminus().station.name);
+                        if (aV.cheminEnvisage.peek().getRight().get(0).name.equals(rame.getTerminus().station.name)) {
+                            System.out.println("salut");
+                        }
+                    }
+                }*/
+
+            }
+        }
     }
 
     /*public List<AgentVoyageur> createVoyageurs(double horaire){
@@ -250,11 +288,23 @@ public class Station implements Steppable{
     }*/
 
     public void addToMctList(String name,AgentVoyageur a){
-        StationsDirectory.getInstance().gares.get(name).queueMct.add(a);
+        StationsDirectory.getInstance().gares.get(name).listMct.add(a);
     }
 
     public int demanderNbPlaceRame(Rame rame) {
         return rame.freePlaces();
+    }
+
+    public List<AgentVoyageur> getRemoveUserRame(Rame rame){
+        return rame.forceRemoveUser();
+    }
+
+    public List<AgentVoyageur> getRemoveForceUserRame(Rame rame){
+        return rame.forceRemoveUser();
+    }
+
+    public Gare getGare(String gareName){
+        return StationsDirectory.getInstance().gares.get(gareName);
     }
 
     /*

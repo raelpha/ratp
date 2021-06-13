@@ -49,5 +49,5 @@ public class Constants {
     public static final String STATION_NAME_STR = "stationName";
     public static final int NB_PIC_MATIN = 20;
     public static final int NB_PIC_SOIR = 20;
-    public static final long ATTENTE_MCT=10000;
+    public static final long ATTENTE_MCT=5000;
 }

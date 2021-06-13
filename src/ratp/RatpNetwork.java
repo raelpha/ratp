@@ -44,8 +44,9 @@ public class RatpNetwork extends SimState {
 
     public AgentVoyageur addVoyageur (Station currentStation){
         AgentVoyageur a = new AgentVoyageur(currentStation, yard,Constants.ATTENTE_MCT);
+        //System.out.println("liste avant : "+currentStation.getListAttenteRame());
         currentStation.getListAttenteRame().add(a);
-        System.out.println(currentStation.getListAttenteRame());
+        //System.out.println("liste att : "+currentStation.getListAttenteRame());
         schedule.scheduleRepeating(a);
         return a;
     }
@@ -72,7 +73,7 @@ public class RatpNetwork extends SimState {
         super.start();
         yard.clear();
         //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
-        for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("13", "Liège"));
+        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("13", "Liège"));
         for (Map.Entry<String, Gare> g: StationsDirectory.getInstance().gares.entrySet()) {
           this.schedule.scheduleRepeating(g.getValue());
             for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {

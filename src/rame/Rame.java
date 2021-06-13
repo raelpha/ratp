@@ -86,7 +86,7 @@ public class Rame implements Steppable {
 
     public double getStartIndex() {return this.startIndex;}
 
-    public int getDirection() {return this.scheduleStation.get(0).direction;}
+    public int getDirection() {return this.scheduleStation.get(0).direction; }
 
     public Schedule getTerminus() {return this.scheduleStation.get(this.scheduleStation.size()-1);}
 
@@ -423,7 +423,7 @@ public class Rame implements Steppable {
     }
 
     public List<AgentVoyageur> forceRemoveUser() {
-        return forceRemoveUser();
+        return forceUser;
     }
 
 }

@@ -8,10 +8,7 @@ import sim.engine.Steppable;
 import sim.util.geo.MasonGeometry;
 import voyageur.AgentVoyageur;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 import java.util.concurrent.DelayQueue;
 
 /**
@@ -22,7 +19,10 @@ public class Gare extends MasonGeometry implements Steppable {
     public int id;
     public String name;
     public Map<String, Station> stations = new HashMap<>();
-    public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
+    //public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
+    public List<AgentVoyageur> listMct = new ArrayList<AgentVoyageur>();
+
+
     private Boolean test=false;
     private Boolean fermee=false;
     private int nbVoyageurs;
@@ -54,7 +54,7 @@ public class Gare extends MasonGeometry implements Steppable {
         for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
             nbVoya+=StationsDirectory.getInstance().getStation(entry.getKey(),this.name).getNbVoyageurs();
         }
-        nbVoya +=queueMct.size();
+        nbVoya +=listMct.size();
         this.nbVoyageurs=nbVoya;
         return nbVoyageurs;
     }
@@ -71,9 +71,14 @@ public class Gare extends MasonGeometry implements Steppable {
         return stations.get(lineId);
     }
 
-    public DelayQueue<AgentVoyageur> getQueueMct() {
+    /*public DelayQueue<AgentVoyageur> getQueueMct() {
         return queueMct;
+    }*/
+
+    public List<AgentVoyageur> getListMct() {
+        return listMct;
     }
+
 
     public Boolean isFermee() {
         return fermee;
