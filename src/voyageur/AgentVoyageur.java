@@ -97,8 +97,6 @@ public class AgentVoyageur implements Steppable {
         }
         RatpNetwork ratpState = (RatpNetwork) simState;
 
-        // Attente du départ
-        // Soit on décide d'une position(0), soit se déplace(1), soit on reste fixe(2)
         if(etat == 0){
             if(Math.random() < VoyageurConstants.probabiliteDeBouger){
                 // Random point
@@ -113,48 +111,40 @@ public class AgentVoyageur implements Steppable {
                 movementDirectionY = movementDirection.y;
                 etat = 1;
             }
-        }
-        else if(etat == 1){
+        } else if(etat == 1){
             Move(ratpState.yard);
             if(isArrive()){
                 etat = 0;
             }
         }
-
-
         updateColere++;
         if(updateColere % 200 != 0){
             return;
         }
-
-        int sommeColeresAdjacente = 0;
-        int avNb = 0;
-
-        Bag nearObjects = ratpState.yard.getNeighborsWithinDistance(new Double2D(x,y), VoyageurConstants.distanceInfluence, false, false);
-
-        if(nearObjects != null){
-            for(Object o : nearObjects){
-                AgentVoyageur av = (AgentVoyageur) o;
-                if(av != null){
-                    sommeColeresAdjacente += av.colere;
-                    avNb++;
-                }
-            }
-        }
-
-
+        CalculerColereAdjacente(ratpState.yard);
         if(colereMoyenneAdjacente > colere){
             addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
         }
         else if(colereMoyenneAdjacente < colere){
             addToColere(-1);
         }
+    }
 
+    private void CalculerColereAdjacente(Continuous2D yard){
+        int sommeColeresAdjacente = 0;
+        int avNb = 0;
+        Bag nearObjects = yard.getNeighborsWithinDistance(new Double2D(x,y), VoyageurConstants.distanceInfluence, false, false);
+
+        if(nearObjects != null){
+            for(Object o : nearObjects){
+                AgentVoyageur av = (AgentVoyageur) o;
+                if(av != null && av.stationCourante.name == stationCourante.name){
+                    sommeColeresAdjacente += av.colere;
+                    avNb++;
+                }
+            }
+        }
         colereMoyenneAdjacente = sommeColeresAdjacente / avNb;
-
-        /*if(Math.random() < colere * VoyageurConstants.probabiliteIncidentVoyageur){
-            // incident voyageur, avertir la station courante
-        }*/
     }
 
     private Double2D GetRandomPointCircle(Double2D point, double distance){
@@ -229,19 +219,13 @@ public class AgentVoyageur implements Steppable {
 
     // détermine une destination au hasard
     private Station DeterminerDestination(){
-        /*List<Gare> ssList = StationsDirectory.getInstance().getAllGares();
-        List<Station> stations = new ArrayList<>();
-        for(Gare ss : ssList){
-            for(Station s : ss.stations.values()){
-                stations.add(s);
-            }
-        }*/
+
         List<Station> stations = StationsDirectory.getInstance().stationsOuvertes;
 
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
 
-        return StationsDirectory.getInstance().getStation("2","Place de Clichy");
+        return StationsDirectory.getInstance().getStation("8","Pointe du Lac");
         //return stations.get(rand);
     }
 
