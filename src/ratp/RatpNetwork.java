@@ -59,7 +59,7 @@ public class RatpNetwork extends SimState {
                 colere += entryStations.getValue().getColereStation();
             }
         }
-        return colere;
+        return colere / 305;
     }
 
     public Pair<String, GeomVectorField> getLine(String name){

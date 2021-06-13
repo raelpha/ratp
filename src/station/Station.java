@@ -86,12 +86,16 @@ public class Station implements Steppable{
     }
 
     public void setColereStation(){
-        double nb=0;
-        for(AgentVoyageur aV : this.getListAttenteRame()){
-            nb+=aV.colere;
+        if (this.getListAttenteRame().size() == 0) {
+            colereStation = 0;
+        } else {
+            double nb = 0;
+            for (AgentVoyageur aV : this.getListAttenteRame()) {
+                nb += aV.colere;
+            }
+            nb = nb / 100;
+            colereStation = nb / getListAttenteRame().size();
         }
-        nb=nb/100;
-        colereStation=nb/getListAttenteRame().size();
     }
 
 
