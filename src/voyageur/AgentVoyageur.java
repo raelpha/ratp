@@ -33,7 +33,22 @@ import station.Station;
 // la rame doit instantier les voyageurs avec la bonne station courante
 public class AgentVoyageur implements Steppable ,Delayed{
 
+
+
     public int colere;
+
+    public String getDestination() {
+        return destination.name;
+    }
+
+    public String getStationCourante() {
+        return stationCourante.name;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
     public Station destination;
     public Station stationCourante;
     public Queue<Pair<Station, List<Station>>> cheminEnvisage;
@@ -69,7 +84,7 @@ public class AgentVoyageur implements Steppable ,Delayed{
         //destination=StationsDirectory.getInstance().getStation("13","Saint-Denis - Université");
         destination = DeterminerDestination();
         //destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
-        System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
+        // System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
         cheminEnvisage = trouverChemin(stationCourante, destination);
         this.time=System.currentTimeMillis()+delayTime;
 
@@ -81,6 +96,10 @@ public class AgentVoyageur implements Steppable ,Delayed{
         else if (rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
         else colere = rand;
         //System.out.println(colere);
+    }
+
+    public int getColere() {
+        return colere;
     }
 
     public void SortirDeRame(Continuous2D yard, Station stationCourante){

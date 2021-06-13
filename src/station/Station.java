@@ -286,7 +286,7 @@ public class Station implements Steppable{
 
     public void spawnVoyageur(RatpNetwork ratpNetwork){
         if(!spawn) {
-            int nombreAleatoire = (int) (Math.random() * 11);
+            int nombreAleatoire = (int) (Math.random() * 2); //TODO previous 11
             for (int i = 0; i < nombreAleatoire; i++) {
                 ratpNetwork.addVoyageur(this);
             }
@@ -297,8 +297,8 @@ public class Station implements Steppable{
     public Boolean checkDestinationVoyageurRame(AgentVoyageur a,Rame rame){
         if(!a.cheminEnvisage.isEmpty()) {
             for (Station s : a.cheminEnvisage.peek().getRight()) {
-                System.out.println("cheminVoyageur : " + s.name);
-                System.out.println("cheminRame : " + getTerminusRame(rame).name);
+                //System.out.println("cheminVoyageur : " + s.name);
+                //System.out.println("cheminRame : " + getTerminusRame(rame).name);
                 if (s.name.equals(this.getTerminusRame(rame).name)) {
                     return true;
                 }

@@ -5,8 +5,11 @@ import com.vividsolutions.jts.geom.Point;
 import global.Constants;
 import lines.Line;
 import sim.app.geo.masoncsc.util.Pair;
+import sim.display.GUIState;
+import sim.display.Manipulating2D;
 import sim.field.geo.GeomVectorField;
 import sim.portrayal.DrawInfo2D;
+import sim.portrayal.LocationWrapper;
 import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.portrayal.simple.LabelledPortrayal2D;
@@ -14,7 +17,9 @@ import sim.util.geo.MasonGeometry;
 import station.Station;
 import station.Gare;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -298,15 +303,39 @@ public class StationsDirectory {
                                 filled = false;
                                 Gare gareGeometry = (Gare) object;
                                 if (gareGeometry.getStringAttribute(Constants.IS_MULTIPLE_STATION_STR).equals(Constants.TRUE)) {
-                                    paint = Color.WHITE;
+                                    if (gareGeometry.isFermee()) {
+                                        paint = Color.RED;
+
+                                    } else {
+                                        paint = Color.WHITE;
+                                    }
                                 } else {
+                                    if (gareGeometry.isFermee()) {
+                                        paint = Color.RED;
+
+                                    } else {
+                                        paint = new Color(128,128,128,0);;
+                                    }
                                     // adding translucent color if Gare.nbStation == 1
-                                    paint = new Color(128,128,128,0);;
                                 }
                                 super.draw(object, graphics, info);
                             }
-                // "null" indicate that it will use toString of object
-                }, 4.0, null , Color.WHITE, true)
+
+                            @Override
+                            public boolean handleMouseEvent(GUIState guistate, Manipulating2D manipulating, LocationWrapper wrapper, MouseEvent event, DrawInfo2D fieldPortrayalDrawInfo, int type) {
+                                if (SwingUtilities.isRightMouseButton(event) && event.getClickCount() == 1) {
+                                    Gare gare = (Gare) wrapper.getObject();
+                                    if (!gare.isFermee()) {
+                                        System.out.println("Closing " + gare.name + " all stations");
+                                        gare.setFermee();
+                                    }
+                                }
+
+                                return super.handleMouseEvent(guistate, manipulating, wrapper, event, fieldPortrayalDrawInfo, type);
+                            }
+
+                            // "null" indicate that it will use toString of object
+                        }, 4.0, null , Color.WHITE, true)
 
         );
 

@@ -401,6 +401,7 @@ public class Rame implements Steppable {
         Boolean isClosed = currentStation.isFermee();
         List<AgentVoyageur> returnList = new ArrayList<>();
         ListIterator<AgentVoyageur> it = users.listIterator();
+        List<AgentVoyageur> toDelete = new ArrayList<>();
         while(it.hasNext()){
             AgentVoyageur a = it.next();
             if(!a.cheminEnvisage.isEmpty() && a.cheminEnvisage.peek().getLeft().name.equals(stationName)){
@@ -408,18 +409,19 @@ public class Rame implements Steppable {
             }
             if (a.cheminEnvisage.isEmpty()){
                 forceUser.add(a);
-                users.remove(a);
+                toDelete.add(a);
             }
             if (!a.cheminEnvisage.peek().getLeft().line.equals(this.nameLine)){
                 if(!isClosed) {
                     returnList.add(a);
-                    users.remove(a);
+                    toDelete.add(a);
                 } else {
                     forceUser.add(a);
-                    users.remove(a);
+                    toDelete.add(a);
                 }
             }
         }
+        users.removeAll(toDelete);
         return returnList;
     }
 
