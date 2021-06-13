@@ -98,8 +98,8 @@ public class AgentVoyageur implements Steppable ,Delayed{
         //System.out.println(colere);
     }
 
-    public int getColere() {
-        return colere;
+    public double getColereAllStations() {
+        return StationsDirectory.getInstance().getColereAllStations();
     }
 
     public void SortirDeRame(Continuous2D yard, Station stationCourante){
@@ -179,7 +179,7 @@ public class AgentVoyageur implements Steppable ,Delayed{
             }
         }
 
-
+        
         if(colereMoyenneAdjacente > colere){
             addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
         }

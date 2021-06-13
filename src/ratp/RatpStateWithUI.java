@@ -3,6 +3,7 @@ package ratp;
 import global.Constants;
 import ratp.directory.LinesDirectory;
 import ratp.directory.StationsDirectory;
+import sim.display.ChartUtilities;
 import sim.display.Controller;
 import sim.display.Display2D;
 import sim.display.GUIState;
@@ -14,7 +15,11 @@ import sim.portrayal.DrawInfo2D;
 import sim.portrayal.continuous.ContinuousPortrayal2D;
 import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
+import sim.util.Valuable;
 import sim.util.geo.MasonGeometry;
+import sim.util.media.chart.ChartGenerator;
+import sim.util.media.chart.TimeSeriesAttributes;
+import sim.util.media.chart.TimeSeriesChartGenerator;
 import voyageur.AgentVoyageur;
 import voyageur.VoyageurPortrayal;
 
@@ -31,7 +36,12 @@ public class RatpStateWithUI extends GUIState {
     ContinuousPortrayal2D yardPortrayal = new ContinuousPortrayal2D();
     public Display2D display;
 
+    public ChartGenerator chart;
+
     public JFrame displayFrame;
+
+    public TimeSeriesAttributes myAttributes;
+    public TimeSeriesChartGenerator myChart;
 
     /**
      * A map storing each line, and station, as a GeomVectorFieldPortrayal
@@ -63,12 +73,39 @@ public class RatpStateWithUI extends GUIState {
         controller.registerFrame(displayFrame);
         displayFrame.setVisible(true);
         displayFrame.setTitle("Network");
+
+        myChart = ChartUtilities.buildTimeSeriesChartGenerator(
+                this,
+                "My colere",
+                "Avec le temps");
+
+        myAttributes = ChartUtilities.addSeries(myChart, "Time time series of interest");
+
     }
 
     @Override
     public void start() {
         super.start();
         setupPortrayals();
+
+        myChart.clearAllSeries();
+
+        ChartUtilities.scheduleSeries(this, myAttributes, new Valuable() {
+            @Override
+            public double doubleValue() {
+                return ((RatpNetwork) state).getAllColere();
+            }
+        });
+    }
+
+    public void load(final SimState state) {
+        super.start();
+        ChartUtilities.scheduleSeries(this, myAttributes, new Valuable() {
+            @Override
+            public double doubleValue() {
+                return ((RatpNetwork) state).getAllColere();
+            }
+        });
     }
 
     /**
