@@ -2,14 +2,12 @@ package rame;
 
 import com.vividsolutions.jts.geom.Point;
 import ratp.RatpNetwork;
-import ratp.directory.LinesDirectory;
 import ratp.directory.SchedulesDirectory;
 import global.Constants;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.util.Bag;
-import sim.util.geo.AttributeValue;
 import sim.util.geo.MasonGeometry;
 
 import java.sql.Array;
@@ -45,6 +43,14 @@ public class RameFactory implements Steppable {
         }
     }
 
+    private void createRameForLigne (RatpNetwork geo, String lineName){
+        Map<String, List<SchedulesDirectory.Schedule>> scheduleOnLine = s.get(lineName);
+        Iterator scheduleIterator = scheduleOnLine.values().iterator();
+        while (scheduleIterator.hasNext()) {
+            addRame(geo, lineName, (List<SchedulesDirectory.Schedule>) scheduleIterator.next());
+        }
+    }
+
     public List<Pair<String, Rame>> getRame() {
         return listOfRame;
     }
@@ -54,12 +60,40 @@ public class RameFactory implements Steppable {
         RatpNetwork geo = (RatpNetwork) simState;
         actualStepCreation.clear();
         checkForTerminus(geo);
+        checkForNewRame(geo);
         if(bufferCheck!=0){
             bufferCheck--;
         } else {
             //System.out.println(bufferRame.size());
             checkBuffer(geo);
             bufferCheck = 150;
+        }
+    }
+
+    private void checkForNewRame(RatpNetwork geo){
+        Iterator lineit = listOfLine.iterator();
+        List<String> toAdd = new ArrayList<>();
+        while(lineit.hasNext()){
+            String lineName = (String) lineit.next();
+            int number = 0;
+            int surchargeNumber = 0;
+            Iterator rameIt = listOfRame.iterator();
+            while (rameIt.hasNext()){
+                Pair<String, Rame> elem = (Pair<String, Rame>) rameIt.next();
+                if(elem.getLeft().equals(lineName)){
+                    number++;
+                    if(elem.getRight().freePlaces()<Constants.listOfCapacity.get(lineName)/10) {
+                        surchargeNumber++;
+                    }
+                }
+            }
+            if((float)surchargeNumber/(float)number>0.5){
+                toAdd.add(lineName);
+            }
+        }
+        Iterator rameToAdd = toAdd.iterator();
+        while(rameToAdd.hasNext()){
+            createRameForLigne(geo, (String) rameToAdd.next());
         }
     }
 

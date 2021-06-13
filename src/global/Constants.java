@@ -14,6 +14,8 @@ public class Constants {
     public static final String FALSE = "false";
 
     public static final List<String> listOfLinesNames = Arrays.asList("1", "2", "3", "3b", "4", "5", "6", "7", "7b", "8", "9", "10", "11", "12", "13", "14");
+
+    //Vrai chiffre
     public static final Map<String, Integer> listOfCapacity = new HashMap<>(){
         {
             put("1",698);
@@ -34,6 +36,49 @@ public class Constants {
             put("14",698);
         }
     };
+    //Vrai chiffre
+    /*public static final Map<String, Integer> listOfNumberOfRame = new HashMap<>(){
+        {
+            put("1",45);
+            put("2",37);
+            put("3",40);
+            put("3b",4);
+            put("4",40);
+            put("5",45);
+            put("6",37);
+            put("7",60);
+            put("7b",6);
+            put("8",50);
+            put("9",59);
+            put("10",22);
+            put("11",20);
+            put("12",37);
+            put("13",52);
+            put("14",25);
+        }
+    };*/
+
+    public static final Map<String, Integer> listOfNumberOfRame = new HashMap<>(){
+        {
+            put("1",10);
+            put("2",10);
+            put("3",10);
+            put("3b",2);
+            put("4",10);
+            put("5",10);
+            put("6",10);
+            put("7",16);
+            put("7b",2);
+            put("8",12);
+            put("9",14);
+            put("10",10);
+            put("11",6);
+            put("12",10);
+            put("13",10);
+            put("14",6);
+        }
+    };
+
     public static List<String> LINE_DEFAULTATTRIBUTES = Arrays.asList("line", "color", "sectionId","origin","destinatio");
 
 
