@@ -7,6 +7,8 @@ import java.util.List;
 
 public class Constants {
 
+    public static final boolean stationPassante = true;
+
     public static final int FIELD_SIZE = 1000;
     public static final int DISPLAY_SIZE = 700;
 

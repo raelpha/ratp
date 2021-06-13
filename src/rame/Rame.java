@@ -44,6 +44,7 @@ public class Rame implements Steppable {
     private LengthIndexedLine segment;
     private int attente;
     private boolean finish = false;
+    private int panne = 0;
     double startIndex;
     double endIndex;
     double currentIndex;
@@ -100,6 +101,8 @@ public class Rame implements Steppable {
     public String getNameLine() {return this.nameLine;}
 
     public Boolean isFinish() {return this.finish;}
+
+    public void setPanne(int p){this.panne = p;}
 
     public void step(SimState state) {
         //System.out.println("++++++++++++++++++++++++++++++");
@@ -324,7 +327,10 @@ public class Rame implements Steppable {
     }
 
     private void move(RatpNetwork geo) {
-        if (!this.arrived() && currentStation == null) {
+        if(panne!=0){
+            panne--;
+            currentSpeed=0.0D;
+        } else if (!this.arrived() && currentStation == null) {
             setNewVitesse(geo);
             this.moveAlongPath();
         } else {
@@ -337,7 +343,14 @@ public class Rame implements Steppable {
                 if(enterInStation(geo)) {
                     attente = 100;
                 } else {
-                    removeUser();
+                    if(Constants.stationPassante) {
+                        removeUser();
+                        nextStation = this.nextnextStation;
+                        if (itSchedule.hasNext()) {
+                            this.nextnextStation = ((Schedule) itSchedule.next()).station.name;
+                        }
+                        this.findNewPath(geo);
+                    }
                 }
             } else if (attente > 0) {
                 attente--;
@@ -421,6 +434,7 @@ public class Rame implements Steppable {
         Boolean isClosed = currentStation.isFermee();
         List<AgentVoyageur> returnList = new ArrayList<>();
         ListIterator<AgentVoyageur> it = users.listIterator();
+        List<AgentVoyageur> toDelete = new ArrayList<>();
         while(it.hasNext()){
             AgentVoyageur a = it.next();
             if(!a.cheminEnvisage.isEmpty() && a.cheminEnvisage.peek().getLeft().name.equals(stationName)){
@@ -428,18 +442,19 @@ public class Rame implements Steppable {
             }
             if (a.cheminEnvisage.isEmpty()){
                 forceUser.add(a);
-                users.remove(a);
+                toDelete.add(a);
             }
             if (!a.cheminEnvisage.peek().getLeft().line.equals(this.nameLine)){
                 if(!isClosed) {
                     returnList.add(a);
-                    users.remove(a);
+                    toDelete.add(a);
                 } else {
                     forceUser.add(a);
-                    users.remove(a);
+                    toDelete.add(a);
                 }
             }
         }
+        users.removeAll(toDelete);
         return returnList;
     }
 
