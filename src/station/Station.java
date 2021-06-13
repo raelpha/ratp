@@ -43,13 +43,6 @@ public class Station implements Steppable{
     private List<AgentVoyageur> voyageurDescendu=new ArrayList<>();
     private int attente=0;
     private Boolean testClear=false;
-    //Deprecated
-    /*
-    public Station(String lineId, String name) {
-        this.lineNumber = lineId;
-        this.name = name;
-    }
-    */
 
     public String getName() {return name;}
 
@@ -61,11 +54,11 @@ public class Station implements Steppable{
         return listAttenteRame;
     }
 
-    public void setListAttenteRame(List<AgentVoyageur> listAttenteRame) {
-        this.listAttenteRame = listAttenteRame;
-    }
-
     public int getColereStation() {
+        int nb=0;
+        for(AgentVoyageur aV : this.getListAttenteRame()){
+            nb+=aV.colere;
+        }
         return colereStation;
     }
 
@@ -89,6 +82,9 @@ public class Station implements Steppable{
     public void setFermee() {
         this.fermee = true;
         StationsDirectory.getInstance().fermerStation(this);
+        /*for(AgentVoyageur a : getListAttenteRame()){
+            a.FermetureStation(this);
+        }*/
     }
 
     public void setOuvert(){
@@ -113,11 +109,6 @@ public class Station implements Steppable{
         this.legacyColor = line.color;
         this.colereStation=0;
         this.nbVoyageurs=nbVoyageurs;
-        /*List<AgentVoyageur> _listAttenteRame=new ArrayList<AgentVoyageur>();
-        for(int i=0;i<nbVoyageurs;i++){
-            //AgentVoyageur nv= new AgentVoyageur(this);
-            //_listAttenteRame.add(nv);
-        }*/
         this.listAttenteRame=new ArrayList<AgentVoyageur>();
     }
 
@@ -127,25 +118,18 @@ public class Station implements Steppable{
     public void step(SimState simState) {
         RatpNetwork ratpNetwork =(RatpNetwork) simState;
         if(!testClear){
-            //System.out.println("je clear");
             this.rameSurPlace.clear();
-            //System.out.println("listeAttenteRame : "+this.rameSurPlace);
             this.getListAttenteRame().clear();
             testClear=true;
         }
+        arriveeRame(ratpNetwork);
         //this.descenteRame();
 
         if (test) {
-            //System.out.println("yo");
-            //System.out.println(this.name);
             if (!spawn) {
                 //int nbVoyageurSpawn = (int)doubleNormale(7,5);
                 for (int i = 0; i < 2; i++) {
                     AgentVoyageur temp = ratpNetwork.addVoyageur(this);
-                    /*if(!this.getListAttenteRame().contains(temp)) {
-                        this.getListAttenteRame().add(temp);
-                    }*/
-                    //System.out.println(" size step2 : "+getListAttenteRame().size());
                 }
                 for (int i = 0; i < 2; i++) {
                     AgentVoyageur temp1 = ratpNetwork.addVoyageur(this);
@@ -205,7 +189,7 @@ public class Station implements Steppable{
             //System.out.println(StationsDirectory.getInstance().gares.get("Nation").stations.entrySet());
             //System.out.println(" nb : " +StationsDirectory.getInstance().getStation("1", "Nation").getNbVoyageurs());
         }
-        monteeRame(ratpNetwork);
+
     }
 
     public static double fonctionNormale(double d) {
@@ -221,11 +205,13 @@ public class Station implements Steppable{
 
     public void descenteRame(){
         if (!this.rameSurPlace.isEmpty()) {
-            System.out.println("rameSurPlace : " + this.rameSurPlace + " station : "+this.name);
+            //System.out.println("rameSurPlace : " + this.rameSurPlace + " station : "+this.name);
             for (int i = 0; i < this.rameSurPlace.size(); i++) {
-                Rame rame = this.rameSurPlace.remove(0);
+                Rame rame = this.rameSurPlace.get(0);
                 if (!this.getRemoveUserRame(rame).isEmpty()) {
-                    for(AgentVoyageur aV : this.getRemoveForceUserRame(rame)){
+                    System.out.println("debug : "+this.getRemoveUserRame(rame));
+                    for(AgentVoyageur aV : this.getRemoveUserRame(rame)){
+                        System.out.println(aV.cheminEnvisage.peek().getLeft());
                         if(aV.cheminEnvisage.isEmpty()){
                             System.out.println("Je suis arrivé : "+aV);
                         }else{
@@ -243,14 +229,26 @@ public class Station implements Steppable{
         }
     }
 
+    public void arriveeRame(RatpNetwork ratpNetwork){
+        descenteRame();
+        monteeRame(ratpNetwork);
+    }
+
     public void monteeRame(RatpNetwork ratpNetwork){
         if (!this.rameSurPlace.isEmpty()) {
             for (int i = 0; i < this.rameSurPlace.size(); i++) {
                 Rame rame = this.rameSurPlace.get(i);
-                for(int j =0 ;j<this.getListAttenteRame().size();j++){
+                int sizeList;
+                if(getListAttenteRame().size()<nbPlaceRame(rame)){
+                    sizeList=getListAttenteRame().size();
+                }else{
+                    sizeList=nbPlaceRame(rame);
+                }
+                for(int j =0 ;j<sizeList;j++){
                     if(checkDestinationVoyageurRame(getListAttenteRame().get(j),rame)){
                         AgentVoyageur a = getListAttenteRame().get(j);
                         rame.addUser(a);
+                        System.out.println("Je monte dans la rame");
                         a.enTrain=true;
                         ratpNetwork.removeVoyageur(a);
                         this.getListAttenteRame().remove(a);
@@ -275,27 +273,16 @@ public class Station implements Steppable{
         return listAttenteRame;
     }*/
 
-    public void colereStationTot(List<AgentVoyageur> listVoyageur){
-        int colereTot=0;
-        for(AgentVoyageur a : listVoyageur){
-            colereTot+=a.colere;
-        }
-        setColereStation(colereTot);
-    }
 
-    public void chargerRame(Rame rame){
-        int nbPlace = demanderNbPlaceRame(rame);
-        for(int i =0;i<nbPlace;i++){
-            AgentVoyageur a = getListAttenteRame().remove(0);
-            //rame.addUser(a);
+    public void spawnVoyageur(RatpNetwork ratpNetwork){
+        int nombreAleatoire = (int)(Math.random() * 21);
+        for (int i = 0; i < nombreAleatoire; i++) {
+            ratpNetwork.addVoyageur(this);
         }
-
     }
 
     public Boolean checkDestinationVoyageurRame(AgentVoyageur a,Rame rame){
         for(Station s : a.cheminEnvisage.peek().getRight()){
-            //System.out.println("cheminVoyageur : "+s.name);
-            //System.out.println("cheminRame : "+this.getTerminusRame(rame).name);
             if(s.name.equals(this.getTerminusRame(rame).name)){
                 return true;
             }
@@ -303,20 +290,6 @@ public class Station implements Steppable{
         return false;
     }
 
-    /*public void dechargerRame(Rame rame,String name){
-        List<AgentVoyageur> listDescedants = new ArrayList<AgentVoyageur>();
-        listDescedants=rame.removeUser(this.name);
-        for(AgentVoyageur a: listDescedants){
-            //remove la station de la liste de station du voyageur
-            //Si la liste est vide , ça signifie que c'est son terminus donc on le remove
-            if(a.chemi.isEmpty()){ // terminus
-                //retirer l'agent
-            }
-            else{ //sinon on le change de quai
-                addToMctList(name,a);
-            }
-        }
-    }*/
 
     public Station getTerminusRame(Rame rame){
         return rame.getTerminus().station;
@@ -326,7 +299,7 @@ public class Station implements Steppable{
         StationsDirectory.getInstance().gares.get(name).listMct.add(a);
     }
 
-    public int demanderNbPlaceRame(Rame rame) {
+    public int nbPlaceRame(Rame rame) {
         return rame.freePlaces();
     }
 

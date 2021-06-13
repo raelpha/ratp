@@ -50,7 +50,8 @@ public class Rame implements Steppable {
     PointMoveTo pointMoveTo;
     private static GeometryFactory fact = new GeometryFactory();
     private int maxUser = Constants.MAX_USER_RAME;
-    private List<AgentVoyageur> users = new ArrayList<>();
+    //TODO change public to private
+    public List<AgentVoyageur> users = new ArrayList<>();
     private List<AgentVoyageur> forceUser = new ArrayList<>();
     private String nameLine;
 
