@@ -69,7 +69,7 @@ public class AgentVoyageur implements Steppable ,Delayed{
         //destination=StationsDirectory.getInstance().getStation("13","Saint-Denis - Université");
         destination = DeterminerDestination();
         //destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
-        //System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
+        System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
         cheminEnvisage = trouverChemin(stationCourante, destination);
         this.time=System.currentTimeMillis()+delayTime;
 
@@ -259,8 +259,8 @@ public class AgentVoyageur implements Steppable ,Delayed{
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
 
-        return StationsDirectory.getInstance().getStation("2","Place de Clichy");
-        //return stations.get(rand);
+        //return StationsDirectory.getInstance().getStation("2","Place de Clichy");
+        return stations.get(rand);
     }
 
 

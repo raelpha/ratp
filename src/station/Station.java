@@ -43,6 +43,7 @@ public class Station implements Steppable{
     private List<AgentVoyageur> voyageurDescendu=new ArrayList<>();
     private int attente=0;
     private Boolean testClear=false;
+    private Boolean sizeListTest=false;
 
     public String getName() {return name;}
 
@@ -117,15 +118,12 @@ public class Station implements Steppable{
     @Override
     public void step(SimState simState) {
         RatpNetwork ratpNetwork =(RatpNetwork) simState;
-        if(!testClear){
-            this.rameSurPlace.clear();
-            this.getListAttenteRame().clear();
-            testClear=true;
-        }
+        clearAllStation();
+        spawnVoyageur(ratpNetwork);
         arriveeRame(ratpNetwork);
         //this.descenteRame();
 
-        if (test) {
+        /*if (test) {
             if (!spawn) {
                 //int nbVoyageurSpawn = (int)doubleNormale(7,5);
                 for (int i = 0; i < 2; i++) {
@@ -152,7 +150,7 @@ public class Station implements Steppable{
             //System.out.println(this.getListAttenteRame());
             //addToMctList(this.name,listAttenteRame.remove(0));
             //System.out.println(StationsDirectory.getInstance().gares.get(this.name).queueMct);
-        }
+        }*/
 
             /*if (!this.voyageurDescendu.isEmpty()) {
                 for (AgentVoyageur a : this.voyageurDescendu) {
@@ -241,10 +239,14 @@ public class Station implements Steppable{
                 int sizeList;
                 if(getListAttenteRame().size()<nbPlaceRame(rame)){
                     sizeList=getListAttenteRame().size();
+                    sizeListTest=true;
                 }else{
                     sizeList=nbPlaceRame(rame);
                 }
                 for(int j =0 ;j<sizeList;j++){
+                    //System.out.println("sizeList : "+sizeList);
+                    //System.out.println(this.getListAttenteRame());
+                    //System.out.println("j : "+j);
                     if(checkDestinationVoyageurRame(getListAttenteRame().get(j),rame)){
                         AgentVoyageur a = getListAttenteRame().get(j);
                         rame.addUser(a);
@@ -254,10 +256,10 @@ public class Station implements Steppable{
                         this.getListAttenteRame().remove(a);
                         //System.out.println("rame user : "+rame.users);
                         //System.out.println(" j : "+j+" size : "+getListAttenteRame().size()+ " voyageur : "+a);
+                        j--;
+                        sizeList--;
                     }
                 }
-                //System.out.println("count : "+count);
-
             }
         }
     }
@@ -273,18 +275,33 @@ public class Station implements Steppable{
         return listAttenteRame;
     }*/
 
+    void clearAllStation(){
+        if(!testClear){
+            this.rameSurPlace.clear();
+            this.getListAttenteRame().clear();
+            this.voyageurDescendu.clear();
+            testClear=true;
+        }
+    }
 
     public void spawnVoyageur(RatpNetwork ratpNetwork){
-        int nombreAleatoire = (int)(Math.random() * 21);
-        for (int i = 0; i < nombreAleatoire; i++) {
-            ratpNetwork.addVoyageur(this);
+        if(!spawn) {
+            int nombreAleatoire = (int) (Math.random() * 11);
+            for (int i = 0; i < nombreAleatoire; i++) {
+                ratpNetwork.addVoyageur(this);
+            }
+            this.spawn=true;
         }
     }
 
     public Boolean checkDestinationVoyageurRame(AgentVoyageur a,Rame rame){
-        for(Station s : a.cheminEnvisage.peek().getRight()){
-            if(s.name.equals(this.getTerminusRame(rame).name)){
-                return true;
+        if(!a.cheminEnvisage.isEmpty()) {
+            for (Station s : a.cheminEnvisage.peek().getRight()) {
+                System.out.println("cheminVoyageur : " + s.name);
+                System.out.println("cheminRame : " + getTerminusRame(rame).name);
+                if (s.name.equals(this.getTerminusRame(rame).name)) {
+                    return true;
+                }
             }
         }
         return false;
