@@ -96,6 +96,7 @@ public class RatpNetwork extends SimState {
             //addAgent("1", schedules);
             //addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
             addAgent("1", sd.schedules.get("1").get("La Défense -> Château de Vincennes"));
+            addAgent("13", sd.schedules.get("13").get("Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles"));
             //addAgent("3", sd.schedules.get("3").get("Pont de Levallois - Bécon -> Gallieni"));
             //addAgent("6");
         }

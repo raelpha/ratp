@@ -66,7 +66,7 @@ public class AgentVoyageur implements Steppable ,Delayed{
     public AgentVoyageur(Station stationCourante, Continuous2D yard,long delayTime){
         InitialisationDansStation(stationCourante, yard);
 
-        destination=StationsDirectory.getInstance().getStation("1","Château de Vincennes");
+        destination=StationsDirectory.getInstance().getStation("13","Saint-Denis - Université");
         //destination = DeterminerDestination();
         //destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
         System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
@@ -313,7 +313,7 @@ public class AgentVoyageur implements Steppable ,Delayed{
         }
     }
 
-    private Queue<Pair<Station, List<Station>>> trouverChemin(Station departS, Station arriveeS){
+    public Queue<Pair<Station, List<Station>>> trouverChemin(Station departS, Station arriveeS){
         Node depart = new Node(departS, 0, 0, null, null);
         Queue<Node> stationFermees = new LinkedList<>();
         PriorityQueue<Node> stationOuvertes = new PriorityQueue<>(new NodeComparator());
@@ -331,7 +331,7 @@ public class AgentVoyageur implements Steppable ,Delayed{
                 if(!(stationFermees.contains(s) || ExisteCoutInferieur(stationOuvertes, s, n.cout+1))){
                     int cout = 1;
                     if(s.lineNumber != n.station.lineNumber){
-                        if(n.station.fermee){
+                        if(n.station.isFermee()){
                             // on veut changer de ligne, mais la ligne est cassée
                             continue;
                         }
