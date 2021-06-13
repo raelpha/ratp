@@ -343,6 +343,17 @@ public class StationsDirectory {
         );
 
     }
+
+    public double getColereAllStations() {
+        double colere = 0;
+        for (Map.Entry<String, Gare> entry : StationsDirectory.getInstance().gares.entrySet()) {
+            for (Map.Entry<String, Station> entryStation :  entry.getValue().stations.entrySet()) {
+                colere += entryStation.getValue().getColereStation();
+            }
+        }
+        return colere;
+    }
+
     /*On Debug*/
     public static void main(String[] args) {
         StationsDirectory s = StationsDirectory.getInstance();

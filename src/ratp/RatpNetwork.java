@@ -52,6 +52,16 @@ public class RatpNetwork extends SimState {
     }
 
 
+    public double getAllColere() {
+        double colere = 0;
+        for (Map.Entry<String, Line> entry : this.lines.entrySet()) {
+            for (Map.Entry<String, Station> entryStations : entry.getValue().stations.entrySet()) {
+                colere += entryStations.getValue().getColereStation();
+            }
+        }
+        return colere;
+    }
+
     public Pair<String, GeomVectorField> getLine(String name){
         GeomVectorField l = lines.get(name).geomVectorField;
         Pair returnValue = new Pair <String, GeomVectorField>(name,l);
