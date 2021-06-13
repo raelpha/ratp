@@ -92,6 +92,13 @@ public class Gare extends MasonGeometry implements Steppable {
         }
     }
 
+    public void setOuvert(){
+        this.fermee=false;
+        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
+            StationsDirectory.getInstance().getStation(entry.getKey(),this.name).setOuvert();
+        }
+    }
+
 
     @Override
     public void step(SimState simState) {

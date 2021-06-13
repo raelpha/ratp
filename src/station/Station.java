@@ -88,6 +88,12 @@ public class Station implements Steppable{
 
     public void setFermee() {
         this.fermee = true;
+        StationsDirectory.getInstance().fermerStation(this);
+    }
+
+    public void setOuvert(){
+        this.fermee=false;
+        StationsDirectory.getInstance().ouvrirStation(this);
     }
 
 
