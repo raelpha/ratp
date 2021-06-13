@@ -328,6 +328,9 @@ public class StationsDirectory {
                                     if (!gare.isFermee()) {
                                         System.out.println("Closing " + gare.name + " all stations");
                                         gare.setFermee();
+                                    } else {
+                                        System.out.println("Openning " + gare.name + " all stations");
+                                        gare.setOuvert();
                                     }
                                 }
 
