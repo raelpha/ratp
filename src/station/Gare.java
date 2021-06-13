@@ -9,7 +9,6 @@ import sim.util.geo.MasonGeometry;
 import voyageur.AgentVoyageur;
 
 import java.util.*;
-import java.util.concurrent.DelayQueue;
 
 /**
  * A gare is made of one or more Station.
@@ -21,7 +20,7 @@ public class Gare extends MasonGeometry implements Steppable {
     public Map<String, Station> stations = new HashMap<>();
     //public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
     public List<AgentVoyageur> listMct = new ArrayList<AgentVoyageur>();
-
+    public List<AgentVoyageur> listVoyageurGare;
 
     private Boolean test=false;
     private Boolean fermee=false;
@@ -47,6 +46,18 @@ public class Gare extends MasonGeometry implements Steppable {
         this.addAttribute(Constants.STATION_NAME_STR, gem.getStringAttribute(Constants.STATION_NAME_STR));
         this.geometry = gem.getGeometry();
         this.name = this.getStringAttribute(Constants.STATION_NAME_STR);
+    }
+
+    public List<AgentVoyageur> getListGare(){
+        this.listVoyageurGare =new ArrayList<AgentVoyageur>();
+        List<List<AgentVoyageur>> listListTot =new ArrayList<List<AgentVoyageur>>();
+        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
+            listListTot.add(StationsDirectory.getInstance().getStation(entry.getKey(),this.name).getListAttenteRame());
+        }
+        for (List<AgentVoyageur> l: listListTot) {
+            listVoyageurGare.addAll(l);
+        }
+        return listVoyageurGare;
     }
 
     public int getNbVoyageurs(){
