@@ -83,7 +83,12 @@ public class AgentVoyageur implements Steppable ,Delayed{
         //System.out.println(colere);
     }
 
-    public void InitialisationDansStation(Station station, Continuous2D yard) {
+    public void SortirDeRame(Continuous2D yard, Station stationCourante){
+        colereMoyenneAdjacente = colere;
+        InitialisationDansStation(stationCourante, yard);
+    }
+
+    public void InitialisationDansStation(Station station, Continuous2D yard){
         this.stationCourante = station;
         Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
         Double2D stationPosCont = ConversionGeomToContinuous(stationPosGeom);
@@ -93,6 +98,9 @@ public class AgentVoyageur implements Steppable ,Delayed{
         //yard.setObjectLocation(this, stationPos);
         x = location.x;
         y = location.y;
+        //
+        etat = 0;
+        enTrain = false;
     }
 
     private Double2D ConversionGeomToContinuous(Double2D c) {
@@ -239,7 +247,6 @@ public class AgentVoyageur implements Steppable ,Delayed{
 
     // détermine une destination au hasard
     private Station DeterminerDestination(){
-        // TODO chercher parmi les stations non fermées
         /*List<Gare> ssList = StationsDirectory.getInstance().getAllGares();
         List<Station> stations = new ArrayList<>();
         for(Gare ss : ssList){
@@ -252,7 +259,8 @@ public class AgentVoyageur implements Steppable ,Delayed{
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
 
-        return stations.get(rand);
+        return StationsDirectory.getInstance().getStation("2","Place de Clichy");
+        //return stations.get(rand);
     }
 
 
@@ -369,7 +377,7 @@ public class AgentVoyageur implements Steppable ,Delayed{
         //System.out.println("J'emprunterai le chemin suivant : ");
         /*for(Pair<Station, List<Station>> station_destination : stationPath){
             System.out.println(station_destination.getLeft().name + " " + station_destination.getLeft().lineNumber);
-            System.out.println("Train à destinations de : ");
+            /*System.out.println("Train à destinations de : ");
             for(Station s : station_destination.getRight()){
                 System.out.println("    " + s.name + ", " + s.lineNumber);
             }

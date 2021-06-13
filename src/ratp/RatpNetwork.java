@@ -101,11 +101,7 @@ public class RatpNetwork extends SimState {
             //addAgent("6");
         }
 
-        /*public void addVoyageur (VoyageurDonnees vD, Station currentStation){
-            AgentVoyageur a = new AgentVoyageur(vD, currentStation, yard);
-        }*/
-
-        public void removeVoyageur (AgentVoyageur voyageur){
-            yard.remove(voyageur);
-        }
+    public void removeVoyageur(AgentVoyageur voyageur){
+        yard.remove(voyageur);
+    }
 }
