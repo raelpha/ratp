@@ -80,6 +80,9 @@ public class AgentVoyageur implements Steppable {
         //yard.setObjectLocation(this, stationPos);
         x = location.x;
         y = location.y;
+        //
+        etat = 0;
+        enTrain = false;
     }
 
     private Double2D ConversionGeomToContinuous(Double2D c){
