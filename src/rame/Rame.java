@@ -43,11 +43,12 @@ public class Rame implements Steppable {
     private double braking = -0.000000008D;
     private LengthIndexedLine segment;
     private int attente;
+    private boolean finish = false;
     double startIndex;
     double endIndex;
     double currentIndex;
     double nextStartIndex;
-    PointMoveTo pointMoveTo;
+    public PointMoveTo pointMoveTo;
     private static GeometryFactory fact = new GeometryFactory();
     private int maxUser = Constants.MAX_USER_RAME;
     private List<AgentVoyageur> users = new ArrayList<>();
@@ -68,6 +69,8 @@ public class Rame implements Steppable {
         this.location.isMovable = true;
         this.location.addAttribute("type", "rame");
         this.location.addAttribute("color", "#ff0000");
+        this.location.addAttribute("direction", Integer.toString(this.getDirection()));
+        this.location.addAttribute("rame", this);
         this.attente = 100;
         setDepart(state, ((Schedule)itSchedule.next()).station.name);
         this.location.addDoubleAttribute("MOVE RATE", this.maxSpeed);
@@ -86,11 +89,17 @@ public class Rame implements Steppable {
 
     public double getStartIndex() {return this.startIndex;}
 
+    public double getEndIndex() {return this.endIndex;}
+
     public int getDirection() {return this.scheduleStation.get(0).direction;}
 
     public Schedule getTerminus() {return this.scheduleStation.get(this.scheduleStation.size()-1);}
 
+    public Schedule getOriginStation() {return this.scheduleStation.get(0);}
+
     public String getNameLine() {return this.nameLine;}
+
+    public Boolean isFinish() {return this.finish;}
 
     public void step(SimState state) {
         //System.out.println("++++++++++++++++++++++++++++++");
@@ -155,10 +164,16 @@ public class Rame implements Steppable {
         Iterator rameIterator = rameOnLine.iterator();
         while(rameIterator.hasNext()){
             Rame r = (Rame) rameIterator.next();
-            if(index==-1 && Math.abs(r.getStartIndex()-r.getCurrentIndex())<=distance){
-                return true;
-            }
-            if (index >=0 && Math.abs(r.getCurrentIndex()-index)<=distance){
+            if(index==-1 && line.getStartPoint().equals(nextStartIndex)) {
+                if(Math.abs(r.getStartIndex()-r.getCurrentIndex())<=distance) {
+                    return true;
+                }
+            } else if (index==-1 && line.getStartPoint().equals(nextStartIndex)){
+                if(Math.abs(r.getEndIndex()-r.getCurrentIndex())<=distance){
+                    return true;
+                }
+            } else if (index >=0 && Math.abs(r.getCurrentIndex()-index)<=distance){
+                if((lineDirection==1 && r.getCurrentIndex()>index) || (lineDirection==-1 && r.getCurrentIndex()<index))
                 return true;
             }
         }
@@ -204,6 +219,7 @@ public class Rame implements Steppable {
         } else if (nextBegin!=null && this.nextLine.getEndPoint().equals(nextBegin)){
             this.nextStartIndex = l.getEndIndex();
         } else {
+            System.out.println("nothing happen");
             //nothing happen
         }
     }
@@ -312,13 +328,18 @@ public class Rame implements Steppable {
             setNewVitesse(geo);
             this.moveAlongPath();
         } else {
-            if(!this.nextStation.equals(this.nextnextStation) && attente == -1) {
+            if(this.nextStation.equals(this.nextnextStation) && attente == 0) {
+                leaveStation();
+                geo.getLine(this.nameLine).getRight().removeGeometry(this.location);
+                finish = true;
+                attente=-2;
+            } else if(attente == -1) {
                 if(enterInStation(geo)) {
                     attente = 100;
                 } else {
                     removeUser();
                 }
-            } else if (!this.nextStation.equals(this.nextnextStation) && attente > 0) {
+            } else if (attente > 0) {
                 attente--;
             } else if(!this.nextStation.equals(this.nextnextStation) && attente == 0) {
                 leaveStation();
@@ -333,6 +354,8 @@ public class Rame implements Steppable {
             } else {
                 //delete (event ou auto delete)
             }
+            //System.out.println(nextStation + "+-+" + nextnextStation);
+            //System.out.println("------------------------------------");
         }
         //System.out.println(this.currentSpeed);
     }
@@ -421,7 +444,7 @@ public class Rame implements Steppable {
     }
 
     public List<AgentVoyageur> forceRemoveUser() {
-        return forceRemoveUser();
+        return forceUser;
     }
 
 }
