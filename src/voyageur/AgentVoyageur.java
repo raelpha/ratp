@@ -65,6 +65,11 @@ public class AgentVoyageur implements Steppable {
         System.out.println(colere);
     }
 
+    public void SortirDeRame(Continuous2D yard, Station stationCourante){
+        colereMoyenneAdjacente = colere;
+        InitialisationDansStation(stationCourante, yard);
+    }
+
     public void InitialisationDansStation(Station station, Continuous2D yard){
         this.stationCourante = station;
         Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
@@ -221,7 +226,6 @@ public class AgentVoyageur implements Steppable {
 
     // détermine une destination au hasard
     private Station DeterminerDestination(){
-        // TODO chercher parmi les stations non fermées
         /*List<Gare> ssList = StationsDirectory.getInstance().getAllGares();
         List<Station> stations = new ArrayList<>();
         for(Gare ss : ssList){
@@ -234,7 +238,8 @@ public class AgentVoyageur implements Steppable {
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
 
-        return stations.get(rand);
+        return StationsDirectory.getInstance().getStation("2","Place de Clichy");
+        //return stations.get(rand);
     }
 
     class Node{
@@ -280,7 +285,7 @@ public class AgentVoyageur implements Steppable {
                 if(!(stationFermees.contains(s) || ExisteCoutInferieur(stationOuvertes, s, n.cout+1))){
                     int cout = 1;
                     if(s.lineNumber != n.station.lineNumber){
-                        if(n.station.fermee){
+                        if(false/*n.station.fermee*/){
                             // on veut changer de ligne, mais la ligne est cassée
                             continue;
                         }
@@ -318,10 +323,10 @@ public class AgentVoyageur implements Steppable {
         System.out.println("J'emprunterai le chemin suivant : ");
         for(Pair<Station, List<Station>> station_destination : stationPath){
             System.out.println(station_destination.getLeft().name + " " + station_destination.getLeft().lineNumber);
-            System.out.println("Train à destinations de : ");
+            /*System.out.println("Train à destinations de : ");
             for(Station s : station_destination.getRight()){
                 System.out.println("    " + s.name + ", " + s.lineNumber);
-            }
+            }*/
         }
         return new LinkedList<>(stationPath);
     }

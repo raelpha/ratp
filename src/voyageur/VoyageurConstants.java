@@ -2,7 +2,7 @@ package voyageur;
 
 public class VoyageurConstants
 {
-    public static int coutChgtStation = 3;
+    public static int coutChgtStation = 10;
     public static float Discretisation = 0.1f;
 
     // Dans Station
