@@ -98,11 +98,11 @@ public class RameFactory implements Steppable {
     }
 
     private void checkBuffer (RatpNetwork geo) {
-        Bag test = geo.getLine("3b").getRight().getGeometries();
+        /*Bag test = geo.getLine("3b").getRight().getGeometries();
         Iterator testIt = test.iterator();
         while(testIt.hasNext()){
-            System.out.println(((MasonGeometry)testIt.next()).getAttributes());
-        }
+            //System.out.println(((MasonGeometry)testIt.next()).getAttributes());
+        }*/
         List<Pair<String, List<SchedulesDirectory.Schedule>>> toDelete = new ArrayList<>();
         Iterator bufferIt = bufferRame.iterator();
         while(bufferIt.hasNext()){
