@@ -8,6 +8,7 @@ import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
 import sim.util.Double2D;
+import station.Gare;
 import station.Station;
 import voyageur.AgentVoyageur;
 import voyageur.VoyageurConstants;
@@ -36,7 +37,7 @@ public class RatpNetwork extends SimState {
     {
         super.start();
         yard.clear();
-        for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
+        //StationsDirectory.getInstance().getStation("8", "Balard")
     }
 
     public void addVoyageur(Station currentStation){

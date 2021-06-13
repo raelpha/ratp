@@ -51,18 +51,20 @@ public class AgentVoyageur implements Steppable {
     public AgentVoyageur(Station stationCourante, Continuous2D yard){
         InitialisationDansStation(stationCourante, yard);
         destination = DeterminerDestination();
-        //destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
-        System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
+        //System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
         cheminEnvisage = trouverChemin(stationCourante, destination);
-
-        System.out.println("Nbr chgt : " + nChangementCheminenvisage);
+        if(cheminEnvisage.isEmpty()){
+            System.out.println("What");
+            System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
+            System.out.println("Nbr chgt : " + nChangementCheminenvisage);
+        }
+        //System.out.println("Nbr chgt : " + nChangementCheminenvisage);
 
         Random R = new Random();
         int rand = (int)(R.nextGaussian()*80);
         if(rand < 0) colere = 0;
         else if(rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
         else colere = rand;
-        System.out.println(colere);
     }
 
     public void SortirDeRame(Continuous2D yard, Station stationCourante){
@@ -75,9 +77,7 @@ public class AgentVoyageur implements Steppable {
         Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
         Double2D stationPosCont = ConversionGeomToContinuous(stationPosGeom);
         Double2D location = GetRandomPointCircle(stationPosCont, VoyageurConstants.maximumDistanceStation);
-        //var stationPos = ConversionGeomToContinuous(new Double2D(station.location.getX(), station.location.getY()));
         yard.setObjectLocation(this, location);
-        //yard.setObjectLocation(this, stationPos);
         x = location.x;
         y = location.y;
         //
@@ -220,13 +220,14 @@ public class AgentVoyageur implements Steppable {
     // détermine une destination au hasard
     private Station DeterminerDestination(){
 
-        List<Station> stations = StationsDirectory.getInstance().stationsOuvertes;
+        List<Station> stations = new ArrayList<>(StationsDirectory.getInstance().stationsOuvertes);
+        stations.remove(stationCourante);
 
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
 
-        return StationsDirectory.getInstance().getStation("8","Pointe du Lac");
-        //return stations.get(rand);
+        //return StationsDirectory.getInstance().getStation("8","Pointe du Lac");
+        return stations.get(rand);
     }
 
     class Node{
@@ -307,14 +308,14 @@ public class AgentVoyageur implements Steppable {
             previousDestinations = currentNode.destinations;
         }
         Collections.reverse(stationPath);
-        System.out.println("J'emprunterai le chemin suivant : ");
+        /*System.out.println("J'emprunterai le chemin suivant : ");
         for(Pair<Station, List<Station>> station_destination : stationPath){
             System.out.println(station_destination.getLeft().name + " " + station_destination.getLeft().lineNumber);
-            /*System.out.println("Train à destinations de : ");
+            System.out.println("Train à destinations de : ");
             for(Station s : station_destination.getRight()){
                 System.out.println("    " + s.name + ", " + s.lineNumber);
-            }*/
-        }
+            }
+        }*/
         return new LinkedList<>(stationPath);
     }
 
