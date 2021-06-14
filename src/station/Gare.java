@@ -60,16 +60,6 @@ public class Gare extends MasonGeometry implements Steppable {
         return listVoyageurGare;
     }
 
-    public int getNbVoyageurs(){
-        int nbVoya=0;
-        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
-            nbVoya+=StationsDirectory.getInstance().getStation(entry.getKey(),this.name).getNbVoyageurs();
-        }
-        nbVoya +=listMct.size();
-        this.nbVoyageurs=nbVoya;
-        return nbVoyageurs;
-    }
-
     public String getName() {
         return name;
     }
@@ -110,13 +100,24 @@ public class Gare extends MasonGeometry implements Steppable {
         }
     }
 
+    public int getNbVoyageurs(){
+        return nbVoyageurs;
+    }
+
+    public void setNbVoyageurs() {
+        int nbVoya=0;
+        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
+            nbVoya+=StationsDirectory.getInstance().getStation(entry.getKey(),this.name).getNbVoyageurs();
+        }
+        this.nbVoyageurs=nbVoya;
+    }
+
+
 
     @Override
     public void step(SimState simState) {
         RatpNetwork ratpNetwork = (RatpNetwork) simState;
-        if(StationsDirectory.getInstance().allGares.get(249).test==false){
-            //System.out.println(StationsDirectory.getInstance().gares.get("Nation");
-        }
+        setNbVoyageurs();
     }
 
 }

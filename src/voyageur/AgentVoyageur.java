@@ -31,7 +31,7 @@ import station.Station;
 
 
 // la rame doit instantier les voyageurs avec la bonne station courante
-public class AgentVoyageur implements Steppable ,Delayed{
+public class AgentVoyageur implements Steppable{
 
 
 
@@ -181,8 +181,7 @@ public class AgentVoyageur implements Steppable ,Delayed{
                 }
             }
         }
-
-
+        colereMoyenneAdjacente = sommeColeresAdjacente / avNb;
         if(colereMoyenneAdjacente > colere){
             addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
         }
@@ -190,7 +189,6 @@ public class AgentVoyageur implements Steppable ,Delayed{
             addToColere(-1);
         }
 
-        colereMoyenneAdjacente = sommeColeresAdjacente / avNb;
     }
 
     private Double2D GetRandomPointCircle(Double2D point, double distance) {
@@ -275,38 +273,6 @@ public class AgentVoyageur implements Steppable ,Delayed{
         //return StationsDirectory.getInstance().getStation("8","Pointe du Lac");
         return stations.get(rand);
     }
-
-
-
-    @Override
-    public long getDelay(TimeUnit unit) {
-        long diff = time - System.currentTimeMillis();
-        return unit.convert(diff, TimeUnit.MILLISECONDS);
-    }
-
-    /*@Override public String toString()
-    {
-        return "\n{ time : "+time +" }";
-    }*/
-
-    @Override
-    public int compareTo(Delayed o) {
-        int resultat = -1;
-        if (o instanceof AgentVoyageur) {
-            AgentVoyageur agentVoyageur = (AgentVoyageur) o;
-            if (this.time < agentVoyageur.time) {
-                resultat = -1;
-            } else {
-                if (this.time > agentVoyageur.time) {
-                    resultat = 1;
-                } else {
-                    resultat = 0;
-                }
-            }
-        }
-        return resultat;
-    }
-
 
 
     class Node{

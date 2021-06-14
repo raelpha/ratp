@@ -11,6 +11,7 @@ import ratp.directory.SchedulesDirectory.*;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
+import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.util.Double2D;
 import station.Gare;
 import station.Station;
@@ -80,6 +81,10 @@ public class RatpNetwork extends SimState {
         return returnValue;
     }
 
+    public GeomVectorFieldPortrayal getPortrayal (String name){
+        return lines.get(name).geomVectorFieldPortrayal;
+    }
+
     private void addAgent(String lineName, List<Schedule> schedules){
         Rame r = new Rame(this, lineName, schedules);
         MasonGeometry rameGeometry = r.getGeometry();
@@ -103,25 +108,18 @@ public class RatpNetwork extends SimState {
             }
         }
         // ce code est la fameuse factory qui crée un rame pour chaque schedule (attention les rame qui arrive en face s'arrêteront)
-        /*factory.setBaseRame(this);
-        List<Pair<String, Rame>> listeRame =  factory.getRame();
-        Iterator rameIterator = listeRame.iterator();
-        while(rameIterator.hasNext()){
-            Rame r = ((Pair<String, Rame>)rameIterator.next()).getRight();
-            this.schedule.scheduleRepeating(r);
-        }*/
+        factory.setBaseRame(this);
+        this.schedule.scheduleRepeating(factory);
 
-            //ce code permet de tester en ajouter des rames à l'unité, il suffit de préciser la ligne et la liste de schedule de la rame
-            SchedulesDirectory sd = SchedulesDirectory.getInstance();
+        //ce code permet de tester en ajouter des rames à l'unité, il suffit de préciser la ligne et la liste de schedule de la rame
+        //SchedulesDirectory sd = SchedulesDirectory.getInstance();
+        //List<Schedule> schedules = sd.schedules.get("1").get("La Défense -> Château de Vincennes");
+        //addAgent("1", schedules);
+        //addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
+        //addAgent("3", sd.schedules.get("3").get("Pont de Levallois - Bécon -> Gallieni"));
+        //addAgent("6");
+    }
 
-            //List<Schedule> schedules = sd.schedules.get("1").get("La Défense -> Château de Vincennes");
-            //addAgent("1", schedules);
-            //addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
-            addAgent("1", sd.schedules.get("1").get("La Défense -> Château de Vincennes"));
-            addAgent("13", sd.schedules.get("13").get("Châtillon - Montrouge -> Asnières - Gennevilliers - Les Courtilles"));
-            //addAgent("3", sd.schedules.get("3").get("Pont de Levallois - Bécon -> Gallieni"));
-            //addAgent("6");
-        }
 
     public void removeVoyageur(AgentVoyageur voyageur){
         yard.remove(voyageur);
