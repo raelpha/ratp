@@ -76,10 +76,10 @@ public class RatpStateWithUI extends GUIState {
 
         myChart = ChartUtilities.buildTimeSeriesChartGenerator(
                 this,
-                "My colere",
-                "Avec le temps");
-
-        myAttributes = ChartUtilities.addSeries(myChart, "Time time series of interest");
+                "Evolution de la colère avec le temps",
+                "Temps");
+        myChart.setYAxisLabel("Colère");
+        myAttributes = ChartUtilities.addSeries(myChart, "Colère sur l'ensemble du réseau");
 
     }
 
