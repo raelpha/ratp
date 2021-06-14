@@ -38,10 +38,10 @@ public class Rame implements Steppable {
     private Iterator itSchedule;
     private String nextStation;
     private String nextnextStation;
-    private double maxSpeed = 0.000001D;
+    private double maxSpeed = Constants.rameMaxSpeed;
     private double currentSpeed = 0.0000000000D;
-    private double acceleration = 0.00000001D;
-    private double braking = -0.000000008D;
+    private double acceleration = Constants.rameAcceleration;
+    private double braking = Constants.rameBraking;
     private LengthIndexedLine segment;
     private int attente;
     private boolean finish = false;
@@ -74,11 +74,16 @@ public class Rame implements Steppable {
         this.location.addAttribute("color", "#ff0000");
         this.location.addAttribute("direction", Integer.toString(this.getDirection()));
         this.location.addAttribute("rame", this);
-        this.attente = 100;
+        this.attente = Constants.attenteRame;
         setDepart(state, ((Schedule)itSchedule.next()).station.name);
         this.location.addDoubleAttribute("MOVE RATE", this.maxSpeed);
         if(params.length > 0) {
-            maxUser = (int) params[0];
+            if(params.length>=1) {
+                forceUser = (List<AgentVoyageur>) params[0];
+            }
+            if(params.length>=2) {
+                maxUser = (int) params[1];
+            }
         }
     }
 
@@ -109,6 +114,8 @@ public class Rame implements Steppable {
     public boolean isPanne(){return panne!=0;}
 
     public boolean isStopped(){return isPanne()||(currentSpeed==0 && currentStation==null);}
+
+    public void setFinish(){finish=true;}
 
     public void step(SimState state) {
         RatpNetwork network = (RatpNetwork) state;
@@ -345,7 +352,7 @@ public class Rame implements Steppable {
                 attente=-2;
             } else if(attente == -1) {
                 if(enterInStation(geo)) {
-                    attente = 100;
+                    attente = Constants.attenteRame;
                 } else {
                     if(Constants.stationPassante) {
                         removeUser();
@@ -402,7 +409,6 @@ public class Rame implements Steppable {
                 if (mg.hasAttribute("type") && mg.getStringAttribute("type").equals("station")){
                     currentStation = (Station)((AttributeValue)mg.getAttribute("station")).getValue();
                     if (currentStation.getName().equals(this.nextStation)){
-
                         if(currentStation.isFermee()){
                             return false;
                         } else {
@@ -451,8 +457,13 @@ public class Rame implements Steppable {
                 a.cheminEnvisage.poll();
             }
             if (a.cheminEnvisage.isEmpty()){
-                forceUser.add(a);
-                toDelete.add(a);
+                if(!isClosed) {
+                    returnList.add(a);
+                    toDelete.add(a);
+                } else {
+                    forceUser.add(a);
+                    toDelete.add(a);
+                }
             }
             if (!a.cheminEnvisage.isEmpty() && !a.cheminEnvisage.peek().getLeft().lineNumber.equals(this.nameLine)){
                 if(!isClosed) {
