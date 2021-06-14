@@ -19,4 +19,5 @@ public class VoyageurConstants
     public static int augmentationColereParNvChgtLigne = 5;
     public static int distanceInfluence = 3;
     public static double vitesseDeColerisation = 0.00000001;
+    public static int updateColere = 500;
 }
