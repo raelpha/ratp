@@ -150,7 +150,7 @@ public class RatpStateWithUI extends GUIState {
         StationsDirectory.getInstance().setUpGarePortrayal();
 
         display.reset();
-        display.setBackdrop(Color.BLACK);
+        display.setBackdrop(Color.WHITE);
         display.repaint();
     }
 
