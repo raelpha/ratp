@@ -61,7 +61,11 @@ public class Line {
                 if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("rame")){
                     filled = true;
                     scale = 0.00001D;
-                    paint = color.darker().darker();
+                    if(((Rame)((AttributeValue)geometry.getAttribute("rame")).getValue()).isPanne()){
+                        paint = Color.RED.darker();
+                    } else {
+                        paint = color.darker().darker();
+                    }
                 }
                 super.draw(object, graphics, info);
             }

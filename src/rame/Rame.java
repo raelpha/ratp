@@ -104,6 +104,8 @@ public class Rame implements Steppable {
 
     public void setPanne(int p){this.panne = p;}
 
+    public boolean isPanne(){return panne!=0;}
+
     public void step(SimState state) {
         //System.out.println("++++++++++++++++++++++++++++++");
         RatpNetwork network = (RatpNetwork) state;
