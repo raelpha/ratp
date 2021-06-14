@@ -181,6 +181,9 @@ public class AgentVoyageur implements Steppable{
                 }
             }
         }
+        if(avNb==0){
+            avNb=1;
+        }
         colereMoyenneAdjacente = sommeColeresAdjacente / avNb;
         if(colereMoyenneAdjacente > colere){
             addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;

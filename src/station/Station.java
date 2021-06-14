@@ -44,6 +44,7 @@ public class Station implements Steppable{
     private int attente=0;
     private Boolean testClear=false;
     private Boolean sizeListTest=false;
+    private int attenteMCT=50;
 
     public String getName() {return name;}
 
@@ -124,42 +125,22 @@ public class Station implements Steppable{
         RatpNetwork ratpNetwork =(RatpNetwork) simState;
         clearAllStation();
         spawnVoyageur(ratpNetwork);
-        arriveeRame(ratpNetwork);
+
         setColereStation();
-        //this.descenteRame();
         setNbVoyageurs();
 
         if (test) {
-            if (!spawn) {
-                //int nbVoyageurSpawn = (int)doubleNormale(7,5);
-                for (int i = 0; i < 2; i++) {
-                    AgentVoyageur temp = ratpNetwork.addVoyageur(this);
-                }
+            /*if (!spawn) {
+
                 AgentVoyageur temp1 = ratpNetwork.addVoyageur(this);
-                temp1.destination=StationsDirectory.getInstance().getStation("14","Madeleine");
+                temp1.destination=StationsDirectory.getInstance().getStation("6","Passy");
                 temp1.cheminEnvisage=temp1.trouverChemin(this, temp1.destination);
                 System.out.println("Jemprunterai le chemin suivant : ");
                 for(Pair<Station, List<Station>> cheminEnvis :temp1.cheminEnvisage){
                     System.out.println(cheminEnvis.getLeft().name);
                 }
-                /*for (int i = 0; i < 2; i++) {
-                    AgentVoyageur temp1 = ratpNetwork.addVoyageur(this);
-                    temp1.destination=StationsDirectory.getInstance().getStation("13","La Fourche");
-                    temp1.cheminEnvisage=temp1.trouverChemin(this, temp1.destination);
-                }
-                for (int i = 0; i < 2; i++) {
-                    AgentVoyageur temp2 = ratpNetwork.addVoyageur(this);
-                    temp2.destination=StationsDirectory.getInstance().getStation("13","Les Agnettes");
-                    temp2.cheminEnvisage=temp2.trouverChemin(this, temp2.destination);
-                }
-                for (int i = 0; i < 2; i++) {
-                    AgentVoyageur temp2 = ratpNetwork.addVoyageur(this);
-                    temp2.destination=StationsDirectory.getInstance().getStation("13","Liège");
-                    temp2.cheminEnvisage=temp2.trouverChemin(this, temp2.destination);
-                }*/
-
                 this.spawn=true;
-            }
+            }*/
             //System.out.println(this.getListAttenteRame());
             //addToMctList(this.name,listAttenteRame.remove(0));
             //System.out.println(StationsDirectory.getInstance().gares.get(this.name).queueMct);
@@ -194,13 +175,13 @@ public class Station implements Steppable{
                 //System.out.println("après :"+s1.getListAttenteRame());
             }*/
 
-        /*if (StationsDirectory.getInstance().getStation("13", "Duroc").test == false) {
-            StationsDirectory.getInstance().getStation("13", "Duroc").test = true;
+        if (StationsDirectory.getInstance().getStation("8", "Lourmel").test == false) {
+            StationsDirectory.getInstance().getStation("8", "Lourmel").test = true;
             //System.out.println("get toutes les lignes d'une station");
             //System.out.println(StationsDirectory.getInstance().gares.get("Nation").stations.entrySet());
             //System.out.println(" nb : " +StationsDirectory.getInstance().getStation("1", "Nation").getNbVoyageurs());
-        }*/
-
+        }
+        arriveeRame(ratpNetwork);
     }
 
     public static double fonctionNormale(double d) {
@@ -216,7 +197,6 @@ public class Station implements Steppable{
     //TODO descenteRame a debug
     public void descenteRame(RatpNetwork ratpNetwork){
         if (!this.rameSurPlace.isEmpty() && !this.isFermee()) {
-            //System.out.println("rameSurPlace : " + this.rameSurPlace + " station : "+this.name);
             for (int i = 0; i < this.rameSurPlace.size(); i++) {
                 Rame rame = this.rameSurPlace.get(0);
                 List<AgentVoyageur> removeUserDeLaRame=new ArrayList<AgentVoyageur>();
@@ -226,8 +206,12 @@ public class Station implements Steppable{
                     for(AgentVoyageur aV : removeUserDeLaRame){
                         //System.out.println(aV.cheminEnvisage.peek().getLeft());
                         //System.out.println(aV.cheminEnvisage.peek().getLeft().name);
+                        //System.out.println("chemin : "+aV.cheminEnvisage);
                         if(aV.cheminEnvisage.isEmpty()){
                             System.out.println("Je suis arrivé : "+aV);
+                            aV.SortirDeRame(ratpNetwork.yard,this);
+                            rame.users.remove(aV);
+                            ratpNetwork.removeVoyageur(aV);
                         }else{
                             //System.out.println(aV.cheminEnvisage.peek().getLeft().name);
                             /*if (aV.stationCourante.name.equals(aV.cheminEnvisage.peek().getLeft().name)) {
@@ -246,10 +230,14 @@ public class Station implements Steppable{
                             String stationName = aV.cheminEnvisage.peek().getLeft().name;
                             Station s = StationsDirectory.getInstance().getStation(lineNumber, stationName);
                             s.getListAttenteRame().add(aV);
-
+                            if(attente==0){
+                                aV.SortirDeRame(ratpNetwork.yard,this);
+                            }
+                            else{
+                                attente--;
+                            }
                             //getRemoveForceUserRame(rame).remove(aV);
 
-                            aV.SortirDeRame(ratpNetwork.yard,this);
                             //System.out.println("Liste mct : "+this.getGare(this.name).getListMct());
                         }
                     }
@@ -278,15 +266,17 @@ public class Station implements Steppable{
             for (int i = 0; i < this.rameSurPlace.size(); i++) {
                 Rame rame = this.rameSurPlace.get(i);
                 int sizeList;
-                if(getListAttenteRame().size()<nbPlaceRame(rame)){
+                //System.out.println("tailleListAttente : "+getListAttenteRame());
+                if(getListAttenteRame().size()<nbPlaceRame(rame) ){
                     sizeList=getListAttenteRame().size();
-                    sizeListTest=true;
+                    //sizeListTest=true;
                 }else{
                     sizeList=nbPlaceRame(rame);
                 }
+                //System.out.println("sizeList : "+sizeList);
                 for(int j =0 ;j<sizeList;j++){
                     //System.out.println("sizeList : "+sizeList);
-                    //System.out.println(this.getListAttenteRame());
+                    //System.out.println("liste att : "+this.getListAttenteRame()+" station : "+this.name);
                     //System.out.println("j : "+j);
                     if(checkDestinationVoyageurRame(getListAttenteRame().get(j),rame)){
                         AgentVoyageur a = getListAttenteRame().get(j);
@@ -317,11 +307,11 @@ public class Station implements Steppable{
     }*/
 
     void clearAllStation(){
-        if(!testClear){
+        if(!this.testClear){
             this.rameSurPlace.clear();
             this.getListAttenteRame().clear();
             this.voyageurDescendu.clear();
-            testClear=true;
+            this.testClear=true;
         }
     }
 
