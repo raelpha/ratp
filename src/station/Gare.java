@@ -1,19 +1,30 @@
 package station;
 
 import global.Constants;
+import ratp.RatpNetwork;
+import ratp.directory.StationsDirectory;
+import sim.engine.SimState;
+import sim.engine.Steppable;
 import sim.util.geo.MasonGeometry;
+import voyageur.AgentVoyageur;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * A gare is made of one or more Station.
  * This class is also used to display associated MasonGeometry with a portrayal
  */
-public class Gare extends MasonGeometry {
+public class Gare extends MasonGeometry implements Steppable {
     public int id;
     public String name;
     public Map<String, Station> stations = new HashMap<>();
+    //public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
+    public List<AgentVoyageur> listMct = new ArrayList<AgentVoyageur>();
+    public List<AgentVoyageur> listVoyageurGare;
+
+    private Boolean test=false;
+    private Boolean fermee=false;
+    private int nbVoyageurs;
 
     /**
      * Main constructor, used when instantiating new gare (without associated MasonGeometry)
@@ -37,6 +48,18 @@ public class Gare extends MasonGeometry {
         this.name = this.getStringAttribute(Constants.STATION_NAME_STR);
     }
 
+    public List<AgentVoyageur> getListGare(){
+        this.listVoyageurGare =new ArrayList<AgentVoyageur>();
+        List<List<AgentVoyageur>> listListTot =new ArrayList<List<AgentVoyageur>>();
+        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
+            listListTot.add(StationsDirectory.getInstance().getStation(entry.getKey(),this.name).getListAttenteRame());
+        }
+        for (List<AgentVoyageur> l: listListTot) {
+            listVoyageurGare.addAll(l);
+        }
+        return listVoyageurGare;
+    }
+
     public String getName() {
         return name;
     }
@@ -49,6 +72,52 @@ public class Gare extends MasonGeometry {
         return stations.get(lineId);
     }
 
+    /*public DelayQueue<AgentVoyageur> getQueueMct() {
+        return queueMct;
+    }*/
 
+    public List<AgentVoyageur> getListMct() {
+        return listMct;
+    }
+
+
+    public Boolean isFermee() {
+        return fermee;
+    }
+
+    public void setFermee() {
+        this.fermee = true;
+        //On ferme toutes les stations dans la Gare
+        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
+            StationsDirectory.getInstance().getStation(entry.getKey(),this.name).setFermee();
+        }
+    }
+
+    public void setOuvert(){
+        this.fermee=false;
+        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
+            StationsDirectory.getInstance().getStation(entry.getKey(),this.name).setOuvert();
+        }
+    }
+
+    public int getNbVoyageurs(){
+        return nbVoyageurs;
+    }
+
+    public void setNbVoyageurs() {
+        int nbVoya=0;
+        for (Map.Entry<String, Station> entry : StationsDirectory.getInstance().gares.get(this.name).stations.entrySet()) {
+            nbVoya+=StationsDirectory.getInstance().getStation(entry.getKey(),this.name).getNbVoyageurs();
+        }
+        this.nbVoyageurs=nbVoya;
+    }
+
+
+
+    @Override
+    public void step(SimState simState) {
+        RatpNetwork ratpNetwork = (RatpNetwork) simState;
+        setNbVoyageurs();
+    }
 
 }

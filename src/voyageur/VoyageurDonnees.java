@@ -3,11 +3,11 @@ package voyageur;
 import sim.app.geo.masoncsc.util.Pair;
 import station.Station;
 
+
 import java.util.List;
 import java.util.Queue;
 
-public class VoyageurDonnees
-{
+public class VoyageurDonnees {
     public int colere;
     public Station destination;
     public Station stationCourante;
@@ -20,4 +20,5 @@ public class VoyageurDonnees
         this.stationCourante = stationCourante;
         this.cheminEnvisage = cheminEnvisage;
     }
+
 }

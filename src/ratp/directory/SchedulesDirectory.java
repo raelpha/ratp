@@ -30,7 +30,7 @@ public class SchedulesDirectory {
 
     Map<String, List<Schedule>> schedulesByLine = new HashMap<>();
 
-    Map<String, Map<String, List<Schedule>>> schedules = new HashMap<>();
+    public Map<String, Map<String, List<Schedule>>> schedules = new HashMap<>();
 
     private void computeSchedulesByLine(){
         //Initialize each list for each line
@@ -86,10 +86,10 @@ public class SchedulesDirectory {
         String lineNumber;
         int branch;
         int split;
-        Station station;
+        public Station station;
         Station origin;
         Station destination;
-        int direction;
+        public int direction;
         String serviceName;
         Line line;
 

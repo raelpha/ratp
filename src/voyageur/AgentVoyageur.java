@@ -1,5 +1,6 @@
 package voyageur;
 
+import global.Constants;
 import ratp.RatpNetwork;
 
 import ratp.directory.StationsDirectory;
@@ -10,25 +11,54 @@ import sim.engine.Steppable;
 import sim.field.continuous.Continuous2D;
 import sim.util.Bag;
 import sim.util.Double2D;
+import sim.util.geo.GeomPlanarGraph;
+import sim.util.geo.MasonGeometry;
 import sim.util.Int2D;
 import station.Gare;
 import station.Station;
+
+
+import java.awt.*;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.TimeUnit;
+import station.Station;
+
 
 
 // la rame doit instantier les voyageurs avec la bonne station courante
-public class AgentVoyageur implements Steppable {
+public class AgentVoyageur implements Steppable{
 
-    int colere;
-    Station destination;
-    Station stationCourante;
-    Queue<Pair<Station, List<Station>>> cheminEnvisage;
+
+
+    public int colere;
+
+    public String getDestination() {
+        return destination.name;
+    }
+
+    public String getStationCourante() {
+        return stationCourante.name;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public Station destination;
+    public Station stationCourante;
+    public Queue<Pair<Station, List<Station>>> cheminEnvisage;
+    public long   time;
+    //Constants.ATTENTE_MCT;
     int nChangementCheminenvisage;
     Queue<Pair<Station, List<Station>>> descentes;
 
     int etat = 0;
-    double x,y;
+    double x, y;
     double goalX, goalY;
     double movementDirectionX;
     double movementDirectionY;
@@ -40,7 +70,7 @@ public class AgentVoyageur implements Steppable {
     double colereMoyenneAdjacente = -1;
 
     // Réapparition d'un voyageur au sortir d'une rame
-    public AgentVoyageur(VoyageurDonnees donnees, Station stationCourante, Continuous2D yard){
+    public AgentVoyageur(VoyageurDonnees donnees, Station stationCourante, Continuous2D yard) {
         destination = donnees.destination;
         cheminEnvisage = donnees.cheminEnvisage;
         colere = donnees.colere;
@@ -48,8 +78,10 @@ public class AgentVoyageur implements Steppable {
         InitialisationDansStation(stationCourante, yard);
     }
 
-    public AgentVoyageur(Station stationCourante, Continuous2D yard){
+    public AgentVoyageur(Station stationCourante, Continuous2D yard,long delayTime){
         InitialisationDansStation(stationCourante, yard);
+
+        //destination=StationsDirectory.getInstance().getStation("13","Saint-Denis - Université");
         destination = DeterminerDestination();
         //System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
         cheminEnvisage = trouverChemin(stationCourante, destination);
@@ -61,10 +93,15 @@ public class AgentVoyageur implements Steppable {
         //System.out.println("Nbr chgt : " + nChangementCheminenvisage);
 
         Random R = new Random();
-        int rand = (int)(R.nextGaussian()*80);
-        if(rand < 0) colere = 0;
-        else if(rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
+        int rand = (int) (R.nextGaussian() * 80);
+        if (rand < 0) colere = 0;
+        else if (rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
         else colere = rand;
+        //System.out.println(colere);
+    }
+
+    public double getColereAllStations() {
+        return StationsDirectory.getInstance().getColereAllStations();
     }
 
     public void SortirDeRame(Continuous2D yard, Station stationCourante){
@@ -85,8 +122,8 @@ public class AgentVoyageur implements Steppable {
         enTrain = false;
     }
 
-    private Double2D ConversionGeomToContinuous(Double2D c){
-        return new Double2D(c.x*456374.2102649563 + 621637.6325538646, c.y*(-441528.2983009379) - 2640599.3936298448);
+    private Double2D ConversionGeomToContinuous(Double2D c) {
+        return new Double2D(c.x * 456374.2102649563 + 621637.6325538646, c.y * (-441528.2983009379) - 2640599.3936298448);
     }
 
     // On suppose qu'un voyageur ne peut pas être instancié si sa liste est vide
@@ -106,14 +143,14 @@ public class AgentVoyageur implements Steppable {
                 goalX = goal.x;
                 goalY = goal.y;
                 // Calcul direction
-                Double2D movementDirection = GetDirection(x,y,goalX,goalY);
+                Double2D movementDirection = GetDirection(x, y, goalX, goalY);
                 movementDirectionX = movementDirection.x;
                 movementDirectionY = movementDirection.y;
                 etat = 1;
             }
         } else if(etat == 1){
             Move(ratpState.yard);
-            if(isArrive()){
+            if (isArrive()) {
                 etat = 0;
             }
         }
@@ -146,9 +183,16 @@ public class AgentVoyageur implements Steppable {
             }
         }
         colereMoyenneAdjacente = sommeColeresAdjacente / avNb;
+        if(colereMoyenneAdjacente > colere){
+            addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
+        }
+        else if(colereMoyenneAdjacente < colere){
+            addToColere(-1);
+        }
+
     }
 
-    private Double2D GetRandomPointCircle(Double2D point, double distance){
+    private Double2D GetRandomPointCircle(Double2D point, double distance) {
         /**
          * Décider d'un endroit où aller dans le rayon possible de la station
          */
@@ -161,29 +205,29 @@ public class AgentVoyageur implements Steppable {
         return new Double2D(x, y);
     }
 
-    private Double2D GetDirection(double fromX, double fromY, double toX, double toY){
+    private Double2D GetDirection(double fromX, double fromY, double toX, double toY) {
         double movementDirectionX = toX - fromX;
         double movementDirectionY = toY - fromY;
         // Normalisation
-        double magnitude = Math.sqrt(movementDirectionX*movementDirectionX
-                                    + movementDirectionY*movementDirectionY);
+        double magnitude = Math.sqrt(movementDirectionX * movementDirectionX
+                + movementDirectionY * movementDirectionY);
         movementDirectionX = movementDirectionX / magnitude;
         movementDirectionY = movementDirectionY / magnitude;
         return new Double2D(movementDirectionX, movementDirectionY);
     }
 
-    private void Move(Continuous2D yard){
-        x += movementDirectionX*VoyageurConstants.vitesse;
-        y += movementDirectionY*VoyageurConstants.vitesse;
-        yard.setObjectLocation(this, new Double2D(x,y));
+    private void Move(Continuous2D yard) {
+        x += movementDirectionX * VoyageurConstants.vitesse;
+        y += movementDirectionY * VoyageurConstants.vitesse;
+        yard.setObjectLocation(this, new Double2D(x, y));
     }
 
-    private boolean isArrive(){
-        return Math.sqrt((goalX - x)*(goalX - x) + (goalY - y)*(goalY - y)) < 0.5f;
+    private boolean isArrive() {
+        return Math.sqrt((goalX - x) * (goalX - x) + (goalY - y) * (goalY - y)) < 0.5f;
     }
 
-    private float RandomRange(float min, float max){
-        return min + (float)Math.random()*max;
+    private float RandomRange(float min, float max) {
+        return min + (float) Math.random() * max;
     }
 
     // permet d'informer l'agent qu'une station a été fermée, si elle est sur son chemin il recalcule son trajet
@@ -208,9 +252,9 @@ public class AgentVoyageur implements Steppable {
         }
     }
 
-    private void addToColere(int a){
+    private void addToColere(int a) {
         colere += a;
-        if(colere > VoyageurConstants.colereMax){
+        if (colere > VoyageurConstants.colereMax) {
             colere = VoyageurConstants.colereMax;
         }
         else if(colere < 0){
@@ -230,6 +274,7 @@ public class AgentVoyageur implements Steppable {
         //return StationsDirectory.getInstance().getStation("8","Pointe du Lac");
         return stations.get(rand);
     }
+
 
     class Node{
         public Station station;
@@ -256,7 +301,7 @@ public class AgentVoyageur implements Steppable {
         }
     }
 
-    private Queue<Pair<Station, List<Station>>> trouverChemin(Station departS, Station arriveeS){
+    public Queue<Pair<Station, List<Station>>> trouverChemin(Station departS, Station arriveeS){
         Node depart = new Node(departS, 0, 0, null, null);
         Queue<Node> stationFermees = new LinkedList<>();
         PriorityQueue<Node> stationOuvertes = new PriorityQueue<>(new NodeComparator());
@@ -274,7 +319,7 @@ public class AgentVoyageur implements Steppable {
                 if(!(stationFermees.contains(s) || ExisteCoutInferieur(stationOuvertes, s, n.cout+1))){
                     int cout = 1;
                     if(s.lineNumber != n.station.lineNumber){
-                        if(false/*n.station.fermee*/){
+                        if(n.station.isFermee()){
                             // on veut changer de ligne, mais la ligne est cassée
                             continue;
                         }
@@ -286,7 +331,7 @@ public class AgentVoyageur implements Steppable {
             }
             stationFermees.add(n);
         }
-        System.out.println("Erreur, pas de chemin trouvé.");
+        //System.out.println("Erreur, pas de chemin trouvé.");
         return null;
     }
 

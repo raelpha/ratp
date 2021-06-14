@@ -5,8 +5,11 @@ import com.vividsolutions.jts.geom.Point;
 import global.Constants;
 import lines.Line;
 import sim.app.geo.masoncsc.util.Pair;
+import sim.display.GUIState;
+import sim.display.Manipulating2D;
 import sim.field.geo.GeomVectorField;
 import sim.portrayal.DrawInfo2D;
+import sim.portrayal.LocationWrapper;
 import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.portrayal.simple.LabelledPortrayal2D;
@@ -14,7 +17,9 @@ import sim.util.geo.MasonGeometry;
 import station.Station;
 import station.Gare;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -28,7 +33,7 @@ public class StationsDirectory {
 
     /**WARNING: SCHEDULES DIRECTIORY MUST BE INITIALIZED (DATA LOADED)*/
 
-    private static StationsDirectory INSTANCE = new StationsDirectory();
+    public static StationsDirectory INSTANCE = new StationsDirectory();
 
     public static StationsDirectory getInstance()
     {
@@ -40,13 +45,15 @@ public class StationsDirectory {
         StationsDirectory s = getInstance();
     }
 
+    //public List<SuperStation> allSuperStations;
+
     public List<Gare> getAllGares() {
         return allGares;
     }
 
-    private List<Gare> allGares;
+    public List<Gare> allGares;
 
-    Map<String, Gare> gares;
+    public Map<String, Gare> gares;
 
     //geomVectorField used to store all Gare geometries
     public GeomVectorField geomVectorFieldGare = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
@@ -296,19 +303,57 @@ public class StationsDirectory {
                                 filled = false;
                                 Gare gareGeometry = (Gare) object;
                                 if (gareGeometry.getStringAttribute(Constants.IS_MULTIPLE_STATION_STR).equals(Constants.TRUE)) {
-                                    paint = Color.WHITE;
+                                    if (gareGeometry.isFermee()) {
+                                        paint = Color.RED;
+
+                                    } else {
+                                        paint = Color.WHITE;
+                                    }
                                 } else {
+                                    if (gareGeometry.isFermee()) {
+                                        paint = Color.RED;
+
+                                    } else {
+                                        paint = new Color(128,128,128,0);;
+                                    }
                                     // adding translucent color if Gare.nbStation == 1
-                                    paint = new Color(128,128,128,0);;
                                 }
                                 super.draw(object, graphics, info);
                             }
-                // "null" indicate that it will use toString of object
-                }, 4.0, null , Color.WHITE, true)
+
+                            @Override
+                            public boolean handleMouseEvent(GUIState guistate, Manipulating2D manipulating, LocationWrapper wrapper, MouseEvent event, DrawInfo2D fieldPortrayalDrawInfo, int type) {
+                                if (SwingUtilities.isRightMouseButton(event) && event.getClickCount() == 1) {
+                                    Gare gare = (Gare) wrapper.getObject();
+                                    if (!gare.isFermee()) {
+                                        System.out.println("Closing " + gare.name + " all stations");
+                                        gare.setFermee();
+                                    } else {
+                                        System.out.println("Openning " + gare.name + " all stations");
+                                        gare.setOuvert();
+                                    }
+                                }
+
+                                return super.handleMouseEvent(guistate, manipulating, wrapper, event, fieldPortrayalDrawInfo, type);
+                            }
+
+                            // "null" indicate that it will use toString of object
+                        }, 4.0, null , Color.WHITE, true)
 
         );
 
     }
+
+    public double getColereAllStations() {
+        double colere = 0;
+        for (Map.Entry<String, Gare> entry : StationsDirectory.getInstance().gares.entrySet()) {
+            for (Map.Entry<String, Station> entryStation :  entry.getValue().stations.entrySet()) {
+                colere += entryStation.getValue().getColereStation();
+            }
+        }
+        return colere;
+    }
+
     /*On Debug*/
     public static void main(String[] args) {
         StationsDirectory s = StationsDirectory.getInstance();
