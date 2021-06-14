@@ -124,4 +124,36 @@ public class RatpNetwork extends SimState {
     public void removeVoyageur(AgentVoyageur voyageur){
         yard.remove(voyageur);
     }
+
+    public void setPerimetreStations(float val) {
+        VoyageurConstants.maximumDistanceStation = val;
+    }
+
+    public float getPerimetreStations() {
+        return VoyageurConstants.maximumDistanceStation;
+    }
+
+    public void setAugmentationColereStationFermee(int val) {
+        VoyageurConstants.augmentationColereStationFermee = val;
+    }
+
+    public int getAugmentationColereStationFermee() {
+        return VoyageurConstants.augmentationColereStationFermee;
+    }
+
+    public void setAugmentationColereParStationSupplementaire(int val) {
+        VoyageurConstants.augmentationColereParStationSupplementaire = val;
+    }
+
+    public int getAugmentationColereParStationSupplementaire() {
+        return VoyageurConstants.augmentationColereParStationSupplementaire;
+    }
+
+    public void setAugmentationColereParChgtLigneStationSupplementaire(int val) {
+        VoyageurConstants.augmentationColereParNvChgtLigne = val;
+    }
+
+    public int getAugmentationColereParChgtLigneStationSupplementaire() {
+        return VoyageurConstants.augmentationColereParNvChgtLigne;
+    }
 }
