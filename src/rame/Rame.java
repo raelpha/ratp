@@ -106,6 +106,8 @@ public class Rame implements Steppable {
 
     public boolean isPanne(){return panne!=0;}
 
+    public boolean isStopped(){return isPanne()||(currentSpeed==0 && currentStation==null);}
+
     public void step(SimState state) {
         //System.out.println("++++++++++++++++++++++++++++++");
         RatpNetwork network = (RatpNetwork) state;
