@@ -129,13 +129,20 @@ public class Station implements Steppable{
         setColereStation();
         //this.descenteRame();
 
-        /*if (test) {
+        if (test) {
             if (!spawn) {
                 //int nbVoyageurSpawn = (int)doubleNormale(7,5);
                 for (int i = 0; i < 2; i++) {
                     AgentVoyageur temp = ratpNetwork.addVoyageur(this);
                 }
-                for (int i = 0; i < 2; i++) {
+                AgentVoyageur temp1 = ratpNetwork.addVoyageur(this);
+                temp1.destination=StationsDirectory.getInstance().getStation("14","Madeleine");
+                temp1.cheminEnvisage=temp1.trouverChemin(this, temp1.destination);
+                System.out.println("Jemprunterai le chemin suivant : ");
+                for(Pair<Station, List<Station>> cheminEnvis :temp1.cheminEnvisage){
+                    System.out.println(cheminEnvis.getLeft().name);
+                }
+                /*for (int i = 0; i < 2; i++) {
                     AgentVoyageur temp1 = ratpNetwork.addVoyageur(this);
                     temp1.destination=StationsDirectory.getInstance().getStation("13","La Fourche");
                     temp1.cheminEnvisage=temp1.trouverChemin(this, temp1.destination);
@@ -149,14 +156,14 @@ public class Station implements Steppable{
                     AgentVoyageur temp2 = ratpNetwork.addVoyageur(this);
                     temp2.destination=StationsDirectory.getInstance().getStation("13","Liège");
                     temp2.cheminEnvisage=temp2.trouverChemin(this, temp2.destination);
-                }
+                }*/
 
                 this.spawn=true;
             }
             //System.out.println(this.getListAttenteRame());
             //addToMctList(this.name,listAttenteRame.remove(0));
             //System.out.println(StationsDirectory.getInstance().gares.get(this.name).queueMct);
-        }*/
+        }
 
             /*if (!this.voyageurDescendu.isEmpty()) {
                 for (AgentVoyageur a : this.voyageurDescendu) {
@@ -187,8 +194,8 @@ public class Station implements Steppable{
                 //System.out.println("après :"+s1.getListAttenteRame());
             }*/
 
-        /*if (StationsDirectory.getInstance().getStation("13", "Place de Clichy").test == false) {
-            StationsDirectory.getInstance().getStation("13", "Place de Clichy").test = true;
+        /*if (StationsDirectory.getInstance().getStation("13", "Duroc").test == false) {
+            StationsDirectory.getInstance().getStation("13", "Duroc").test = true;
             //System.out.println("get toutes les lignes d'une station");
             //System.out.println(StationsDirectory.getInstance().gares.get("Nation").stations.entrySet());
             //System.out.println(" nb : " +StationsDirectory.getInstance().getStation("1", "Nation").getNbVoyageurs());
@@ -235,7 +242,7 @@ public class Station implements Steppable{
                             }*/
                             //a.cheminEnvisage.poll();
                             String lineNumber = aV.cheminEnvisage.peek().getLeft().lineNumber;
-                            System.out.println("lineNumber : " + lineNumber);
+                            //System.out.println("lineNumber : " + lineNumber);
                             String stationName = aV.cheminEnvisage.peek().getLeft().name;
                             Station s = StationsDirectory.getInstance().getStation(lineNumber, stationName);
                             s.getListAttenteRame().add(aV);
@@ -262,7 +269,7 @@ public class Station implements Steppable{
     }
 
     public void arriveeRame(RatpNetwork ratpNetwork){
-        //descenteRame(ratpNetwork);
+        descenteRame(ratpNetwork);
         monteeRame(ratpNetwork);
     }
 

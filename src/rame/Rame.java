@@ -411,7 +411,7 @@ public class Rame implements Steppable {
                 forceUser.add(a);
                 toDelete.add(a);
             }
-            if (!a.cheminEnvisage.peek().getLeft().line.equals(this.nameLine)){
+            if (!a.cheminEnvisage.isEmpty() && !a.cheminEnvisage.peek().getLeft().lineNumber.equals(this.nameLine)){
                 if(!isClosed) {
                     returnList.add(a);
                     toDelete.add(a);
