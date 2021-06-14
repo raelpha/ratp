@@ -84,7 +84,7 @@ public class Line {
                         if (elem.hasAttribute("type") && elem.getStringAttribute("type").equals("rame")) {
                             Rame r = ((Rame) (((AttributeValue) elem.getAttribute("rame")).getValue()));
                             if (r.getGeometry().getGeometry().getCoordinate().distance(clickLocation.getCoordinate()) < 0.00001) {
-                                r.setPanne(200);
+                                r.setPanne(Constants.panneAttente);
                             }
                         }
                     }
