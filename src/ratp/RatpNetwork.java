@@ -63,6 +63,17 @@ public class RatpNetwork extends SimState {
         return colere / 305;
     }
 
+    /* Exemple of Model use: to adapt with your constants */
+    public void setVitessePassenger(float val) {
+        VoyageurConstants.vitesse = val;
+    }
+
+    public float getVitessePassenger() {
+        return VoyageurConstants.vitesse;
+    }
+    /* ------------------------------------------------- */
+
+
     public Pair<String, GeomVectorField> getLine(String name){
         GeomVectorField l = lines.get(name).geomVectorField;
         Pair returnValue = new Pair <String, GeomVectorField>(name,l);

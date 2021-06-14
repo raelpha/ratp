@@ -98,6 +98,7 @@ public class RatpStateWithUI extends GUIState {
         });
     }
 
+    @Override
     public void load(final SimState state) {
         super.start();
         ChartUtilities.scheduleSeries(this, myAttributes, new Valuable() {
@@ -107,6 +108,9 @@ public class RatpStateWithUI extends GUIState {
             }
         });
     }
+
+    @Override
+    public Object getSimulationInspectedObject() { return state; } // return the model
 
     /**
      * Where we set up the visualization when the user is

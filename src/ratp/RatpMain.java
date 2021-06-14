@@ -29,6 +29,7 @@ public class RatpMain {
 
         Console console = new Console(gui);
         console.setVisible(true);
-        console.pressPlay();
+
+        // console.pressPlay();
     }
 }
