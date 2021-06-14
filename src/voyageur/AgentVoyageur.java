@@ -123,6 +123,7 @@ public class AgentVoyageur implements Steppable{
         enTrain = false;
         updateColere = -1;
         updateInformation = -1;
+        colereMoyenneAdjacente = colere;
     }
 
     private Double2D ConversionGeomToContinuous(Double2D c) {
@@ -160,28 +161,20 @@ public class AgentVoyageur implements Steppable{
 
 
         updateColere++;
-<<<<<<< Updated upstream
-        if(updateColere < VoyageurConstants.updateColere){
-            return;
-        }
-        updateColere = 0;
-        CalculerColereAdjacente(ratpState.yard);
-        if(colereMoyenneAdjacente > colere){
-            addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
-=======
-        if(updateColere % 200 == 0){
+        if(updateColere > 200){
+            updateColere = 0;
             CalculerColereAdjacente(ratpState.yard);
             if(colereMoyenneAdjacente > colere){
-                addToColere(2);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
+                addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
             }
             else if(colereMoyenneAdjacente < colere){
                 addToColere(-1);
             }
->>>>>>> Stashed changes
         }
 
         updateInformation++;
-        if(updateInformation % 400 == 0){
+        if(updateInformation > 400){
+            updateInformation = 0;
             if(cheminEnvisage.peek() == null) return;
             Station previousStation = cheminEnvisage.peek().getLeft();
             Iterator<Pair<Station, List<Station>>> itr = cheminEnvisage.iterator();
@@ -193,7 +186,6 @@ public class AgentVoyageur implements Steppable{
                         int previousCheminSize = cheminEnvisage.size();
                         int previousNChangement = nChangementCheminenvisage;
                         trouverChemin(stationCourante, destination);
-                        System.out.println("La colere");
                         addToColere(VoyageurConstants.augmentationColereStationFermee
                                 + VoyageurConstants.augmentationColereParStationSupplementaire*(cheminEnvisage.size() - previousCheminSize)
                                 + VoyageurConstants.augmentationColereParNvChgtLigne*(nChangementCheminenvisage - previousNChangement));

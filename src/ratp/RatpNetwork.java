@@ -53,14 +53,6 @@ public class RatpNetwork extends SimState {
         return a;
     }
 
-
-    public void start()
-    {
-        super.start();
-        yard.clear();
-        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
-
-
     public double getAllColere() {
         double colere = 0;
         for (Map.Entry<String, Line> entry : this.lines.entrySet()) {
@@ -131,8 +123,6 @@ public class RatpNetwork extends SimState {
     public void removeVoyageur(AgentVoyageur voyageur){
         yard.remove(voyageur);
     }
-<<<<<<< Updated upstream
-=======
 
     public void setPerimetreStations(float val) {
         VoyageurConstants.maximumDistanceStation = val;
@@ -173,5 +163,4 @@ public class RatpNetwork extends SimState {
     public int getColereMoyenneDepart() {
         return VoyageurConstants.colereMoyenneDeDepart;
     }
->>>>>>> Stashed changes
 }
