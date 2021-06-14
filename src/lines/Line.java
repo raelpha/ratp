@@ -63,6 +63,9 @@ public class Line {
                     scale = 0.00001D;
                     if(((Rame)((AttributeValue)geometry.getAttribute("rame")).getValue()).isPanne()){
                         paint = Color.RED.darker();
+                    } else if (((Rame)((AttributeValue)geometry.getAttribute("rame")).getValue()).isFinish()) {
+                        paint = new Color(255,255,255,0);
+
                     } else {
                         paint = color.darker().darker();
                     }
