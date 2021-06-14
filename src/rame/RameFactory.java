@@ -35,11 +35,10 @@ public class RameFactory implements Steppable {
             String lineName = (String) lineNameIterator.next();
             Map<String, List<SchedulesDirectory.Schedule>> scheduleOnLine = s.get(lineName);
             Iterator scheduleIterator = scheduleOnLine.values().iterator();
-            if(lineName.equals("3b")) {
-                while (scheduleIterator.hasNext()) {
-                    addRame(geo, lineName, (List<SchedulesDirectory.Schedule>) scheduleIterator.next());
-                }
+            while (scheduleIterator.hasNext()) {
+                addRame(geo, lineName, (List<SchedulesDirectory.Schedule>) scheduleIterator.next());
             }
+
         }
     }
 
