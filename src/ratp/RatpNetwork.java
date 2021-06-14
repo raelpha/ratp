@@ -12,7 +12,6 @@ import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
-import sim.util.Bag;
 import sim.util.Double2D;
 import station.Gare;
 import station.Station;
@@ -226,5 +225,15 @@ public class RatpNetwork extends SimState {
         return Constants.attenteRame;
     }
 
+
+
+
+    public void setColereMoyenneDepart(int val) {
+        VoyageurConstants.colereMoyenneDeDepart = val;
+    }
+
+    public int getColereMoyenneDepart() {
+        return VoyageurConstants.colereMoyenneDeDepart;
+    }
 
 }
