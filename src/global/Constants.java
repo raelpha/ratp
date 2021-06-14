@@ -86,6 +86,7 @@ public class Constants {
     public static double rameBraking = -0.000000008D;
     public static int generateMode = 200;
     public static int attenteRame = 50;
+    public static int panneAttente = 75;
 
     public static final String LINES_FILESNAMES = "data/lines/lines";
     public static final String SCHEDULES_FILENAME = "data/schedule/schedule.csv";
