@@ -12,6 +12,7 @@ import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
+import sim.util.Bag;
 import sim.util.Double2D;
 import station.Gare;
 import station.Station;
@@ -96,8 +97,31 @@ public class RatpNetwork extends SimState {
 
     }
 
+    private void removeAllRame(){
+        factory.clear();
+        Iterator lineIt = lines.values().iterator();
+        while(lineIt.hasNext()){
+            List<MasonGeometry> toDelete = new ArrayList<>();
+            Line elem = (Line) lineIt.next();
+            Bag obj = elem.geomVectorField.getGeometries();
+            Iterator objIt = obj.iterator();
+            while(objIt.hasNext()){
+                MasonGeometry mgElem = (MasonGeometry) objIt.next();
+                if(mgElem.hasAttribute("type") && mgElem.getStringAttribute("type").equals("rame")){
+                    toDelete.add(mgElem);
+                }
+            }
+            Iterator removeIt = toDelete.iterator();
+            while(removeIt.hasNext()){
+                elem.geomVectorField.removeGeometry((MasonGeometry) removeIt.next());
+            }
+        }
+
+    }
+
     public void start() {
         super.start();
+        removeAllRame();
         yard.clear();
         //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
         //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("13", "Liège"));
@@ -156,4 +180,47 @@ public class RatpNetwork extends SimState {
     public int getAugmentationColereParChgtLigneStationSupplementaire() {
         return VoyageurConstants.augmentationColereParNvChgtLigne;
     }
+
+    public void setRameMaxSpeed(double val){
+        Constants.rameMaxSpeed = val;
+    }
+
+    public double getRameMaxSpeed(){
+        return Constants.rameMaxSpeed;
+    }
+
+    public void setRameAcceleration(double val){
+        Constants.rameAcceleration = val;
+    }
+
+    public double getRameAcceleration(){
+        return Constants.rameAcceleration;
+    }
+
+    public void setRameBraking(double val){
+        Constants.rameBraking = val;
+    }
+
+    public double getRameBraking(){
+        return Constants.rameBraking;
+    }
+
+    public void setGeneratingMode(int val){
+        System.out.println(val);
+        Constants.generateMode = val;
+    }
+
+    public int getGeneratingMode(){
+        return Constants.generateMode;
+    }
+
+    public void setAttenteRame(int val){
+        Constants.attenteRame = val;
+    }
+
+    public int getAttenteRame(){
+        return Constants.attenteRame;
+    }
+
+
 }

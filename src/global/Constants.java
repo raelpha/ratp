@@ -81,6 +81,11 @@ public class Constants {
 
     public static List<String> LINE_DEFAULTATTRIBUTES = Arrays.asList("line", "color", "sectionId","origin","destinatio");
 
+    public static double rameMaxSpeed = 0.000001D;
+    public static double rameAcceleration = 0.00000001D;
+    public static double rameBraking = -0.000000008D;
+    public static int generateMode = 200;
+    public static int attenteRame = 50;
 
     public static final String LINES_FILESNAMES = "data/lines/lines";
     public static final String SCHEDULES_FILENAME = "data/schedule/schedule.csv";

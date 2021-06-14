@@ -24,11 +24,12 @@ public class RameFactory implements Steppable {
     List<Pair<String, List<SchedulesDirectory.Schedule>>> bufferRame = new ArrayList<>();
     List<Point> actualStepCreation = new ArrayList<>();
     int bufferCheck = 150;
+    int creationTicker;
 
     public static RameFactory getInstance() {return INSTANCE;}
 
     private RameFactory() {
-
+        this.creationTicker = Constants.generateMode;
     }
     public void setBaseRame (RatpNetwork geo){
         Iterator lineNameIterator = listOfLine.iterator();
@@ -70,29 +71,39 @@ public class RameFactory implements Steppable {
     }
 
     private void checkForNewRame(RatpNetwork geo){
+        System.out.println(creationTicker);
         Iterator lineit = listOfLine.iterator();
-        List<String> toAdd = new ArrayList<>();
-        while(lineit.hasNext()){
-            String lineName = (String) lineit.next();
-            int number = 0;
-            int surchargeNumber = 0;
-            Iterator rameIt = listOfRame.iterator();
-            while (rameIt.hasNext()){
-                Pair<String, Rame> elem = (Pair<String, Rame>) rameIt.next();
-                if(elem.getLeft().equals(lineName)){
-                    number++;
-                    if(elem.getRight().freePlaces()<Constants.listOfCapacity.get(lineName)/10) {
-                        surchargeNumber++;
+        if(creationTicker < 0) {
+            List<String> toAdd = new ArrayList<>();
+            while (lineit.hasNext()) {
+                String lineName = (String) lineit.next();
+                int number = 0;
+                int surchargeNumber = 0;
+                Iterator rameIt = listOfRame.iterator();
+                while (rameIt.hasNext()) {
+                    Pair<String, Rame> elem = (Pair<String, Rame>) rameIt.next();
+                    if (elem.getLeft().equals(lineName)) {
+                        number++;
+                        if (elem.getRight().freePlaces() < Constants.listOfCapacity.get(lineName) / 10) {
+                            surchargeNumber++;
+                        }
                     }
                 }
+                if ((float) surchargeNumber / (float) number > 0.5) {
+                    toAdd.add(lineName);
+                }
             }
-            if((float)surchargeNumber/(float)number>0.5){
-                toAdd.add(lineName);
+            Iterator rameToAdd = toAdd.iterator();
+            while (rameToAdd.hasNext()) {
+                createRameForLigne(geo, (String) rameToAdd.next());
             }
-        }
-        Iterator rameToAdd = toAdd.iterator();
-        while(rameToAdd.hasNext()){
-            createRameForLigne(geo, (String) rameToAdd.next());
+        } else if (creationTicker>0){
+            creationTicker--;
+        } else {
+            creationTicker = Constants.generateMode;
+            while(lineit.hasNext()){
+                createRameForLigne(geo, (String) lineit.next());
+            }
         }
     }
 
@@ -171,5 +182,17 @@ public class RameFactory implements Steppable {
         List<SchedulesDirectory.Schedule> sch = s.get(r.getNameLine()).get(stationEnd + " -> " + stationDebut);
         Object[] params = {r.forceRemoveUser(), Constants.listOfCapacity.get(r.getNameLine())};
         createRame(geo, r.getNameLine(), sch, params);
+    }
+
+    public void clear(){
+        Iterator rame = listOfRame.iterator();
+        while(rame.hasNext()){
+            ((Pair<String,Rame>)rame.next()).getRight().setFinish();
+        }
+        listOfRame.clear();
+        bufferRame.clear();
+        actualStepCreation.clear();
+        creationTicker = Constants.generateMode;
+        bufferCheck = 150;
     }
 }
