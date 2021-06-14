@@ -57,6 +57,7 @@ public class Rame implements Steppable {
     public List<AgentVoyageur> users = new ArrayList<>();
     private List<AgentVoyageur> forceUser = new ArrayList<>();
     private String nameLine;
+    private int colereCooldown = 50;
 
     public Rame(RatpNetwork state, String nameLine, List<Schedule> schedule, Object ... params) {
         this.scheduleStation = schedule;
@@ -109,11 +110,32 @@ public class Rame implements Steppable {
 
     public Boolean isFinish() {return this.finish;}
 
-    public void setPanne(int p){this.panne = p;}
+    public void setPanne(int p){
+        this.panne = p;
+        addColereToAllVoyageur();
+    }
 
     public boolean isPanne(){return panne!=0;}
 
     public boolean isStopped(){return isPanne()||(currentSpeed==0 && currentStation==null);}
+
+    private void addColereToAllVoyageur() {
+        Iterator voyageur = users.iterator();
+        while(voyageur.hasNext()){
+            ((AgentVoyageur)voyageur.next()).addToColere(2);
+        }
+        Iterator forceVoyageur = forceUser.iterator();
+        while(forceVoyageur.hasNext()){
+            ((AgentVoyageur)forceVoyageur.next()).addToColere(15);
+        }
+    }
+
+    private void addColereToAllForceUser(){
+        Iterator voyageur = forceUser.iterator();
+        while(voyageur.hasNext()){
+            ((AgentVoyageur)voyageur.next()).addToColere(10);
+        }
+    }
 
     public void setFinish(){finish=true;}
 
@@ -338,11 +360,18 @@ public class Rame implements Steppable {
     }
 
     private void move(RatpNetwork geo) {
+        if(colereCooldown>0){
+            colereCooldown--;
+        }
         if(panne!=0){
             panne--;
             currentSpeed=0.0D;
         } else if (!this.arrived() && currentStation == null) {
             setNewVitesse(geo);
+            if(this.currentSpeed == 0 && colereCooldown==0){
+                addColereToAllVoyageur();
+                colereCooldown = 50;
+            }
             this.moveAlongPath();
         } else {
             if(this.nextStation.equals(this.nextnextStation) && attente == 0) {
@@ -357,6 +386,7 @@ public class Rame implements Steppable {
                     if(Constants.stationPassante) {
                         removeUser();
                         leaveStation();
+                        addColereToAllForceUser();
                         nextStation = this.nextnextStation;
                         if (itSchedule.hasNext()) {
                             this.nextnextStation = ((Schedule) itSchedule.next()).station.name;

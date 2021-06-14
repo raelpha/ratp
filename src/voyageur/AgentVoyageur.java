@@ -278,7 +278,7 @@ public class AgentVoyageur implements Steppable{
         }
     }
 
-    private void addToColere(int a) {
+    public void addToColere(int a) {
         colere += a;
         if (colere > VoyageurConstants.colereMax) {
             colere = VoyageurConstants.colereMax;
