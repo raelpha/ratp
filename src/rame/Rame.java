@@ -8,6 +8,7 @@ import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.planargraph.DirectedEdgeStar;
 import com.vividsolutions.jts.planargraph.Node;
 import global.Constants;
+import ratp.directory.SchedulesDirectory;
 import sim.app.virus.Agent;
 import station.Station;
 import voyageur.AgentVoyageur;
@@ -348,15 +349,19 @@ public class Rame implements Steppable {
                 attente=-2;
             } else if(attente == -1) {
                 if(enterInStation(geo)) {
+                    System.out.println("Hello");
                     attente = 100;
                 } else {
                     if(Constants.stationPassante) {
+                        System.out.println("hello I'm here");
                         removeUser();
+                        leaveStation();
                         nextStation = this.nextnextStation;
                         if (itSchedule.hasNext()) {
                             this.nextnextStation = ((Schedule) itSchedule.next()).station.name;
                         }
                         this.findNewPath(geo);
+                        return;
                     }
                 }
             } else if (attente > 0) {
@@ -370,6 +375,8 @@ public class Rame implements Steppable {
                 }
                 //System.out.println(nextStation + " " + nextnextStation);
                 this.findNewPath(geo);
+                setNewVitesse(geo);
+                this.moveAlongPath();
 
             } else {
                 //delete (event ou auto delete)
@@ -394,8 +401,9 @@ public class Rame implements Steppable {
     }
 
     private boolean enterInStation (RatpNetwork geo) {
-        this.currentSpeed = 0.0D;
         Bag object = geo.getLine(this.nameLine).getRight().getGeometries();
+        System.out.println(this.nextStation);
+
         if(object.isEmpty()){
             return false;
         } else {
@@ -404,10 +412,20 @@ public class Rame implements Steppable {
                 MasonGeometry mg = (MasonGeometry) itObject.next();
                 if (mg.hasAttribute("type") && mg.getStringAttribute("type").equals("station")){
                     currentStation = (Station)((AttributeValue)mg.getAttribute("station")).getValue();
-                    if (currentStation.getName().equals(this.nextStation) && !currentStation.isFermee()){
-                        currentStation.addRame(this);
-                        return true;
+                    System.out.println(currentStation.getName());
+                    if (currentStation.getName().equals(this.nextStation)){
+                        System.out.println(currentStation.isFermee());
+                        System.out.println(currentStation.name);
+                        System.out.println("------------------");
+                        if(currentStation.isFermee()){
+                            return false;
+                        } else {
+                            currentStation.addRame(this);
+                            this.currentSpeed = 0.0D;
+                            return true;
+                        }
                     }
+                    System.out.println("++++++++++++++++++++++");
                 }
             }
         }
