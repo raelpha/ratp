@@ -71,7 +71,6 @@ public class RameFactory implements Steppable {
     }
 
     private void checkForNewRame(RatpNetwork geo){
-        System.out.println(creationTicker);
         Iterator lineit = listOfLine.iterator();
         if(creationTicker < 0) {
             List<String> toAdd = new ArrayList<>();
