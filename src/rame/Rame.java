@@ -463,8 +463,13 @@ public class Rame implements Steppable {
                 a.cheminEnvisage.poll();
             }
             if (a.cheminEnvisage.isEmpty()){
-                returnList.add(a);
-                toDelete.add(a);
+                if(!isClosed) {
+                    returnList.add(a);
+                    toDelete.add(a);
+                } else {
+                    forceUser.add(a);
+                    toDelete.add(a);
+                }
             }
             if (!a.cheminEnvisage.isEmpty() && !a.cheminEnvisage.peek().getLeft().lineNumber.equals(this.nameLine)){
                 if(!isClosed) {
