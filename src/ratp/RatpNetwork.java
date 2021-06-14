@@ -11,6 +11,7 @@ import ratp.directory.SchedulesDirectory.*;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
+import sim.util.Double2D;
 import station.Gare;
 import station.Station;
 import voyageur.AgentVoyageur;

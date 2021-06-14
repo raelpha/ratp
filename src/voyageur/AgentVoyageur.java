@@ -83,11 +83,13 @@ public class AgentVoyageur implements Steppable ,Delayed{
 
         //destination=StationsDirectory.getInstance().getStation("13","Saint-Denis - Université");
         destination = DeterminerDestination();
-        //destination = Math.random() > 0.5f ? StationsDirectory.getInstance().getStation("13", "Les Agnettes") : StationsDirectory.getInstance().getStation("13", "Garibaldi");
-        // System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
+        //System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
         cheminEnvisage = trouverChemin(stationCourante, destination);
-        this.time=System.currentTimeMillis()+delayTime;
-
+        if(cheminEnvisage.isEmpty()){
+            System.out.println("What");
+            System.out.println("Je suis à : " + stationCourante.name + " " + stationCourante.lineNumber + " et je veux aller à : " + destination.name + " " + destination.lineNumber);
+            System.out.println("Nbr chgt : " + nChangementCheminenvisage);
+        }
         //System.out.println("Nbr chgt : " + nChangementCheminenvisage);
 
         Random R = new Random();
@@ -112,9 +114,7 @@ public class AgentVoyageur implements Steppable ,Delayed{
         Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
         Double2D stationPosCont = ConversionGeomToContinuous(stationPosGeom);
         Double2D location = GetRandomPointCircle(stationPosCont, VoyageurConstants.maximumDistanceStation);
-        //var stationPos = ConversionGeomToContinuous(new Double2D(station.location.getX(), station.location.getY()));
         yard.setObjectLocation(this, location);
-        //yard.setObjectLocation(this, stationPos);
         x = location.x;
         y = location.y;
         //
@@ -134,10 +134,8 @@ public class AgentVoyageur implements Steppable ,Delayed{
         }
         RatpNetwork ratpState = (RatpNetwork) simState;
 
-        // Attente du départ
-        // Soit on décide d'une position(0), soit se déplace(1), soit on reste fixe(2)
-        if (etat == 0) {
-            if (Math.random() < VoyageurConstants.probabiliteDeBouger) {
+        if(etat == 0){
+            if(Math.random() < VoyageurConstants.probabiliteDeBouger){
                 // Random point
                 Double2D stationPosGeom = new Double2D(stationCourante.location.getX(), stationCourante.location.getY());
                 Double2D stationPosCont = ConversionGeomToContinuous(stationPosGeom);
@@ -150,36 +148,41 @@ public class AgentVoyageur implements Steppable ,Delayed{
                 movementDirectionY = movementDirection.y;
                 etat = 1;
             }
-        }
-        else if(etat == 1){
+        } else if(etat == 1){
             Move(ratpState.yard);
             if (isArrive()) {
                 etat = 0;
             }
         }
-
-
         updateColere++;
         if(updateColere % 200 != 0){
             return;
         }
+        CalculerColereAdjacente(ratpState.yard);
+        if(colereMoyenneAdjacente > colere){
+            addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
+        }
+        else if(colereMoyenneAdjacente < colere){
+            addToColere(-1);
+        }
+    }
 
+    private void CalculerColereAdjacente(Continuous2D yard){
         int sommeColeresAdjacente = 0;
         int avNb = 0;
-
-        Bag nearObjects = ratpState.yard.getNeighborsWithinDistance(new Double2D(x,y), VoyageurConstants.distanceInfluence, false, false);
+        Bag nearObjects = yard.getNeighborsWithinDistance(new Double2D(x,y), VoyageurConstants.distanceInfluence, false, false);
 
         if(nearObjects != null){
             for(Object o : nearObjects){
                 AgentVoyageur av = (AgentVoyageur) o;
-                if(av != null){
+                if(av != null && av.stationCourante.name == stationCourante.name){
                     sommeColeresAdjacente += av.colere;
                     avNb++;
                 }
             }
         }
 
-        
+
         if(colereMoyenneAdjacente > colere){
             addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
         }
@@ -188,10 +191,6 @@ public class AgentVoyageur implements Steppable ,Delayed{
         }
 
         colereMoyenneAdjacente = sommeColeresAdjacente / avNb;
-
-        /*if(Math.random() < colere * VoyageurConstants.probabiliteIncidentVoyageur){
-            // incident voyageur, avertir la station courante
-        }*/
     }
 
     private Double2D GetRandomPointCircle(Double2D point, double distance) {
@@ -266,19 +265,14 @@ public class AgentVoyageur implements Steppable ,Delayed{
 
     // détermine une destination au hasard
     private Station DeterminerDestination(){
-        /*List<Gare> ssList = StationsDirectory.getInstance().getAllGares();
-        List<Station> stations = new ArrayList<>();
-        for(Gare ss : ssList){
-            for(Station s : ss.stations.values()){
-                stations.add(s);
-            }
-        }*/
-        List<Station> stations = StationsDirectory.getInstance().stationsOuvertes;
+
+        List<Station> stations = new ArrayList<>(StationsDirectory.getInstance().stationsOuvertes);
+        stations.remove(stationCourante);
 
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
 
-        //return StationsDirectory.getInstance().getStation("2","Place de Clichy");
+        //return StationsDirectory.getInstance().getStation("8","Pointe du Lac");
         return stations.get(rand);
     }
 
@@ -393,10 +387,10 @@ public class AgentVoyageur implements Steppable ,Delayed{
             previousDestinations = currentNode.destinations;
         }
         Collections.reverse(stationPath);
-        //System.out.println("J'emprunterai le chemin suivant : ");
-        /*for(Pair<Station, List<Station>> station_destination : stationPath){
+        /*System.out.println("J'emprunterai le chemin suivant : ");
+        for(Pair<Station, List<Station>> station_destination : stationPath){
             System.out.println(station_destination.getLeft().name + " " + station_destination.getLeft().lineNumber);
-            /*System.out.println("Train à destinations de : ");
+            System.out.println("Train à destinations de : ");
             for(Station s : station_destination.getRight()){
                 System.out.println("    " + s.name + ", " + s.lineNumber);
             }
