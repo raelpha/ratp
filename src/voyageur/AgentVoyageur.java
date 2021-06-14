@@ -118,9 +118,10 @@ public class AgentVoyageur implements Steppable {
             }
         }
         updateColere++;
-        if(updateColere % 200 != 0){
+        if(updateColere < VoyageurConstants.updateColere){
             return;
         }
+        updateColere = 0;
         CalculerColereAdjacente(ratpState.yard);
         if(colereMoyenneAdjacente > colere){
             addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
