@@ -326,14 +326,11 @@ public class StationsDirectory {
                                 if (SwingUtilities.isRightMouseButton(event) && event.getClickCount() == 1) {
                                     Gare gare = (Gare) wrapper.getObject();
                                     if (!gare.isFermee()) {
-                                        System.out.println("Closing " + gare.name + " all stations");
                                         gare.setFermee();
                                     } else {
-                                        System.out.println("Openning " + gare.name + " all stations");
                                         gare.setOuvert();
                                     }
                                 }
-
                                 return super.handleMouseEvent(guistate, manipulating, wrapper, event, fieldPortrayalDrawInfo, type);
                             }
 

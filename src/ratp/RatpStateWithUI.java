@@ -28,7 +28,7 @@ public class RatpStateWithUI extends GUIState {
 
     ContinuousPortrayal2D yardPortrayal = new ContinuousPortrayal2D();
     public Display2D display;
-    
+
     public JFrame displayFrame;
 
     public TimeSeriesAttributes attributesColere;
@@ -161,7 +161,6 @@ public class RatpStateWithUI extends GUIState {
 
     @Override
     public boolean step() {
-        //System.out.println("step");
         display.updateUI();
         display.repaint();
         return super.step();
