@@ -42,6 +42,16 @@ public class RameFactory implements Steppable {
         }
     }
 
+    public int getNbRameStopped() {
+        int count = 0;
+        for (Pair<String, Rame> rame: listOfRame) {
+            if (rame.getRight().isStopped()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     private void createRameForLigne (RatpNetwork geo, String lineName){
         Map<String, List<SchedulesDirectory.Schedule>> scheduleOnLine = s.get(lineName);
         Iterator scheduleIterator = scheduleOnLine.values().iterator();

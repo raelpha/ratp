@@ -9,21 +9,14 @@ import sim.display.Display2D;
 import sim.display.GUIState;
 import sim.engine.SimState;
 
-import sim.field.geo.GeomVectorField;
-import sim.field.continuous.Continuous2D;
-import sim.portrayal.DrawInfo2D;
 import sim.portrayal.continuous.ContinuousPortrayal2D;
-import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.util.Valuable;
-import sim.util.geo.MasonGeometry;
 import sim.util.media.chart.ChartGenerator;
 import sim.util.media.chart.TimeSeriesAttributes;
 import sim.util.media.chart.TimeSeriesChartGenerator;
 import voyageur.AgentVoyageur;
 import voyageur.VoyageurPortrayal;
-
-import sim.portrayal.geo.GeomVectorFieldPortrayal;
 
 
 import javax.swing.*;
@@ -36,12 +29,15 @@ public class RatpStateWithUI extends GUIState {
     ContinuousPortrayal2D yardPortrayal = new ContinuousPortrayal2D();
     public Display2D display;
 
-    public ChartGenerator chart;
+    public ChartGenerator chartGenerator;
 
     public JFrame displayFrame;
 
-    public TimeSeriesAttributes myAttributes;
-    public TimeSeriesChartGenerator myChart;
+    public TimeSeriesAttributes attributesColere;
+    public TimeSeriesChartGenerator chartColere;
+
+    public TimeSeriesAttributes attributesRameStopped;
+    public TimeSeriesChartGenerator chartRameStopped;
 
     /**
      * A map storing each line, and station, as a GeomVectorFieldPortrayal
@@ -74,12 +70,23 @@ public class RatpStateWithUI extends GUIState {
         displayFrame.setVisible(true);
         displayFrame.setTitle("Network");
 
-        myChart = ChartUtilities.buildTimeSeriesChartGenerator(
+        chartColere = ChartUtilities.buildTimeSeriesChartGenerator(
                 this,
                 "Evolution de la colère avec le temps",
                 "Temps");
-        myChart.setYAxisLabel("Colère");
-        myAttributes = ChartUtilities.addSeries(myChart, "Colère sur l'ensemble du réseau");
+        chartColere.setYAxisLabel("Colère");
+        attributesColere = ChartUtilities.addSeries(chartColere, "Colère sur l'ensemble du réseau");
+
+        chartRameStopped = ChartUtilities.buildTimeSeriesChartGenerator(
+                this,
+                "Evolution du nombre de rames à l'arrêt",
+                "Temps");
+        chartRameStopped.setYAxisLabel("Nombre de rames à l'arrêt");
+        chartRameStopped.setForeground(Color.BLUE);
+        attributesRameStopped = ChartUtilities.addSeries(
+                chartRameStopped,
+                "Nombre de rames à l'arrêt l'ensemble du réseau");
+        attributesRameStopped.setStrokeColor(Color.BLUE);
 
     }
 
@@ -88,12 +95,21 @@ public class RatpStateWithUI extends GUIState {
         super.start();
         setupPortrayals();
 
-        myChart.clearAllSeries();
+        chartColere.clearAllSeries();
 
-        ChartUtilities.scheduleSeries(this, myAttributes, new Valuable() {
+        ChartUtilities.scheduleSeries(this, attributesColere, new Valuable() {
             @Override
             public double doubleValue() {
                 return ((RatpNetwork) state).getAllColere();
+            }
+        });
+
+        chartRameStopped.clearAllSeries();
+
+        ChartUtilities.scheduleSeries(this, attributesRameStopped, new Valuable() {
+            @Override
+            public double doubleValue() {
+                return ((RatpNetwork) state).getAllRameStopped();
             }
         });
     }
@@ -101,10 +117,17 @@ public class RatpStateWithUI extends GUIState {
     @Override
     public void load(final SimState state) {
         super.start();
-        ChartUtilities.scheduleSeries(this, myAttributes, new Valuable() {
+        ChartUtilities.scheduleSeries(this, attributesColere, new Valuable() {
             @Override
             public double doubleValue() {
                 return ((RatpNetwork) state).getAllColere();
+            }
+        });
+
+        ChartUtilities.scheduleSeries(this, attributesRameStopped, new Valuable() {
+            @Override
+            public double doubleValue() {
+                return ((RatpNetwork) state).getAllRameStopped();
             }
         });
     }

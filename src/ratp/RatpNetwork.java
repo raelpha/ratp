@@ -64,6 +64,10 @@ public class RatpNetwork extends SimState {
         return colere / 305;
     }
 
+    public int getAllRameStopped() {
+        return factory.getNbRameStopped();
+    }
+
     /* Exemple of Model use: to adapt with your constants */
     public void setVitessePassenger(float val) {
         VoyageurConstants.vitesse = val;
