@@ -101,4 +101,7 @@ public class Constants {
     public static final int NB_PIC_MATIN = 20;
     public static final int NB_PIC_SOIR = 20;
     public static final long ATTENTE_MCT=5000;
+
+    // voyageurs
+    public static final int facteurVoyageurMax = 10;
 }

@@ -317,7 +317,7 @@ public class Station implements Steppable{
 
     public void spawnVoyageur(RatpNetwork ratpNetwork){
         if(!spawn) {
-            int nombreAleatoire = (int) (Math.random() * 11); //TODO previous 11
+            int nombreAleatoire = (int) (Math.random() * Constants.facteurVoyageurMax + 1); //TODO previous 11
             for (int i = 0; i < nombreAleatoire; i++) {
                 ratpNetwork.addVoyageur(this);
             }
