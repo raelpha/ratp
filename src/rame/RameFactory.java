@@ -131,7 +131,8 @@ public class RameFactory implements Steppable {
             }
         }
         actualStepCreation.add(startPoint);
-        createRame(geo, lineName, s);
+        Object[] params = {new ArrayList<AgentVoyageur>(), Constants.listOfCapacity.get(lineName)};
+        createRame(geo, lineName, s, params);
         return true;
     }
 
@@ -168,6 +169,7 @@ public class RameFactory implements Steppable {
         String stationDebut = r.getOriginStation().station.name;
         String stationEnd = r.getTerminus().station.name;
         List<SchedulesDirectory.Schedule> sch = s.get(r.getNameLine()).get(stationEnd + " -> " + stationDebut);
-        createRame(geo, r.getNameLine(), sch, r.forceRemoveUser(), Constants.listOfCapacity.get(r.getNameLine()));
+        Object[] params = {r.forceRemoveUser(), Constants.listOfCapacity.get(r.getNameLine())};
+        createRame(geo, r.getNameLine(), sch, params);
     }
 }
