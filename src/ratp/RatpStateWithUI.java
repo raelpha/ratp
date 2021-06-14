@@ -28,9 +28,7 @@ public class RatpStateWithUI extends GUIState {
 
     ContinuousPortrayal2D yardPortrayal = new ContinuousPortrayal2D();
     public Display2D display;
-
-    public ChartGenerator chartGenerator;
-
+    
     public JFrame displayFrame;
 
     public TimeSeriesAttributes attributesColere;
@@ -82,7 +80,6 @@ public class RatpStateWithUI extends GUIState {
                 "Evolution du nombre de rames à l'arrêt",
                 "Temps");
         chartRameStopped.setYAxisLabel("Nombre de rames à l'arrêt");
-        chartRameStopped.setForeground(Color.BLUE);
         attributesRameStopped = ChartUtilities.addSeries(
                 chartRameStopped,
                 "Nombre de rames à l'arrêt l'ensemble du réseau");
