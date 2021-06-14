@@ -111,7 +111,6 @@ public class Rame implements Steppable {
     public boolean isStopped(){return isPanne()||(currentSpeed==0 && currentStation==null);}
 
     public void step(SimState state) {
-        //System.out.println("++++++++++++++++++++++++++++++");
         RatpNetwork network = (RatpNetwork) state;
         this.move(network);
     }
@@ -121,10 +120,8 @@ public class Rame implements Steppable {
     }
 
     private void setDepart(RatpNetwork geo, String stationName){
-        //System.out.println(stationName);
         nextStation = stationName;
         nextnextStation = ((Schedule)itSchedule.next()).station.name;
-        //System.out.println(nextnextStation);
         GeomPlanarGraph network = new GeomPlanarGraph();
         network.createFromGeomField(geo.getLine(this.nameLine).getRight());
         Iterator it = network.edgeIterator();
@@ -228,7 +225,6 @@ public class Rame implements Steppable {
         } else if (nextBegin!=null && this.nextLine.getEndPoint().equals(nextBegin)){
             this.nextStartIndex = l.getEndIndex();
         } else {
-            System.out.println("nothing happen");
             //nothing happen
         }
     }
@@ -349,11 +345,9 @@ public class Rame implements Steppable {
                 attente=-2;
             } else if(attente == -1) {
                 if(enterInStation(geo)) {
-                    System.out.println("Hello");
                     attente = 100;
                 } else {
                     if(Constants.stationPassante) {
-                        System.out.println("hello I'm here");
                         removeUser();
                         leaveStation();
                         nextStation = this.nextnextStation;
@@ -373,7 +367,6 @@ public class Rame implements Steppable {
                 if(itSchedule.hasNext()) {
                     this.nextnextStation = ((Schedule) itSchedule.next()).station.name;
                 }
-                //System.out.println(nextStation + " " + nextnextStation);
                 this.findNewPath(geo);
                 setNewVitesse(geo);
                 this.moveAlongPath();
@@ -381,10 +374,7 @@ public class Rame implements Steppable {
             } else {
                 //delete (event ou auto delete)
             }
-            //System.out.println(nextStation + "+-+" + nextnextStation);
-            //System.out.println("------------------------------------");
         }
-        //System.out.println(this.currentSpeed);
     }
 
     private void moveAlongPath() {
@@ -402,7 +392,6 @@ public class Rame implements Steppable {
 
     private boolean enterInStation (RatpNetwork geo) {
         Bag object = geo.getLine(this.nameLine).getRight().getGeometries();
-        System.out.println(this.nextStation);
 
         if(object.isEmpty()){
             return false;
@@ -412,11 +401,8 @@ public class Rame implements Steppable {
                 MasonGeometry mg = (MasonGeometry) itObject.next();
                 if (mg.hasAttribute("type") && mg.getStringAttribute("type").equals("station")){
                     currentStation = (Station)((AttributeValue)mg.getAttribute("station")).getValue();
-                    System.out.println(currentStation.getName());
                     if (currentStation.getName().equals(this.nextStation)){
-                        System.out.println(currentStation.isFermee());
-                        System.out.println(currentStation.name);
-                        System.out.println("------------------");
+
                         if(currentStation.isFermee()){
                             return false;
                         } else {
@@ -425,7 +411,6 @@ public class Rame implements Steppable {
                             return true;
                         }
                     }
-                    System.out.println("++++++++++++++++++++++");
                 }
             }
         }
