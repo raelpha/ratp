@@ -173,7 +173,7 @@ public class AgentVoyageur implements Steppable{
         }
 
         updateInformation++;
-        if(updateInformation > 400){
+        if(updateInformation > 200){
             updateInformation = 0;
             if(cheminEnvisage.peek() == null) return;
             Station previousStation = cheminEnvisage.peek().getLeft();
