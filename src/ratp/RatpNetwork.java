@@ -156,6 +156,7 @@ public class RatpNetwork extends SimState {
         return VoyageurConstants.augmentationColereParNvChgtLigne;
     }
 
+
     public void setColereMoyenneDepart(int val) {
         VoyageurConstants.colereMoyenneDeDepart = val;
     }
@@ -163,4 +164,5 @@ public class RatpNetwork extends SimState {
     public int getColereMoyenneDepart() {
         return VoyageurConstants.colereMoyenneDeDepart;
     }
+
 }
