@@ -9,6 +9,7 @@ import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.util.Bag;
 import sim.util.geo.MasonGeometry;
+import voyageur.AgentVoyageur;
 
 import java.sql.Array;
 import java.util.*;
@@ -35,12 +36,9 @@ public class RameFactory implements Steppable {
             String lineName = (String) lineNameIterator.next();
             Map<String, List<SchedulesDirectory.Schedule>> scheduleOnLine = s.get(lineName);
             Iterator scheduleIterator = scheduleOnLine.values().iterator();
-            if(lineName.equals("1")) {
-                while (scheduleIterator.hasNext()) {
-                    addRame(geo, lineName, (List<SchedulesDirectory.Schedule>) scheduleIterator.next());
-                }
+            while (scheduleIterator.hasNext()) {
+                addRame(geo, lineName, (List<SchedulesDirectory.Schedule>) scheduleIterator.next());
             }
-
         }
     }
 
@@ -137,8 +135,8 @@ public class RameFactory implements Steppable {
         return true;
     }
 
-    private void createRame(RatpNetwork geo, String lineName, List<SchedulesDirectory.Schedule> s){
-        Rame r = new Rame(geo, lineName, s);
+    private void createRame(RatpNetwork geo, String lineName, List<SchedulesDirectory.Schedule> s, Object ... params){
+        Rame r = new Rame(geo, lineName, s, params);
         addRameToGeometry(geo, r);
         geo.schedule.scheduleRepeating(r);
         Pair<String, Rame> newRame = new Pair(lineName, r);
@@ -170,6 +168,6 @@ public class RameFactory implements Steppable {
         String stationDebut = r.getOriginStation().station.name;
         String stationEnd = r.getTerminus().station.name;
         List<SchedulesDirectory.Schedule> sch = s.get(r.getNameLine()).get(stationEnd + " -> " + stationDebut);
-        createRame(geo, r.getNameLine(), sch);
+        createRame(geo, r.getNameLine(), sch, r.forceRemoveUser(), Constants.listOfCapacity.get(r.getNameLine()));
     }
 }

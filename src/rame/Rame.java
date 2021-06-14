@@ -78,7 +78,12 @@ public class Rame implements Steppable {
         setDepart(state, ((Schedule)itSchedule.next()).station.name);
         this.location.addDoubleAttribute("MOVE RATE", this.maxSpeed);
         if(params.length > 0) {
-            maxUser = (int) params[0];
+            if(params.length>=1) {
+                forceUser = (List<AgentVoyageur>) params[0];
+            }
+            if(params.length>=2) {
+                maxUser = (int) params[1];
+            }
         }
     }
 
@@ -349,11 +354,9 @@ public class Rame implements Steppable {
                 attente=-2;
             } else if(attente == -1) {
                 if(enterInStation(geo)) {
-                    System.out.println("Hello");
                     attente = 100;
                 } else {
                     if(Constants.stationPassante) {
-                        System.out.println("hello I'm here");
                         removeUser();
                         leaveStation();
                         nextStation = this.nextnextStation;
@@ -402,7 +405,6 @@ public class Rame implements Steppable {
 
     private boolean enterInStation (RatpNetwork geo) {
         Bag object = geo.getLine(this.nameLine).getRight().getGeometries();
-        System.out.println(this.nextStation);
 
         if(object.isEmpty()){
             return false;
@@ -412,11 +414,7 @@ public class Rame implements Steppable {
                 MasonGeometry mg = (MasonGeometry) itObject.next();
                 if (mg.hasAttribute("type") && mg.getStringAttribute("type").equals("station")){
                     currentStation = (Station)((AttributeValue)mg.getAttribute("station")).getValue();
-                    System.out.println(currentStation.getName());
                     if (currentStation.getName().equals(this.nextStation)){
-                        System.out.println(currentStation.isFermee());
-                        System.out.println(currentStation.name);
-                        System.out.println("------------------");
                         if(currentStation.isFermee()){
                             return false;
                         } else {
@@ -425,7 +423,6 @@ public class Rame implements Steppable {
                             return true;
                         }
                     }
-                    System.out.println("++++++++++++++++++++++");
                 }
             }
         }
