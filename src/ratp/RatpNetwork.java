@@ -131,4 +131,47 @@ public class RatpNetwork extends SimState {
     public void removeVoyageur(AgentVoyageur voyageur){
         yard.remove(voyageur);
     }
+<<<<<<< Updated upstream
+=======
+
+    public void setPerimetreStations(float val) {
+        VoyageurConstants.maximumDistanceStation = val;
+    }
+
+    public float getPerimetreStations() {
+        return VoyageurConstants.maximumDistanceStation;
+    }
+
+    public void setAugmentationColereStationFermee(int val) {
+        VoyageurConstants.augmentationColereStationFermee = val;
+    }
+
+    public int getAugmentationColereStationFermee() {
+        return VoyageurConstants.augmentationColereStationFermee;
+    }
+
+    public void setAugmentationColereParStationSupplementaire(int val) {
+        VoyageurConstants.augmentationColereParStationSupplementaire = val;
+    }
+
+    public int getAugmentationColereParStationSupplementaire() {
+        return VoyageurConstants.augmentationColereParStationSupplementaire;
+    }
+
+    public void setAugmentationColereParChgtLigneStationSupplementaire(int val) {
+        VoyageurConstants.augmentationColereParNvChgtLigne = val;
+    }
+
+    public int getAugmentationColereParChgtLigneStationSupplementaire() {
+        return VoyageurConstants.augmentationColereParNvChgtLigne;
+    }
+
+    public void setColereMoyenneDepart(int val) {
+        VoyageurConstants.colereMoyenneDeDepart = val;
+    }
+
+    public int getColereMoyenneDepart() {
+        return VoyageurConstants.colereMoyenneDeDepart;
+    }
+>>>>>>> Stashed changes
 }

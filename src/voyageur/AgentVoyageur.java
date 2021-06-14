@@ -66,6 +66,7 @@ public class AgentVoyageur implements Steppable{
     public boolean enTrain = false;
 
     int updateColere = -1;
+    int updateInformation = -1;
 
     double colereMoyenneAdjacente = -1;
 
@@ -93,7 +94,7 @@ public class AgentVoyageur implements Steppable{
         //System.out.println("Nbr chgt : " + nChangementCheminenvisage);
 
         Random R = new Random();
-        int rand = (int) (R.nextGaussian() * 80);
+        int rand = (int) (R.nextGaussian() * 80 + VoyageurConstants.colereMoyenneDeDepart);
         if (rand < 0) colere = 0;
         else if (rand > VoyageurConstants.colereMax) colere = VoyageurConstants.colereMax;
         else colere = rand;
@@ -120,6 +121,8 @@ public class AgentVoyageur implements Steppable{
         //
         etat = 0;
         enTrain = false;
+        updateColere = -1;
+        updateInformation = -1;
     }
 
     private Double2D ConversionGeomToContinuous(Double2D c) {
@@ -154,7 +157,10 @@ public class AgentVoyageur implements Steppable{
                 etat = 0;
             }
         }
+
+
         updateColere++;
+<<<<<<< Updated upstream
         if(updateColere < VoyageurConstants.updateColere){
             return;
         }
@@ -162,10 +168,42 @@ public class AgentVoyageur implements Steppable{
         CalculerColereAdjacente(ratpState.yard);
         if(colereMoyenneAdjacente > colere){
             addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
+=======
+        if(updateColere % 200 == 0){
+            CalculerColereAdjacente(ratpState.yard);
+            if(colereMoyenneAdjacente > colere){
+                addToColere(2);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
+            }
+            else if(colereMoyenneAdjacente < colere){
+                addToColere(-1);
+            }
+>>>>>>> Stashed changes
         }
-        else if(colereMoyenneAdjacente < colere){
-            addToColere(-1);
+
+        updateInformation++;
+        if(updateInformation % 400 == 0){
+            if(cheminEnvisage.peek() == null) return;
+            Station previousStation = cheminEnvisage.peek().getLeft();
+            Iterator<Pair<Station, List<Station>>> itr = cheminEnvisage.iterator();
+            itr.next();
+            while(itr.hasNext()){
+                Station currentStation = itr.next().getLeft();
+                if(previousStation.isFermee()){
+                    if(currentStation.lineNumber != previousStation.lineNumber){
+                        int previousCheminSize = cheminEnvisage.size();
+                        int previousNChangement = nChangementCheminenvisage;
+                        trouverChemin(stationCourante, destination);
+                        System.out.println("La colere");
+                        addToColere(VoyageurConstants.augmentationColereStationFermee
+                                + VoyageurConstants.augmentationColereParStationSupplementaire*(cheminEnvisage.size() - previousCheminSize)
+                                + VoyageurConstants.augmentationColereParNvChgtLigne*(nChangementCheminenvisage - previousNChangement));
+
+                        return;
+                    }
+                }
+            }
         }
+
     }
 
     private void CalculerColereAdjacente(Continuous2D yard){
@@ -183,13 +221,6 @@ public class AgentVoyageur implements Steppable{
             }
         }
         colereMoyenneAdjacente = sommeColeresAdjacente / avNb;
-        if(colereMoyenneAdjacente > colere){
-            addToColere(1);//colere + (colereMoyenneAdjacente - colere) * VoyageurConstants.vitesseDeColerisation;
-        }
-        else if(colereMoyenneAdjacente < colere){
-            addToColere(-1);
-        }
-
     }
 
     private Double2D GetRandomPointCircle(Double2D point, double distance) {
