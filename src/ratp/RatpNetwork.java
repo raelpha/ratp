@@ -65,7 +65,7 @@ public class RatpNetwork extends SimState {
         return colere / 305;
     }
 
-    public int getAllRameStopped() {
+    public float getAllRameStopped() {
         return factory.getNbRameStopped();
     }
 

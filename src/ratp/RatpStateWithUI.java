@@ -79,10 +79,10 @@ public class RatpStateWithUI extends GUIState {
                 this,
                 "Evolution du nombre de rames à l'arrêt",
                 "Temps");
-        chartRameStopped.setYAxisLabel("Nombre de rames à l'arrêt");
+        chartRameStopped.setYAxisLabel("Nombre de rames à l'arrêt (%)");
         attributesRameStopped = ChartUtilities.addSeries(
                 chartRameStopped,
-                "Nombre de rames à l'arrêt l'ensemble du réseau");
+                "Pourcentage de rames à l'arrêt l'ensemble du réseau");
         attributesRameStopped.setStrokeColor(Color.BLUE);
 
     }
@@ -97,7 +97,7 @@ public class RatpStateWithUI extends GUIState {
         ChartUtilities.scheduleSeries(this, attributesColere, new Valuable() {
             @Override
             public double doubleValue() {
-                return ((RatpNetwork) state).getAllColere();
+                return ((RatpNetwork) state).getAllColere() * 100;
             }
         });
 
@@ -106,7 +106,7 @@ public class RatpStateWithUI extends GUIState {
         ChartUtilities.scheduleSeries(this, attributesRameStopped, new Valuable() {
             @Override
             public double doubleValue() {
-                return ((RatpNetwork) state).getAllRameStopped();
+                return ((RatpNetwork) state).getAllRameStopped() * 100;
             }
         });
     }
@@ -117,14 +117,14 @@ public class RatpStateWithUI extends GUIState {
         ChartUtilities.scheduleSeries(this, attributesColere, new Valuable() {
             @Override
             public double doubleValue() {
-                return ((RatpNetwork) state).getAllColere();
+                return ((RatpNetwork) state).getAllColere() * 100;
             }
         });
 
         ChartUtilities.scheduleSeries(this, attributesRameStopped, new Valuable() {
             @Override
             public double doubleValue() {
-                return ((RatpNetwork) state).getAllRameStopped();
+                return ((RatpNetwork) state).getAllRameStopped() * 100;
             }
         });
     }

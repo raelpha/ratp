@@ -43,14 +43,17 @@ public class RameFactory implements Steppable {
         }
     }
 
-    public int getNbRameStopped() {
+    public float getNbRameStopped() {
+        if (listOfRame.size() == 0)
+            return 0.F;
         int count = 0;
         for (Pair<String, Rame> rame: listOfRame) {
             if (rame.getRight().isStopped()) {
                 count++;
             }
         }
-        return count;
+
+        return (float) count / (float) listOfRame.size();
     }
 
     private void createRameForLigne (RatpNetwork geo, String lineName){
