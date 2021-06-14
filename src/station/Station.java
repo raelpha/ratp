@@ -60,12 +60,11 @@ public class Station implements Steppable{
     }
 
     public int getNbVoyageurs() {
-        nbVoyageurs=getListAttenteRame().size();
         return nbVoyageurs;
     }
 
-    public void setNbVoyageurs(int nbVoyageurs) {
-        this.nbVoyageurs = nbVoyageurs;
+    public void setNbVoyageurs() {
+        this.nbVoyageurs = this.getListAttenteRame().size();
     }
 
     public Boolean isFermee() {
@@ -128,6 +127,7 @@ public class Station implements Steppable{
         arriveeRame(ratpNetwork);
         setColereStation();
         //this.descenteRame();
+        setNbVoyageurs();
 
         if (test) {
             if (!spawn) {
@@ -213,7 +213,7 @@ public class Station implements Steppable{
         return fonctionNormale((x-7.5)/3)*Constants.NB_PIC_MATIN + fonctionNormale((x-18)/4)*Constants.NB_PIC_SOIR;
     }
 
-//TODO descenteRame a debug
+    //TODO descenteRame a debug
     public void descenteRame(RatpNetwork ratpNetwork){
         if (!this.rameSurPlace.isEmpty() && !this.isFermee()) {
             //System.out.println("rameSurPlace : " + this.rameSurPlace + " station : "+this.name);
