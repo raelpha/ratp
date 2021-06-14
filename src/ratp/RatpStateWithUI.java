@@ -134,4 +134,12 @@ public class RatpStateWithUI extends GUIState {
         VoyageurPortrayal vp = new VoyageurPortrayal();
         return vp;
     }
+
+    @Override
+    public boolean step() {
+        //System.out.println("step");
+        display.updateUI();
+        display.repaint();
+        return super.step();
+    }
 }
