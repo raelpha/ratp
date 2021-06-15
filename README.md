@@ -24,30 +24,7 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-<h2> :book: Naive Bayes</h2>
-
-<p>In machine learning, naive Bayes classifiers are a family of simple "probabilistic classifiers" based on applying Bayes' theorem with strong (naive) independence assumptions between the features.
-Abstractly, naive Bayes is a conditional probability model: given a problem instance to be classified, represented by a vector
-<img src="image/1.png" alt="Formula 1" style="max-width:100%;"></p>
-
-<p>representing some n features (independent variables), it assigns to this instance probabilities
-<img src="image/2.png" alt="Formula 2" style="max-width:100%;"></p>
-
-<p>The problem with the above formulation is that if the number of features n is large or if a feature can take on a large number of values, then basing such a model on probability tables is infeasible. We therefore reformulate the model to make it more tractable. Using Bayes' theorem, the conditional probability can be decomposed as
-<img src="image/3.png" alt="Formula 3" style="max-width:100%;"></p>
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-<h2> :clipboard: Execution Instruction</h2>
-<p>The order of execution of the program files is as follows:</p>
-<p><b>1) spam_detector.py</b></p>
-<p>First, the spam_detector.py file must be executed to define all the functions and variables required for classification operations.</p>
-<p><b>2) train.py</b></p>
-<p>Then, the train.py file must be executed, which leads to the production of the model.txt file. 
-At the beginning of this file, the spam_detector has been imported so that the functions defined in it can be used.</p>
-<p><b>3) test.py</b></p>
-<p>Finally, the test.py file must be executed to create the result.txt and evaluation.txt files.
-Just like the train.py file, at the beginning of this file, the spam_detector has been imported so that the functions defined in it can be used.</p>
+<h2> :clipboard: Dependencies</h2>
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
