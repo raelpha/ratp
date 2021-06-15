@@ -1,3 +1,0 @@
-route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
-2467846,100,"3B","(PORTE DES LILAS <-> GAMBETTA) - Aller",,1,,FFFFFF,000000
-2467847,100,"3B","(PORTE DES LILAS <-> GAMBETTA) - Retour",,1,,FFFFFF,000000

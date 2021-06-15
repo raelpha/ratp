@@ -1,5 +1,0 @@
-route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
-2467854,100,"7","(LA COURNEUVE - 8 MAI 1945 <-> VILLEJUIF-L. ARAGON / MAIRIE D'IVRY) - Aller",,1,,FFFFFF,000000
-2467855,100,"7","(LA COURNEUVE - 8 MAI 1945 <-> VILLEJUIF-L. ARAGON / MAIRIE D'IVRY) - Aller",,1,,FFFFFF,000000
-2467856,100,"7","(LA COURNEUVE - 8 MAI 1945 <-> VILLEJUIF-L. ARAGON / MAIRIE D'IVRY) - Retour",,1,,FFFFFF,000000
-2467857,100,"7","(LA COURNEUVE - 8 MAI 1945 <-> VILLEJUIF-L. ARAGON / MAIRIE D'IVRY) - Retour",,1,,FFFFFF,000000
