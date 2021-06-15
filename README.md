@@ -38,6 +38,40 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
 MASON contains both a model library and an optional suite of visualization tools in 2D and 3D." </p>
 
 
+<h2> :clipboard: Input files</h2>
+
+<p> We used <a href="https://data.iledefrance-mobilites.fr/pages/home/"> IDFM OpenData</a> ressources to implement the model. </p>
+<p> The <b>data</b> folder contains:</p>
+<ul>
+  <li><b>lines</b> - A shapefile, with each LineString as a line section, storing:</li>
+    <ul>
+      <li><i>color</i>: color of the line section</li>
+      <li><i>origin</i>: starting point of the line section</li>
+      <li><i>destination</i>: ending point of the line section</li>
+      <li><i>line</i>: the line id</li>
+    </ul>
+  <li><b>schedule</b> - A csv, storing the different itineraries (multiple paths on the same line)</li>
+    <ul>
+      <li><i>order</i>: order</li>
+      <li><i>station_name</i>: name of the station</li>
+      <li><i>line</i>: line id</li>
+      <li><i>direction</i>: heading of the train</li>
+      <li><i>station_origin</i>: origin station</li>
+      <li><i>station_destination</i>: destination station</li>
+      <li><i>service</i>: the service name (usually origin -> destination)</li>
+    </ul>
+  <li><b>stations</b> - A list of all the stations</li>
+    <ul>
+      <li><i>name</i>: the name of the station</li>
+    </ul>
+</ul>
+
+<p>The aforementionned files can be made out of <a href="https://data.iledefrance-mobilites.fr/pages/home/">IDFM</a> ressources using <a href=" www.qgis.org">QGIS</a>, or handmade with ETL tools such as Pentaho or Alteryx.</p>
+
+<p>The system will automatically compute the connecting stations based on their names. Three singletons are bulid at startup onto these files and will store all the dynamic objects shared by the agents and their algorithms.</p>
+
+<p>As little information as possible is <i>hardcoded</i> so you may adapt this simulation to your favorite transit system as long as the data is on these input files with little code adjustment.</p>
+
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
@@ -46,12 +80,16 @@ MASON contains both a model library and an optional suite of visualization tools
 
 
 
-Raphael Jaures: [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/raelpha)
+Raphael Jaures: [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/raelpha)[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/raphaeljaures/)
+
 
 Yvain Raynaud: [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Raynaudy)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yvain-raynaud/)
 
 Clément Giummara
-Jimmy Luong
+
+Jimmy Luong: [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Neaus77)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jimmy-luong-3a050b179/)
+
 Hugo Martin
 
