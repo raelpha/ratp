@@ -24,6 +24,12 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
+<h2> :tv: Video example</h2>
+
+[![Youtube video](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=PBO92TN1FDQ)
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
+
 <h2> :clipboard: Dependencies</h2>
 
 <p> We used <a href="https://cs.gmu.edu/~eclab/projects/mason/"> Mason</a> for this project. </p>
