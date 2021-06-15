@@ -14,7 +14,15 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
 
 <h2> :floppy_disk: Project Files Description</h2>
 
-<p>This Project includes 3 executable files, 3 text files as well as 2 directories as follows:</p>
+<p>There are 4 main directories for this projet:</p>
+<ul>
+  <li><b>data directory</b> - Includes all cleaned data originaly from <a href="https://data.iledefrance-mobilites.fr/pages/home/">IDFM Open Data</a> .</li>
+  <li><b>img directory</b> - Includes all logo used in this documentation.</li>
+  <li><b>lib directory</b> - Includes all libraries used in our project. None of these belong to us.</li>
+  <li><b>src directory</b> - Includes all java files.</li>
+</ul>
+
+
 <h4>Executable Files:</h4>
 <ul>
   <li><b>spam_detector.py</b> - Includes all functions required for classification operations.</li>
@@ -29,11 +37,7 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
   <li><b>evaluation.txt</b> - Contains evaluation results table as well as Confusion Matrix of Spam and Ham classes.</li>
 </ul>
 
-<h4>Source Directories:</h4>
-<ul>
-  <li><b>train directory</b> - Includes all emails for the training phase of the program.</li>
-  <li><b>test directory</b> - Includes all emails for the testing phase of the program.</li>
-</ul>
+
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
