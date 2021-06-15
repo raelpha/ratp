@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src="img/ratp_logo.png" alt="Logo RATP" width="80px" height="80px">
+  <img src="img/ratp_logo.png" alt="Logo RATP" width="150px" height="181px">
 </p>
 <h1 align="center"> Paris metro simulation </h1>
 <h3 align="center"> IA04 - Multi Agent Systems </h3>
