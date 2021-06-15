@@ -82,7 +82,7 @@ MASON contains both a model library and an optional suite of visualization tools
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
 <!-- CREDITS -->
-<h2 id="credits"> :scroll: Credits</h2>
+<h2 id="contributors"> :scroll: Contributors</h2>
 
 
 
