@@ -26,6 +26,12 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
 
 <h2> :clipboard: Dependencies</h2>
 
+<p> We used <a href="https://cs.gmu.edu/~eclab/projects/mason/"> Mason</a> for this project. </p>
+
+<p> From their website: "MASON is a fast discrete-event multiagent simulation library core in Java, designed to be the foundation for large custom-purpose Java simulations, and also to provide more than enough functionality for many lightweight simulation needs. 
+MASON contains both a model library and an optional suite of visualization tools in 2D and 3D." </p>
+
+
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
