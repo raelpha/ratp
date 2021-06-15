@@ -26,6 +26,8 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
 
 <h2> :tv: Video example</h2>
 
+[![Everything Is AWESOME](http://img.youtube.com/vi/PBO92TN1FDQ/0.jpg)](https://www.youtube.com/watch?v=PBO92TN1FDQ?t=35s "Everything Is AWESOME")
+
 [![Youtube video](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=PBO92TN1FDQ)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
