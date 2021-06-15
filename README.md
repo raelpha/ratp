@@ -22,12 +22,12 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
   <li><b>src directory</b> - Includes all java files.</li>
 </ul>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
 <h2> :clipboard: Dependencies</h2>
 
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
 <!-- CREDITS -->
 <h2 id="credits"> :scroll: Credits</h2>
