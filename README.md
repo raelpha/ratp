@@ -6,7 +6,7 @@
 <h5 align="center"> Project Assignment - <a href="https://www.utc.fr/">Université de Technologie de Compiègne</a> (Spring 2021) </h5>
 
 <p align="center"> 
-<img src="gif/spam detector.gif" alt="Animated gif pacman game" height="382px">
+<img src="img/ratp_network.gif" alt="Animated network" height="382px">
 </p>
 
 <p>We developped a simulation of the whole parisian subway.
