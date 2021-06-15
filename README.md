@@ -30,7 +30,7 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
-<h2> :clipboard: Dependencies</h2>
+<h2> :open_file_folder: Dependencies</h2>
 
 <p> We used <a href="https://cs.gmu.edu/~eclab/projects/mason/"> Mason</a> for this project. </p>
 
