@@ -74,7 +74,7 @@ MASON contains both a model library and an optional suite of visualization tools
 
 <p>The aforementionned files can be made out of <a href="https://data.iledefrance-mobilites.fr/pages/home/">IDFM</a> ressources using <a href=" www.qgis.org">QGIS</a>, or handmade with ETL tools such as Pentaho or Alteryx.</p>
 
-<p>The system will automatically compute the connecting stations based on their names. Three singletons are bulid at startup onto these files and will store all the dynamic objects shared by the agents and their algorithms.</p>
+<p>The system will automatically compute the connecting stations based on their names. Three singletons are build at startup onto these files and will store all the dynamic objects shared by the agents and their algorithms.</p>
 
 <p>As little information as possible is <i>hardcoded</i> so you may adapt this simulation to your favorite transit system as long as the data is on these input files with little code adjustment.</p>
 
