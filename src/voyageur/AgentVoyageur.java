@@ -1,31 +1,19 @@
 package voyageur;
 
-import global.Constants;
 import ratp.RatpNetwork;
 
 import ratp.directory.StationsDirectory;
-import sim.app.geo.campusworld.Agent;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.field.continuous.Continuous2D;
 import sim.util.Bag;
 import sim.util.Double2D;
-import sim.util.geo.GeomPlanarGraph;
-import sim.util.geo.MasonGeometry;
-import sim.util.Int2D;
-import station.Gare;
-import station.Station;
 
 
-import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.util.*;
 import java.util.List;
-import java.util.concurrent.Delayed;
-import java.util.concurrent.TimeUnit;
+
 import station.Station;
 
 
@@ -297,7 +285,6 @@ public class AgentVoyageur implements Steppable{
         int n = stations.size();
         int rand = (int)RandomRange(0,n-1);
 
-        //return StationsDirectory.getInstance().getStation("8","Pointe du Lac");
         return stations.get(rand);
     }
 
@@ -357,7 +344,6 @@ public class AgentVoyageur implements Steppable{
             }
             stationFermees.add(n);
         }
-        //System.out.println("Erreur, pas de chemin trouvé.");
         return null;
     }
 
@@ -380,14 +366,7 @@ public class AgentVoyageur implements Steppable{
             previousDestinations = currentNode.destinations;
         }
         Collections.reverse(stationPath);
-        /*System.out.println("J'emprunterai le chemin suivant : ");
-        for(Pair<Station, List<Station>> station_destination : stationPath){
-            System.out.println(station_destination.getLeft().name + " " + station_destination.getLeft().lineNumber);
-            System.out.println("Train à destinations de : ");
-            for(Station s : station_destination.getRight()){
-                System.out.println("    " + s.name + ", " + s.lineNumber);
-            }
-        }*/
+
         return new LinkedList<>(stationPath);
     }
 

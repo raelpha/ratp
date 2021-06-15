@@ -8,15 +8,12 @@ import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.planargraph.DirectedEdgeStar;
 import com.vividsolutions.jts.planargraph.Node;
 import global.Constants;
-import ratp.directory.SchedulesDirectory;
-import sim.app.virus.Agent;
 import station.Station;
 import voyageur.AgentVoyageur;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import com.vividsolutions.jts.linearref.LengthIndexedLine;
 import ratp.RatpNetwork;
-import sim.field.geo.GeomVectorField;
 import sim.util.Bag;
 import sim.util.geo.*;
 
@@ -24,7 +21,6 @@ import java.util.*;
 import java.math.BigDecimal;
 
 import ratp.directory.SchedulesDirectory.Schedule;
-import voyageur.VoyageurDonnees;
 
 
 public class Rame implements Steppable {
@@ -33,15 +29,15 @@ public class Rame implements Steppable {
     private LineString currentLine;
     private int lineDirection;
     private LineString nextLine;
-    private MasonGeometry location;
-    private List<Schedule> scheduleStation;
-    private Iterator itSchedule;
+    private final MasonGeometry location;
+    private final List<Schedule> scheduleStation;
+    private final Iterator itSchedule;
     private String nextStation;
     private String nextnextStation;
-    private double maxSpeed = Constants.rameMaxSpeed;
+    private final double maxSpeed = Constants.rameMaxSpeed;
     private double currentSpeed = 0.0000000000D;
-    private double acceleration = Constants.rameAcceleration;
-    private double braking = Constants.rameBraking;
+    private final double acceleration = Constants.rameAcceleration;
+    private final double braking = Constants.rameBraking;
     private LengthIndexedLine segment;
     private int attente;
     private boolean finish = false;
@@ -51,12 +47,12 @@ public class Rame implements Steppable {
     double currentIndex;
     double nextStartIndex;
     public PointMoveTo pointMoveTo;
-    private static GeometryFactory fact = new GeometryFactory();
+    private static final GeometryFactory fact = new GeometryFactory();
     private int maxUser = Constants.MAX_USER_RAME;
     //TODO change public to private
     public List<AgentVoyageur> users = new ArrayList<>();
     private List<AgentVoyageur> forceUser = new ArrayList<>();
-    private String nameLine;
+    private final String nameLine;
     private int colereCooldown = 50;
 
     public Rame(RatpNetwork state, String nameLine, List<Schedule> schedule, Object ... params) {
@@ -157,14 +153,12 @@ public class Rame implements Steppable {
         GeomPlanarGraphEdge originEdge = null;
         while(it.hasNext() && ((originEdge == null) || (originEdge!=null && !originEdge.getStringAttribute("destinatio").equals(stationName) && !originEdge.getStringAttribute("origin").equals(stationName) ))){
             originEdge = (GeomPlanarGraphEdge) it.next();
-            //System.out.println("Origine : "+ originEdge.getStringAttribute("origin")+ originEdge.getStringAttribute("destinatio"));
         }
         currentLine = originEdge.getLine();
         it = network.edgeIterator();
         GeomPlanarGraphEdge nextEdge = null;
         while(it.hasNext() && ((nextEdge == null) || (nextEdge!=null && !nextEdge.getStringAttribute("destinatio").equals(nextnextStation) && !nextEdge.getStringAttribute("origin").equals(nextnextStation) ))){
             nextEdge = (GeomPlanarGraphEdge) it.next();
-            //System.out.println("Origine : "+ originEdge.getStringAttribute("origin")+ originEdge.getStringAttribute("destinatio"));
         }
         nextLine = nextEdge.getLine();
         if(originEdge.getStringAttribute("origin").equals(stationName)){
@@ -259,7 +253,6 @@ public class Rame implements Steppable {
     }
 
     private LineString getLineForStation (RatpNetwork geo, Coordinate coord, String station) {
-       // System.out.println(station);
         GeomPlanarGraph network = new GeomPlanarGraph();
         network.createFromGeomField(geo.getLine(this.nameLine).getRight());
         Node currentJunction = network.findNode(coord);
@@ -271,12 +264,10 @@ public class Rame implements Steppable {
                 if (edges.length > 1) {
                     int i = 0;
                     while (!((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[i]).getEdge()).getStringAttribute("destinatio").equals(station) && !((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[i]).getEdge()).getStringAttribute("origin").equals(station)) {
-                        //System.out.println(((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[i]).getEdge()).getStringAttribute("destinatio") + "+-+" + ((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[i]).getEdge()).getStringAttribute("origin"));
                         i++;
                     }
                     directedEdge = (GeomPlanarGraphDirectedEdge) edges[i];
                 } else {
-                    //System.out.println(((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[0]).getEdge()).getStringAttribute("origin") + " +-+ " +((GeomPlanarGraphEdge) ((GeomPlanarGraphDirectedEdge) edges[0]).getEdge()).getStringAttribute("destinatio"));
                     directedEdge = (GeomPlanarGraphDirectedEdge) edges[0];
                 }
                 GeomPlanarGraphEdge edge = (GeomPlanarGraphEdge) directedEdge.getEdge();
@@ -319,8 +310,6 @@ public class Rame implements Steppable {
         BigDecimal resBrak = cs.multiply(mult);
         double maxSpeedStation = resSpeed.doubleValue();
         double brakingLimitDistance = resBrak.doubleValue();
-
-        //System.out.println(this.lineDirection);
 
         if(isRameClose(geo, Constants.DETECTION_DISTANCE)){
             if(this.lineDirection==-1) {

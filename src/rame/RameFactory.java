@@ -11,12 +11,11 @@ import sim.util.Bag;
 import sim.util.geo.MasonGeometry;
 import voyageur.AgentVoyageur;
 
-import java.sql.Array;
 import java.util.*;
 
 public class RameFactory implements Steppable {
 
-    private static RameFactory INSTANCE = new RameFactory();
+    private static final RameFactory INSTANCE = new RameFactory();
 
     List<Pair<String, Rame>> listOfRame = new ArrayList<>();
     Map<String, Map<String, List<SchedulesDirectory.Schedule>>> s = SchedulesDirectory.getInstance().schedules;
@@ -77,7 +76,6 @@ public class RameFactory implements Steppable {
         if(bufferCheck!=0){
             bufferCheck--;
         } else {
-            //System.out.println(bufferRame.size());
             checkBuffer(geo);
             bufferCheck = 150;
         }
@@ -120,11 +118,6 @@ public class RameFactory implements Steppable {
     }
 
     private void checkBuffer (RatpNetwork geo) {
-        /*Bag test = geo.getLine("3b").getRight().getGeometries();
-        Iterator testIt = test.iterator();
-        while(testIt.hasNext()){
-            //System.out.println(((MasonGeometry)testIt.next()).getAttributes());
-        }*/
         List<Pair<String, List<SchedulesDirectory.Schedule>>> toDelete = new ArrayList<>();
         Iterator bufferIt = bufferRame.iterator();
         while(bufferIt.hasNext()){

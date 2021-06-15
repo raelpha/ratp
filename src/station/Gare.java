@@ -18,11 +18,10 @@ public class Gare extends MasonGeometry implements Steppable {
     public int id;
     public String name;
     public Map<String, Station> stations = new HashMap<>();
-    //public DelayQueue<AgentVoyageur> queueMct=new DelayQueue<AgentVoyageur>();
     public List<AgentVoyageur> listMct = new ArrayList<AgentVoyageur>();
     public List<AgentVoyageur> listVoyageurGare;
 
-    private Boolean test=false;
+    private final Boolean test=false;
     private Boolean fermee=false;
     private int nbVoyageurs;
 
@@ -71,10 +70,6 @@ public class Gare extends MasonGeometry implements Steppable {
     public Station getStation(String lineId){
         return stations.get(lineId);
     }
-
-    /*public DelayQueue<AgentVoyageur> getQueueMct() {
-        return queueMct;
-    }*/
 
     public List<AgentVoyageur> getListMct() {
         return listMct;

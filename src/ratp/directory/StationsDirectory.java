@@ -20,7 +20,6 @@ import station.Gare;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -44,8 +43,6 @@ public class StationsDirectory {
     {
         StationsDirectory s = getInstance();
     }
-
-    //public List<SuperStation> allSuperStations;
 
     public List<Gare> getAllGares() {
         return allGares;
@@ -93,7 +90,6 @@ public class StationsDirectory {
         }
         //Get one or two neighbours from line
         for(Map.Entry<String, List<SchedulesDirectory.Schedule>> entry : SchedulesDirectory.getInstance().schedules.get(station.lineNumber).entrySet()){
-            //System.out.println(entry.getKey() + "/" + entry.getValue());
             for(int i=0;i<entry.getValue().size();i++){
                 List<SchedulesDirectory.Schedule> listOfStations = entry.getValue();
                 if(listOfStations.get(i).station==station){
@@ -129,12 +125,11 @@ public class StationsDirectory {
                             destinationDetected = true;
                 }
                 if (destinationDetected && destination != null) {
-                    //TODO: on parle ici de la destination de la ligne, pas de
                     towards.add(destination);
                 }
             }
         }else{ // Si on n'est pas sur la même ligne, on retourne toutes les destinations possibles, il faudra mettre un coup de ponceuse après (destination=destination n+1)
-            // TODO OR NOT TODO ?
+
         }
 
         return towards;
@@ -152,7 +147,6 @@ public class StationsDirectory {
         }
         //Get one or two neighbours from line
         for(Map.Entry<String, List<SchedulesDirectory.Schedule>> entry : SchedulesDirectory.getInstance().schedules.get(station.lineNumber).entrySet()){
-            //System.out.println(entry.getKey() + "/" + entry.getValue());
             for(int i=0;i<entry.getValue().size();i++){
                 List<SchedulesDirectory.Schedule> listOfStations = entry.getValue();
                 if(listOfStations.get(i).station==station){
@@ -161,7 +155,6 @@ public class StationsDirectory {
                     //Corner cases: 7b
                     if(i<entry.getValue().size()-1){
                         if(!adjacentStations.contains(listOfStations.get(i+1).station)){
-                            //adjacentStations.add(listOfStations.get(i+1).station);
                             Pair<Station,List<Station>> s = new Pair<Station,List<Station>>(listOfStations.get(i+1).station,getTowardsStation(station, listOfStations.get(i+1).station));
                             adjacentStations.add(s);
                         }
@@ -314,7 +307,7 @@ public class StationsDirectory {
                                         paint = Color.RED;
 
                                     } else {
-                                        paint = new Color(128,128,128,0);;
+                                        paint = new Color(128,128,128,0);
                                     }
                                     // adding translucent color if Gare.nbStation == 1
                                 }

@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class SchedulesDirectory {
 
-    private static SchedulesDirectory INSTANCE = new SchedulesDirectory();
+    private static final SchedulesDirectory INSTANCE = new SchedulesDirectory();
 
     public static SchedulesDirectory getInstance()
     {   
@@ -37,7 +37,7 @@ public class SchedulesDirectory {
         for(String line : Constants.listOfLinesNames){
             schedulesByLine.put(line, new ArrayList<>());
         }
-        //TODO: move this elsewhere
+
         for(Schedule s : allSchedules){
             if(schedulesByLine.containsKey(s.lineNumber))
                 schedulesByLine.get(s.lineNumber).add(s);

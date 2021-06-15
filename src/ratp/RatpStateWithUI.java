@@ -12,7 +12,6 @@ import sim.engine.SimState;
 import sim.portrayal.continuous.ContinuousPortrayal2D;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.util.Valuable;
-import sim.util.media.chart.ChartGenerator;
 import sim.util.media.chart.TimeSeriesAttributes;
 import sim.util.media.chart.TimeSeriesChartGenerator;
 import voyageur.AgentVoyageur;
@@ -94,39 +93,19 @@ public class RatpStateWithUI extends GUIState {
 
         chartColere.clearAllSeries();
 
-        ChartUtilities.scheduleSeries(this, attributesColere, new Valuable() {
-            @Override
-            public double doubleValue() {
-                return ((RatpNetwork) state).getAllColere() * 100;
-            }
-        });
+        ChartUtilities.scheduleSeries(this, attributesColere, () -> ((RatpNetwork) state).getAllColere() * 100);
 
         chartRameStopped.clearAllSeries();
 
-        ChartUtilities.scheduleSeries(this, attributesRameStopped, new Valuable() {
-            @Override
-            public double doubleValue() {
-                return ((RatpNetwork) state).getAllRameStopped() * 100;
-            }
-        });
+        ChartUtilities.scheduleSeries(this, attributesRameStopped, () -> ((RatpNetwork) state).getAllRameStopped() * 100);
     }
 
     @Override
     public void load(final SimState state) {
         super.start();
-        ChartUtilities.scheduleSeries(this, attributesColere, new Valuable() {
-            @Override
-            public double doubleValue() {
-                return ((RatpNetwork) state).getAllColere() * 100;
-            }
-        });
+        ChartUtilities.scheduleSeries(this, attributesColere, () -> ((RatpNetwork) state).getAllColere() * 100);
 
-        ChartUtilities.scheduleSeries(this, attributesRameStopped, new Valuable() {
-            @Override
-            public double doubleValue() {
-                return ((RatpNetwork) state).getAllRameStopped() * 100;
-            }
-        });
+        ChartUtilities.scheduleSeries(this, attributesRameStopped, () -> ((RatpNetwork) state).getAllRameStopped() * 100);
     }
 
     @Override

@@ -1,8 +1,6 @@
 package lines;
 
-import com.vividsolutions.jts.geom.LineString;
 import com.vividsolutions.jts.geom.Point;
-import com.vividsolutions.jts.planargraph.Node;
 import global.Constants;
 import rame.Rame;
 import sim.display.GUIState;
@@ -14,7 +12,6 @@ import sim.portrayal.geo.GeomPortrayal;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.util.Bag;
 import sim.util.geo.AttributeValue;
-import sim.util.geo.GeomPlanarGraph;
 import sim.util.geo.MasonGeometry;
 import station.Station;
 
@@ -48,7 +45,6 @@ public class Line {
                 MasonGeometry geometry = (MasonGeometry) object;
                 paint = color;
 
-                //TODO: The station should set its own portrayal
                 //If the geometry is a station
                 if (geometry.getStringAttribute("type") != null && geometry.getStringAttribute("type").equals("station"))
                     filled = true;

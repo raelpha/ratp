@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class LinesDirectory {
 
-    private static LinesDirectory INSTANCE = new LinesDirectory();
+    private static final LinesDirectory INSTANCE = new LinesDirectory();
 
     public static LinesDirectory getInstance()
     {
@@ -55,7 +55,7 @@ public class LinesDirectory {
         lines.get(lineId).stations.put(stationName, station);
     }
 
-    private GeomVectorField allLinesReadGVF = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
+    private final GeomVectorField allLinesReadGVF = new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE);
 
     public void loadLines(Map<String, Line> lines){
 

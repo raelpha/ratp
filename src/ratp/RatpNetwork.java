@@ -5,29 +5,21 @@ import lines.Line;
 import rame.RameFactory;
 import rame.Rame;
 import ratp.directory.LinesDirectory;
-import ratp.directory.SchedulesDirectory;
 import ratp.directory.StationsDirectory;
 import ratp.directory.SchedulesDirectory.*;
-import sim.app.geo.masoncsc.util.Pair;
 import sim.engine.SimState;
 import sim.field.continuous.Continuous2D;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
 import sim.util.Bag;
-import sim.util.Double2D;
 import station.Gare;
 import station.Station;
 import voyageur.AgentVoyageur;
 import voyageur.VoyageurConstants;
-import voyageur.VoyageurDonnees;
 import sim.app.geo.masoncsc.util.Pair;
 import sim.field.geo.GeomVectorField;
 import sim.util.geo.MasonGeometry;
 
 import java.util.*;
-
-
-import java.util.List;
-import java.util.Map;
 
 public class RatpNetwork extends SimState {
 
@@ -38,11 +30,6 @@ public class RatpNetwork extends SimState {
     public RatpNetwork(long seed) {
         super(seed);
 
-        /*for (String s : Constants.listOfLinesNames){
-            linesGeomVectorField.put(s, new GeomVectorField(Constants.FIELD_SIZE, Constants.FIELD_SIZE));
-        }*/
-        //FileImporter.shapeFileImporterByLine("lines/lines", linesGeomVectorField);
-        //this.schedule.scheduleRepeating(a);
     }
 
     public AgentVoyageur addVoyageur (Station currentStation){
@@ -127,8 +114,6 @@ public class RatpNetwork extends SimState {
         super.start();
         removeAllRame();
         yard.clear();
-        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("8", "Balard"));
-        //for(int i = 0; i < 20; i++) addVoyageur(StationsDirectory.getInstance().getStation("13", "Liège"));
         for (Map.Entry<String, Gare> g: StationsDirectory.getInstance().gares.entrySet()) {
           this.schedule.scheduleRepeating(g.getValue());
             for (Map.Entry<String, Station> entry : g.getValue().stations.entrySet()) {
@@ -140,12 +125,6 @@ public class RatpNetwork extends SimState {
         this.schedule.scheduleRepeating(factory);
 
         //ce code permet de tester en ajouter des rames à l'unité, il suffit de préciser la ligne et la liste de schedule de la rame
-        //SchedulesDirectory sd = SchedulesDirectory.getInstance();
-        //List<Schedule> schedules = sd.schedules.get("1").get("La Défense -> Château de Vincennes");
-        //addAgent("1", schedules);
-        //addAgent("1", sd.schedules.get("1").get("Château de Vincennes -> La Défense"));
-        //addAgent("3", sd.schedules.get("3").get("Pont de Levallois - Bécon -> Gallieni"));
-        //addAgent("6");
     }
 
 

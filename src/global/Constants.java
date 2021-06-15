@@ -36,27 +36,6 @@ public class Constants {
             put("14",698);
         }
     };
-    //Vrai chiffre
-    /*public static final Map<String, Integer> listOfNumberOfRame = new HashMap<>(){
-        {
-            put("1",45);
-            put("2",37);
-            put("3",40);
-            put("3b",4);
-            put("4",40);
-            put("5",45);
-            put("6",37);
-            put("7",60);
-            put("7b",6);
-            put("8",50);
-            put("9",59);
-            put("10",22);
-            put("11",20);
-            put("12",37);
-            put("13",52);
-            put("14",25);
-        }
-    };*/
 
     public static final Map<String, Integer> listOfNumberOfRame = new HashMap<String,Integer>(){
         {
