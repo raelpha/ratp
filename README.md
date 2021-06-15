@@ -1,15 +1,16 @@
 <p align="center"> 
-  <img src="src/ratp/ratp.png" alt="Logo RATP" width="80px" height="80px">
+  <img src="img/ratp_logo.png" alt="Logo RATP" width="80px" height="80px">
 </p>
 <h1 align="center"> Paris metro simulation </h1>
-<h3 align="center"> IA04 - MultiAgent Systems </h3>
+<h3 align="center"> IA04 - Multi Agent Systems </h3>
 <h5 align="center"> Project Assignment - <a href="https://www.utc.fr/">Université de Technologie de Compiègne</a> (Spring 2021) </h5>
 
 <p align="center"> 
 <img src="gif/spam detector.gif" alt="Animated gif pacman game" height="382px">
 </p>
 
-<p>I have developed a spam detector program in Python which classifies given emails as spam or ham using the Naive Bayes approach.</p>
+<p>We developped a simulation of the whole parisian subway.
+It includes simulation of subway train, traveller pathfinding, station failure, etc. </p>
 
 <h2> :floppy_disk: Project Files Description</h2>
 
