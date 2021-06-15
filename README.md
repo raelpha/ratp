@@ -22,6 +22,8 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
   <li><b>src directory</b> - Includes all java files.</li>
 </ul>
 
+You can also find our slides used for our presentation here: [presentation slides](ratp_slides_presentation_15062021.pdf).
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
 <h2> :tv: Video example</h2>
