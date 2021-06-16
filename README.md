@@ -17,7 +17,7 @@ It includes simulation of subway train, traveller pathfinding, station failure, 
 <p>There are 4 main directories for this projet:</p>
 <ul>
   <li><b>data directory</b> - Includes all cleaned data originaly from <a href="https://data.iledefrance-mobilites.fr/pages/home/">IDFM Open Data</a> .</li>
-  <li><b>img directory</b> - Includes all logo used in this documentation.</li>
+  <li><b>img directory</b> - Includes all logos used in this documentation.</li>
   <li><b>lib directory</b> - Includes all libraries used in our project. None of these belong to us.</li>
   <li><b>src directory</b> - Includes all java files.</li>
 </ul>
