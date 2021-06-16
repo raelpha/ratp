@@ -30,8 +30,7 @@ You can also find our slides used for our presentation here: [presentation slide
 
 <p>You can find below a Youtube video that show how the simulation is working:</p>
 
-[![Youtube video example](http://img.youtube.com/vi/PBO92TN1FDQ/0.jpg)](https://www.youtube.com/watch?v=PBO92TN1FDQ?t=35s "Youtube video example")
-
+[![Youtube video example](http://img.youtube.com/vi/08HplBNFX04/0.jpg)](https://www.youtube.com/watch?v=08HplBNFX04?t=35s "Youtube video example")
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
