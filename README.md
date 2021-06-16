@@ -29,7 +29,8 @@ You can also find our slides used for our presentation here: [presentation slide
 <h2> :tv: Video example</h2>
 
 <p>You can find below a Youtube video that show how the simulation is working:</p>
-[![Youtube video example](http://img.youtube.com/vi/08HplBNFX04/0.jpg)](https://www.youtube.com/watch?v=08HplBNFX04 "Youtube video example")
+
+[![Youtube video example](http://img.youtube.com/vi/08HplBNFX04/0.jpg)](https://www.youtube.com/watch?v=08HplBNFX04?t=0s "Youtube video example")
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
