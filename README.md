@@ -12,7 +12,7 @@
 <p>We developped a simulation of the whole parisian subway.
 The system simulates the basic dynamics of a subway train (accelerations, minimum distances, ...), traveller pathfinding (A*, MCT, ...), station/lines closures, etc. </p>
 
-<p> We restrained ourselves to the simulation of subway services, but the system is versatile and RER (suburban), trams, and even buses could be added to the simulation. The data is available, we only missed a few cores, a lot of RAM, and more time.</p>
+<p> We restrained ourselves to the simulation of subway services, but the system is versatile and RER (suburban), trams, and even buses could be added to the simulation. The data is available, we only missed a few cores, RAM, and a lot of caffeine.</p>
 <h2> :floppy_disk: Project Files Description</h2>
 
 <p>There are 4 main directories for this projet:</p>
