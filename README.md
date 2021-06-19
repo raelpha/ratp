@@ -17,19 +17,19 @@ The system simulates the basic dynamics of a subway train (accelerations, minimu
 
 <p>There are 4 main directories for this projet:</p>
 <ul>
-  <li><b>data directory</b> - Includes all cleaned data originaly from <a href="https://data.iledefrance-mobilites.fr/pages/home/">IDFM Open Data</a> .</li>
+  <li><b>data directory</b> - Includes all data tranformed to fit our needs, taken from <a href="https://data.iledefrance-mobilites.fr/pages/home/">IDFM Open Data</a>.</li>
   <li><b>img directory</b> - Includes all logos used in this documentation.</li>
-  <li><b>lib directory</b> - Includes all libraries used in our project. None of these belong to us.</li>
+  <li><b>lib directory</b> - Includes all libraries used for the project. None of these belong to us.</li>
   <li><b>src directory</b> - Includes all java files.</li>
 </ul>
 
-You can also find our slides used for our presentation here: [presentation slides](ratp_slides_presentation_15062021.pdf).
+You can also find our slides used for our (academic) presentation here: [presentation slides](ratp_slides_presentation_15062021.pdf).
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
 <h2> :tv: Video example</h2>
 
-<p>You can find below a Youtube video that show how the simulation is working:</p>
+<p>You can find below a Youtube video that shows how the simulation is working:</p>
 
 [![Youtube video example](http://img.youtube.com/vi/08HplBNFX04/0.jpg)](https://www.youtube.com/watch?v=08HplBNFX04?t=35s "Youtube video example")
 
@@ -39,8 +39,8 @@ You can also find our slides used for our presentation here: [presentation slide
 
 <p> We used <a href="https://cs.gmu.edu/~eclab/projects/mason/"> Mason</a> for this project. </p>
 
-<p> From their website: "MASON is a fast discrete-event multiagent simulation library core in Java, designed to be the foundation for large custom-purpose Java simulations, and also to provide more than enough functionality for many lightweight simulation needs. 
-MASON contains both a model library and an optional suite of visualization tools in 2D and 3D." </p>
+<p> From their website: <i> "MASON is a fast discrete-event multiagent simulation library core in Java, designed to be the foundation for large custom-purpose Java simulations, and also to provide more than enough functionality for many lightweight simulation needs. 
+  MASON contains both a model library and an optional suite of visualization tools in 2D and 3D." </i></p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
@@ -92,10 +92,10 @@ Raphael Jaures: [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?styl
 Yvain Raynaud: [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Raynaudy)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yvain-raynaud/)
 
-Clément Giummara
+Clément Giummara [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/clementgiummara/)
 
 Jimmy Luong: [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Neaus77)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jimmy-luong-3a050b179/)
 
-Hugo Martin
+Hugo Martin [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hugo-martin-5150a1215/)
 
