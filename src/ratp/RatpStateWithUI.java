@@ -11,7 +11,6 @@ import sim.engine.SimState;
 
 import sim.portrayal.continuous.ContinuousPortrayal2D;
 import sim.portrayal.geo.GeomVectorFieldPortrayal;
-import sim.util.Valuable;
 import sim.util.media.chart.TimeSeriesAttributes;
 import sim.util.media.chart.TimeSeriesChartGenerator;
 import voyageur.AgentVoyageur;

@@ -12,7 +12,6 @@ import sim.util.Double2D;
 
 
 import java.util.*;
-import java.util.List;
 
 import station.Station;
 
@@ -207,8 +206,8 @@ public class AgentVoyageur implements Steppable{
     }
 
     private Double2D GetRandomPointCircle(Double2D point, double distance) {
-        /**
-         * Décider d'un endroit où aller dans le rayon possible de la station
+        /*
+          Décider d'un endroit où aller dans le rayon possible de la station
          */
         // Coordonnées randoms en polaire
         double r = distance * Math.sqrt(Math.random());

@@ -28,7 +28,6 @@ public class Gare extends MasonGeometry implements Steppable {
     /**
      * Main constructor, used when instantiating new gare (without associated MasonGeometry)
      * @param id debug value - can be null
-     * @param name
      */
     public Gare(int id, String name) {
         this.id = id;
@@ -38,7 +37,7 @@ public class Gare extends MasonGeometry implements Steppable {
     /**
      * This constructor is used to create a Gare from an existing geometry
      * It is especially used when you want to create a Gare from many Stations
-     * @param gem
+     * @param gem geometry used for the simulation
      */
     public Gare(MasonGeometry gem) {
         this.addAttribute(Constants.IS_MULTIPLE_STATION_STR, gem.getStringAttribute(Constants.IS_MULTIPLE_STATION_STR));
