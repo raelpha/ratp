@@ -78,12 +78,17 @@ You can also find our slides used for our (academic) presentation here: [present
 
 <p>As little information as possible is <i>hardcoded</i> so you may adapt this simulation to your favorite transit system as long as the data is on these input files with little code adjustment.</p>
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
+
+<!-- CREDITS -->
+<h2 id="license"> :unlock: License</h2>
+
+This projet uses the MIT License (that you can find in <a href="LICENSE.md">LICENSE.md</a> file).
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
 <!-- CREDITS -->
 <h2 id="contributors"> :scroll: Contributors</h2>
-
 
 
 Raphael Jaures: [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/raelpha)[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/raphaeljaures/)
